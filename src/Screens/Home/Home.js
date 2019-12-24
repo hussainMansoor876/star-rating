@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { loginUser } from '../../Redux/actions/authActions'
+import { connect } from 'react-redux';
 import './Home.css'
 
 class Home extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
 
@@ -13,8 +15,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-
+      <div className="jumbotron text-center">
+        <h1>My First Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
       </div>
     )
   }

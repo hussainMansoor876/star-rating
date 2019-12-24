@@ -4,6 +4,7 @@ import Login from '../Screens/Login/Login';
 import SignUp from '../Screens/Login/SignUp'
 import { connect } from 'react-redux'
 import SessionStorageManager from './SessionStorageManager';
+import Home from '../Screens/Home/Home'
 // import { loginUser } from '../Redux/actions/authActions'
 
 
@@ -53,6 +54,7 @@ class Routes extends Component {
                 <Switch>
                     <Route path="/" exact component={Login} />
                     <Route path="/register" exact component={SignUp} />
+                    <Route path="/home" exact component={Home} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
                     {/* <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
                     <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/article" component={Article} /> */}

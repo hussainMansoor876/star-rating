@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { loginUser } from '../../Redux/actions/authActions'
+import { connect } from 'react-redux';
 import './Search.css'
 
 class Search extends React.Component {
