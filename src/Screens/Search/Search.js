@@ -1,5 +1,5 @@
-/*eslint-disable*/
 import React, { Component } from 'react';
+import './Search.css'
 
 class Search extends React.Component {
 
@@ -37,4 +37,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+export default connect(mapStateToProps, mapDispatchToProps)(Search)
