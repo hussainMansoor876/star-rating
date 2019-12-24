@@ -1,0 +1,83 @@
+.wrapper {
+  width: 90% !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+.fc-blue{
+  color: #0c94ac;
+}
+.fc-primary{
+  font-family: 'Poppins', sans-serif;
+}
+.fc-secondary{
+  font-family: 'Roboto', sans-serif;
+}
+.fc-white{
+  color: #fff;
+}
+/***************** HEADER START *****************/
+header{
+  padding: 20px 0;
+  position: relative;
+  z-index: 9999999;
+}
+header .nav-list ul{
+  display: flex;
+  margin-bottom: 0;
+  float: right;
+}
+header .nav-list ul li{
+  list-style-type: none;
+}
+header .nav-list ul li a{
+  margin: 0 10px;
+  padding: 0 5px;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s;
+}
+header .nav-list ul li a:hover{
+  color: #0c94ac;
+  border-bottom:2px solid #0c94ac;
+}
+
+/***************** HEADER END *****************/
+
+
+
+
+/**************** BANNER START ****************/
+
+
+#banner{
+  background-image: url('../../assets/img/banner.jpg');
+  background-size: cover;
+  position: relative;
+  /* position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -99; */
+}
+#banner::before{
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+
+}
+#banner .va-middle {
+  vertical-align: middle;
+  height: 75vh;
+}
+#banner .banner-content{
+  position: relative;
+}
+#banner .banner-content h2{
+  font-size: 60px;
+  color: #fff;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/**************** BANNER END ****************/

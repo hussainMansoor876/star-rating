@@ -15,9 +15,52 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="jumbotron text-center">
-        <h1>My First Bootstrap Page</h1>
-        <p>Resize this responsive page to see the effect!</p>
+      <div className="main-body">
+
+
+          <header>
+              <div className="wrapper">
+                <div className="row">
+                  <div className="col-md-3">
+                    <div className="main-logo">
+                      <h5 className="fc-blue">Your Logo Here</h5>
+                  </div>
+                </div>
+                <div className="col-md-9">
+                      <nav className="nav-list">
+                          <ul>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">Home</a></li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+              </div>
+
+            </header>
+
+
+
+          <section id="banner">
+              <div className="wrapper">
+                <div className="d-table w-100">
+                  <div className="d-table-cell va-middle">
+                    <div className="banner-content">
+                        <h2 className=".fc-secondary">CLICK.<br />
+                            <span className="fc-blue">SHOP.</span><br />
+                            SAFE.</h2>
+                            <p className="fc-primary fc-white">ONLINE SHOPPING WITH TRUSTED SHOPS.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </section>
+
+
       </div>
     )
   }
