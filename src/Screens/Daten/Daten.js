@@ -1,24 +1,55 @@
 /*eslint-disable*/
 import React, { Component } from 'react';
-import './Article.css'
+import './Dashboard.css'
 import SessionStorageManager from '../../Config/SessionStorageManager';
 import { connect } from 'react-redux';
 import { loginUser } from '../../Redux/actions/authActions'
 import 'antd/dist/antd.css';
-import { Menu, Icon, Input, Button, Select, Table, Skeleton } from 'antd';
+import { Menu, Icon, Input, Button, Select, Table, Skeleton, notification } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const { Option } = Select;
 const { Search } = Input;
 
-class ViewArticle extends React.Component {
+const columns = [
+  {
+    title: 'Headline',
+    dataIndex: 'headline',
+    render: text => <Link to={`article/${text.slug}`} onClick={() => sessionStorage.setItem("article", JSON.stringify(text))}>{text.headline.length > 30 ? text.headline.slice(0, 30) : text.headline}</Link>
+  },
+  {
+    title: 'Status',
+    dataIndex: 'status',
+  },
+  {
+    title: 'Author',
+    dataIndex: 'author',
+  },
+  {
+    title: 'Date',
+    dataIndex: 'date',
+  },
+];
+
+const data = [];
+for (let i = 0; i < 460; i++) {
+  data.push({
+    key: i,
+    name: `Edward King ABc hello rfjygyjgfyh ${i}`,
+    age: 32,
+    address: `London, Park Lane no. ${i}`,
+  });
+}
+
+class Dashboard extends React.Component {
 
 
   state = {
     current: 'mail',
     user: null,
-    allData: []
+    allData: [],
+    filter: 'city'
   }
 
   handleClick = e => {
@@ -27,6 +58,15 @@ class ViewArticle extends React.Component {
       current: e.key,
     });
   };
+
+  openNotification = (title, desc, icon, color = '#108ee9') => {
+    notification.open({
+      message: title,
+      description: desc,
+      icon: <Icon type={icon} style={{ color: color }} />,
+    });
+  };
+
 
   async componentWillMount() {
     const { allData } = this.state
@@ -59,7 +99,34 @@ class ViewArticle extends React.Component {
   }
 
   handleChange(value) {
-    console.log(`selected ${value}`);
+    this.setState({ filter: value })
+  }
+
+  searchValue(value) {
+    var { filter, allData } = this.state
+    allData = []
+    // this.setState({ allData: [] })
+    axios.get(`https://cmsbackend123.herokuapp.com/get/article/${filter}/${value}`)
+      .then((res) => {
+        console.log(res)
+        const { data } = res.data
+        data.length ? data.map((v, i) => {
+          return allData.push({
+            key: i,
+            headline: v,
+            status: v.status,
+            author: v.author,
+            date: v.timestamp
+          })
+        }) : this.openNotification("Sorry","No Result found","close-circle","red")
+        this.setState({ allData })
+        !data.length && setTimeout(() => {
+          window.location.reload()
+        },1000)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
 
@@ -118,12 +185,12 @@ class ViewArticle extends React.Component {
               // style={{ paddingTop: 5 }}
               className="search1"
               style={{ paddingTop: 18, paddingBottom: 10, paddingLeft: 5, alignSelf: 'center' }}
-              onSearch={value => console.log(value)}
+              onSearch={value => this.searchValue(value)}
             />
             <Select defaultValue="City" size="large" className="selector" style={{ width: 120, marginLeft: 10, paddingTop: 8 }} onChange={(value) => this.handleChange(value)}>
               <Option value="city">City</Option>
-              <Option value="categories">Category</Option>
-              <Option value="topics">Topic</Option>
+              <Option value="category">Category</Option>
+              <Option value="topic">Topic</Option>
             </Select>
           </div>
           <div style={{ height: 70, backgroundColor: 'white' }} className="left">
@@ -151,7 +218,15 @@ class ViewArticle extends React.Component {
           </div>
         </div>
         <br />
-        <h1 style={{ justifyContent: 'center', textAlign: 'center' }}>View Article</h1>
+        <h1 style={{ justifyContent: 'center', textAlign: 'center' }}>News Articles</h1>
+        <br />
+        <div style={{ width: '100%', justifyContent: 'center', display: 'flex', textAlign: 'center' }}>
+          {allData.length ? <Table
+            style={{ width: '94%' }}
+            columns={columns}
+            dataSource={allData}
+          /> : <Skeleton active />}
+        </div>
       </div>
     )
   }
@@ -174,4 +249,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ViewArticle)
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

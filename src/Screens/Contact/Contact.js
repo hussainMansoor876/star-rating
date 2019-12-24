@@ -5,8 +5,9 @@ import SessionStorageManager from '../../Config/SessionStorageManager';
 import { connect } from 'react-redux';
 import { loginUser } from '../../Redux/actions/authActions'
 import 'antd/dist/antd.css';
-import { Menu, Icon, Input, Button, Select, Table } from 'antd';
+import { Menu, Icon, Input, Button, Select, Table, Skeleton, notification } from 'antd';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const { Option } = Select;
 const { Search } = Input;
@@ -14,16 +15,20 @@ const { Search } = Input;
 const columns = [
   {
     title: 'Headline',
-    dataIndex: 'name',
-    render: text => <Link to="/hello">{text}</Link>
+    dataIndex: 'headline',
+    render: text => <Link to={`article/${text.slug}`} onClick={() => sessionStorage.setItem("article", JSON.stringify(text))}>{text.headline.length > 30 ? text.headline.slice(0, 30) : text.headline}</Link>
   },
   {
     title: 'Status',
-    dataIndex: 'age',
+    dataIndex: 'status',
   },
   {
     title: 'Author',
-    dataIndex: 'address',
+    dataIndex: 'author',
+  },
+  {
+    title: 'Date',
+    dataIndex: 'date',
   },
 ];
 
@@ -37,11 +42,14 @@ for (let i = 0; i < 460; i++) {
   });
 }
 
-class Gallery extends React.Component {
+class Dashboard extends React.Component {
+
 
   state = {
     current: 'mail',
-    user: null
+    user: null,
+    allData: [],
+    filter: 'city'
   }
 
   handleClick = e => {
@@ -51,7 +59,34 @@ class Gallery extends React.Component {
     });
   };
 
-  componentWillMount() {
+  openNotification = (title, desc, icon, color = '#108ee9') => {
+    notification.open({
+      message: title,
+      description: desc,
+      icon: <Icon type={icon} style={{ color: color }} />,
+    });
+  };
+
+
+  async componentWillMount() {
+    const { allData } = this.state
+    await axios.get('https://cmsbackend123.herokuapp.com/get/article/getAll')
+      .then((res) => {
+        console.log(res.data.data)
+        const { data } = res.data
+        data.map((v, i) => {
+          return allData.push({
+            key: i,
+            headline: v,
+            status: v.status,
+            author: v.author,
+            date: v.timestamp
+          })
+        })
+        this.setState({ allData })
+        console.log(allData)
+      })
+      .catch((err) => console.log(err))
     const user = SessionStorageManager.getUser();
     if (user) {
       this.setState({ user })
@@ -64,7 +99,34 @@ class Gallery extends React.Component {
   }
 
   handleChange(value) {
-    console.log(`selected ${value}`);
+    this.setState({ filter: value })
+  }
+
+  searchValue(value) {
+    var { filter, allData } = this.state
+    allData = []
+    // this.setState({ allData: [] })
+    axios.get(`https://cmsbackend123.herokuapp.com/get/article/${filter}/${value}`)
+      .then((res) => {
+        console.log(res)
+        const { data } = res.data
+        data.length ? data.map((v, i) => {
+          return allData.push({
+            key: i,
+            headline: v,
+            status: v.status,
+            author: v.author,
+            date: v.timestamp
+          })
+        }) : this.openNotification("Sorry","No Result found","close-circle","red")
+        this.setState({ allData })
+        !data.length && setTimeout(() => {
+          window.location.reload()
+        },1000)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
 
@@ -111,7 +173,7 @@ class Gallery extends React.Component {
         },
       ],
     };
-    const { user } = this.state
+    const { user, allData } = this.state
     return (
       <div>
         <div style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
@@ -123,12 +185,12 @@ class Gallery extends React.Component {
               // style={{ paddingTop: 5 }}
               className="search1"
               style={{ paddingTop: 18, paddingBottom: 10, paddingLeft: 5, alignSelf: 'center' }}
-              onSearch={value => console.log(value)}
+              onSearch={value => this.searchValue(value)}
             />
             <Select defaultValue="City" size="large" className="selector" style={{ width: 120, marginLeft: 10, paddingTop: 8 }} onChange={(value) => this.handleChange(value)}>
               <Option value="city">City</Option>
-              <Option value="categories">Category</Option>
-              <Option value="topics">Topic</Option>
+              <Option value="category">Category</Option>
+              <Option value="topic">Topic</Option>
             </Select>
           </div>
           <div style={{ height: 70, backgroundColor: 'white' }} className="left">
@@ -157,14 +219,13 @@ class Gallery extends React.Component {
         </div>
         <br />
         <h1 style={{ justifyContent: 'center', textAlign: 'center' }}>News Articles</h1>
-        <br/>
+        <br />
         <div style={{ width: '100%', justifyContent: 'center', display: 'flex', textAlign: 'center' }}>
-        <Table 
-        // rowSelection={rowSelection} 
-        style={{ width: '94%' }}
-        columns={columns} 
-        dataSource={data} 
-        />
+          {allData.length ? <Table
+            style={{ width: '94%' }}
+            columns={columns}
+            dataSource={allData}
+          /> : <Skeleton active />}
         </div>
       </div>
     )
