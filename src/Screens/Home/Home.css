@@ -1,0 +1,243 @@
+.wrapper {
+  width: 90% !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+.sec-padding{
+  padding: 60px 0px;
+}
+.fc-blue{
+  color: #0c94ac;
+}
+.fc-primary{
+  font-family: 'Poppins', sans-serif;
+}
+.fc-secondary{
+  font-family: 'Roboto', sans-serif;
+}
+.fc-white{
+  color: #fff;
+}
+.bg-white{
+  background-color: white;
+}
+.bg-yellow{
+  background-color: yellow;
+}
+
+
+/***************** HEADER START *****************/
+header{
+  padding: 20px 0;
+  position: relative;
+  z-index: 9999999;
+}
+header .nav-list ul{
+  display: flex;
+  margin-bottom: 0;
+  float: right;
+}
+header .nav-list ul li{
+  list-style-type: none;
+}
+header .nav-list ul li a{
+  margin: 0 10px;
+  padding: 0 5px;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s;
+}
+header .nav-list ul li a:hover{
+  color: #0c94ac;
+  border-bottom:2px solid #0c94ac;
+}
+
+/***************** HEADER END *****************/
+
+
+
+
+/**************** BANNER START ****************/
+
+
+#banner{
+  background-image: url('../../assets/img/banner.jpg');
+  background-size: cover;
+  position: relative;
+  /* position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -99; */
+}
+#banner::before{
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+
+}
+#banner .va-middle {
+  vertical-align: middle;
+  height: 75vh;
+}
+#banner .banner-content{
+  position: relative;
+}
+#banner .banner-content h2{
+  font-size: 60px;
+  color: #fff;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/**************** BANNER END ****************/
+
+
+/****************our-service ****************/
+.our-service-main h1{
+  text-align: center; 
+  font-size: 45px;
+  padding-bottom: 25px;
+}
+.service{
+  margin-bottom: 30px;
+  transition: 0.3s;
+  box-shadow: 0px 1px 1px 0px #88888869
+}
+.service:hover{
+  box-shadow: 0px 5px 0px 4px #88888869;
+  transition: 0.3s;
+}
+.service-image{
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.service-logo{
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
+}
+.service-logo img{
+  display: block;
+  text-align: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: absolute;
+  top: -28px;
+  left: 0%;
+  border: 10px solid white;
+  height: auto;
+}
+.service-content{
+  padding: 20px;
+}
+.service-content span{
+  color: gray;
+}
+.service-content-star img{
+  height: 30px;
+  float: left;
+}
+
+.starr ul{
+  list-style: none;
+  display: inline-flex;
+  padding: 4px 16px;
+}
+.starr ul li{
+  margin-left: 5px;
+}
+.starr ul li i{
+  color: yellow;
+  font-size: 15px;
+}
+/****************our-service-end ****************/
+
+
+
+
+/****************shop-search ****************/
+#testimonial{
+  background: #f3f38370;
+  padding: 30px 0px;
+}
+.testimonial-main{
+    background: white;
+    padding: 50px;
+    box-shadow: -2px 2px 41px 1px rgba(0, 0, 0, 0.6);
+}
+.tetimoial-left{
+  background-position: center;
+  background-size: contain;
+  height: 480px;
+  background-repeat: no-repeat;
+}
+.testimonial-content{
+    padding-top: 40px;
+}
+.testimonial-content h3{
+  margin-bottom: 2px;
+  font-size: 30px;
+}
+.testimonial-content h2{
+  font-size: 35px;
+  font-weight: 600;
+}
+.testimonial-content p{
+  font-size: 16px;
+  line-height: 24px;
+}
+.testimonial-content button{
+  padding: 10px 15px;
+  background: #0c94ac;
+  color: white;
+  border: 2px solid #0c94ac;
+  transition: 0.3s;
+  margin-top: 17px;
+}
+.testimonial-content button:hover{
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
+/****************shop-search-end ****************/
+
+
+/****************certified-shops ****************/
+.certified-shops-content{
+  padding-top: 40px;
+  text-align: center;
+}
+.certified-shops-content h3{
+margin-bottom: 2px;
+font-size: 30px;
+}
+.certified-shops-content h2{
+font-size: 35px;
+font-weight: 600;
+}
+.certified-shops-content p{
+font-size: 16px;
+line-height: 24px;
+padding: 0px 60px;
+}
+.certified-shops-content button{
+padding: 10px 15px;
+background: #0c94ac;
+color: white;
+border: 2px solid #0c94ac;
+margin-top: 17px;
+transition: 0.3s;
+}
+.certified-shops-content button:hover{
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
+
+
+/****************certified-shops-end ****************/
