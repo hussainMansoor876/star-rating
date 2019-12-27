@@ -7,13 +7,22 @@
   #components-form-demo-normal-login .login-form-button {
     width: 100%;
   }
-
+  .login-card{
+    padding: 10% 0 5%;
+    background-size: 100% 100%;
+    background-image: url('../../assets/img/login.png');
+  }
+  .register-card{
+    padding: 10% 0 5%;
+    background-size: 100% 100%;
+    background-image: url('../../assets/img/register-bg.jpg');
+  }
   .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     /* position: relative; */
     background-color: #fff;
-    margin: 10%;
+    margin: 0 auto;
     padding: 30px;
     width: 40%;
   }
@@ -30,6 +39,23 @@
     justify-content: center;
     align-items: center;
   }
+  .ant-form-item-children {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+}
+.ant-form-item-children a{
+  color: #000;
+  font-weight: 500;
+}
+.ant-row.ant-form-item.sign-up{
+  text-align: center;
+}
+.ant-form-item label {
+  color: #000;
+}
+.ant-form h1{
+  font-style: italic;
+}
 
 
   @media(max-width: 1000px){
@@ -58,7 +84,11 @@
       width: 80%;
     }
   }
-
+@media(max-width:991px){
+  .login-card {
+    padding: 10% 0 10%;
+  }
+}
 
 .login-form {
   /* max-width: 500px; */
@@ -69,14 +99,86 @@
 }
 .login-form-button {
   width: 100%;
-  background-color: #37A000 !important;
+  background-color: #0c94ac !important;
   color: white !important;
   font-weight: bold;
   font-size: 14; 
   height: 40;
 }
 
+/*********************** EMAN WORK ********************/
 
+.signup-with{
+  text-align: center;
+}
+.signup-info p{
+  color:#000;
+  font-weight: bold;
+}
+.signup-with a i.fa.fa-facebook { 
+  background:#3c5b9b;
+  color: #fff;
+  margin: 0px 2px 0;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  border: 2px solid #3c5b9b;
+  transition: 0.5s;
+}
+.signup-with a i.fa.fa-facebook:hover{
+  color: #3c5b9b;
+  background: #fff;
+}
+.signup-with a i.fa.fa-twitter { 
+  background:#2daae1;
+  color: #fff;
+  margin: 0px 2px 0;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  border: 2px solid #2daae1;
+  transition: 0.5s;
+}
+.signup-with a i.fa.fa-twitter:hover{
+  color: #2daae1;
+  background: #fff;
+}
+.signup-with a i.fa.fa-instagram { 
+  background:red;
+  color: #fff;
+  margin: 0px 2px 0;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 37px;
+  border: 2px solid red;
+  transition: 0.5s;
+}
+.signup-with a i.fa.fa-instagram:hover{
+  color: red;
+  background: #fff;
+}
+.signup-with a i.fa.fa-google-plus { 
+  background:red;
+  color: #fff;
+  margin: 0px 2px 0;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 37px;
+  border: 2px solid red;
+  transition: 0.5s;
+}
+.signup-with a i.fa.fa-google-plus:hover{
+  color: red;
+  background: #fff;
+}
   
 
   
