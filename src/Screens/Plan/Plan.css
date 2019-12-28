@@ -38,6 +38,59 @@
 #banner-3 .banner-content p{
   font-size: 22px;
 }
+
+
+
+
+@media only screen and (max-width:1024px){
+  #banner-3 .banner-content h2 {
+    font-size: 50px;
+  }
+  #banner-3 .banner-content p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width:991px){
+  #banner-3 .va-middle {
+    height: 70vh;
+}
+}
+@media only screen and (max-width:768px){
+#banner-3 .banner-content h2 {
+  font-size: 40px;
+  }
+  #banner-3 .banner-content p {
+    font-size: 18px;
+    }
+}
+@media only screen and (max-width:640px){
+#banner-3 .va-middle {
+  height: 50vh;
+}
+}
+@media only screen and (max-width:575px){
+
+  #banner-3 .banner-content h2 {
+    font-size: 30px;
+    }
+    #banner-3 .banner-content p {
+      font-size: 16px;
+      }
+  }
+
+  @media only screen and (max-width:460px){
+    #banner-3 {
+      background-size: 100% 55%;
+      background-repeat: no-repeat;
+    }
+    #banner-3 .banner-content h2 {
+      font-size: 25px;
+      }
+      #banner-3 .banner-content p {
+        font-size: 14px;
+        }
+  }
 /**************** BANNER END ****************/
 
 
@@ -153,6 +206,9 @@ transition: 0.5s;
 @media only screen and (max-width:991px){
   .price-description {
     margin-bottom: 55px;
+}
+.mb-o {
+  margin-bottom: 55px !important;
 }
 .price-detail::before {
   width: 100%;

@@ -101,7 +101,7 @@ class Signup extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="register-body">
-        <header>
+       <header>
           <div className="wrapper">
             <div className="row">
               <div className="col-md-3">
@@ -112,12 +112,13 @@ class Signup extends React.Component {
               <div className="col-md-9">
                 <nav className="nav-list">
                   <ul>
-                  <li><a href="http://localhost:3000/home">Home</a></li>
-                    <li><a href="http://localhost:3000/home">About Us</a></li>
-                    <li><a href="http://localhost:3000/home">Pricing</a></li>
-                    <li><a href="http://localhost:3000/home">User Review</a></li>
+                    <li><a href="http://localhost:3000/home">Home</a></li>
                     <li><a href="http://localhost:3000/plan">Plan</a></li>
-                    <li><a href="http://localhost:3000/contact">Contact</a></li>
+                    <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
+                    <li><a href="http://localhost:3000/contact">Contact Us</a></li>
+                    <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+                    <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+
                   </ul>
                 </nav>
               </div>
@@ -125,6 +126,44 @@ class Signup extends React.Component {
           </div>
 
         </header>
+
+        <div className="mob-section">
+       <div className="wrapper">
+       <div className="row">
+          <div className="col-md-6">
+          <div className="main-logo">
+                  <h5 className="fc-blue">Your Logo Here</h5>
+                </div>
+          </div>
+          <div className="col-md-6">
+          <div class="mobile-nav" id="nav">
+         <a href="#">
+            <div class="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
+            <div className="main-logo">
+                  <h5 className="fc-blue">Your Logo Here</h5>
+                </div>
+            </div>
+         </a>
+         <nav>
+            <div className="mob-nav-list">
+               <ul>
+               <li><a href="http://localhost:3000/home">Home</a></li>
+              <li><a href="http://localhost:3000/plan">Plan</a></li>
+              <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
+              <li><a href="http://localhost:3000/contact">Contact Us</a></li>
+              <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+              <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <div class="mobile-nav-btn">
+         <span class="lines"></span>
+      </div>
+          </div>
+        </div>
+       </div>
+      </div>
 
         <div className="register-card">
         <div className="card">

@@ -4,16 +4,20 @@ import { connect } from 'react-redux';
 import './Home.css';
 import logo from '../../assets/img/shoes.jpg';
 import sole from '../../assets/img/sole-trader.jpg';
-import trust from '../../assets/img/trust.png';
+import trust from '../../assets/img/trust-2.png';
 import testiimage from '../../assets/img/man.png'; // with import
-
+import slider1 from '../../assets/img/slider-1.jpg';
+import slider2 from '../../assets/img/slider-2.jpg';
+import slider3 from '../../assets/img/slider-3.jpg';
+import slider4 from '../../assets/img/slider-4.jpg';
+import slider5 from '../../assets/img/slider-5.jpg';
 
 class Home extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-
+      
     }
   }
 
@@ -35,11 +39,12 @@ class Home extends React.Component {
                 <nav className="nav-list">
                   <ul>
                     <li><a href="http://localhost:3000/home">Home</a></li>
-                    <li><a href="http://localhost:3000/home">About Us</a></li>
-                    <li><a href="http://localhost:3000/home">Pricing</a></li>
-                    <li><a href="http://localhost:3000/home">User Review</a></li>
                     <li><a href="http://localhost:3000/plan">Plan</a></li>
-                    <li><a href="http://localhost:3000/contact">Contact</a></li>
+                    <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
+                    <li><a href="http://localhost:3000/contact">Contact Us</a></li>
+                    <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+                    <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+
                   </ul>
                 </nav>
               </div>
@@ -47,6 +52,47 @@ class Home extends React.Component {
           </div>
 
         </header>
+
+
+      <div className="mob-section">
+       <div className="wrapper">
+       <div className="row">
+          <div className="col-md-6">
+          <div className="main-logo">
+                  <h5 className="fc-blue">Your Logo Here</h5>
+                </div>
+          </div>
+          <div className="col-md-6">
+          <div class="mobile-nav" id="nav">
+         <a href="#">
+            <div class="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
+            <div className="main-logo">
+                  <h5 className="fc-blue">Your Logo Here</h5>
+                </div>
+            </div>
+         </a>
+         <nav>
+            <div className="mob-nav-list">
+               <ul>
+               <li><a href="http://localhost:3000/home">Home</a></li>
+              <li><a href="http://localhost:3000/plan">Plan</a></li>
+              <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
+              <li><a href="http://localhost:3000/contact">Contact Us</a></li>
+              <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+              <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <div class="mobile-nav-btn">
+         <span class="lines"></span>
+      </div>
+          </div>
+        </div>
+       </div>
+      </div>
+
+
 
 
 
@@ -100,7 +146,7 @@ class Home extends React.Component {
                   </div>
                   <div className="col-md-4">
                     <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${logo})`}}></div>
+                      <div className="service-image" style={{ backgroundImage: `url(${slider5})`}}></div>
                       <div className="service-logo">
                       <img src={sole} />
                       </div>
@@ -125,7 +171,7 @@ class Home extends React.Component {
                   </div>
                   <div className="col-md-4">
                     <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${logo})`}}></div>
+                      <div className="service-image" style={{ backgroundImage: `url(${slider4})`}}></div>
                       <div className="service-logo">
                       <img src={sole} />
                       </div>
@@ -150,7 +196,7 @@ class Home extends React.Component {
                   </div>
                   <div className="col-md-4">
                     <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${logo})`}}></div>
+                      <div className="service-image" style={{ backgroundImage: `url(${slider3})`}}></div>
                       <div className="service-logo">
                       <img src={sole} />
                       </div>
@@ -175,7 +221,7 @@ class Home extends React.Component {
                   </div>
                   <div className="col-md-4">
                     <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${logo})`}}></div>
+                      <div className="service-image" style={{ backgroundImage: `url(${slider2})`}}></div>
                       <div className="service-logo">
                       <img src={sole} />
                       </div>
@@ -200,7 +246,7 @@ class Home extends React.Component {
                   </div>
                   <div className="col-md-4">
                     <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${logo})`}}></div>
+                      <div className="service-image" style={{ backgroundImage: `url(${slider1})`}}></div>
                       <div className="service-logo">
                       <img src={sole} />
                       </div>
@@ -387,6 +433,7 @@ class Home extends React.Component {
 
 
 const mapStateToProps = (state) => {
+  
   console.log("mapToState", state.authReducer)
   return {
     isLoggedIn: state.authReducer.isLoggedIn,
