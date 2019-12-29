@@ -32,6 +32,13 @@
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 
@@ -49,5 +56,21 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
+<script>
+   $('.mobile-nav-btn').click(function() {
+        $('.mobile-nav-btn, .mobile-nav, .app-container').toggleClass('active');
+
+        $(document).mouseup(function(e)
+        {
+            var container = $(".mobile-nav, .mobile-nav-btn");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                $('.mobile-nav-btn, .mobile-nav, .app-container').removeClass('active');
+            }
+        });
+    });
+</script>
 
 </html>

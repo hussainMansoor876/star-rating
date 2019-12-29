@@ -1,0 +1,661 @@
+
+
+/****************inside-banner ****************/
+.inside-content button{
+    margin-right: 8px;
+}
+.fa-star{
+    color: #0c94ac;
+}
+ .push-md-2 {
+    left: 16.666667%;
+  }
+  .push-md-10 {
+    left: 83.333333%;
+  }
+  .pull-md-2 {
+    right: 16.666667%;
+  }
+  .pull-md-10 {
+    right: 83.333333%;
+  }
+.inside-banner-image{
+	background-image: url('../../assets/img/hedre.jpg');
+	height: 60vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.inside-banner-image::before{
+    content: '';
+  height: 100%;
+  position: absolute;
+  background: url('../../assets/img/bg-doted.png') rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+.inside-content{
+	position: absolute;
+	top:70px;
+	right: 20px;
+}
+.social-icons{
+	position: absolute;
+	bottom: -12px;
+	right: 20px;
+}
+.social-icons ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+.social-icons ul li{
+	margin-right: 6px;
+}
+.social-icons ul li a i{
+	transition: 0.5s;
+    color: white;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    line-height: 37px;
+    text-align: center;
+    border-radius: 50px;
+}
+.social-icons ul li a i:hover{
+	background-color:#0c94ac;
+	transition: 0.5s
+}
+.fa-facebook-f{
+	background:#3b5998;
+}
+.fa-twitter{
+	background:#00acee;
+
+}
+.social-icons-proven ul li i{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin: 0 3px;
+}
+ .fa-linkedin{
+	background: #0e76a8;
+
+}
+.fa-xing-square{
+	background:#126567;
+
+}
+.exp-con {
+    padding: 20px 0px 20px 43px;
+}
+.exp-con h3{
+    margin: 0;
+}
+.exp-con h4{
+    margin: 0;
+}
+.proven-con img{
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid #0c94ac;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+}
+.exp-con-left{
+	position: relative;
+    top: -80px;
+    margin-left: 15px;
+    text-align: center;
+}
+.starr ul{
+    list-style: none;
+    display: inline-flex;
+}
+.center-second-main .starr ul li {
+    margin: 5px 5px 5px 0px;
+}
+.icon-image{
+    text-align: right;
+}
+.flrt-r{
+	float: left;
+}
+.starrs ul{
+	display: inline-flex;
+	list-style: none;
+}
+.social-icons-proven ul{
+	    list-style: none;
+    display: inline-flex;
+    padding:0;
+    margin: 10px 0 0;
+}
+.centr-sub-1-main span{
+	display: block;
+}
+.expert-main{
+	background-color: white;
+}
+
+/**************** inside-banner END ****************/
+
+
+
+/**************** competencies ****************/
+.customer-service-main{
+    background: #fff;
+    border: 1px solid #c5bfbf;
+    margin-bottom: 60px;
+    padding: 60px 20px;
+}
+.two-r-main {
+    
+    padding: 10px;
+}
+.measure-sub i.fa.fa-check{
+    margin-right: 10px;
+    font-size: 30px;
+    color: #0c94ac;
+}
+.starress ul{
+    padding: 0;
+    margin: 0;
+}
+.star-center{
+    text-align: center;
+}
+.starrsd ul{
+    margin: 0;
+    padding: 0;
+}
+.lft-sty{
+    float: left;
+    padding: 13px;
+}
+.mrtpt{
+    margin-top: 25px;
+}
+.customer-ser-head i{
+    color: #0c94ac;
+    font-size: 20px;
+}
+.customer-ser-head{
+    margin-bottom: 20px;
+}
+.cost-ben{
+    float: left;
+}
+.cost-ben span{
+    color: #0c94ac;
+}
+.two-d-main{
+    background: #f1f2f7;
+    padding: 15px 0px;
+}
+.customer-ser-head p{
+    margin-bottom: 4px;
+}
+.two-star{
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bfbebe;
+}
+.two-icon{
+    text-align: center;
+    
+}
+.two-str-main-dv{
+    margin-top: 25px;
+}
+.inputcol select{
+    background: #0c94ac;
+    border: 1px solid #0c94ac;
+    padding: 10px 0px;
+    color: #fff;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+}
+.prove-centre{
+    text-align: center;
+}
+/* .two-str-main-dv{
+    border: 1px solid gray;
+} */
+.prove-centre-lnk{
+    padding-top: 10px;
+    text-align: center;
+}
+.two-main-r{
+    border-left: 1px solid #bfbebe;
+    padding-left: 17px;
+}
+.prove-centre-lnk a{
+    color: #0c94ac;
+}
+.prove-centre-lnk a i{
+    margin-left: 12px;
+}
+.prove-centre span{
+    color: #0c94ac;
+    font-size: 16px;
+}
+.prove-centre p{
+    font-size: 16px;
+    margin: 0;
+}
+.starress ul li i{
+    font-size: 25px;
+}
+.starres ul{
+    padding: 0;
+    margin: 0;
+}
+.starres ul li i{
+    font-size: 20px;
+}
+.competencies-main p{
+    margin-bottom: 0;
+}
+.competencies-main p span{
+    font-weight: 500;
+    color: #000;
+    font-size: 16px;
+}
+.competencies-main a i{
+    font-size: 20px;
+}
+.center-second-main{
+    border: 1px solid #f1f1f1;
+    padding: 20px 20px;
+}
+.starr ul{
+    padding: 0;
+    margin: 0;
+}
+.star-first p{
+    margin-bottom: 5px;
+}
+.starrs {
+    text-align: right;
+}
+.starrs ul{
+    padding: 0;
+    margin: 0;
+}
+.competencies-main{
+    padding: 15px;
+    text-align: center;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    position: relative;
+}
+.competencies-main a{
+    position: absolute;
+    display: inline-block;
+    right: 50px;
+    top: 16px;
+}
+.starres ul{
+    display: inline-flex;
+    list-style: none;
+}
+.measure-main{
+    background: white;
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.reviews-main{
+	padding: 30px 20px;
+}
+.starress ul{
+	display: inline-flex;
+    list-style: none;
+}
+.inputcol select{
+	width: 100%;
+}
+.starrsd ul{
+	display: inline-flex;
+	list-style: none;
+}
+.center-first-sub p{
+    margin-bottom: 0;
+}
+.center-first-sub .ideal{
+    margin-bottom: 15px;
+}
+.center-first-sub a{
+    padding: 5px 0;
+    display: block;
+}
+.center-proven{
+    padding-bottom: 20px;
+}
+.direction i{
+    margin-right: 10px;
+}
+.centr-sub-1-main{
+    margin: 15px 0;
+}
+.centr-subs-2 p{
+    margin-bottom: 5px;
+}
+.centr-subs-2 i{
+    margin-right: 5px;
+}
+.centr-subs-2{
+    margin: 15px 0px;
+}
+.centr-sub-1-main .direction{
+    padding: 2px 0;
+    font-size: 17px;
+}
+.centr-sub-1-main h5{
+    margin-bottom: 5px;
+}
+.centr-sub-2-main h5{
+    margin-bottom: 0;
+}
+.centr-sub-2-main ul{
+    padding: 0;
+    margin: 15px 0 0;
+}
+.centr-sub-2-main ul li{
+    list-style-type: none;
+    padding: 0 0 7px;
+}
+.centr-sub-2-main ul li i{
+    margin-right: 5px;
+}
+.a-tg-h{
+    color: #0c94ac;
+}
+.a-tg-h span{
+    margin-right: 10px;
+}
+.for-main h4 {
+    font-weight: 400;
+}
+/**************** competencies END ****************/
+
+@media only screen and (max-width:1200px){
+    .star-first a{
+        font-size: 13px;
+    }
+    .a-tg-h{
+        font-size: 13px;
+    }
+    .for-main h4{
+        font-size: 21px;
+    }
+    .proven-botm h4{
+        font-size: 21px;
+    }
+    .centr-sub-1-main h5{
+        font-size: 18px;
+    }
+    .centr-subs-2 h5{
+        font-size: 18px;
+    }
+    .centr-sub-2-main h5{
+        font-size: 18px;
+    }
+    .two-icon h5{
+        font-size: 15px;
+    }
+    .icon-image h5{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:1024px){
+    .for-main h4 {
+        font-size: 18px;
+    }
+    .measure-sub i.fa.fa-check {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width:991px){
+    .inside-banner-image {
+        height: 50vh;}
+    .proven-con img {
+        max-width: 20%;
+    }
+    .exp-con-left {
+        top: 0px;
+        margin: 20px 0;
+    }
+    .centr-subs-2 {
+     text-align: right;
+    }
+    .exp-con {
+        text-align: center;
+    }
+    .center-first-sub {
+        text-align: center;
+    }
+    .center-first-sub .ideal {
+        margin-bottom: 0px;
+    }
+    .social-icons {
+        right: 50%;
+        transform: translate(50%, 0px);
+    }
+    .social-icons ul li a i {
+        font-size: 22px;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+    }
+   
+    .center-second-main {
+        border: 1px solid #f1f1f1;
+        padding: 15px 20px;
+    }
+    .icon-image img{
+        height: 40px;
+        margin-bottom: 5px;
+    }
+    .measure-sub {
+        margin: 15px 0;
+    }
+    .measure-sub h5{
+        margin: 0 0 5px;
+    }
+    .star-center {
+        text-align: right;
+    }
+    .reviews-head{
+        padding: 13px 0;
+    }
+    .inputcol {
+        margin-top: 25px;
+    }
+    .two-r-main .coment{
+        text-align: center;
+    }
+    .customer-ser-head {
+        float: right;
+    }
+    .star-rating-second {
+        padding-top: 10px;
+    }
+    .two-str-main-dv {
+        margin-top: 0px;
+    }
+    .customer-service-main {
+        padding: 30px 20px;
+    }
+}
+
+
+@media only screen and (max-width:767px){
+    .inside-content {
+        position: absolute;
+        top: 8%;
+        right: 50%;
+        transform: translate(50%, 50px);
+        display: grid;
+    }
+    .centr-sub-1-main {
+        text-align: center;
+    }
+    .centr-sub-2-main{
+        text-align: center;
+    }
+    .centr-subs-2 {
+        text-align: center;
+    }
+    .exp-con h4 {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    .exp-con-left {
+        top: 15px;
+    }
+    .for-main {
+        text-align: center;
+    }
+    .icon-image {
+        text-align: center;
+    }
+    .starres ul li i {
+        font-size: 14px;
+        margin: 4px 2px;
+    }
+    .starress ul li i {
+        font-size: 14px;
+        margin: 4px 2px;
+    }
+    .reviews-head h5{
+        margin: 0;
+    }
+    .starrsd {
+        text-align: right;
+    }
+    .customer-ser-head {
+        float: none;
+        text-align: center;
+    }
+    .reviews-head {
+        text-align: center;
+    }
+    .star-center {
+        text-align: center;
+    }
+    .cost-ben {
+        float: none;
+    }
+    .customer-ser-head i {
+        display: none;
+    }
+    .two-r-main .coment {
+        font-size: 13px;
+    }
+    .center-first-sub p {
+        font-size: 13px;
+    }
+    .exp-con {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width:640px){
+    .inside-banner-image {
+        height: 35vh;
+    }
+    .inside-content {
+        transform: translate(50%, -35%);
+    }
+    .exp-con h4 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    .two-main-r {
+        padding-left: 0px;
+    }
+    .inside-content {
+        transform: translate(50%, 0px);
+        top: 70px;
+    }
+}
+@media only screen and (max-width:575px){
+    .exp-con h4 {
+        font-size: 14px;
+    }
+    .proven-con img {
+        max-width: 30%;
+    }
+    .exp-con-left {
+        top: 10px;
+    }
+    .measure-sub {
+        margin: 10px 0;
+    }
+
+}
+
+@media only screen and (max-width:460px){
+    .inside-content {
+        top: 15%;
+        width: 90%;
+    }
+    .starrs ul li i{
+        font-size: 10px;
+    }
+    .center-second-main {
+        padding: 15px 10px;
+    }
+    .star-first a {
+        font-size: 11px;
+    }
+    .centr-sub-1-main span {
+        font-size: 12px;
+    }
+    .exp-con h3 {
+        font-size: 20px;
+    }
+    .competencies-main a i{
+        display: none;
+    }
+    .measure-sub h5 {
+        font-size: 17px;
+    }
+    .measure-sub i.fa.fa-check {
+        font-size: 20px;
+    }
+    .customer-service-main {
+        padding: 30px 0px;
+    }
+    .star-third p{
+        font-size: 13px;
+    }
+    .starrsd ul li i{
+        font-size: 13px;
+    }
+    .prove-centre p {
+        font-size: 14px;
+    }
+    .two-icon img{
+        height: 40px;
+    }
+}
+@media only screen and (max-width:320px){
+    .inside-content {
+        top: 10%;
+    }
+}
+

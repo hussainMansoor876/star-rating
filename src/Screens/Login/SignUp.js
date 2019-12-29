@@ -100,11 +100,76 @@ class Signup extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'ceenter' }}>
+      <div className="register-body">
+       <header>
+          <div className="wrapper">
+            <div className="row">
+              <div className="col-md-3">
+                <div className="main-logo">
+                  <h5 className="fc-blue">Your Logo Here</h5>
+                </div>
+              </div>
+              <div className="col-md-9">
+                <nav className="nav-list">
+                  <ul>
+                    <li><a href="http://localhost:3000/home">Home</a></li>
+                    <li><a href="http://localhost:3000/plan">Plan</a></li>
+                    <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
+                    <li><a href="http://localhost:3000/contact">Contact Us</a></li>
+                    <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+                    <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+        </header>
+
+        <div className="mob-section">
+       <div className="wrapper">
+       <div className="row">
+          <div className="col-md-6">
+          <div className="main-logo">
+                  <h5 className="fc-blue">Your Logo Here</h5>
+                </div>
+          </div>
+          <div className="col-md-6">
+          <div class="mobile-nav" id="nav">
+         <a href="#">
+            <div class="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
+            <div className="main-logo">
+                  <h5 className="fc-blue">Your Logo Here</h5>
+                </div>
+            </div>
+         </a>
+         <nav>
+            <div className="mob-nav-list">
+               <ul>
+               <li><a href="http://localhost:3000/home">Home</a></li>
+              <li><a href="http://localhost:3000/plan">Plan</a></li>
+              <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
+              <li><a href="http://localhost:3000/contact">Contact Us</a></li>
+              <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+              <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <div class="mobile-nav-btn">
+         <span class="lines"></span>
+      </div>
+          </div>
+        </div>
+       </div>
+      </div>
+
+        <div className="register-card">
         <div className="card">
           <div>
             <Form onSubmit={this.handleSubmit} className="login-form">
-              <h1 style={{ textAlign: 'center' }} >Register</h1>
+              <h1 className="ff-secondary fc-blue" style={{ textAlign: 'center' }} >Register</h1>
               <Form.Item className="sign-up">
                 {getFieldDecorator('name', {
                   rules: [{ required: true, message: 'Please input your username!' }],
@@ -154,11 +219,47 @@ class Signup extends React.Component {
                 <Button htmlType="submit" className="login-form-button" disabled={this.state.disable} style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
                   Sign Up
           </Button>
-                Or <Link to="/">Login Account</Link>
+                Or <Link to="/">Login With An Existing Account</Link>
               </Form.Item>
+              <div className="signup-with">
+                  <div className="signup-info">
+                    <p className="ff-primary">Or Sign Up with gmail !</p></div>
+                    <a href="#"><i className="fa fa-google-plus"></i></a>
+            </div>
             </Form>
           </div>
         </div>
+        </div>
+        <footer>
+        <div className="wrapper">
+            <div className="sec-padding">
+              <div className="row">
+                  <div className="col-md-12">
+                      <div className="footer-list">
+                      <h5 className="fc-white">Your Logo Here</h5>
+                      <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
+                           involve strict requirements as to the service quality as well as legal requirements.
+                            </p>
+                          <ul>
+                            <li><a href="#">Heplcenter</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Our Plain</a></li>
+                            <li><a href="#">Pricing</a></li>
+
+                          </ul>
+                        <span className="footer-social">
+                          <a href="#"><i className="fa fa-facebook"></i></a>
+                          <a href="#"><i className="fa fa-twitter"></i></a>
+                          <a href="#"><i className="fa fa-instagram"></i></a>
+                          <a href="#"><i className="fa fa-linkedin"></i></a>
+                        </span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        </footer>
       </div>
     );
   }
