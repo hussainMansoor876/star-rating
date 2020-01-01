@@ -11,6 +11,7 @@ import slider2 from '../../assets/img/slider-2.jpg';
 import slider3 from '../../assets/img/slider-3.jpg';
 import slider4 from '../../assets/img/slider-4.jpg';
 import slider5 from '../../assets/img/slider-5.jpg';
+import logonew from '../../assets/img/new-logo.png';
 
 class Home extends React.Component {
 
@@ -57,7 +58,8 @@ class Home extends React.Component {
             <div className="row">
               <div className="col-md-3">
                 <div className="main-logo">
-                  <h5 className="fc-blue">Your Logo Here</h5>
+                
+                <a href='#'><img src={logonew} /></a>
                 </div>
               </div>
               <div className="col-md-9">
@@ -84,7 +86,7 @@ class Home extends React.Component {
        <div className="row">
           <div className="col-md-6">
           <div className="main-logo">
-                  <h5 className="fc-blue">Your Logo Here</h5>
+          <a href='#'><img src={logonew} /></a>
                 </div>
           </div>
           <div className="col-md-6">
@@ -92,7 +94,7 @@ class Home extends React.Component {
          <a href="#">
             <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
             <div className="main-logo">
-                  <h5 className="fc-blue">Your Logo Here</h5>
+            <a href='#'><img src={logonew} /></a>
                 </div>
             </div>
          </a>

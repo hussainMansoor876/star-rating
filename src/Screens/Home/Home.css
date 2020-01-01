@@ -154,15 +154,14 @@ header{
   background: #fff;
   border-bottom: 2px solid #0c94ac;
 }
-.main-logo h5{
-  font-weight: bold;
-  font-size: 27px;
-  margin-bottom: 0;
+.main-logo img{
+  height: 30px;
 }
 header .nav-list ul{
   display: flex;
   margin-bottom: 0;
   float: right;
+  /* padding: 7px 0 0; */
 }
 header .nav-list ul li{
   list-style-type: none;
@@ -363,7 +362,7 @@ header .nav-list ul .nav-signup:hover a::before {
 .mobile-nav-btn {
   display: none;
   position: fixed;
-  top: 102px;
+  top: 105px;
   height: 30px;
   padding: 7px 6px 19px;
   border-radius: 4px;
@@ -417,12 +416,13 @@ header .nav-list ul .nav-signup:hover a::before {
 .mobile-nav-btn.active {
   right: 84%;
 }
-.mob-nav-logo .main-logo h5{
-  padding: 50px 0px 0px;
+.mob-nav-logo .main-logo img{
+  height: 30px;
+  margin-top: 30px;
 }
 .mob-nav-list ul {
   padding: 0;
-  margin: 50px 0 0;
+  margin: 30px 0 0;
 }
 .mob-nav-list ul li{
   list-style-type: none;
@@ -473,6 +473,14 @@ header .nav-list ul .nav-signup:hover a::before {
   .mobile-nav nav li a{
     text-align: center;
   }
+}
+@media (max-width:460px){
+  .main-logo img {
+    height: 20px;
+}
+.mob-nav-logo .main-logo img {
+  height: 20px;
+}
 }
 .app-container {
   width: 100%;

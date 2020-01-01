@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './Plan.css'
+import logonew from '../../assets/img/new-logo.png';
 
 class Search extends React.Component {
 
@@ -44,12 +45,13 @@ class Search extends React.Component {
         </div>
 
 
-<header>
+        <header>
           <div className="wrapper">
             <div className="row">
               <div className="col-md-3">
                 <div className="main-logo">
-                  <h5 className="fc-blue">Your Logo Here</h5>
+                
+                <a href='#'><img src={logonew} /></a>
                 </div>
               </div>
               <div className="col-md-9">
@@ -70,20 +72,21 @@ class Search extends React.Component {
 
         </header>
 
-        <div className="mob-section">
+
+      <div className="mob-section">
        <div className="wrapper">
        <div className="row">
           <div className="col-md-6">
           <div className="main-logo">
-                  <h5 className="fc-blue">Your Logo Here</h5>
+          <a href='#'><img src={logonew} /></a>
                 </div>
           </div>
           <div className="col-md-6">
-          <div class="mobile-nav" id="nav">
+          <div className="mobile-nav" id="nav">
          <a href="#">
-            <div class="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
+            <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
             <div className="main-logo">
-                  <h5 className="fc-blue">Your Logo Here</h5>
+            <a href='#'><img src={logonew} /></a>
                 </div>
             </div>
          </a>
@@ -100,8 +103,8 @@ class Search extends React.Component {
             </div>
          </nav>
       </div>
-      <div class="mobile-nav-btn">
-         <span class="lines"></span>
+      <div className="mobile-nav-btn">
+         <span className="lines"></span>
       </div>
           </div>
         </div>
