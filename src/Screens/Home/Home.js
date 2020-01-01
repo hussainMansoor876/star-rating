@@ -26,6 +26,31 @@ class Home extends React.Component {
     return (
       <div className="main-body">
 
+        <div className="top-bar">
+          <div className="wrapper">
+          <form action="javascript:void(0)" method="get">
+            <div className="input-group">
+              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
+              <div className="input-group-addon" id="order">
+                <div className="select-style">
+                  <select name="order">
+                    <option value="" disabled>Select Your Type</option>
+                    <option value="a" selected>A</option>
+                    <option value="b">B</option>
+                  </select>
+                </div>
+              </div>
+              <div className="input-group-addon" id="sub">
+                <button className="submit" type="submit">
+                  <span className="fa fa-search"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+
+        </div>
+
 
         <header>
           <div className="wrapper">
@@ -63,9 +88,9 @@ class Home extends React.Component {
                 </div>
           </div>
           <div className="col-md-6">
-          <div class="mobile-nav" id="nav">
+          <div className="mobile-nav" id="nav">
          <a href="#">
-            <div class="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
+            <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
             <div className="main-logo">
                   <h5 className="fc-blue">Your Logo Here</h5>
                 </div>
@@ -84,8 +109,8 @@ class Home extends React.Component {
             </div>
          </nav>
       </div>
-      <div class="mobile-nav-btn">
-         <span class="lines"></span>
+      <div className="mobile-nav-btn">
+         <span className="lines"></span>
       </div>
           </div>
         </div>
@@ -132,11 +157,11 @@ class Home extends React.Component {
                           <img src={trust} />
                           <div className="starr">
                             <ul>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
                             </ul>
                             <span className="ff-primary">4.66/5.00</span>
                           </div>
@@ -157,11 +182,11 @@ class Home extends React.Component {
                           <img src={trust} />
                           <div className="starr">
                             <ul>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
                             </ul>
                             <span className="ff-primary">4.66/5.00</span>
                           </div>
@@ -182,11 +207,11 @@ class Home extends React.Component {
                           <img src={trust} />
                           <div className="starr">
                             <ul>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
                             </ul>
                             <span className="ff-primary">4.66/5.00</span>
                           </div>
@@ -207,11 +232,11 @@ class Home extends React.Component {
                           <img src={trust} />
                           <div className="starr">
                             <ul>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
                             </ul>
                             <span className="ff-primary">4.66/5.00</span>
                           </div>
@@ -232,11 +257,11 @@ class Home extends React.Component {
                           <img src={trust} />
                           <div className="starr">
                             <ul>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
                             </ul>
                             <span className="ff-primary">4.66/5.00</span>
                           </div>
@@ -257,11 +282,11 @@ class Home extends React.Component {
                           <img src={trust} />
                           <div className="starr">
                             <ul>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
+                              <li><i className="fa fa-star"></i></li>
                             </ul>
                             <span className="ff-primary">4.66/5.00</span>
                           </div>

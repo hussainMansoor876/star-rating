@@ -18,6 +18,32 @@ class Search extends React.Component {
       <div className="main-body">
 
 
+<div className="top-bar">
+          <div className="wrapper">
+          <form action="javascript:void(0)" method="get">
+            <div className="input-group">
+              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
+              <div className="input-group-addon" id="order">
+                <div className="select-style">
+                  <select name="order">
+                    <option value="" disabled>Select Your Type</option>
+                    <option value="a" selected>A</option>
+                    <option value="b">B</option>
+                  </select>
+                </div>
+              </div>
+              <div className="input-group-addon" id="sub">
+                <button className="submit" type="submit">
+                  <span className="fa fa-search"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+
+        </div>
+
+
 <header>
           <div className="wrapper">
             <div className="row">
