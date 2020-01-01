@@ -125,6 +125,9 @@
 .icon-image{
     text-align: right;
 }
+.icon-image img{
+    height: 50px;
+}
 .flrt-r{
 	float: left;
 }
@@ -211,7 +214,9 @@
 }
 .two-icon{
     text-align: center;
-    
+}
+.two-icon img{
+    height: 50px;
 }
 .two-str-main-dv{
     margin-top: 25px;

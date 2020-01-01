@@ -3,7 +3,7 @@ import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './CompanyProfile.css'
 import proven from '../../assets/img/user.png';
-import manicon from '../../assets/img/man-icon.png';
+import manicon from '../../assets/img/man-icon-2.png';
 class Company extends React.Component {
 
   constructor(props){
@@ -17,6 +17,32 @@ class Company extends React.Component {
   render() {
     return (
       <div className="main-body">
+
+
+<div className="top-bar">
+          <div className="wrapper">
+          <form action="javascript:void(0)" method="get">
+            <div className="input-group">
+              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
+              <div className="input-group-addon" id="order">
+                <div className="select-style">
+                  <select name="order">
+                    <option value="" disabled>Select Your Type</option>
+                    <option value="a" selected>A</option>
+                    <option value="b">B</option>
+                  </select>
+                </div>
+              </div>
+              <div className="input-group-addon" id="sub">
+                <button className="submit" type="submit">
+                  <span className="fa fa-search"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+
+        </div>
 
 <header>
           <div className="wrapper">
