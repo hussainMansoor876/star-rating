@@ -1,0 +1,13 @@
+/********************* REVIEWER PROFILE STAR ****************/
+div#headingTwo{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    cursor: pointer;
+}
+
+.main-2{
+    margin-top: 16px;
+}
+
+/********************* REVIEWER PROFILE END ****************/
