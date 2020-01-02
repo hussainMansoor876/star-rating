@@ -75,10 +75,7 @@
 }
 }
 
-/****************** TOP BAR START ********************/
-.top-bar {
-  padding: 20px 0;
-}
+/****************** SEARCH-FORM START ********************/
 
 button[type="submit"] {
   padding: 0;
@@ -90,11 +87,10 @@ form{
 width: 50%;
 margin: 0 auto;
 }
-/* select menu */
 #order {
   padding: 6px 8px;
   border: 1px solid #ced4da;
-  border-left: transparent;
+  border-radius: 3px 0 0 3px;
   background: #fff;
   border-right: transparent;
 }
@@ -139,7 +135,7 @@ button.submit:hover{
     }
 }
 
-/***************** TOP-BAR-END ********************/
+/***************** SEARCH-FORM END ********************/
 
 /***************** HEADER START *****************/
 .mob-section {
@@ -155,19 +151,27 @@ header{
   border-bottom: 2px solid #0c94ac;
 }
 .main-logo img{
-  height: 30px;
+  height: 25px;
+  margin-top: 8px;
+}
+.main-logo{
+  display: flex;
 }
 header .nav-list ul{
   display: flex;
   margin-bottom: 0;
   float: right;
-  /* padding: 7px 0 0; */
+  padding: 7px 0 0;
 }
 header .nav-list ul li{
   list-style-type: none;
 }
+.mob-nav-list ul .mobile-form form{
+  width: 90%;
+  margin-bottom: 30px;
+}
 header .nav-list ul li a{
-  margin: 0 10px;
+  margin: 0 5px;
   padding: 0 5px;
   font-size: 20px;
   border-bottom: 2px solid transparent;
@@ -226,12 +230,24 @@ header .nav-list ul .nav-signup:hover a::before {
 }
 
 @media only screen and (max-width:1200px){
+  .main-logo img {
+    height: 20px;
+    margin-top: 10px;
+}
   header .nav-list ul li a {
     font-size: 16px;
     font-weight: 500;
   }
   .main-logo h5{
     font-size: 22px;
+  }
+}
+@media only screen and (max-width:1024px){
+  header .nav-list ul li a {
+    font-size: 15px;
+  }
+  header .nav-list ul {
+    padding: 10px 0 0;
   }
 }
 
@@ -362,7 +378,7 @@ header .nav-list ul .nav-signup:hover a::before {
 .mobile-nav-btn {
   display: none;
   position: fixed;
-  top: 105px;
+  top: 20px;
   height: 30px;
   padding: 7px 6px 19px;
   border-radius: 4px;
@@ -415,6 +431,12 @@ header .nav-list ul .nav-signup:hover a::before {
 }
 .mobile-nav-btn.active {
   right: 84%;
+}
+.mob-first img{
+  margin-top: 0;
+}
+.mob-nav-logo .main-logo{
+  display: block;
 }
 .mob-nav-logo .main-logo img{
   height: 30px;
