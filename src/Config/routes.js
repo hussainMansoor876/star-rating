@@ -13,6 +13,7 @@ import impressum from '../Screens/Impressum/Impressum'
 import Plan from '../Screens/Plan/Plan'
 import ReviewerProfile from '../Screens/ReviewerProfile/ReviewerProfile'
 import Search from '../Screens/Search/Search'
+import Privacy from '../Screens/privacy/privacy'
 
 // import { loginUser } from '../Redux/actions/authActions'
 
@@ -72,6 +73,7 @@ class Routes extends Component {
                     <Route path="/plan" exact component={Plan} />
                     <Route path="/reviewerprofile" exact component={ReviewerProfile} />
                     <Route path="/search" exact component={Search} />
+                    <Route path="/privacy" exact component={Privacy} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
                     {/* <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
                     <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/article" component={Article} /> */}

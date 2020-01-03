@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './ReviewerProfile.css'
-import proven from '../../assets/img/user.png';
+import businesss from '../../assets/img/businesss.jpg';
 import manicon from '../../assets/img/man-icon-2.png';
 import logonew from '../../assets/img/new-logo.png';
 
@@ -168,7 +168,7 @@ class Reviewer extends React.Component {
 							<div className="row">
 								<div className="col-lg-12">
 									<div className="proven-con">
-										<img src={proven} />
+										<img src={businesss} />
 									</div>
 								</div>
 								<div className="col-lg-12">
@@ -540,14 +540,14 @@ I think the rating system is quite good. However, I would like that the sub-poin
 										<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
 										<div class="card-body ff-primary">
 											<div className="row">
-											<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
+											<div className="col-lg-12 col-md-12 col-sm-12 flrt-r">
 								<div className="star-rating-second">
 									<div className="star-third">
 										<div className="row">
-											<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-												<p className="ff-primary">Possible applications</p>
+											<div className="col-lg-8 col-md-8 col-sm-6 col-8">
+												<p className="ff-primary txt-align">Possible applications</p>
 											</div>
-											<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+											<div className="col-lg-4 col-md-4 col-sm-6 col-4">
 												<div className="starrsd">
 													<ul>
 														<li><i className="fa fa-star"></i></li>
@@ -562,10 +562,10 @@ I think the rating system is quite good. However, I would like that the sub-poin
 									</div>
 									<div className="star-third">
 										<div className="row">
-											<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-												<p className="ff-primary">Possible applications</p>
+											<div className="col-lg-8 col-md-8 col-sm-6 col-8">
+												<p className="ff-primary txt-align">Possible applications</p>
 											</div>
-											<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+											<div className="col-lg-4 col-md-4 col-sm-6 col-4">
 												<div className="starrsd">
 													<ul>
 														<li><i className="fa fa-star"></i></li>
@@ -580,10 +580,10 @@ I think the rating system is quite good. However, I would like that the sub-poin
 									</div>
 									<div className="star-third">
 										<div className="row">
-											<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-												<p className="ff-primary">Possible applications</p>
+											<div className="col-lg-8 col-md-8 col-sm-6 col-8">
+												<p className="ff-primary txt-align">Possible applications</p>
 											</div>
-											<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+											<div className="col-lg-4 col-md-4 col-sm-6 col-4">
 												<div className="starrsd">
 													<ul>
 														<li><i className="fa fa-star"></i></li>
@@ -598,10 +598,10 @@ I think the rating system is quite good. However, I would like that the sub-poin
 									</div>
 									<div className="star-third">
 										<div className="row">
-											<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-												<p className="ff-primary">Possible applications</p>
+											<div className="col-lg-8 col-md-8 col-sm-6 col-8">
+												<p className="ff-primary txt-align">Possible applications</p>
 											</div>
-											<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+											<div className="col-lg-4 col-md-4 col-sm-6 col-4">
 												<div className="starrsd">
 													<ul>
 														<li><i className="fa fa-star"></i></li>
@@ -616,10 +616,10 @@ I think the rating system is quite good. However, I would like that the sub-poin
 									</div>
 									<div className="star-third">
 										<div className="row">
-											<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-												<p className="ff-primary">Possible applications</p>
+											<div className="col-lg-8 col-md-8 col-sm-6 col-8">
+												<p className="ff-primary txt-align">Possible applications</p>
 											</div>
-											<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+											<div className="col-lg-4 col-md-4 col-sm-6 col-4">
 												<div className="starrsd">
 													<ul>
 														<li><i className="fa fa-star"></i></li>
@@ -634,7 +634,7 @@ I think the rating system is quite good. However, I would like that the sub-poin
 									</div>
 								</div>
 							</div>
-							<div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
+							{/* <div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
 								<div className="mrtpt-1 clearfix">
 								<div className="customer-ser-head clearfix">
 									<i className="lft-sty  fa fa-check"></i>
@@ -651,7 +651,7 @@ I think the rating system is quite good. However, I would like that the sub-poin
 									</div>
 								</div>
 								</div>
-							</div>
+							</div> */}
 											</div>
 										</div>
 										</div>
@@ -686,14 +686,14 @@ I think the rating system is quite good. However, I would like that the sub-poin
                         <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
                            involve strict requirements as to the service quality as well as legal requirements.
                             </p>
-                          <ul>
-                            <li><a href="#">Heplcenter</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Our Plain</a></li>
-                            <li><a href="#">Pricing</a></li>
+							<ul>
+                                                    
+								{/* <li><a href="#">Our Plain</a></li>
+								<li><a href="#">Pricing</a></li> */}
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
 
-                          </ul>
+								</ul>
                         <span className="footer-social">
                           <a href="#"><i className="fa fa-facebook"></i></a>
                           <a href="#"><i className="fa fa-twitter"></i></a>
