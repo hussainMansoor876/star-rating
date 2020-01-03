@@ -423,6 +423,9 @@
     .icon-image h5{
         font-size: 16px;
     }
+    .prove-centre p{
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width:1024px){
@@ -493,9 +496,9 @@
     .two-r-main .coment{
         text-align: center;
     }
-    .customer-ser-head {
+    /* .customer-ser-head {
         float: right;
-    }
+    } */
     .star-rating-second {
         padding-top: 10px;
     }

@@ -128,13 +128,13 @@ class Login extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="login-body">
-         <header>
+        <header>
           <div className="wrapper">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-3">
                 <div className="main-logo">
                 <a href='#'><img src={logonew} /></a>
-                <form action="javascript:void(0)" method="get">
+                {/* <form action="javascript:void(0)" method="get">
                     <div className="input-group">
                     <div className="input-group-addon" id="order">
                         <div className="select-style">
@@ -152,10 +152,10 @@ class Login extends React.Component {
                         </button>
                       </div>
                     </div>
-                  </form>
+                  </form> */}
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-9">
                 <nav className="nav-list">
                   <ul>
                     <li><a href="http://localhost:3000/home">Home</a></li>
@@ -163,6 +163,7 @@ class Login extends React.Component {
                     <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
                     <li><a href="http://localhost:3000/contact">Contact Us</a></li>
                     <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+                    <li className="nav-login"><a href="http://localhost:3000/register">Signup</a></li>
 
                   </ul>
                 </nav>
@@ -171,7 +172,6 @@ class Login extends React.Component {
           </div>
 
         </header>
-
 
       <div className="mob-section">
        <div className="wrapper">
@@ -299,14 +299,14 @@ class Login extends React.Component {
                       <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
                            involve strict requirements as to the service quality as well as legal requirements.
                             </p>
-                          <ul>
-                            <li><a href="#">Heplcenter</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Our Plain</a></li>
-                            <li><a href="#">Pricing</a></li>
-
-                          </ul>
+                            <ul>
+                                                    
+                                                    {/* <li><a href="#">Our Plain</a></li>
+                                                    <li><a href="#">Pricing</a></li> */}
+                                                    <li><a href="#">Contact Us</a></li>
+                                                    <li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
+                                    
+                                                    </ul>
                         <span className="footer-social">
                           <a href="#"><i className="fa fa-facebook"></i></a>
                           <a href="#"><i className="fa fa-twitter"></i></a>

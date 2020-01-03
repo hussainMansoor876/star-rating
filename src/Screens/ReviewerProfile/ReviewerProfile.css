@@ -9,5 +9,16 @@ div#headingTwo{
 .main-2{
     margin-top: 16px;
 }
+.txt-align{
+    text-align: left;
+}
+.starrsd{
+    text-align: right;
+}
 
+@media (max-width:320px){
+    .prove-centre p {
+        font-size: 12px;
+    }
+}
 /********************* REVIEWER PROFILE END ****************/

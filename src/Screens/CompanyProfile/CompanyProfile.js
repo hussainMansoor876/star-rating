@@ -536,7 +536,7 @@ I think the rating system is quite good. However, I would like that the sub-poin
 								<div className="star-rating-second">
 									<div className="star-third">
 										<div className="row">
-											<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+											<div className="col-lg-8 col-md-8 col-sm-6 col-8">
 												<p className="ff-primary">Possible applications</p>
 											</div>
 											<div className="col-lg-4 col-md-4 col-sm-4 col-4">
@@ -678,14 +678,14 @@ I think the rating system is quite good. However, I would like that the sub-poin
                         <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
                            involve strict requirements as to the service quality as well as legal requirements.
                             </p>
-                          <ul>
-                            <li><a href="#">Heplcenter</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Our Plain</a></li>
-                            <li><a href="#">Pricing</a></li>
-
-                          </ul>
+							<ul>
+                                                    
+													{/* <li><a href="#">Our Plain</a></li>
+													<li><a href="#">Pricing</a></li> */}
+													<li><a href="#">Contact Us</a></li>
+													<li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
+					
+													</ul>
                         <span className="footer-social">
                           <a href="#"><i className="fa fa-facebook"></i></a>
                           <a href="#"><i className="fa fa-twitter"></i></a>

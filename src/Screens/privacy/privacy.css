@@ -1,0 +1,172 @@
+/**************** BANNER START ****************/
+
+
+#banner-4{
+    background-image: url('../../assets/img/privacy.jpg');
+    background-size: 100% 100%;
+    position: relative;
+    background-attachment: fixed;
+  }
+  #banner-4::before{
+    content: '';
+    height: 100%;
+    position: absolute;
+    background: url('../../assets/img/bg-doted.png') rgba(0, 0, 0, 0.5);
+    width: 100%;
+  
+  }
+  #banner-4 .va-middle {
+    vertical-align: middle;
+    height: 80vh;
+  }
+  #banner-4 .banner-content{
+    position: relative;
+    text-align: center;
+  }
+  #banner-4 .banner-content h2{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  #banner-4 .banner-content p{
+    font-size: 22px;
+  }
+  
+  
+  
+  
+  @media only screen and (max-width:1024px){
+    #banner-4 .banner-content h2 {
+      font-size: 50px;
+    }
+    #banner-4 .banner-content p {
+      font-size: 20px;
+    }
+  }
+  
+  @media only screen and (max-width:991px){
+    #banner-4 .va-middle {
+      height: 70vh;
+  }
+  }
+  @media only screen and (max-width:768px){
+  #banner-4 .banner-content h2 {
+    font-size: 40px;
+    }
+    #banner-4 .banner-content p {
+      font-size: 18px;
+      }
+  }
+  @media only screen and (max-width:640px){
+  #banner-4 .va-middle {
+    height: 50vh;
+  }
+  }
+  @media only screen and (max-width:575px){
+  
+    #banner-4 .banner-content h2 {
+      font-size: 30px;
+      }
+      #banner-4 .banner-content p {
+        font-size: 16px;
+        }
+    }
+  
+    @media only screen and (max-width:460px){
+      #banner-4 {
+        background-size: 100% 55%;
+        background-repeat: no-repeat;
+      }
+      #banner-4 .banner-content h2 {
+        font-size: 25px;
+        }
+        #banner-4 .banner-content p {
+          font-size: 14px;
+          }
+    }
+  /**************** BANNER END ****************/
+
+
+  /****************** PRIVACY START *******************/
+    #privacy-content{
+        background: #fff;
+    }
+    .privacy-heading{
+        text-align: center;
+    }
+    .privacy-heading h1{
+        font-size: 40px;
+        font-style: italic;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .privacy-paragraph p{
+        margin: 0px 0 30px;
+        color: #000;
+        font-size: 16px;
+    }
+    .privacy-list ul{
+        list-style-type: decimal-leading-zero;
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        color: #000;
+    }
+    .privacy-list ul li{
+        margin: 10px 0;
+        font-size: 16px;
+    }
+    .privacy-list ul li ul{
+        list-style-type: lower-alpha;
+        padding: 20px 0px 20px 20px;
+    }
+    .privacy-list ul li ul li{
+        margin:6px 0;
+        font-size: 14px;
+        color: #614949;
+    }
+    /* .ta-center{
+        text-align: center;
+    } */
+
+
+    @media (max-width:640px){
+        .privacy-heading h1 {
+            font-size: 30px;
+        }
+        .privacy-paragraph p {
+            font-size: 14px;
+            margin: 0px 0 20px;
+        }
+        .privacy-list ul{
+            list-style-type: none;
+        }
+        .privacy-list ul li {
+            font-size: 14px;
+        }
+
+    }
+    @media (max-width: 460px){
+        .privacy-heading h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .privacy-paragraph p {
+            font-size: 12px;
+            margin: 0px 0 10px;
+        }
+        .privacy-list ul li {
+            font-size: 13px;
+        }
+        .privacy-list ul li ul {
+            padding: 10px 0px 10px 20px;
+        }
+        .privacy-list ul li ul li {
+            font-size: 12px;
+        }
+    }
+
+  /****************** PRIVACY END *******************/
