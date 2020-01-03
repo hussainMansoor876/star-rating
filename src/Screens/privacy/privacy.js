@@ -169,8 +169,7 @@ class Privacy extends React.Component {
                                 </div>
 
                                 <div className="privacy-paragraph">
-                                    <p className="ff-primary">This privacy policy applies between you, the User of this Website and Social
-                                         avocadoo Limited, the owner and provider of this Website. Social avocadoo Limited takes
+                                    <p className="ff-primary">This privacy policy applies between you, the User of this Website and Star rating Limited, the owner and provider of this Website. Star rating Limited takes
                                           the privacy of your information very seriously. This privacy policy applies to our
                                          use of any and all Data collected by us or provided by you in relation to your use of the Website.
                                          </p>
@@ -198,8 +197,8 @@ class Privacy extends React.Component {
                                                 <li>the headings and sub-headings do not form part of this privacy policy.</li>
                                             </ul>
                                         </li>  
-                                        <li>This privacy policy applies only to the actions of Social avocadoo Limited and Users with respect to this Website. It does not extend to any websites that can be accessed from this Website including, but not limited to, any links we may provide to social media websites.</li>
-                                        <li>For purposes of the applicable Data Protection Laws, Social avocadoo Limited is the "data controller". This means that Social avocadoo Limited determines the purposes for which, and the manner in which, your Data is processed.</li>
+                                        <li>This privacy policy applies only to the actions of Star rating Limited and Users with respect to this Website. It does not extend to any websites that can be accessed from this Website including, but not limited to, any links we may provide to social media websites.</li>
+                                        <li>For purposes of the applicable Data Protection Laws, Star rating Limited is the "data controller". This means that Star rating Limited determines the purposes for which, and the manner in which, your Data is processed.</li>
                                         <li>We may collect the following Data, which includes personal Data, from you:
                                             <ul>
                                                 <li>name;</li>
@@ -216,7 +215,7 @@ class Privacy extends React.Component {
                                                 <li>data is collected automatically.</li>
                                             </ul>
                                         </li>
-                                        <li>Social avocadoo Limited will collect your Data in a number of ways, for example:
+                                        <li>Star rating Limited will collect your Data in a number of ways, for example:
                                             <ul>
                                                 <li>when you contact us through the Website, by telephone, post, e-mail or through any other means;</li>
                                                 <li>when you register with us and set up an account to receive our products/services;</li>
