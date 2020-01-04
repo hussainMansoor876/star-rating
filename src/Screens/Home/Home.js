@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import logo from '../../assets/img/shoes.jpg';
 import sole from '../../assets/img/sole-trader.jpg';
@@ -84,11 +85,11 @@ class Home extends React.Component {
                 <nav className="nav-list">
                   <ul>
                     {/* <li><a href="http://localhost:3000/home">Home</a></li> */}
-                    <li><a href="http://localhost:3000/plan">Plan</a></li>
-                    <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
-                    <li><a href="http://localhost:3000/contact">Contact Us</a></li>
-                    <li className="nav-login"><a href="http://localhost:3000">login</a></li>
-                    <li className="nav-login"><a href="http://localhost:3000">Signup</a></li>
+                    <li><Link to="/plan">Plan</Link></li>
+                    {/* <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li> */}
+                    <li><Link to="http://localhost:3000/contact">Contact Us</Link></li>
+                    <li className="nav-login"><Link to="/login">login</Link></li>
+                    <li className="nav-login"><Link to="/register">Signup</Link></li>
                   </ul>
                 </nav>
               </div>
