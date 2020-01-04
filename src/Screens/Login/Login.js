@@ -21,7 +21,8 @@ class Login extends React.Component {
     super(props);
     this.state = {
       password: '',
-      disable: false,
+      email: '',
+      disable: true,
       loggedIn: false,
       loading: false,
       errorMessage: "",
@@ -123,6 +124,16 @@ class Login extends React.Component {
 
   };
 
+  validation(e) {
+    console.log(e.name)
+    const { setFieldsValue, getFieldValue } = this.props.form
+    // setFieldsValue({
+    //   password: e.value + 'Hello',
+    //   email: 'eee'
+    // }, () => console.log('after'))
+
+  }
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -133,8 +144,8 @@ class Login extends React.Component {
             <div className="row">
               <div className="col-md-3">
                 <div className="main-logo">
-                <a href='#'><img src={logonew} /></a>
-                {/* <form action="javascript:void(0)" method="get">
+                  <a href='#'><img src={logonew} /></a>
+                  {/* <form action="javascript:void(0)" method="get">
                     <div className="input-group">
                     <div className="input-group-addon" id="order">
                         <div className="select-style">
@@ -173,151 +184,154 @@ class Login extends React.Component {
 
         </header>
 
-      <div className="mob-section">
-       <div className="wrapper">
-       <div className="row">
-          <div className="col-md-6">
-          <div className="main-logo mob-first">
-          <a href='#'><img src={logonew} /></a>
+        <div className="mob-section">
+          <div className="wrapper">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="main-logo mob-first">
+                  <a href='#'><img src={logonew} /></a>
                 </div>
-          </div>
-          <div className="col-md-6">
-          <div className="mobile-nav" id="nav">
-         <a href="#">
-            <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
-            <div className="main-logo">
-            <a href='#'><img src={logonew} /></a>
-                </div>
-            </div>
-         </a>
-         <nav>
-            <div className="mob-nav-list">
-               <ul>
-               <li className='mobile-form'>
-                <form action="javascript:void(0)" method="get">
-                      <div className="input-group">
-                      <div className="input-group-addon" id="order">
-                          <div className="select-style">
-                            <select name="order">
-                              <option value="" disabled>Select Your Type</option>
-                              <option value="a" selected>A</option>
-                              <option value="b">B</option>
-                            </select>
-                          </div>
-                        </div>
-                        <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
-                        <div className="input-group-addon" id="sub">
-                          <button className="submit" type="submit">
-                            <span className="fa fa-search"></span>
-                          </button>
-                        </div>
+              </div>
+              <div className="col-md-6">
+                <div className="mobile-nav" id="nav">
+                  <a href="#">
+                    <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
+                      <div className="main-logo">
+                        <a href='#'><img src={logonew} /></a>
                       </div>
-                    </form>
-                </li>
-               <li><a href="http://localhost:3000/home">Home</a></li>
-              <li><a href="http://localhost:3000/plan">Plan</a></li>
-              <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
-              <li><a href="http://localhost:3000/contact">Contact Us</a></li>
-              <li className="nav-login"><a href="http://localhost:3000">login</a></li>
-              <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
-               </ul>
+                    </div>
+                  </a>
+                  <nav>
+                    <div className="mob-nav-list">
+                      <ul>
+                        <li className='mobile-form'>
+                          <form action="javascript:void(0)" method="get">
+                            <div className="input-group">
+                              <div className="input-group-addon" id="order">
+                                <div className="select-style">
+                                  <select name="order">
+                                    <option value="" disabled>Select Your Type</option>
+                                    <option value="a" selected>A</option>
+                                    <option value="b">B</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
+                              <div className="input-group-addon" id="sub">
+                                <button className="submit" type="submit">
+                                  <span className="fa fa-search"></span>
+                                </button>
+                              </div>
+                            </div>
+                          </form>
+                        </li>
+                        <li><a href="http://localhost:3000/home">Home</a></li>
+                        <li><a href="http://localhost:3000/plan">Plan</a></li>
+                        <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
+                        <li><a href="http://localhost:3000/contact">Contact Us</a></li>
+                        <li className="nav-login"><a href="http://localhost:3000">login</a></li>
+                        <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+                <div className="mobile-nav-btn">
+                  <span className="lines"></span>
+                </div>
+              </div>
             </div>
-         </nav>
-      </div>
-      <div className="mobile-nav-btn">
-         <span className="lines"></span>
-      </div>
           </div>
         </div>
-       </div>
-      </div>
 
 
 
 
-      
+
         <div className="login-card">
-        <div className="card">
-          <div className="wrapper">
-            <Form onSubmit={this.handleSubmit} className="login-form">
-              <h1 className="fc-blue ff-secondary" style={{ textAlign: 'center' }}>Login</h1>
-              <Form.Item>
-                {getFieldDecorator('email', {
-                  rules: [{ required: true, message: 'Please input your Email!' }],
-                })(
-                  <Input
-                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                    placeholder="Email"
-                    type="email"
-                  />,
-                )}
-              </Form.Item>
-              <Form.Item>
-                {getFieldDecorator('password', {
-                  rules: [{ required: true, message: 'Please input your Password!' }],
-                })(
-                  <Input
-                    prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                    type="password"
-                    placeholder="Password"
-                  />,
-                )}
-              </Form.Item>
-              <Form.Item>
-                {getFieldDecorator('remember', {
-                  valuePropName: 'checked',
-                  initialValue: true,
-                })(<Checkbox>Remember me</Checkbox>)}
-                <a className="login-form-forgot" href="">
-                  Forgot password
+          <div className="card">
+            <div className="wrapper">
+              <Form onSubmit={this.handleSubmit} className="login-form">
+                <h1 className="fc-blue ff-secondary" style={{ textAlign: 'center' }}>Login</h1>
+                <Form.Item>
+                  {getFieldDecorator('email', {
+                    rules: [{ required: true, message: 'Please input your Email!' }],
+                  })(
+                    <Input
+                      name="email"
+                      onChange={(e) => this.validation(e.target)}
+                      prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                      placeholder="Email"
+                      type="email"
+                    />,
+                  )}
+                </Form.Item>
+                <Form.Item>
+                  {getFieldDecorator('password', {
+                    rules: [{ required: true, message: 'Please input your Password!' }],
+                  })(
+                    <Input
+                      onChange={(e) => this.validation(e.target)}
+                      prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                      type="password"
+                      placeholder="Password"
+                    />,
+                  )}
+                </Form.Item>
+                <Form.Item>
+                  {getFieldDecorator('remember', {
+                    valuePropName: 'checked',
+                    initialValue: true,
+                  })(<Checkbox>Remember me</Checkbox>)}
+                  <a className="login-form-forgot" href="">
+                    Forgot password
           </a>
-                <Button htmlType="submit" className="login-form-button" disabled={this.state.disable} style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
-                  Log in
+                  <Button htmlType="submit" className="login-form-button" disabled={this.state.disable} style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
+                    Log in
           </Button>
-                Or <Link to="/register">Register Now!</Link>
-              </Form.Item>
-              <div className="signup-with">
+                  Or <Link to="/register">Register Now!</Link>
+                </Form.Item>
+                <div className="signup-with">
                   <div className="signup-info">
                     <p className="ff-primary">Or Register with !</p></div>
-                    <a href="#"><i className="fa fa-facebook"></i></a>
-                    <a href="#"><i className="fa fa-instagram"></i></a>
-                    <a href="#"><i className="fa fa-twitter"></i></a>
+                  <a href="#"><i className="fa fa-facebook"></i></a>
+                  <a href="#"><i className="fa fa-instagram"></i></a>
+                  <a href="#"><i className="fa fa-twitter"></i></a>
+                </div>
+              </Form>
+
             </div>
-            </Form>
-            
           </div>
-        </div>
 
         </div>
         <footer>
-        <div className="wrapper">
+          <div className="wrapper">
             <div className="sec-padding">
               <div className="row">
-                  <div className="col-md-12">
-                      <div className="footer-list">
-                      <h5 className="fc-white">Your Logo Here</h5>
-                      <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
-                           involve strict requirements as to the service quality as well as legal requirements.
+                <div className="col-md-12">
+                  <div className="footer-list">
+                    <h5 className="fc-white">Your Logo Here</h5>
+                    <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
+                         involve strict requirements as to the service quality as well as legal requirements.
                             </p>
-                            <ul>
-                                                    
-                                                    {/* <li><a href="#">Our Plain</a></li>
+                    <ul>
+
+                      {/* <li><a href="#">Our Plain</a></li>
                                                     <li><a href="#">Pricing</a></li> */}
-                                                    <li><a href="#">Contact Us</a></li>
-                                                    <li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
-                                    
-                                                    </ul>
-                        <span className="footer-social">
-                          <a href="#"><i className="fa fa-facebook"></i></a>
-                          <a href="#"><i className="fa fa-twitter"></i></a>
-                          <a href="#"><i className="fa fa-instagram"></i></a>
-                          <a href="#"><i className="fa fa-linkedin"></i></a>
-                        </span>
-                      </div>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
+
+                    </ul>
+                    <span className="footer-social">
+                      <a href="#"><i className="fa fa-facebook"></i></a>
+                      <a href="#"><i className="fa fa-twitter"></i></a>
+                      <a href="#"><i className="fa fa-instagram"></i></a>
+                      <a href="#"><i className="fa fa-linkedin"></i></a>
+                    </span>
                   </div>
+                </div>
               </div>
             </div>
-        </div>
+          </div>
         </footer>
       </div>
     );
