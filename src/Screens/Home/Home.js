@@ -83,12 +83,12 @@ class Home extends React.Component {
               <div className="col-md-6">
                 <nav className="nav-list">
                   <ul>
-                    <li><a href="http://localhost:3000/home">Home</a></li>
+                    {/* <li><a href="http://localhost:3000/home">Home</a></li> */}
                     <li><a href="http://localhost:3000/plan">Plan</a></li>
                     <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
                     <li><a href="http://localhost:3000/contact">Contact Us</a></li>
                     <li className="nav-login"><a href="http://localhost:3000">login</a></li>
-
+                    <li className="nav-login"><a href="http://localhost:3000">Signup</a></li>
                   </ul>
                 </nav>
               </div>
