@@ -51,9 +51,9 @@ class Signup extends React.Component {
   componentDidMount() {
     const user = SessionStorageManager.getUser();
 
-    if (user) {
-      this.props.history.push('/dashboard')
-    }
+    // if (user) {
+    //   this.props.history.push('/dashboard')
+    // }
   }
 
 
@@ -73,28 +73,30 @@ class Signup extends React.Component {
         else if(values.password !== values.repassword){
           return this.openNotification("Password", "Password Did not match", 'close-circle', 'red')
         }
-        this.setState({ disable: true })
+        // this.setState({ disable: true })
         var formData = new FormData();
         formData.append('name', values.name)
         formData.append('email', values.email)
         formData.append('password', values.password)
         formData.append('upload', values.upload[0].originFileObj)
-        // axios.post('https://cmsbackend123.herokuapp.com/login/signup', formData)
-        //   .then((result) => {
-        //     console.log(result)
-        //     if (result.data.success) {
-        //       this.openNotification('Wellcome', result.data.message, 'check')
-        //       this.props.loginUser(true)
-        //       SessionStorageManager.setUser(result.data)
-        //       window.location.reload()
-        //       this.props.history.push('/dashboard')
-        //     }
-        //     else {
-        //       this.openNotification(title, result.message, 'close-circle', 'red')
-        //       this.setState({ disable: false })
-        //     }
-        //   })
-        // this.setState({ email: values.email, userName: values.user })
+        console.log("cons", formData)
+        console.log(values)
+        axios.post('http://localhost:5001/user/signup', formData)
+          .then((result) => {
+            console.log(result)
+            if (result.data.success) {
+              this.openNotification('Wellcome', result.data.message, 'check')
+              // this.props.loginUser(true)
+              // SessionStorageManager.setUser(result.data)
+              // window.location.reload()
+              // this.props.history.push('/dashboard')
+            }
+            else {
+              this.openNotification(title, result.data.message, 'close-circle', 'red')
+              this.setState({ disable: false })
+            }
+          })
+        this.setState({ email: values.email, userName: values.user })
       }
       else {
         this.openNotification(title, desc, 'close-circle', 'red')

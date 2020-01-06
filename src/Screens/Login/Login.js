@@ -107,16 +107,16 @@ class Login extends React.Component {
         .then((res) => res.json())
         .then((result) => {
           console.log(result)
-          if (result.success) {
+          if (result.data.success) {
             this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
-            SessionStorageManager.setUser(result)
-            this.props.loginUser(true)
-            window.location.reload()
-            this.props.history.push('/dashboard')
+            // SessionStorageManager.setUser(result)
+            // this.props.loginUser(true)
+            // window.location.reload()
+            // this.props.history.push('/dashboard')
           }
           else {
-            this.openNotification(title, result.message, 'close-circle', 'red')
-            this.setState({ disable: false })
+            this.openNotification(title, result.data.message, 'close-circle', 'red')
+            // this.setState({ disable: false })
           }
         })
 
