@@ -108,7 +108,7 @@ class Login extends React.Component {
           if (result.success) {
             this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
             // SessionStorageManager.setUser(result)
-            this.props.loginUser(result.data.user)
+            this.props.loginUser(result.user)
             // window.location.reload()
             this.props.history.push('/')
           }
