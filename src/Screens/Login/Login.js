@@ -125,13 +125,22 @@ class Login extends React.Component {
   };
 
   validation(e) {
-    console.log(e.name)
+    const { name, value } = e
     const { setFieldsValue, getFieldValue } = this.props.form
-    // setFieldsValue({
-    //   password: e.value + 'Hello',
-    //   email: 'eee'
-    // }, () => console.log('after'))
+    setFieldsValue({
+      [name]: value
+    })
 
+    if (getFieldValue('email').length > 10 && getFieldValue('password') && getFieldValue('password').length > 6) {
+      this.setState({
+        disable: false
+      })
+
+      return
+    }
+    this.setState({
+      disable: true
+    })
   }
 
 
@@ -205,13 +214,13 @@ class Login extends React.Component {
                     <div className="mob-nav-list">
                       <ul>
                         <li className='mobile-form'>
-                          <form action="javascript:void(0)" method="get">
+                          <form>
                             <div className="input-group">
                               <div className="input-group-addon" id="order">
                                 <div className="select-style">
                                   <select name="order">
                                     <option value="" disabled>Select Your Type</option>
-                                    <option value="a" selected>A</option>
+                                    <option defaultValue="a">A</option>
                                     <option value="b">B</option>
                                   </select>
                                 </div>
@@ -271,6 +280,7 @@ class Login extends React.Component {
                   })(
                     <Input
                       onChange={(e) => this.validation(e.target)}
+                      name="password"
                       prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                       type="password"
                       placeholder="Password"
