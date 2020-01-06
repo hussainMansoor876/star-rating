@@ -27,7 +27,7 @@ class Home extends React.Component {
     return (
       <div className="main-body">
 
-        {/* <div className="top-bar">
+        <div className="top-bar">
           <div className="wrapper">
           <form action="javascript:void(0)" method="get">
             <div className="input-group">
@@ -50,7 +50,7 @@ class Home extends React.Component {
           </form>
           </div>
 
-        </div> */}
+        </div>
 
 
         <header>
@@ -118,27 +118,6 @@ class Home extends React.Component {
          <nav>
             <div className="mob-nav-list">
                <ul>
-               <li className='mobile-form'>
-                <form action="javascript:void(0)" method="get">
-                      <div className="input-group">
-                      <div className="input-group-addon" id="order">
-                          <div className="select-style">
-                            <select name="order">
-                              <option value="" disabled>Select Your Type</option>
-                              <option value="a" selected>A</option>
-                              <option value="b">B</option>
-                            </select>
-                          </div>
-                        </div>
-                        <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
-                        <div className="input-group-addon" id="sub">
-                          <button className="submit" type="submit">
-                            <span className="fa fa-search"></span>
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                </li>
                <li><a href="http://localhost:3000/home">Home</a></li>
               <li><a href="http://localhost:3000/plan">Plan</a></li>
               <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>

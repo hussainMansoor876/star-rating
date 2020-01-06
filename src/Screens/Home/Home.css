@@ -137,6 +137,23 @@ button.submit:hover{
 
 /***************** SEARCH-FORM END ********************/
 
+/**************** TOP BAR START *******************/
+.top-bar{
+  display: none;
+}
+
+@media only screen and (max-width:991px){
+  .top-bar{
+    display: block;
+    padding: 15px;
+  }
+  .top-bar form{
+    width: 100%;
+  }
+} 
+/**************** TOP BAR END *******************/
+
+
 /***************** HEADER START *****************/
 .mob-section {
  display: none;
@@ -378,7 +395,7 @@ header .nav-list ul .nav-signup:hover a::before {
 .mobile-nav-btn {
   display: none;
   position: fixed;
-  top: 20px;
+  top: 89px;
   height: 30px;
   padding: 7px 6px 19px;
   border-radius: 4px;

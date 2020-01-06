@@ -1,3 +1,10 @@
+.login-body .mobile-nav-btn {
+  top: 20px;
+}
+.register-body .mobile-nav-btn {
+  top: 20px;
+}
+
 #components-form-demo-normal-login .login-form {
     max-width: 300px;
   }
