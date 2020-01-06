@@ -49,10 +49,10 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    const user = SessionStorageManager.getUser();
+    const { user } = this.props;
 
     if (user) {
-      this.props.history.push('/dashboard')
+      this.props.history.push('/')
     }
   }
 
@@ -96,8 +96,7 @@ class Login extends React.Component {
       }
 
       this.setState({ loading: true, disable: true })
-      console.log(values)
-      fetch('https://cmsbackend123.herokuapp.com/login/signin', {
+      fetch('https://star-rating123.herokuapp.com/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -106,16 +105,15 @@ class Login extends React.Component {
       })
         .then((res) => res.json())
         .then((result) => {
-          console.log(result)
-          if (result.data.success) {
+          if (result.success) {
             this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
             // SessionStorageManager.setUser(result)
-            // this.props.loginUser(true)
+            this.props.loginUser(result.data.user)
             // window.location.reload()
-            // this.props.history.push('/dashboard')
+            this.props.history.push('/')
           }
           else {
-            this.openNotification(title, result.data.message, 'close-circle', 'red')
+            this.openNotification(title, result.message, 'close-circle', 'red')
             // this.setState({ disable: false })
           }
         })
@@ -124,24 +122,6 @@ class Login extends React.Component {
 
   };
 
-  validation(e) {
-    const { name, value } = e
-    const { setFieldsValue, getFieldValue } = this.props.form
-    setFieldsValue({
-      [name]: value
-    })
-
-    if (getFieldValue('email').length > 10 && getFieldValue('password') && getFieldValue('password').length > 6) {
-      this.setState({
-        disable: false
-      })
-
-      return
-    }
-    this.setState({
-      disable: true
-    })
-  }
 
 
   render() {
@@ -267,7 +247,6 @@ class Login extends React.Component {
                   })(
                     <Input
                       name="email"
-                      onChange={(e) => this.validation(e.target)}
                       prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                       placeholder="Email"
                       type="email"
@@ -279,7 +258,6 @@ class Login extends React.Component {
                     rules: [{ required: true, message: 'Please input your Password!' }],
                   })(
                     <Input
-                      onChange={(e) => this.validation(e.target)}
                       name="password"
                       prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                       type="password"
@@ -295,7 +273,7 @@ class Login extends React.Component {
                   <a className="login-form-forgot" href="">
                     Forgot password
           </a>
-                  <Button htmlType="submit" className="login-form-button" disabled={this.state.disable} style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
+                  <Button htmlType="submit" className="login-form-button" style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
                     Log in
           </Button>
                   Or <Link to="/register">Register Now!</Link>
@@ -355,13 +333,13 @@ const LoginComp = Form.create({ name: 'normal_login' })(Login);
 const mapStateToProps = (state) => {
   console.log("mapToState", state.authReducer)
   return {
-    isLoggedIn: state.authReducer.isLoggedIn,
+    user: state.authReducer.user,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginUser: (isLoggedIn) => dispatch(loginUser(isLoggedIn)),
+    loginUser: (user) => dispatch(loginUser(user)),
   }
 }
 

@@ -5,7 +5,14 @@ const loginUser = (user) => {
     }
 }
 
+const removeUser = () => {
+    return {
+        type: "REMOVE_USER"
+    }
+}
+
 
 export {
-    loginUser
+    loginUser,
+    removeUser
 }

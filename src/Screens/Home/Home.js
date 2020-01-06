@@ -13,6 +13,8 @@ import slider3 from '../../assets/img/slider-3.jpg';
 import slider4 from '../../assets/img/slider-4.jpg';
 import slider5 from '../../assets/img/slider-5.jpg';
 import logonew from '../../assets/img/new-logo.png';
+import { removeUser } from '../../Redux/actions/authActions'
+
 
 class Home extends React.Component {
 
@@ -24,10 +26,13 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
 
   }
 
+  logout(){
+    this.props.removeUser()
+    window.location.reload()
+  }
 
   render() {
     const { user } = this.props
@@ -95,7 +100,7 @@ class Home extends React.Component {
                     {/* <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li> */}
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to=""><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
-                    <li><a href="javascript:void(0)">Logout</a></li>
+                    <li><a href="javascript:void(0)" onClick={() => this.logout()}>Logout</a></li>
                   </ul> : <ul>
                       {/* <li><a href="http://localhost:3000/home">Home</a></li> */}
                       <li><Link to="/plan">Plan</Link></li>
@@ -521,7 +526,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginUser: (user) => dispatch(loginUser(user)),
+    removeUser: () => dispatch(removeUser()),
   }
 }
 

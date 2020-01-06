@@ -80,7 +80,7 @@ class Signup extends React.Component {
         formData.append('upload', values.upload[0].originFileObj)
         console.log("cons", formData)
         console.log(values)
-        axios.post('http://localhost:5001/user/signup', formData)
+        axios.post('https://star-rating123.herokuapp.com/user/signup', formData)
           .then((result) => {
             console.log(result)
             if (result.data.success) {
