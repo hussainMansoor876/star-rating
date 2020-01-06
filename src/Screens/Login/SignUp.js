@@ -61,34 +61,39 @@ class Signup extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        if (!validator.isEmail(values.email)) {
+        if(values.name.length < 4){
+          return this.openNotification("Name", "Name must be Atleast 4 Digits", 'close-circle', 'red')
+        }
+        else if (!validator.isEmail(values.email)) {
           return this.openNotification("Email", "Invalid Email", 'close-circle', 'red')
         }
         else if (values.password.length < 6) {
           return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
         }
+        else if(values.password !== values.repassword){
+          return this.openNotification("Password", "Password Did not match", 'close-circle', 'red')
+        }
         this.setState({ disable: true })
-        console.log('Received values of form: ', values);
         var formData = new FormData();
         formData.append('name', values.name)
         formData.append('email', values.email)
         formData.append('password', values.password)
         formData.append('upload', values.upload[0].originFileObj)
-        axios.post('https://cmsbackend123.herokuapp.com/login/signup', formData)
-          .then((result) => {
-            console.log(result)
-            if (result.data.success) {
-              this.openNotification('Wellcome', result.data.message, 'check')
-              this.props.loginUser(true)
-              SessionStorageManager.setUser(result.data)
-              window.location.reload()
-              this.props.history.push('/dashboard')
-            }
-            else {
-              this.openNotification(title, result.message, 'close-circle', 'red')
-              this.setState({ disable: false })
-            }
-          })
+        // axios.post('https://cmsbackend123.herokuapp.com/login/signup', formData)
+        //   .then((result) => {
+        //     console.log(result)
+        //     if (result.data.success) {
+        //       this.openNotification('Wellcome', result.data.message, 'check')
+        //       this.props.loginUser(true)
+        //       SessionStorageManager.setUser(result.data)
+        //       window.location.reload()
+        //       this.props.history.push('/dashboard')
+        //     }
+        //     else {
+        //       this.openNotification(title, result.message, 'close-circle', 'red')
+        //       this.setState({ disable: false })
+        //     }
+        //   })
         // this.setState({ email: values.email, userName: values.user })
       }
       else {
@@ -251,11 +256,11 @@ class Signup extends React.Component {
                   )}
                 </Form.Item>
                 <Form.Item className="sign-up">
-                  {getFieldDecorator('re-password', {
-                    rules: [{ required: true, message: 'Please input your Password!' }],
+                  {getFieldDecorator('repassword', {
+                    rules: [{ required: true, message: 'Please input your Password Again!' }],
                   })(
                     <Input
-                      name="re-password"
+                      name="repassword"
                       prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                       type="password"
                       placeholder="Re-Enter Password"
