@@ -19,7 +19,7 @@ class Search extends React.Component {
       <div className="main-body">
 
 
-<div className="top-bar">
+{/* <div className="top-bar">
           <div className="wrapper">
           <form action="javascript:void(0)" method="get">
             <div className="input-group">
@@ -42,7 +42,7 @@ class Search extends React.Component {
           </form>
           </div>
 
-        </div>
+        </div> */}
 
 
 <header>
