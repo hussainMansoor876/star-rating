@@ -86,10 +86,10 @@ class Signup extends React.Component {
             console.log(result)
             if (result.data.success) {
               this.openNotification('Wellcome', result.data.message, 'check')
-              // this.props.loginUser(true)
+              // this.props.loginUser({true})
               // SessionStorageManager.setUser(result.data)
               // window.location.reload()
-              // this.props.history.push('/dashboard')
+              // this.props.history.push('/')
             }
             else {
               this.openNotification(title, result.data.message, 'close-circle', 'red')

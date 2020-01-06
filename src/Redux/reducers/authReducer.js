@@ -1,7 +1,7 @@
 const reducer = (state = {}, action) =>{
     switch(action.type){
         case "LOGIN_USER": {
-            return {...state, isLoggedIn: action.isLoggedIn}
+            return {...state, user: action.user}
         }
         default: {
             return state;

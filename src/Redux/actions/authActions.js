@@ -1,7 +1,7 @@
-const loginUser = (isLoggedIn) => {
+const loginUser = (user) => {
     return {
         type: "LOGIN_USER",
-        isLoggedIn
+        user
     }
 }
 
