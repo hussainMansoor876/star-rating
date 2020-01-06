@@ -49,11 +49,10 @@ class Signup extends React.Component {
   }
 
   componentDidMount() {
-    const user = SessionStorageManager.getUser();
-
-    // if (user) {
-    //   this.props.history.push('/dashboard')
-    // }
+    const { user } = this.props
+    if (user) {
+      this.props.history.push('/')
+    }
   }
 
 
@@ -86,10 +85,10 @@ class Signup extends React.Component {
             console.log(result)
             if (result.data.success) {
               this.openNotification('Wellcome', result.data.message, 'check')
-              // this.props.loginUser({true})
+              this.props.loginUser(result.data.user)
               // SessionStorageManager.setUser(result.data)
               // window.location.reload()
-              // this.props.history.push('/')
+              this.props.history.push('/')
             }
             else {
               this.openNotification(title, result.data.message, 'close-circle', 'red')
@@ -340,13 +339,13 @@ const SignupComp = Form.create({ name: 'normal_login' })(Signup);
 const mapStateToProps = (state) => {
   console.log("mapToState", state.authReducer)
   return {
-    isLoggedIn: state.authReducer.isLoggedIn,
+    user: state.authReducer.user,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginUser: (isLoggedIn) => dispatch(loginUser(isLoggedIn)),
+    loginUser: (user) => dispatch(loginUser(user)),
   }
 }
 
