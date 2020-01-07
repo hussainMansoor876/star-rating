@@ -31,6 +31,7 @@ class Home extends React.Component {
 
   logout(){
     this.props.removeUser()
+    this.props.history.push('/login')
     // window.location.reload()
   }
 

@@ -60,6 +60,7 @@ class Signup extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
+        console.log(values.upload)
         if(values.name.length < 4){
           return this.openNotification("Name", "Name must be Atleast 4 Digits", 'close-circle', 'red')
         }
@@ -71,6 +72,9 @@ class Signup extends React.Component {
         }
         else if(values.password !== values.repassword){
           return this.openNotification("Password", "Password Did not match", 'close-circle', 'red')
+        }
+        else if(!values.upload){
+          return this.openNotification("Picture", "Please Upload the picture", 'close-circle', 'red')
         }
         // this.setState({ disable: true })
         var formData = new FormData();
