@@ -96,20 +96,17 @@ class Login extends React.Component {
         return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
       }
 
-      // this.setState({ loading: true, disable: true })
+      this.setState({ loading: true, disable: true })
       axios.post('https://star-rating123.herokuapp.com/user/login', values)
         .then((result) => {
-          console.log('res', result)
-          if (result.success) {
+          if (result.data.success) {
             this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
-            // SessionStorageManager.setUser(result)
-            this.props.loginUser(result.user)
-            // window.location.reload()
-            // this.props.history.push('/')
+            this.props.loginUser(result.data.user)
+            this.props.history.push('/')
           }
           else {
             this.setState({ loading: false, disable: false })
-            this.openNotification(title, result.message, 'close-circle', 'red')
+            this.openNotification(title, result.data.message, 'close-circle', 'red')
             // this.setState({ disable: false })
           }
         })
