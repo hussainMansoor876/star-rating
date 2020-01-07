@@ -31,7 +31,7 @@ class Home extends React.Component {
 
   logout(){
     this.props.removeUser()
-    window.location.reload()
+    // window.location.reload()
   }
 
   render() {

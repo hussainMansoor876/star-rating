@@ -10,10 +10,10 @@ import { connect } from 'react-redux';
 import { loginUser } from '../../Redux/actions/authActions'
 import SessionStorageManager from '../../Config/SessionStorageManager';
 import logonew from '../../assets/img/new-logo.png';
+import axios from 'axios'
 
 const title = "Error"
 const desc = 'Please Enter Email and Password!'
-console.log(sessionStorage)
 
 
 class Login extends React.Component {
@@ -22,7 +22,7 @@ class Login extends React.Component {
     this.state = {
       password: '',
       email: '',
-      disable: true,
+      disable: false,
       loggedIn: false,
       loading: false,
       errorMessage: "",
@@ -50,6 +50,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     const { user } = this.props;
+    console.log('user', user)
 
     if (user) {
       this.props.history.push('/')
@@ -95,24 +96,19 @@ class Login extends React.Component {
         return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
       }
 
-      this.setState({ loading: true, disable: true })
-      fetch('https://star-rating123.herokuapp.com/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values)
-      })
-        .then((res) => res.json())
+      // this.setState({ loading: true, disable: true })
+      axios.post('https://star-rating123.herokuapp.com/user/login', values)
         .then((result) => {
+          console.log('res', result)
           if (result.success) {
             this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
             // SessionStorageManager.setUser(result)
             this.props.loginUser(result.user)
             // window.location.reload()
-            this.props.history.push('/')
+            // this.props.history.push('/')
           }
           else {
+            this.setState({ loading: false, disable: false })
             this.openNotification(title, result.message, 'close-circle', 'red')
             // this.setState({ disable: false })
           }
@@ -273,7 +269,7 @@ class Login extends React.Component {
                   <a className="login-form-forgot" href="">
                     Forgot password
           </a>
-                  <Button htmlType="submit" className="login-form-button" style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
+                  <Button disabled={this.state.disable} loading={this.state.loading} htmlType="submit" className="login-form-button" style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
                     Log in
           </Button>
                   Or <Link to="/register">Register Now!</Link>
