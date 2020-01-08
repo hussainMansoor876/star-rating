@@ -13,18 +13,20 @@ class Navbar extends Component {
   }
 
   componentDidMount() {
-    console.log('user', this.props.location)
+    console.log('user', this.props)
 
     const { user } = this.props
 
-    if (user) {
-      this.props.history.push('/')
+    if (!user) {
+      this.props.history.push('/login')
     }
   }
 
   logout() {
     this.props.removeUser()
-    this.props.history.push('/login')
+    setTimeout(() => {
+      this.props.history.push('/login')
+    }, 200)
   }
 
   toggle() {
