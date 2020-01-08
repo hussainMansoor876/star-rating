@@ -51,12 +51,12 @@ class Navbar extends Component {
                         <div className="select-style">
                           <select name="order">
                             <option value="" disabled>Select Your Type</option>
-                            <option value="a" selected>A</option>
+                            <option defaultValue="a">A</option>
                             <option value="b">B</option>
                           </select>
                         </div>
                       </div>
-                      <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
+                      <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
                       <div className="input-group-addon" id="sub">
                         <button className="submit" type="submit">
                           <span className="fa fa-search"></span>
