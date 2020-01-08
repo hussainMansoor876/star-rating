@@ -5,6 +5,7 @@ import './ReviewerProfile.css'
 import businesss from '../../assets/img/businesss.jpg';
 import manicon from '../../assets/img/man-icon-2.png';
 import logonew from '../../assets/img/new-logo.png';
+import Header from '../Header/Header'
 
 class Reviewer extends React.Component {
 
@@ -19,126 +20,7 @@ class Reviewer extends React.Component {
   render() {
     return (
       <div className="main-body">
-
-<header>
-          <div className="wrapper">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="main-logo">
-                <a href='#'><img src={logonew} /></a>
-                <form action="javascript:void(0)" method="get">
-                    <div className="input-group">
-                    <div className="input-group-addon" id="order">
-                        <div className="select-style">
-                          <select name="order">
-                            <option value="" disabled>Select Your Type</option>
-                            <option value="a" selected>A</option>
-                            <option value="b">B</option>
-                          </select>
-                        </div>
-                      </div>
-                      <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
-                      <div className="input-group-addon" id="sub">
-                        <button className="submit" type="submit">
-                          <span className="fa fa-search"></span>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <nav className="nav-list">
-                  <ul>
-                    <li><a href="http://localhost:3000/home">Home</a></li>
-                    <li><a href="http://localhost:3000/plan">Plan</a></li>
-                    <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
-                    <li><a href="http://localhost:3000/contact">Contact Us</a></li>
-                    <li className="nav-login"><a href="http://localhost:3000">login</a></li>
-
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-
-        </header>
-
-
-      <div className="mob-section">
-       <div className="wrapper">
-       <div className="row">
-          <div className="col-md-6">
-          <div className="main-logo mob-first">
-          <a href='#'><img src={logonew} /></a>
-                </div>
-          </div>
-          <div className="col-md-6">
-          <div className="mobile-nav" id="nav">
-         <a href="#">
-            <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
-            <div className="main-logo">
-            <a href='#'><img src={logonew} /></a>
-                </div>
-            </div>
-         </a>
-         <nav>
-            <div className="mob-nav-list">
-               <ul>
-               <li className='mobile-form'>
-                <form action="javascript:void(0)" method="get">
-                      <div className="input-group">
-                      <div className="input-group-addon" id="order">
-                          <div className="select-style">
-                            <select name="order">
-                              <option value="" disabled>Select Your Type</option>
-                              <option value="a" selected>A</option>
-                              <option value="b">B</option>
-                            </select>
-                          </div>
-                        </div>
-                        <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
-                        <div className="input-group-addon" id="sub">
-                          <button className="submit" type="submit">
-                            <span className="fa fa-search"></span>
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                </li>
-               <li><a href="http://localhost:3000/home">Home</a></li>
-              <li><a href="http://localhost:3000/plan">Plan</a></li>
-              <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
-              <li><a href="http://localhost:3000/contact">Contact Us</a></li>
-              <li className="nav-login"><a href="http://localhost:3000">login</a></li>
-              <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
-               </ul>
-            </div>
-         </nav>
-      </div>
-      <div className="mobile-nav-btn">
-         <span className="lines"></span>
-      </div>
-          </div>
-        </div>
-       </div>
-      </div>
-
-	  
-
-        {/* <section id="banner-3">
-          <div className="wrapper">
-            <div className="d-table w-100">
-              <div className="d-table-cell va-middle">
-                <div className="banner-content">
-                  <h2 className="ff-secondary">Pricing and Features</h2>
-                  <p className="ff-primary fc-white">The free version of ProvenExpert is — and always will be — free.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
+		  <Header />
         <section id="inside-banner">
           <div className="wrapper">
             <div className="inside-banner-image">

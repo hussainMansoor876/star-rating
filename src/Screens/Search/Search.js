@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './Search.css'
+import Header from '../Header/Header'
 
 class Search extends React.Component {
 
@@ -16,7 +17,7 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        
+        <Header />
       </div>
     )
   }
