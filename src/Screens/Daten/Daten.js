@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './Daten.css'
+import Header from '../Header/Header'
 
 class Daten extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
 
@@ -16,7 +17,7 @@ class Daten extends React.Component {
   render() {
     return (
       <div>
-
+        <Header />
       </div>
     )
   }

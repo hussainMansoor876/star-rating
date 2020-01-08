@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom'
 import validator from 'validator'
 import { connect } from 'react-redux';
 import { loginUser } from '../../Redux/actions/authActions'
-import SessionStorageManager from '../../Config/SessionStorageManager';
-import logonew from '../../assets/img/new-logo.png';
+import Header from '../Header/Header'
 import axios from 'axios'
 
 const title = "Error"
@@ -121,114 +120,7 @@ class Login extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="login-body">
-        <header>
-          <div className="wrapper">
-            <div className="row">
-              <div className="col-md-3">
-                <div className="main-logo">
-                  <a href='#'><img src={logonew} /></a>
-                  {/* <form action="javascript:void(0)" method="get">
-                    <div className="input-group">
-                    <div className="input-group-addon" id="order">
-                        <div className="select-style">
-                          <select name="order">
-                            <option value="" disabled>Select Your Type</option>
-                            <option value="a" selected>A</option>
-                            <option value="b">B</option>
-                          </select>
-                        </div>
-                      </div>
-                      <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
-                      <div className="input-group-addon" id="sub">
-                        <button className="submit" type="submit">
-                          <span className="fa fa-search"></span>
-                        </button>
-                      </div>
-                    </div>
-                  </form> */}
-                </div>
-              </div>
-              <div className="col-md-9">
-                <nav className="nav-list">
-                  <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/plan">Plan</Link></li>
-                    <li><Link to="/companyprofile">Company Profile</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li className="nav-login"><Link to="/login">login</Link></li>
-                    <li className="nav-login"><Link to="/register">Signup</Link></li>
-
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-
-        </header>
-
-        <div className="mob-section">
-          <div className="wrapper">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="main-logo mob-first">
-                  <a href='#'><img src={logonew} /></a>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="mobile-nav" id="nav">
-                  <a href="#">
-                    <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
-                      <div className="main-logo">
-                        <a href='#'><img src={logonew} /></a>
-                      </div>
-                    </div>
-                  </a>
-                  <nav>
-                    <div className="mob-nav-list">
-                      <ul>
-                        <li className='mobile-form'>
-                          <form>
-                            <div className="input-group">
-                              <div className="input-group-addon" id="order">
-                                <div className="select-style">
-                                  <select name="order">
-                                    <option value="" disabled>Select Your Type</option>
-                                    <option defaultValue="a">A</option>
-                                    <option value="b">B</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
-                              <div className="input-group-addon" id="sub">
-                                <button className="submit" type="submit">
-                                  <span className="fa fa-search"></span>
-                                </button>
-                              </div>
-                            </div>
-                          </form>
-                        </li>
-                        <li><a href="http://localhost:3000/home">Home</a></li>
-                        <li><a href="http://localhost:3000/plan">Plan</a></li>
-                        <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
-                        <li><a href="http://localhost:3000/contact">Contact Us</a></li>
-                        <li className="nav-login"><a href="http://localhost:3000">login</a></li>
-                        <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
-                      </ul>
-                    </div>
-                  </nav>
-                </div>
-                <div className="mobile-nav-btn">
-                  <span className="lines"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
+        <Header />
         <div className="login-card">
           <div className="card">
             <div className="wrapper">

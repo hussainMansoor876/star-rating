@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import './CompanyProfile.css'
 import proven from '../../assets/img/user.png';
 import manicon from '../../assets/img/man-icon-2.png';
-import logonew from '../../assets/img/new-logo.png';
 import Header from '../Header/Header'
 
 class Company extends React.Component {
