@@ -67,7 +67,7 @@ class Login extends React.Component {
     }
 
     if (!this.props.isError && this.props.currentUser) {
-      this.props.history.push('/dashboard')
+      this.props.history.push('/')
     }
 
   }
@@ -120,7 +120,7 @@ class Login extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="login-body">
-        <Header />
+        <Header {...this.props} />
         <div className="login-card">
           <div className="card">
             <div className="wrapper">

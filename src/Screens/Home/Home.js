@@ -31,7 +31,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="main-body">
-        <Header />
+        <Header {...this.props} />
         <section id="banner">
           <div className="wrapper">
             <div className="d-table w-100">

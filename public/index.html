@@ -60,20 +60,20 @@
     -->
 </body>
 <script>
-   $('.mobile-nav-btn').click(function() {
-        $('.mobile-nav-btn, .mobile-nav, .app-container').toggleClass('active');
+  //  $('.mobile-nav-btn').click(function() {
+  //       $('.mobile-nav-btn, .mobile-nav, .app-container').toggleClass('active');
 
-        $(document).mouseup(function(e)
-        {
-            var container = $(".mobile-nav, .mobile-nav-btn");
+  //       $(document).mouseup(function(e)
+  //       {
+  //           var container = $(".mobile-nav, .mobile-nav-btn");
 
-            // if the target of the click isn't the container nor a descendant of the container
-            if (!container.is(e.target) && container.has(e.target).length === 0)
-            {
-                $('.mobile-nav-btn, .mobile-nav, .app-container').removeClass('active');
-            }
-        });
-    });
+  //           // if the target of the click isn't the container nor a descendant of the container
+  //           if (!container.is(e.target) && container.has(e.target).length === 0)
+  //           {
+  //               $('.mobile-nav-btn, .mobile-nav, .app-container').removeClass('active');
+  //           }
+  //       });
+  //   });
 </script>
 <script>
   (function () {
