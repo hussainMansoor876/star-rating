@@ -71,7 +71,7 @@ class Navbar extends Component {
                   {user ? <ul>
                     <li><Link to="/plan">Plan</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link to=""><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
+                    <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
                     <li><a href="javascript:void(0)" onClick={() => this.logout()}>Logout</a></li>
                   </ul> : <ul>
                       <li><Link to="/plan">Plan</Link></li>
@@ -130,7 +130,7 @@ class Navbar extends Component {
                         </li>
                         <li><Link to="/plan">Plan</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to=""><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
+                        <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
                         <li><a href="javascript:void(0)" onClick={() => this.logout()}>Logout</a></li>
                       </ul> : <ul>
                           <li className='mobile-form'>

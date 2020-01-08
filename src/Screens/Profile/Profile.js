@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
-import './ReviewerProfile.css'
+import './Profile.css'
 import businesss from '../../assets/img/businesss.jpg';
 import manicon from '../../assets/img/man-icon-2.png';
 import logonew from '../../assets/img/new-logo.png';
