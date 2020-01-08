@@ -96,16 +96,12 @@ class Home extends React.Component {
               <div className="col-md-6">
                 <nav className="nav-list">
                   {user ? <ul>
-                    {/* <li><a href="http://localhost:3000/home">Home</a></li> */}
                     <li><Link to="/plan">Plan</Link></li>
-                    {/* <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li> */}
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to=""><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
                     <li><a href="javascript:void(0)" onClick={() => this.logout()}>Logout</a></li>
                   </ul> : <ul>
-                      {/* <li><a href="http://localhost:3000/home">Home</a></li> */}
                       <li><Link to="/plan">Plan</Link></li>
-                      {/* <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li> */}
                       <li><Link to="/contact">Contact Us</Link></li>
                       <li className="nav-login"><Link to="/login">login</Link></li>
                       <li className="nav-login"><Link to="/register">Signup</Link></li>
@@ -159,12 +155,10 @@ class Home extends React.Component {
                             </div>
                           </form>
                         </li>
-                        <li><a href="http://localhost:3000/home">Home</a></li>
-                        <li><a href="http://localhost:3000/plan">Plan</a></li>
-                        <li><a href="http://localhost:3000/companyprofile">Company Profile</a></li>
-                        <li><a href="http://localhost:3000/contact">Contact Us</a></li>
-                        <li className="nav-login"><a href="http://localhost:3000">login</a></li>
-                        <li className="nav-signup"><a href="http://localhost:3000/register">Register</a></li>
+                        <li><Link to="/plan">Plan</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
+                        <li className="nav-login"><Link to="/login">login</Link></li>
+                        <li className="nav-signup"><Link to="/register">Register</Link></li>
                       </ul>
                     </div>
                   </nav>
