@@ -72,6 +72,7 @@ class Routes extends Component {
                     <Route path="/impressum" exact component={impressum} />
                     <Route path="/plan" exact component={Plan} />
                     <Route path="/reviewerprofile" exact component={ReviewerProfile} />
+                    <Route path="/profile" exact component={ReviewerProfile} />
                     <Route path="/search" exact component={Search} />
                     <Route path="/privacy" exact component={Privacy} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
