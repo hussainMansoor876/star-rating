@@ -20,7 +20,7 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="main-body">
-		  <Header />
+		  <Header {...this.props} />
         <section id="inside-banner">
           <div className="wrapper">
             <div className="inside-banner-image">
@@ -516,24 +516,6 @@ I think the rating system is quite good. However, I would like that the sub-poin
 									</div>
 								</div>
 							</div>
-							{/* <div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
-								<div className="mrtpt-1 clearfix">
-								<div className="customer-ser-head clearfix">
-									<i className="lft-sty  fa fa-check"></i>
-									<div className="cost-ben">
-										<p className="ff-primary">Customer service</p>
-										<span className="ff-primary">EXCELLENT (5.00)</span>
-									</div>
-								</div>
-								<div className="customer-ser-head clearfix">
-										<i className="lft-sty fa fa-check"></i>
-									<div className="cost-ben">
-										<p className="ff-primary">Customer service</p>
-										<span className="ff-primary">EXCELLENT (5.00)</span>
-									</div>
-								</div>
-								</div>
-							</div> */}
 											</div>
 										</div>
 										</div>

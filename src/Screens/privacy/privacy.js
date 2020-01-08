@@ -17,7 +17,7 @@ class Privacy extends React.Component {
     render() {
         return (
             <div className="main-body">
-                <Header />
+                <Header {...this.props} />
                 <section id="banner-4">
                     <div className="wrapper">
                         <div className="d-table w-100">

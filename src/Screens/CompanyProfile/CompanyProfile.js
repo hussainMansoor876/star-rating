@@ -19,7 +19,7 @@ class Company extends React.Component {
   render() {
     return (
       <div className="main-body">
-		  <Header />
+		  <Header {...this.props} />
         <section id="inside-banner">
           <div className="wrapper">
             <div className="inside-banner-image">

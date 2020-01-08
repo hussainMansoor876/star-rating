@@ -112,7 +112,7 @@ class Signup extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="register-body">
-        <Header />
+        <Header {...this.props} />
         <div className="register-card">
           <div className="card">
             <div>
