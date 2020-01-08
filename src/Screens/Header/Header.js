@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import './Header.css'
 import { removeUser } from '../../Redux/actions/authActions'
 import logonew from '../../assets/img/new-logo.png';
@@ -14,6 +14,12 @@ class Navbar extends Component {
 
   componentDidMount() {
     console.log('user', this.props.location)
+
+    const { user } = this.props
+
+    if (user) {
+      this.props.history.push('/')
+    }
   }
 
   logout() {
@@ -44,8 +50,8 @@ class Navbar extends Component {
             <div className="row">
               <div className="col-md-6">
                 <div className="main-logo">
-                  <a href='#'><img src={logonew} /></a>
-                  <form action="javascript:void(0)" method="get">
+                  <NavLink to='#'><img src={logonew} /></NavLink>
+                  <form method="get">
                     <div className="input-group">
                       <div className="input-group-addon" id="order">
                         <div className="select-style">
@@ -72,7 +78,7 @@ class Navbar extends Component {
                     <li><Link to="/plan">Plan</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
-                    <li><a href="javascript:void(0)" onClick={() => this.logout()}>Logout</a></li>
+                    <li><NavLink to="#" onClick={() => this.logout()}>Logout</NavLink></li>
                   </ul> : <ul>
                       <li><Link to="/plan">Plan</Link></li>
                       <li><Link to="/contact">Contact Us</Link></li>
@@ -100,7 +106,7 @@ class Navbar extends Component {
                   <a href="#">
                     <div className="mob-nav-logo ptpx-15 pbpx-15 plpx-30">
                       <div className="main-logo">
-                        <a href='#'><img src={logonew} /></a>
+                        <a><img src={logonew} /></a>
                       </div>
                     </div>
                   </a>
@@ -108,18 +114,18 @@ class Navbar extends Component {
                     <div className="mob-nav-list">
                       {user ? <ul>
                         <li className='mobile-form'>
-                          <form action="javascript:void(0)" method="get">
+                          <form method="get">
                             <div className="input-group">
                               <div className="input-group-addon" id="order">
                                 <div className="select-style">
                                   <select name="order">
                                     <option value="" disabled>Select Your Type</option>
-                                    <option value="a" selected>A</option>
+                                    <option defaultValue="a">A</option>
                                     <option value="b">B</option>
                                   </select>
                                 </div>
                               </div>
-                              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
+                              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
                               <div className="input-group-addon" id="sub">
                                 <button className="submit" type="submit">
                                   <span className="fa fa-search"></span>
@@ -131,21 +137,21 @@ class Navbar extends Component {
                         <li><Link to="/plan">Plan</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                         <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
-                        <li><a href="javascript:void(0)" onClick={() => this.logout()}>Logout</a></li>
+                        <li><NavLink to="#" onClick={() => this.logout()}>Logout</NavLink></li>
                       </ul> : <ul>
                           <li className='mobile-form'>
-                            <form action="javascript:void(0)" method="get">
+                            <form method="get">
                               <div className="input-group">
                                 <div className="input-group-addon" id="order">
                                   <div className="select-style">
                                     <select name="order">
                                       <option value="" disabled>Select Your Type</option>
-                                      <option value="a" selected>A</option>
+                                      <option defaultValue="a">A</option>
                                       <option value="b">B</option>
                                     </select>
                                   </div>
                                 </div>
-                                <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autocomplete="off" />
+                                <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
                                 <div className="input-group-addon" id="sub">
                                   <button className="submit" type="submit">
                                     <span className="fa fa-search"></span>
