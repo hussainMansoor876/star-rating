@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { loginUser, removeUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import './Home.css';
 import logo from '../../assets/img/shoes.jpg';
 import sole from '../../assets/img/sole-trader.jpg';
