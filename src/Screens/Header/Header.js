@@ -12,22 +12,26 @@ class Navbar extends Component {
     super(props)
   }
 
+  componentDidMount() {
+    console.log('user', this.props.location)
+  }
+
   logout() {
     this.props.removeUser()
     this.props.history.push('/login')
   }
 
-  toggle(){
+  toggle() {
     $('.mobile-nav-btn, .mobile-nav, .app-container').toggleClass('active');
 
-      $(document).mouseup(function (e) {
-        var container = $(".mobile-nav, .mobile-nav-btn");
+    $(document).mouseup(function (e) {
+      var container = $(".mobile-nav, .mobile-nav-btn");
 
-        // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-          $('.mobile-nav-btn, .mobile-nav, .app-container').removeClass('active');
-        }
-      });
+      // if the target of the click isn't the container nor a descendant of the container
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+        $('.mobile-nav-btn, .mobile-nav, .app-container').removeClass('active');
+      }
+    });
   }
 
 

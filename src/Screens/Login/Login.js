@@ -49,8 +49,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     const { user } = this.props;
-    console.log('user', user)
-
+    
     if (user) {
       this.props.history.push('/')
     }
