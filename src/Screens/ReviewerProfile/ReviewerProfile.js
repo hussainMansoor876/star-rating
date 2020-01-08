@@ -97,7 +97,7 @@ class Reviewer extends React.Component {
 											<p className="ff-primary ideal">The ideal solution for your referral marketing: For more confidence, customers & sales.</p>
 											<p className="ff-primary">With ProvenExpert.com you get the feedback from your customers
 											 and present your evaluations from all platforms in one single rating...</p>
-											<a href="#">View full description <i class="fa fa-chevron-circle-down fc-blue"></i></a>
+											<a href="#">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a>
 										</div>
 									</div>
 									<div className="col-lg-6 col-md-6 flrt-r">
@@ -108,7 +108,7 @@ class Reviewer extends React.Component {
 												<span className="ff-primary">Quedlinburger Straße 1</span>
 												<span className="ff-primary">10589 Berlin</span>
 												<span className="ff-primary">Germany</span>
-												<span className="ff-primary direction"><i class="fa fa-map-marker"></i><a href="#" className="fc-blue"> Direction</a></span>
+												<span className="ff-primary direction"><i className="fa fa-map-marker"></i><a href="#" className="fc-blue"> Direction</a></span>
 											</div>
 											
 										</div>
@@ -411,16 +411,16 @@ I think the rating system is quite good. However, I would like that the sub-poin
 
 									<div id="accordion" role="tablist">
 									
-									<div class="card-1">
-										<div class="card-header-1" role="tab" id="headingTwo">
-										<h5 class="mb-0">
+									<div className="card-1">
+										<div className="card-header-1" role="tab" id="headingTwo">
+										<h5 className="mb-0">
 											
 
-											<i class="fa fa-chevron-circle-down fc-blue collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></i>
+											<i className="fa fa-chevron-circle-down fc-blue collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></i>
 										</h5>
 										</div>
-										<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-										<div class="card-body ff-primary">
+										<div id="collapseTwo" className="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+										<div className="card-body ff-primary">
 											<div className="row">
 											<div className="col-lg-12 col-md-12 col-sm-12 flrt-r">
 								<div className="star-rating-second">
