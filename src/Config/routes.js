@@ -12,6 +12,7 @@ import Header from '../Screens/Header/Header'
 import impressum from '../Screens/Impressum/Impressum'
 import Plan from '../Screens/Plan/Plan'
 import ReviewerProfile from '../Screens/ReviewerProfile/ReviewerProfile'
+import Profile from '../Screens/Profile/Profile'
 import Search from '../Screens/Search/Search'
 import Privacy from '../Screens/privacy/privacy'
 
@@ -72,7 +73,7 @@ class Routes extends Component {
                     <Route path="/impressum" exact component={impressum} />
                     <Route path="/plan" exact component={Plan} />
                     <Route path="/reviewerprofile" exact component={ReviewerProfile} />
-                    <Route path="/profile" exact component={ReviewerProfile} />
+                    <Route path="/profile" exact component={Profile} />
                     <Route path="/search" exact component={Search} />
                     <Route path="/privacy" exact component={Privacy} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
