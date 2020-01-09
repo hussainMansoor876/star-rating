@@ -24,45 +24,41 @@ class Navbar extends Component {
       },
       ],
       routes: [{
-          name: 'Plan',
-          route: '/plan'
-        }, {
-          name: 'Contact Us',
-          route: '/contact'
-        }, {
-          name: 'Login',
-          route: '/login',
-          className: 'nav-login'
-        },{
-          name: 'Signup',
-          route: '/register',
-          className: 'nav-login'
-        }
+        name: 'Plan',
+        route: '/plan'
+      }, {
+        name: 'Contact Us',
+        route: '/contact'
+      }, {
+        name: 'Login',
+        route: '/login',
+        className: 'nav-login'
+      }, {
+        name: 'Signup',
+        route: '/register',
+        className: 'nav-login'
+      }
       ]
     }
   }
 
   componentWillMount() {
     const { user } = this.props
+    const { loginRoutes } = this.state
     if (user) {
-      this.setState(prevState => ({
-        loginRoutes: {
-          ...prevState.loginRoutes,
-          profile: {
-            name: user.name,
-            pic: user.profilePic.url
-          }
-        }
-      }))
+      loginRoutes.push({
+        name: user.name,
+        pic: user.profilePic.url,
+        route: '/profile'
+      })
+
+      this.setState({ loginRoutes })
     }
   }
 
   componentDidMount() {
     const { loginRoutes } = this.state
     console.log('user', this.props.location)
-    Object.keys(loginRoutes).map((v, i) => {
-      console.log('keys', loginRoutes[v])
-    })
 
     // const { user } = this.props
 
@@ -95,8 +91,7 @@ class Navbar extends Component {
   render() {
     const { user, location } = this.props
     const { loginRoutes, routes } = this.state
-    const path = location.pathname.split('/')[1]
-    console.log('location.pathname', location.pathname.split('/'))
+
     return (
       <div>
         <header>
@@ -129,22 +124,22 @@ class Navbar extends Component {
               <div className="col-md-6">
                 <nav className="nav-list">
                   {user ? <ul>
-                    {Object.keys(loginRoutes).map((v, i) => {
-                      if (path == v) {
+                    {loginRoutes.map((v, i) => {
+                      if (location.pathname == v.route) {
                         return
                       }
-                      else if (v == 'profile') {
+                      else if (v.route == '/profile') {
                         return <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name}</Link></li>
                       }
-                      return <li><Link to={`/${v}`} className={loginRoutes[v].className ? loginRoutes[v].className : null}>{loginRoutes[v].name}</Link></li>
+                      return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
                     })}
                     {/* <li><Link to="/plan">Plan</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name}</Link></li> */}
                     <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                   </ul> : <ul>
-                      {Object.keys(routes).map((v, i) => {
-                        return <li className={routes[v].className ? routes[v].className : null}><Link to={`/${v}`}>{routes[v].name}</Link></li>
+                      {routes.map((v, i) => {
+                        return <li className={v.className ? v.className : null}><Link to={v.route}>{v.name}</Link></li>
                       })}
                       {/* <li><Link to="/plan">Plan</Link></li>
                       <li><Link to="/contact">Contact Us</Link></li>
