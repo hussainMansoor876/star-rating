@@ -7,7 +7,7 @@ import { Form, Icon, Input, Button, Checkbox, notification } from 'antd';
 import { Link } from 'react-router-dom'
 import validator from 'validator'
 import { connect } from 'react-redux';
-import { loginUser } from '../../Redux/actions/authActions'
+import { loginUser, removeUser } from '../../Redux/actions/authActions'
 import Header from '../Header/Header'
 import axios from 'axios'
 
@@ -48,9 +48,12 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    const { user } = this.props;
-    
-    if (user) {
+    const { user, history } = this.props;
+    console.log('user', this.props)
+    if (history.location.state) {
+      this.props.removeUser()
+    }
+    else if (user) {
       this.props.history.push('/')
     }
   }
@@ -224,6 +227,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     loginUser: (user) => dispatch(loginUser(user)),
+    removeUser: () => dispatch(removeUser())
   }
 }
 

@@ -48,19 +48,23 @@ class Navbar extends Component {
   componentWillMount() {
     const { user, location } = this.props
     const { loginRoutes, routes } = this.state
-    var fill = routes.filter((obj) =>{
+    var fill = routes.filter((obj) => {
       return obj.route !== location.pathname;
     })
-    console.log()
     if (user) {
       loginRoutes.push({
         name: user.name,
         pic: user.profilePic.url,
         route: '/profile'
       })
-
-      this.setState({ loginRoutes })
     }
+
+    var fill1 = loginRoutes.filter((obj) => {
+      return obj.route !== location.pathname;
+    })
+
+
+    this.setState({ loginRoutes: fill1, routes: fill })
   }
 
   componentDidMount() {
@@ -75,9 +79,8 @@ class Navbar extends Component {
   }
 
   logout() {
-    this.props.removeUser()
     setTimeout(() => {
-      this.props.history.push('/login')
+      this.props.history.push('/login', {reload: true})
     }, 100)
   }
 
@@ -132,10 +135,7 @@ class Navbar extends Component {
                 <nav className="nav-list">
                   {user ? <ul>
                     {loginRoutes.map((v, i) => {
-                      if (location.pathname == v.route) {
-                        return
-                      }
-                      else if (v.route == '/profile') {
+                      if (v.route == '/profile') {
                         return <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name}</Link></li>
                       }
                       return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
@@ -143,9 +143,6 @@ class Navbar extends Component {
                     <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                   </ul> : <ul>
                       {routes.map((v, i) => {
-                        if (location.pathname == v.route) {
-                          return
-                        }
                         return <li className={v.className ? v.className : null}><Link to={v.route}>{v.name}</Link></li>
                       })}
                     </ul>}
@@ -199,10 +196,7 @@ class Navbar extends Component {
                           </form>
                         </li>
                         {loginRoutes.map((v, i) => {
-                          if (location.pathname == v.route) {
-                            return
-                          }
-                          else if (v.route == '/profile') {
+                          if (v.route == '/profile') {
                             return <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name}</Link></li>
                           }
                           return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
@@ -231,9 +225,6 @@ class Navbar extends Component {
                             </form>
                           </li>
                           {routes.map((v, i) => {
-                            if (location.pathname == v.route) {
-                              return
-                            }
                             return <li className={v.className ? v.className : null}><Link to={v.route}>{v.name}</Link></li>
                           })}
                         </ul>}
