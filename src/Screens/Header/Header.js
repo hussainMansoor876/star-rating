@@ -194,10 +194,16 @@ class Navbar extends Component {
                             </div>
                           </form>
                         </li>
-                        <li><Link to="/plan">Plan</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
-                        <li><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
+                        {loginRoutes.map((v, i) => {
+                          if (location.pathname == v.route) {
+                            return
+                          }
+                          else if (v.route == '/profile') {
+                            return <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name}</Link></li>
+                          }
+                          return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
+                        })}
+                        <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                       </ul> : <ul>
                           <li className='mobile-form'>
                             <form method="get">
@@ -220,10 +226,12 @@ class Navbar extends Component {
                               </div>
                             </form>
                           </li>
-                          <li><Link to="/plan">Plan</Link></li>
-                          <li><Link to="/contact">Contact Us</Link></li>
-                          <li className="nav-login"><Link to="/login">login</Link></li>
-                          <li className="nav-login"><Link to="/register">Signup</Link></li>
+                          {routes.map((v, i) => {
+                            if (location.pathname == v.route) {
+                              return
+                            }
+                            return <li className={v.className ? v.className : null}><Link to={v.route}>{v.name}</Link></li>
+                          })}
                         </ul>}
                     </div>
                   </nav>
