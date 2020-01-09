@@ -6,6 +6,7 @@ import businesss from '../../assets/img/businesss.jpg';
 import manicon from '../../assets/img/man-icon-2.png';
 import logonew from '../../assets/img/new-logo.png';
 import Header from '../Header/Header'
+import Login from '../Login/Login'
 
 class Profile extends React.Component {
 
@@ -16,13 +17,22 @@ class Profile extends React.Component {
 		}
 	}
 
-	componentDidMount() {
-		console.log("user", this.props.user)
+
+
+	componentWillMount() {
+		const { user } = this.props
+
+		if (!user) {
+			this.props.history.push('/login')
+		}
 	}
 
 
 	render() {
 		const { user } = this.props
+		if (!user) {
+			return <Login {...this.props} />
+		}
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
@@ -55,7 +65,7 @@ class Profile extends React.Component {
 										<div className="row">
 											<div className="col-lg-12">
 												<div className="proven-con">
-													<img src={businesss} />
+													<img src={user.profilePic.url} />
 												</div>
 											</div>
 											<div className="col-lg-12">
