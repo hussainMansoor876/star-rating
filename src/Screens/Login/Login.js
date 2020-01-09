@@ -49,7 +49,6 @@ class Login extends React.Component {
 
   componentDidMount() {
     const { user, history } = this.props;
-    console.log('user', this.props)
     if (history.location.state) {
       this.props.removeUser()
     }

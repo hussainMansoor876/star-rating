@@ -67,17 +67,6 @@ class Navbar extends Component {
     this.setState({ loginRoutes: fill1, routes: fill })
   }
 
-  componentDidMount() {
-    const { loginRoutes } = this.state
-    console.log('user', this.props)
-
-    // const { user } = this.props
-
-    // if (!user) {
-    //   this.props.history.push('/login')
-    // }
-  }
-
   logout() {
     setTimeout(() => {
       this.props.history.push('/login', {reload: true})
@@ -99,7 +88,7 @@ class Navbar extends Component {
 
 
   render() {
-    const { user, location } = this.props
+    const { user } = this.props
     const { loginRoutes, routes } = this.state
 
     return (
