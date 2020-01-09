@@ -46,8 +46,12 @@ class Navbar extends Component {
   }
 
   componentWillMount() {
-    const { user } = this.props
-    const { loginRoutes } = this.state
+    const { user, location } = this.props
+    const { loginRoutes, routes } = this.state
+    var fill = routes.filter((obj) =>{
+      return obj.route !== location.pathname;
+    })
+    console.log()
     if (user) {
       loginRoutes.push({
         name: user.name,
@@ -61,7 +65,7 @@ class Navbar extends Component {
 
   componentDidMount() {
     const { loginRoutes } = this.state
-    console.log('user', this.props.location)
+    console.log('user', this.props)
 
     // const { user } = this.props
 
@@ -74,7 +78,7 @@ class Navbar extends Component {
     this.props.removeUser()
     setTimeout(() => {
       this.props.history.push('/login')
-    }, 200)
+    }, 100)
   }
 
   toggle() {
