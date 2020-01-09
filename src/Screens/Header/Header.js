@@ -139,6 +139,9 @@ class Navbar extends Component {
                     <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                   </ul> : <ul>
                       {routes.map((v, i) => {
+                        if (location.pathname == v.route) {
+                          return
+                        }
                         return <li className={v.className ? v.className : null}><Link to={v.route}>{v.name}</Link></li>
                       })}
                       {/* <li><Link to="/plan">Plan</Link></li>
