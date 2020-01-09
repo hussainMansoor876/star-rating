@@ -10,16 +10,62 @@ var $ = require("jquery");
 class Navbar extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      loginRoutes: {
+        plan: {
+          name: 'plan'
+        },
+        contact: {
+          name: 'Contact Us'
+        },
+      },
+      routes: {
+        plan: {
+          name: 'plan'
+        },
+        contact: {
+          name: 'Contact Us'
+        },
+        login: {
+          name: 'Login',
+          className: 'nav-login'
+        },
+        register: {
+          name: 'Sign Up',
+          className: 'nav-login'
+        }
+      }
+    }
+  }
+
+  componentWillMount(){
+    const { user } = this.props
+    if(user){
+      this.setState(prevState => ({
+        loginRoutes: {
+          ...prevState.loginRoutes,
+          profile: {
+           name: user.name,
+           pic: user.profilePic.url 
+          },
+          logout: {
+            name: 'Logout',
+            className: 'nav-login'
+          }
+        }
+      }))
+    }
   }
 
   componentDidMount() {
-    console.log('user', this.props)
+    console.log('user', this.props.location)
 
-    const { user } = this.props
+    // const { user } = this.props
 
-    if (!user) {
-      this.props.history.push('/login')
-    }
+    // if (!user) {
+    //   this.props.history.push('/login')
+    // }
   }
 
   logout() {
@@ -139,7 +185,7 @@ class Navbar extends Component {
                         <li><Link to="/plan">Plan</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                         <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} />{user.name}</Link></li>
-                        <li><NavLink to="#" onClick={() => this.logout()}>Logout</NavLink></li>
+                        <li><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                       </ul> : <ul>
                           <li className='mobile-form'>
                             <form method="get">
