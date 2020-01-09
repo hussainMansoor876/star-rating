@@ -24,6 +24,9 @@ class Navbar extends Component {
       },
       ],
       routes: [{
+        name: 'Dashboard',
+        route: '/'
+      }, {
         name: 'Plan',
         route: '/plan'
       }, {
@@ -133,9 +136,6 @@ class Navbar extends Component {
                       }
                       return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
                     })}
-                    {/* <li><Link to="/plan">Plan</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name}</Link></li> */}
                     <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                   </ul> : <ul>
                       {routes.map((v, i) => {
@@ -144,10 +144,6 @@ class Navbar extends Component {
                         }
                         return <li className={v.className ? v.className : null}><Link to={v.route}>{v.name}</Link></li>
                       })}
-                      {/* <li><Link to="/plan">Plan</Link></li>
-                      <li><Link to="/contact">Contact Us</Link></li>
-                      <li className="nav-login"><Link to="/login">login</Link></li>
-                      <li className="nav-login"><Link to="/register">Signup</Link></li> */}
                     </ul>}
                 </nav>
               </div>
