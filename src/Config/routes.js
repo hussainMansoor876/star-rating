@@ -27,7 +27,7 @@ function PrivateRoute({ component: Component, isLoggedIn, ...rest }) {
             {...rest}
             render={props => isLoggedIn === true ? (
                 <Component {...props} />
-            ) : (<Redirect to={{ pathname: "/", state: { from: props.location } }} />)
+            ) : (<Redirect to={{ pathname: "/login", state: { from: props.location } }} />)
             }
         />
     );
@@ -37,29 +37,28 @@ function PrivateRoute({ component: Component, isLoggedIn, ...rest }) {
 class Routes extends Component {
 
     state = {
-        isLoggedIn: false,
         user: null,
     }
 
     UNSAFE_componentWillMount() {
-        const user = SessionStorageManager.getUser();
+        const { user } = this.props
         if (user) {
-            this.setState({ isLoggedIn: true, user })
+            this.setState({ user: user })
         }
     }
 
 
     render() {
-        const user = SessionStorageManager.getUser();
+        const { user } = this.props;
 
 
         return (
             <Router>
 
-                {user && <React.Fragment>
-                    {/* <Header user={this.state.user} /> */}
-                    {/* <Navbar /> */}
-                </React.Fragment>}
+                {/* {user && <React.Fragment>
+                    <Header user={this.state.user} />
+                    <Navbar />
+                </React.Fragment>} */}
 
 
 
@@ -67,16 +66,16 @@ class Routes extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/register" exact component={SignUp} />
                     <Route path="/login" exact component={Login} />
-                    <Route path="/companyprofile" exact component={CompanyProfile} />
-                    <Route path="/createcompany" exact component={CreateCompany} />
+                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/companyprofile" exact component={CompanyProfile} />
+                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/createcompany" exact component={CreateCompany} />
                     <Route path="/contact" exact component={Contact} />
                     <Route path="/daten" exact component={Daten} />
                     <Route path="/header" exact component={Header} />
                     <Route path="/impressum" exact component={impressum} />
-                    <Route path="/plan" exact component={Plan} />
+                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/plan" exact component={Plan} />
                     <Route path="/reviewerprofile" exact component={ReviewerProfile} />
-                    <Route path="/profile" exact component={Profile} />
-                    <Route path="/search" exact component={Search} />
+                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/profile" exact component={Profile} />
+                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/search" exact component={Search} />
                     <Route path="/privacy" exact component={Privacy} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
                     {/* <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
@@ -95,7 +94,7 @@ class Routes extends Component {
 const mapStateToProps = (state) => {
     console.log("mapToState", state.authReducer)
     return {
-        isLoggedIn: state.authReducer.isLoggedIn,
+        user: state.authReducer.user,
     }
 }
 
