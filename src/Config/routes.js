@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import SessionStorageManager from './SessionStorageManager';
 import Home from '../Screens/Home/Home'
 import CompanyProfile from '../Screens/CompanyProfile/CompanyProfile'
+import CreateCompany from '../Screens/CompanyProfile/CreateCompany'
 import Contact from '../Screens/Contact/Contact'
 import Daten from '../Screens/Daten/Daten'
 import Header from '../Screens/Header/Header'
@@ -67,6 +68,7 @@ class Routes extends Component {
                     <Route path="/register" exact component={SignUp} />
                     <Route path="/login" exact component={Login} />
                     <Route path="/companyprofile" exact component={CompanyProfile} />
+                    <Route path="/createcompany" exact component={CreateCompany} />
                     <Route path="/contact" exact component={Contact} />
                     <Route path="/daten" exact component={Daten} />
                     <Route path="/header" exact component={Header} />
