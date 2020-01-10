@@ -28,13 +28,13 @@ class Daten extends React.Component {
 const mapStateToProps = (state) => {
   console.log("mapToState", state.authReducer)
   return {
-    isLoggedIn: state.authReducer.isLoggedIn,
+    user: state.authReducer.user,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginUser: (isLoggedIn) => dispatch(loginUser(isLoggedIn)),
+    loginUser: (user) => dispatch(loginUser(user)),
   }
 }
 
