@@ -66,23 +66,23 @@ class Routes extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/register" exact component={SignUp} />
                     <Route path="/login" exact component={Login} />
-                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/companyprofile" exact component={CompanyProfile} />
-                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/createcompany" exact component={CreateCompany} />
+                    <Route path="/companyprofile" exact component={CompanyProfile} />
+                    <Route path="/createcompany" exact component={CreateCompany} />
                     <Route path="/contact" exact component={Contact} />
                     <Route path="/daten" exact component={Daten} />
                     <Route path="/header" exact component={Header} />
                     <Route path="/impressum" exact component={impressum} />
-                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/plan" exact component={Plan} />
+                    <Route path="/plan" exact component={Plan} />
                     <Route path="/reviewerprofile" exact component={ReviewerProfile} />
-                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/profile" exact component={Profile} />
-                    <PrivateRoute isLoggedIn={(this.props.user || this.state.user)} path="/search" exact component={Search} />
+                    <Route path="/profile" exact component={Profile} />
+                    <Route path="/search" exact component={Search} />
                     <Route path="/privacy" exact component={Privacy} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
-                    {/* <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
-                    <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/article" component={Article} /> */}
-                    {/* <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/alljobs" component={AllJobs} />
-                    <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/postjob" component={PostJob} />
-                    <PrivateRoute isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/editjob" component={EditJob} /> */}
+                    {/* <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
+                    <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/article" component={Article} /> */}
+                    {/* <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/alljobs" component={AllJobs} />
+                    <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/postjob" component={PostJob} />
+                    <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/editjob" component={EditJob} /> */}
 
                 </Switch>
             </Router>

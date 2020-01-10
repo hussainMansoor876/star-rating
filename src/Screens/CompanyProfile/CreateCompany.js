@@ -5,6 +5,11 @@ import './CompanyProfile.css'
 import proven from '../../assets/img/user.png';
 import manicon from '../../assets/img/man-icon-2.png';
 import Header from '../Header/Header'
+import axios from 'axios'
+import validator from 'validator'
+import { Form, Icon, Input, Button, Checkbox, notification } from 'antd';
+
+const title = "Error"
 
 class CreateCompany extends React.Component {
 
@@ -14,6 +19,46 @@ class CreateCompany extends React.Component {
 
     }
   }
+
+  openNotification = (title, desc, icon, color = '#108ee9') => {
+    notification.open({
+      message: title,
+      description: desc,
+      icon: <Icon type={icon} style={{ color: color }} />,
+    });
+  };
+
+
+  handleSubmit = e => {
+    e.preventDefault();
+
+    this.props.form.validateFields((err, values) => {
+
+      if (!validator.isEmail(values.email)) {
+        return this.openNotification("Email", "Invalid Email", 'close-circle', 'red')
+      }
+      else if (values.password.length < 6) {
+        return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
+      }
+
+      this.setState({ loading: true, disable: true })
+      axios.post('https://star-rating123.herokuapp.com/user/login', values)
+        .then((result) => {
+          if (result.data.success) {
+            this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
+            this.props.loginUser(result.data.user)
+            this.props.history.push('/')
+          }
+          else {
+            this.setState({ loading: false, disable: false })
+            this.openNotification(title, result.data.message, 'close-circle', 'red')
+            // this.setState({ disable: false })
+          }
+        })
+
+    });
+
+  };
 
 
   render() {
