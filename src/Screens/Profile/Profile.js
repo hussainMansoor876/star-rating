@@ -39,10 +39,10 @@ class Profile extends React.Component {
 				<section id="inside-banner">
 					<div className="wrapper">
 						<div className="inside-banner-image">
-							<div className="inside-content">
+							{/* <div className="inside-content">
 								<button className="btn-blue ff-primary"><i className="fa fa-phone"></i> Callback request</button>
 								<button className="btn-blue ff-primary"><i className="fa fa-envelope"></i> Write a message</button>
-							</div>
+							</div> */}
 							<div className="social-icons">
 								<ul>
 									<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>

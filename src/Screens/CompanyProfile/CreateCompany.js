@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom'
 
 const title = "Error"
 
+const { TextArea } = Input;
+
 class CreateCompany extends React.Component {
 
 	constructor(props) {
@@ -65,40 +67,88 @@ class CreateCompany extends React.Component {
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
-				<section id="inside-banner">
+			
+				<section id="banner-6">
+          <div className="wrapper">
+            <div className="d-table w-100">
+              <div className="d-table-cell va-middle">
+                <div className="banner-content">
+                  <h2 className="ff-secondary">Register Your Company</h2>
+                  <p className="ff-primary fc-white">The free version of ProvenExpert is — and always will be — free.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+ 
+				<div className="create-card">
 					<div className="wrapper">
-						<div className="inside-banner-image">
-							<div className="inside-content">
-								<button className="btn-blue ff-primary"><i className="fa fa-phone"></i> Callback request</button>
-								<button className="btn-blue ff-primary"><i className="fa fa-envelope"></i> Write a message</button>
-							</div>
-							<div className="social-icons">
-								<ul>
-									<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
-									<li><a href="#"><i className="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i className="fa fa-xing-square"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
-				<div className="register-card">
 					<div className="card">
 						<div>
 							<Form onSubmit={this.handleSubmit} className="login-form">
-								<h1 className="ff-secondary fc-blue" style={{ textAlign: 'center' }} >Register</h1>
+								<h1 className="ff-secondary fc-blue" style={{ textAlign: 'center' }} >Company Registration Form</h1>
+								<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<label>Company Name:</label>
+									<Form.Item className="sign-up">
+										{getFieldDecorator('name', {
+											rules: [{ required: true, message: 'Please input your Company Name!' }],
+										})(
+											<Input
+												name="name"
+												prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+												placeholder="Company Name"
+											/>,
+										)}
+									</Form.Item>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<label>Company Url:</label>
 								<Form.Item className="sign-up">
-									{getFieldDecorator('name', {
-										rules: [{ required: true, message: 'Please input your username!' }],
+									{getFieldDecorator('url', {
+										rules: [{ required: true, message: 'Please input your Company Url!' }],
 									})(
 										<Input
 											name="name"
 											prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-											placeholder="Username"
+											placeholder="example.com"
 										/>,
 									)}
 								</Form.Item>
+								</div>
+								<div className="col-md-6 col-sm-6 col-xs-12">
+								<label>Telephone Number:</label>
+								<Form.Item className="sign-up">
+									{getFieldDecorator('telnumber', {
+										rules: [{ required: true, message: 'Please input your Tel Number!' }],
+									})(
+										
+										<Input
+											type="phone"
+											name="phone"
+											prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+											placeholder="Telephone No"
+										/>,
+									)}
+								</Form.Item>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<label>Mobile Number:</label>
+								<Form.Item className="sign-up">
+									{getFieldDecorator('mobnimber', {
+										rules: [{ required: true, message: 'Please input your Mob Number!' }],
+									})(
+										<Input
+											type="phone"
+											name="phone"
+											prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+											placeholder="Mobile No"
+										/>,
+									)}
+								</Form.Item>
+								</div>
+								<div className="col-md-6 col-sm-6 col-xs-12">
+								<label>Email:</label>
 								<Form.Item className="sign-up">
 									{getFieldDecorator('email', {
 										rules: [{ required: true, message: 'Please input your Email!' }],
@@ -111,30 +161,46 @@ class CreateCompany extends React.Component {
 										/>,
 									)}
 								</Form.Item>
+								</div>
+								
+								<div className="col-md-6 col-sm-6 col-xs-12">
+								<label>Address:</label>
 								<Form.Item className="sign-up">
-									{getFieldDecorator('password', {
-										rules: [{ required: true, message: 'Please input your Password!' }],
+									{getFieldDecorator('address', {
+										rules: [{ required: true, message: 'Please input your Address!' }],
 									})(
 										<Input
-											name="password"
-											prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-											type="password"
-											placeholder="Password"
+											type="name"
+											name="name"
+											prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+											placeholder="Address"
 										/>,
 									)}
 								</Form.Item>
+
+								</div>
+								<div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<label>Country:</label>
 								<Form.Item className="sign-up">
-									{getFieldDecorator('repassword', {
-										rules: [{ required: true, message: 'Please input your Password Again!' }],
+									{getFieldDecorator('select', {
+										rules: [{ required: true, message: 'Please Select Your Country!' }],
 									})(
-										<Input
-											name="repassword"
-											prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-											type="password"
-											placeholder="Re-Enter Password"
-										/>,
+										<select>
+											<option value="Select Your Country">Select Your Country</option>
+											<option value="Pakistan">Pakistan</option>
+											<option value="Saudia Arabia">Saudia Arabia</option>
+											<option value="United States">United States</option>
+											<option value="United Kingdom">United Kingdom</option>
+											<option value="Sirilanka">Sirilanka</option>
+											<option value="Austrailia">Austrailia</option>
+											<option value="France">France</option>
+										</select>,
 									)}
 								</Form.Item>
+
+								</div>
+								<div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<label>Upload Your Logo</label>
 								<Form.Item className="sign-up">
 									{getFieldDecorator('upload', {
 										valuePropName: 'fileList',
@@ -147,20 +213,35 @@ class CreateCompany extends React.Component {
 										</Upload>,
 									)}
 								</Form.Item>
-
-								<Form.Item className="sign-up">
-									<Button htmlType="submit" className="login-form-button" disabled={this.state.disable} style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
-										Sign Up
-          </Button>
-									Or <Link to="/">Login With An Existing Account</Link>
-								</Form.Item>
-								<div className="signup-with">
-									<div className="signup-info">
-										<p className="ff-primary">Or Sign Up with gmail !</p></div>
-									<a href="#"><i className="fa fa-google-plus"></i></a>
 								</div>
+								<div className="col-md-12">
+								<label>Description:</label>
+								<Form.Item className="sign-up">
+									{getFieldDecorator('description',{
+										rules: [{ required: true, message: 'Please input your Description!' }],
+									})(
+										<TextArea
+											placeholder="Description"
+										 />
+									)}
+								</Form.Item>
+								</div>
+									
+									<div className="col-md-12">
+										<div className="register-btn">
+											<Form.Item className="sign-up">
+												<Button htmlType="submit" className="login-form-button" style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
+													Register
+												</Button>
+											</Form.Item>
+										</div>
+									</div>
+								</div>
+								
+								
 							</Form>
 						</div>
+					</div>
 					</div>
 				</div>
 

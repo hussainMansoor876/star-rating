@@ -102,12 +102,20 @@
     margin: 0;
 }
 .proven-con img{
-    margin: 0 auto;
+    margin: 0 auto 10px;
     border-radius: 50%;
     border: 2px solid #0c94ac;
     background-color: #fff;
+    height: 160px;
+    width: 160px;
+}
+.inputcol-2 {
+    padding: 24px 0;
+}
+.inputcol-2 a{
     width: 100%;
-    height: auto;
+    display: block;
+    text-align: center;
 }
 .exp-con-left{
 	position: relative;
@@ -440,9 +448,6 @@
 @media only screen and (max-width:991px){
     .inside-banner-image {
         height: 50vh;}
-    .proven-con img {
-        max-width: 20%;
-    }
     .exp-con-left {
         top: 0px;
         margin: 20px 0;
@@ -605,9 +610,6 @@
     .exp-con h4 {
         font-size: 14px;
     }
-    .proven-con img {
-        max-width: 30%;
-    }
     .exp-con-left {
         top: 10px;
     }
@@ -668,3 +670,158 @@
     }
 }
 
+
+
+/******************** CREATE COMPANY *******************/
+/* .create-card {
+    padding: 5% 0;
+} */
+
+.create-card .card{
+    width: 100%;
+    margin:6% 0;
+}
+
+.create-card form textarea{
+    height: 50px;
+}
+.create-card .ant-row.ant-form-item.sign-up{
+    text-align: left;
+}
+.create-card .ant-upload.ant-upload-select.ant-upload-select-text{
+    width: 100%;
+}
+.create-card button.ant-btn{
+    width: 100%;
+}
+.create-card form select{
+    width: 100%;
+    height: 32px;
+    padding: 4px 11px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.register-btn .ant-form-item-control{
+    text-align: center;
+}
+.register-btn button.ant-btn.login-form-button{
+    width:50%;
+}
+
+@media (max-width:640px){
+    .create-card h1{
+        font-size: 30px;
+    }
+    .register-btn button.ant-btn.login-form-button{
+        width:100%;
+    }
+}
+@media (max-width:575px){
+    .create-card h1{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:460px){
+    .create-card h1{
+        font-size: 18px;
+    }
+}
+/***************** CREATE CARD END ******************/
+/**************** BANNER START ****************/
+
+
+#banner-6{
+    background-image: url('../../assets/img/company-register.jpg');
+    background-size: 100% 100%;
+    position: relative;
+    background-attachment: fixed;
+  }
+  #banner-6::before{
+    content: '';
+    height: 100%;
+    position: absolute;
+    background: url('../../assets/img/bg-doted.png') rgba(0, 0, 0, 0.5);
+    width: 100%;
+  
+  }
+  #banner-6 .va-middle {
+    vertical-align: middle;
+    height: 80vh;
+  }
+  #banner-6 .banner-content{
+    position: relative;
+    text-align: center;
+  }
+  #banner-6 .banner-content h2{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  #banner-6 .banner-content p{
+    font-size: 22px;
+  }
+  
+  
+  
+  
+  @media only screen and (max-width:1024px){
+    #banner-6 .banner-content h2 {
+      font-size: 50px;
+    }
+    #banner-6 .banner-content p {
+      font-size: 20px;
+    }
+  }
+  
+  @media only screen and (max-width:991px){
+    #banner-6 .va-middle {
+      height: 70vh;
+  }
+  }
+  @media only screen and (max-width:768px){
+  #banner-6 .banner-content h2 {
+    font-size: 40px;
+    }
+    #banner-6 .banner-content p {
+      font-size: 18px;
+      }
+  }
+  @media only screen and (max-width:640px){
+  #banner-6 .va-middle {
+    height: 50vh;
+  }
+  }
+  @media only screen and (max-width:575px){
+  
+    #banner-6 .banner-content h2 {
+      font-size: 30px;
+      }
+      #banner-6 .banner-content p {
+        font-size: 16px;
+        }
+    }
+  
+    @media only screen and (max-width:460px){
+      #banner-6 {
+        background-size: 100% 55%;
+        background-repeat: no-repeat;
+      }
+      #banner-6 .banner-content h2 {
+        font-size: 25px;
+        }
+        #banner-6 .banner-content p {
+          font-size: 14px;
+          }
+    }
+  /**************** BANNER END ****************/
