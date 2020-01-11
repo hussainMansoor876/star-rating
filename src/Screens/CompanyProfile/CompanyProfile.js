@@ -264,6 +264,9 @@ class Company extends React.Component {
 											</div>
 										</div>
 									</div>
+									<div className="inputcol-2">
+										<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
+									</div>
 								</div>
 							</div>
 						</div>
