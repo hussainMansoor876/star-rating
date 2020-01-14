@@ -8,7 +8,7 @@ import validator from 'validator'
 import { connect } from 'react-redux';
 import { loginUser } from '../../Redux/actions/authActions'
 import Header from '../Header/Header'
-import logonew from '../../assets/img/new-logo.png';
+import Footer from '../Header/Footer'
 
 const title = "Error"
 const desc = 'Please Enter Correct UserName, Email and Password!'
@@ -61,7 +61,7 @@ class Signup extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log(values.upload)
-        if(values.name.length < 4){
+        if (values.name.length < 4) {
           return this.openNotification("Name", "Name must be Atleast 4 Digits", 'close-circle', 'red')
         }
         else if (!validator.isEmail(values.email)) {
@@ -70,10 +70,10 @@ class Signup extends React.Component {
         else if (values.password.length < 6) {
           return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
         }
-        else if(values.password !== values.repassword){
+        else if (values.password !== values.repassword) {
           return this.openNotification("Password", "Password Did not match", 'close-circle', 'red')
         }
-        else if(!values.upload){
+        else if (!values.upload) {
           return this.openNotification("Picture", "Please Upload the picture", 'close-circle', 'red')
         }
         // this.setState({ disable: true })
@@ -193,36 +193,7 @@ class Signup extends React.Component {
             </div>
           </div>
         </div>
-        <footer>
-          <div className="wrapper">
-            <div className="sec-padding">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="footer-list">
-                    <h5 className="fc-white">Your Logo Here</h5>
-                    <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
-                         involve strict requirements as to the service quality as well as legal requirements.
-                            </p>
-                    <ul>
-
-                      {/* <li><a href="#">Our Plain</a></li>
-                                                    <li><a href="#">Pricing</a></li> */}
-                      <li><a href="#">Contact Us</a></li>
-                      <li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
-
-                    </ul>
-                    <span className="footer-social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-instagram"></i></a>
-                      <a href="#"><i className="fa fa-linkedin"></i></a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer {...this.props} />
       </div>
     );
   }

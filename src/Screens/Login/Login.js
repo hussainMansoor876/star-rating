@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { loginUser, removeUser } from '../../Redux/actions/authActions'
 import Header from '../Header/Header'
 import axios from 'axios'
+import Footer from '../Header/Footer'
 
 const title = "Error"
 const desc = 'Please Enter Email and Password!'
@@ -177,37 +178,8 @@ class Login extends React.Component {
           </div>
 
         </div>
-        <footer>
-          <div className="wrapper">
-            <div className="sec-padding">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="footer-list">
-                    <h5 className="fc-white">Your Logo Here</h5>
-                    <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
-                         involve strict requirements as to the service quality as well as legal requirements.
-                            </p>
-                    <ul>
-
-                      {/* <li><a href="#">Our Plain</a></li>
-                                                    <li><a href="#">Pricing</a></li> */}
-                      <li><a href="#">Contact Us</a></li>
-                      <li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
-
-                    </ul>
-                    <span className="footer-social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-instagram"></i></a>
-                      <a href="#"><i className="fa fa-linkedin"></i></a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+        <Footer {...this.props} />
+        </div>
     );
   }
 }
