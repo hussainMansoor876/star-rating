@@ -3,6 +3,8 @@ import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './Search.css'
 import Header from '../Header/Header'
+import Footer from '../Header/Footer'
+
 
 class Search extends React.Component {
 
@@ -18,6 +20,7 @@ class Search extends React.Component {
     return (
       <div>
         <Header {...this.props} />
+        <Footer {...this.props} />
       </div>
     )
   }
