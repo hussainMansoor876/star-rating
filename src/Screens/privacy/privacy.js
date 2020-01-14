@@ -139,8 +139,6 @@ class Privacy extends React.Component {
                     </div>
                     <Footer {...this.props} />
                 </section>
-
-
             </div>
         )
     }
