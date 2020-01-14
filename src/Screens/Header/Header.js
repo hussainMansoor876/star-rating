@@ -69,7 +69,7 @@ class Navbar extends Component {
 
   logout() {
     setTimeout(() => {
-      this.props.history.push('/login', {reload: true})
+      this.props.history.push('/login', { reload: true })
     }, 100)
   }
 
@@ -193,6 +193,9 @@ class Navbar extends Component {
                           }
                           return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
                         })}
+                        {
+                          location.pathname === '/profile' && <li><Link to='/createcompany' className='nav-login' >Create Company</Link></li>
+                        }
                         <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                       </ul> : <ul>
                           <li className='mobile-form'>
