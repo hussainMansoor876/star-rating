@@ -3,10 +3,11 @@ import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './Contact.css'
 import Header from '../Header/Header'
+import Footer from '../Header/Footer'
 
 class Contact extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
 
@@ -32,22 +33,22 @@ class Contact extends React.Component {
         </section>
 
         <section id="contact">
-        <div className="wrapper">
+          <div className="wrapper">
             <div className="sec-padding">
               <div className="row">
                 <div className="col-md-6">
                   <div className="contact-content">
-                  <h1 className="ff-secondary fc-blue">We are here for you – <br /><span>contact us!</span></h1>
-                  <p className="ff-primary">Defective deliveries or unreceived, returned goods: when shopping online, it might happen that something goes wrong.</p>
-                  <p className="ff-primary">But you don’t need to worry:<br />
-                          the Trusted Shops service deals with it for you.</p>
-                  <button className="btn-blue ff-primary">Contact Us</button>
+                    <h1 className="ff-secondary fc-blue">We are here for you – <br /><span>contact us!</span></h1>
+                    <p className="ff-primary">Defective deliveries or unreceived, returned goods: when shopping online, it might happen that something goes wrong.</p>
+                    <p className="ff-primary">But you don’t need to worry:<br />
+                      the Trusted Shops service deals with it for you.</p>
+                    <button className="btn-blue ff-primary">Contact Us</button>
                   </div>
                 </div>
                 <div className="col-md-6 relative-block">
-                    <div className="contact-woman">
+                  <div className="contact-woman">
 
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -55,17 +56,17 @@ class Contact extends React.Component {
         </section>
 
 
-        <section id="contact-form"> 
+        <section id="contact-form">
           <div className="wrapper">
             <div className="sec-padding">
               <div className="forms">
-                  <div className="row">  
+                <div className="row">
                   <div className="col-md-12">
-                      <div className="form-heading">
-                        <h1 className="ff-primary fc-blue">Your information</h1>
-                      </div>
-                    </div>  
-                    {/* <div className="col-md-6">
+                    <div className="form-heading">
+                      <h1 className="ff-primary fc-blue">Your information</h1>
+                    </div>
+                  </div>
+                  {/* <div className="col-md-6">
                       <div className="contact-address">
                           <div className="details">
                             <div className="row">
@@ -120,61 +121,30 @@ class Contact extends React.Component {
 
                       </div>
                     </div> */}
-                    <div className="col-md-12">
-                      <div className="forms-content">
+                  <div className="col-md-12">
+                    <div className="forms-content">
                       <form>
-                      
-                          <input type="name" placeholder="First Name" />
-                          <input type="name" placeholder="Last Name" />
-                          <input type="email" placeholder="your-E-mail" />
-                          <input type="phone" placeholder="Your Number" />
-                        
-                    </form>
-                      </div>
-                      <div className="form-btn">
-                          <button className="btn-blue ff-primary">
-                              Send
+
+                        <input type="name" placeholder="First Name" />
+                        <input type="name" placeholder="Last Name" />
+                        <input type="email" placeholder="your-E-mail" />
+                        <input type="phone" placeholder="Your Number" />
+
+                      </form>
+                    </div>
+                    <div className="form-btn">
+                      <button className="btn-blue ff-primary">
+                        Send
                           </button>
-                      </div>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
 
           </div>
         </section>
-
-        <footer>
-        <div className="wrapper">
-            <div className="sec-padding">
-              <div className="row">
-                  <div className="col-md-12">
-                      <div className="footer-list">
-                      <h5 className="fc-white">Your Logo Here</h5>
-                      <p className="fc-white ff-primary">Online shops are checked for compliance with the Trusted Shops quality criteria before they are awarded the trustmark that they can then display on their website. Our quality criteria
-                           involve strict requirements as to the service quality as well as legal requirements.
-                            </p>
-                            <ul>
-                                                    
-                                                    {/* <li><a href="#">Our Plain</a></li>
-                                                    <li><a href="#">Pricing</a></li> */}
-                                                    <li><a href="#">Contact Us</a></li>
-                                                    <li><a href="http://localhost:3000/privacy">Privacy Policy</a></li>
-                                    
-                                                    </ul>
-                        <span className="footer-social">
-                          <a href="#"><i className="fa fa-facebook"></i></a>
-                          <a href="#"><i className="fa fa-twitter"></i></a>
-                          <a href="#"><i className="fa fa-instagram"></i></a>
-                          <a href="#"><i className="fa fa-linkedin"></i></a>
-                        </span>
-                      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-        </footer>
-
+        <Footer {...this.props} />
       </div>
     )
   }
