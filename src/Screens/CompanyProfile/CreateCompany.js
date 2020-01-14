@@ -5,9 +5,11 @@ import './CompanyProfile.css'
 import Header from '../Header/Header'
 import axios from 'axios'
 import validator from 'validator'
-import { Form, Icon, Input, Button, Upload, notification } from 'antd';
+import { Form, Icon, Input, Button, Upload, notification, Select } from 'antd';
 import { Link } from 'react-router-dom'
 import Footer from '../Header/Footer'
+
+const { Option } = Select;
 
 
 const title = "Error"
@@ -37,27 +39,29 @@ class CreateCompany extends React.Component {
 
 		this.props.form.validateFields((err, values) => {
 
-			if (!validator.isEmail(values.email)) {
-				return this.openNotification("Email", "Invalid Email", 'close-circle', 'red')
-			}
-			else if (values.password.length < 6) {
-				return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
-			}
+			console.log('values', values)
 
-			this.setState({ loading: true, disable: true })
-			axios.post('https://star-rating123.herokuapp.com/user/login', values)
-				.then((result) => {
-					if (result.data.success) {
-						this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
-						this.props.loginUser(result.data.user)
-						this.props.history.push('/')
-					}
-					else {
-						this.setState({ loading: false, disable: false })
-						this.openNotification(title, result.data.message, 'close-circle', 'red')
-						// this.setState({ disable: false })
-					}
-				})
+			// if (!validator.isEmail(values.email)) {
+			// 	return this.openNotification("Email", "Invalid Email", 'close-circle', 'red')
+			// }
+			// else if (values.password.length < 6) {
+			// 	return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
+			// }
+
+			// this.setState({ loading: true, disable: true })
+			// axios.post('https://star-rating123.herokuapp.com/user/login', values)
+			// 	.then((result) => {
+			// 		if (result.data.success) {
+			// 			this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
+			// 			this.props.loginUser(result.data.user)
+			// 			this.props.history.push('/')
+			// 		}
+			// 		else {
+			// 			this.setState({ loading: false, disable: false })
+			// 			this.openNotification(title, result.data.message, 'close-circle', 'red')
+			// 			// this.setState({ disable: false })
+			// 		}
+			// 	})
 
 		});
 
@@ -187,16 +191,29 @@ class CreateCompany extends React.Component {
 												{getFieldDecorator('select', {
 													rules: [{ required: true, message: 'Please Select Your Country!' }],
 												})(
-													<select>
-														<option value="Select Your Country">Select Your Country</option>
-														<option value="Pakistan">Pakistan</option>
-														<option value="Saudia Arabia">Saudia Arabia</option>
-														<option value="United States">United States</option>
-														<option value="United Kingdom">United Kingdom</option>
-														<option value="Sirilanka">Sirilanka</option>
-														<option value="Austrailia">Austrailia</option>
-														<option value="France">France</option>
-													</select>,
+													<Select
+														showSearch
+														// style={{ width: 200 }}
+														placeholder="Select a person"
+														optionFilterProp="children"
+														filterOption={(input, option) =>
+															option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+														}
+													>
+														<Option value="jack">Jack</Option>
+														<Option value="lucy">Lucy</Option>
+														<Option value="tom">Tom</Option>
+													</Select>,
+													// <select>
+													// 	<option value="Select Your Country">Select Your Country</option>
+													// 	<option value="Pakistan">Pakistan</option>
+													// 	<option value="Saudia Arabia">Saudia Arabia</option>
+													// 	<option value="United States">United States</option>
+													// 	<option value="United Kingdom">United Kingdom</option>
+													// 	<option value="Sirilanka">Sirilanka</option>
+													// 	<option value="Austrailia">Austrailia</option>
+													// 	<option value="France">France</option>
+													// </select>,
 												)}
 											</Form.Item>
 
@@ -211,7 +228,7 @@ class CreateCompany extends React.Component {
 													<Upload name="logo" accept="image/*" disabled={this.state.disable}>
 														<Button disabled={this.state.disableUpload}>
 															<Icon type="upload" /> Click to upload Image
-                    </Button>
+                    									</Button>
 													</Upload>,
 												)}
 											</Form.Item>
