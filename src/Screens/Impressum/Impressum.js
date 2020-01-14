@@ -3,6 +3,7 @@ import { loginUser } from '../../Redux/actions/authActions'
 import { connect } from 'react-redux';
 import './Impressum.css'
 import Header from '../Header/Header'
+import Footer from '../Header/Footer'
 
 class Impressum extends React.Component {
 
@@ -18,6 +19,7 @@ class Impressum extends React.Component {
     return (
       <div>
         <Header {...this.props} />
+        <Footer {...this.props} />
       </div>
     )
   }
