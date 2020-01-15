@@ -6,12 +6,15 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { store, persistor } from "./Redux/store";
 import { PersistGate } from 'redux-persist/integration/react'
+import { StripeProvider } from 'react-stripe-elements'
 
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <App />
+      <StripeProvider apiKey="pk_test_12345">
+        <App />
+      </StripeProvider>
     </PersistGate>
   </Provider>,
   document.getElementById("root")
