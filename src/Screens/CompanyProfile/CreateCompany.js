@@ -9,6 +9,7 @@ import { Form, Icon, Input, Button, Upload, notification, Select } from 'antd';
 import { Link } from 'react-router-dom'
 import Footer from '../Header/Footer'
 import data from '../../country'
+import Plan from '../Plan/Plan'
 
 const { Option } = Select;
 
@@ -53,6 +54,7 @@ class CreateCompany extends React.Component {
 
 	handleSubmit = e => {
 		const { city } = this.state
+		const { user } = this.props
 		e.preventDefault();
 
 		this.props.form.validateFields((err, values) => {
@@ -101,6 +103,7 @@ class CreateCompany extends React.Component {
 				formData.append('country', values.country)
 				formData.append('city', city[values.city])
 				formData.append('description', values.description)
+				formData.append('user', JSON.stringify(user))
 
 
 				axios.post('http://localhost:5001/user/createCompany', formData)
@@ -128,6 +131,9 @@ class CreateCompany extends React.Component {
 		const { getFieldDecorator } = this.props.form;
 		const { user } = this.props
 		const { city } = this.state
+		if(!user.buyPlan){
+			return <
+		}
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
