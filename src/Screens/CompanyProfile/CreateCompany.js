@@ -71,8 +71,12 @@ class CreateCompany extends React.Component {
 					return this.openNotification("Problem", "Descrription Must be Atleast 10 Numbers", 'close-circle', 'red')
 				}
 
+				values.user = this.props.user
+				values.profilePic = values.profilePic[0].originFileObj
 				this.setState({ loading: true, disable: true })
-				axios.post('https://star-rating123.herokuapp.com/user/login', values)
+				var formData = new FormData();
+				formData.append('data', values)
+				axios.post('https://star-rating123.herokuapp.com/user/login', formData)
 					.then((result) => {
 						if (result.data.success) {
 							this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
@@ -94,6 +98,7 @@ class CreateCompany extends React.Component {
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
+		const { user } = this.props
 		const { city } = this.state
 		return (
 			<div className="main-body">
@@ -222,7 +227,7 @@ class CreateCompany extends React.Component {
 														style={{ backgroundColor: '#fff' }}
 														placeholder="Select a Country"
 														optionFilterProp="children"
-														onSelect={(e) => this.setState({city: data[e]})}
+														onSelect={(e) => this.setState({ city: data[e] })}
 														filterOption={(input, option) =>
 															option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 														}

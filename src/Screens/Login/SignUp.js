@@ -82,8 +82,6 @@ class Signup extends React.Component {
         formData.append('email', values.email)
         formData.append('password', values.password)
         formData.append('upload', values.upload[0].originFileObj)
-        console.log("cons", formData)
-        console.log(values)
         axios.post('https://star-rating123.herokuapp.com/user/signup', formData)
           .then((result) => {
             console.log(result)
