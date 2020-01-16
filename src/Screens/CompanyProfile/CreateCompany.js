@@ -106,19 +106,18 @@ class CreateCompany extends React.Component {
 				formData.append('user', JSON.stringify(user))
 
 
-				axios.post('http://localhost:5001/user/createCompany', formData)
+				axios.post('https://star-rating123.herokuapp.com/user/createCompany', formData)
 					.then((result) => {
-						console.log(result)
-						// if (result.data.success) {
-						// 	this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
-						// 	this.props.loginUser(result.data.user)
-						// 	this.props.history.push('/')
-						// }
-						// else {
-						// 	this.setState({ loading: false, disable: false })
-						// 	this.openNotification(title, result.data.message, 'close-circle', 'red')
-						// 	// this.setState({ disable: false })
-						// }
+						if (result.data.success) {
+							this.openNotification('Success', 'Successfully Created Company!!!', 'check')
+							// this.props.loginUser(result.data.user)
+							this.props.history.push('/profile')
+						}
+						else {
+							this.setState({ loading: false, disable: false })
+							this.openNotification(title, result.data.message, 'close-circle', 'red')
+							// this.setState({ disable: false })
+						}
 					})
 			}
 
