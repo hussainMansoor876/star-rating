@@ -64,7 +64,7 @@ class Search extends React.Component {
                         token={(e) => this.handleToken(e)}
                         billingAddress
                         shippingAddress
-                        amount={24.90}
+                        amount={24.90 * 100}
                         >
                         <button className="ff-primary">Join Now</button>
                         </StripeCheckout>
@@ -97,7 +97,15 @@ class Search extends React.Component {
                       </div>
 
                       <div className="price-btn">
+                        <StripeCheckout
+                        stripeKey="pk_test_Lh2CKCRHvCf7KgPVftBL7tu900oQMdN2v5"
+                        token={(e) => this.handleToken(e)}
+                        billingAddress
+                        shippingAddress
+                        amount={240 * 100}
+                        >
                         <button className="ff-primary">Join Now</button>
+                        </StripeCheckout>
                       </div>
                       <div className="price-list">
                         <ul>
