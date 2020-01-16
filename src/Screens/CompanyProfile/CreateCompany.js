@@ -39,8 +39,6 @@ class CreateCompany extends React.Component {
 		e.preventDefault();
 
 		this.props.form.validateFields((err, values) => {
-
-			console.log('values', values)
 			if (!err) {
 				if (values.name.length <= 3) {
 					return this.openNotification("Problem", "Name Must be ATleast 4 characters", 'close-circle', 'red')
@@ -59,6 +57,12 @@ class CreateCompany extends React.Component {
 				}
 				else if (values.address.length < 10) {
 					return this.openNotification("Problem", "Address Must be Atleast 10 Numbers", 'close-circle', 'red')
+				}
+				else if (values.address.country < 10) {
+					return this.openNotification("Problem", "Please Select a Country", 'close-circle', 'red')
+				}
+				else if (values.address.city < 10) {
+					return this.openNotification("Problem", "Please Select a City", 'close-circle', 'red')
 				}
 				else if (!values.profilePic) {
 					return this.openNotification("Picture", "Please Upload the picture", 'close-circle', 'red')
