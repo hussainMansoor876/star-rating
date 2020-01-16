@@ -126,14 +126,18 @@ class CreateCompany extends React.Component {
 
 	};
 
+	componentDidMount(){
+		const { user } = this.props
+		if(!user.buyPlan){
+			this.props.history.push('/plan')
+		}
+	}
+
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
-		const { user } = this.props
 		const { city } = this.state
-		if(!user.buyPlan){
-			return <Plan {...this.props} />
-		}
+		
 		return (
 			<div className="main-body">
 				<Header {...this.props} />

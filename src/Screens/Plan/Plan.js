@@ -40,99 +40,69 @@ class Search extends React.Component {
               <div className="row">
                 <div className="col-md-12">
                   <div className="price-heading">
-                    <h1 className="ff-secondary fc-blue">MOST POPULAR</h1>
+                    <h1 className="ff-secondary fc-blue">SELECT PLAN</h1>
                   </div>
                 </div>
-                <div className="col-lg-4 col-md-6">
-                  <div className="price-description">
-                    <div className="price-detail bg-primary">
-                      <i class="fa fa-home fc-white"></i>
-                      <h4 className="ff-secondary fc-white"> BASIC</h4>
-                      <h5 className="ff-secondary fc-white">$ 24.90<span>/m</span></h5>
-                      <p className="ff-primary fc-white">you save $ 60 per year</p>
-                    </div>
+                  <div className="col-lg-6 col-md-6">
+                    <div className="price-description">
+                      <div className="price-detail bg-primary">
+                        <i class="fa fa-home fc-white"></i>
+                        <h4 className="ff-secondary fc-white"> MONTHLY</h4>
+                        <h5 className="ff-secondary fc-white">$ 24.90<span>/m</span></h5>
+                        <p className="ff-primary fc-white">Monhtly Plan</p>
+                      </div>
 
-                    <div className="price-btn">
-                      <button className="ff-primary">Join Now</button>
-                    </div>
-                    <div className="price-list">
-                      <ul>
-                        <li>50</li>
-                        <li>25</li>
-                        <li>3 platforms</li>
-                        <li>-</li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
+                      <div className="price-btn">
+                        <button className="ff-primary">Join Now</button>
+                      </div>
+                      <div className="price-list">
+                        <ul>
+                          <li>50</li>
+                          <li>25</li>
+                          <li>3 platforms</li>
+                          <li>-</li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                        </ul>
+                      </div>
 
+                    </div>
                   </div>
-                </div>
 
-                <div className="col-lg-4 col-md-6">
-                  <div className="price-description mb-o">
-                    <div className="price-detail bg-primary">
-                      <i class="fa fa-home fc-white"></i>
-                      <h4 className="ff-secondary fc-white"> PLUS</h4>
-                      <h5 className="ff-secondary fc-white">$ 39.90<span>/m</span></h5>
-                      <p className="ff-primary fc-white">you save $ 120 per year</p>
-                    </div>
+                  <div className="col-lg-6 col-md-6">
+                    <div className="price-description mb-o">
+                      <div className="price-detail bg-primary">
+                        <i class="fa fa-home fc-white"></i>
+                        <h4 className="ff-secondary fc-white"> PLUS</h4>
+                        <h5 className="ff-secondary fc-white">$ 240<span>/m</span></h5>
+                        <p className="ff-primary fc-white">you save $ 120 per year</p>
+                      </div>
 
-                    <div className="price-btn">
-                      <button className="ff-primary">Join Now</button>
-                    </div>
-                    <div className="price-list">
-                      <ul>
-                        <li>250</li>
-                        <li>50</li>
-                        <li>5 platforms</li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
+                      <div className="price-btn">
+                        <button className="ff-primary">Join Now</button>
+                      </div>
+                      <div className="price-list">
+                        <ul>
+                          <li>250</li>
+                          <li>50</li>
+                          <li>5 platforms</li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                          <li><i class="fa fa-check"></i></li>
+                        </ul>
+                      </div>
 
+                    </div>
                   </div>
-                </div>
 
-
-                <div className="col-lg-4 col-md-6">
-                  <div className="price-description mb-o">
-                    <div className="price-detail bg-primary">
-                      <i class="fa fa-home fc-white"></i>
-                      <h4 className="ff-secondary fc-white">PREMIUM</h4>
-                      <h5 className="ff-secondary fc-white">$ 79.90<span>/m</span></h5>
-                      <p className="ff-primary fc-white">you save $ 60 per year</p>
-                    </div>
-
-                    <div className="price-btn">
-                      <button className="ff-primary">Join Now</button>
-                    </div>
-                    <div className="price-list">
-                      <ul>
-                        <li>Unlimited</li>
-                        <li>Unlimited</li>
-                        <li>Unlimited</li>
-                        <li>Unlimited</li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
-
-                  </div>
-                </div>
 
               </div>
 
