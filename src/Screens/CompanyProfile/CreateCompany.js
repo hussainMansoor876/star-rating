@@ -22,7 +22,8 @@ class CreateCompany extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			city: []
+			city: [],
+			disableUpload: false
 		}
 	}
 
@@ -34,8 +35,24 @@ class CreateCompany extends React.Component {
 		});
 	};
 
+	normFile = e => {
+		this.setState({ disableUpload: false })
+		if (e.file.type.indexOf('image')) {
+			this.openNotification(title, 'Please Upload an Image', 'close-circle', 'red')
+			return
+		}
+		if (Array.isArray(e)) {
+			return e;
+		}
+		if (e.fileList.length) {
+			this.setState({ disableUpload: true })
+		}
+		return e && e.fileList;
+	}
+
 
 	handleSubmit = e => {
+		const { city } = this.state
 		e.preventDefault();
 
 		this.props.form.validateFields((err, values) => {
@@ -44,7 +61,7 @@ class CreateCompany extends React.Component {
 					return this.openNotification("Problem", "Name Must be ATleast 4 characters", 'close-circle', 'red')
 				}
 				else if (!validator.isURL(values.url)) {
-					return this.openNotification("Email", "Invalid Url", 'close-circle', 'red')
+					return this.openNotification("Problem", "Invalid Url", 'close-circle', 'red')
 				}
 				else if (values.telnumber.length < 10) {
 					return this.openNotification("Problem", "Telephone Number be Atleast 10 Numbers", 'close-circle', 'red')
@@ -53,41 +70,52 @@ class CreateCompany extends React.Component {
 					return this.openNotification("Problem", "Contact Number be Atleast 10 Numbers", 'close-circle', 'red')
 				}
 				else if (!validator.isEmail(values.contactEmail)) {
-					return this.openNotification("Email", "Invalid Email", 'close-circle', 'red')
+					return this.openNotification("Problem", "Invalid Email", 'close-circle', 'red')
 				}
 				else if (values.address.length < 10) {
 					return this.openNotification("Problem", "Address Must be Atleast 10 Numbers", 'close-circle', 'red')
 				}
-				else if (values.address.country < 10) {
+				else if (!values.country) {
 					return this.openNotification("Problem", "Please Select a Country", 'close-circle', 'red')
 				}
-				else if (values.address.city < 10) {
+				else if (!values.city) {
 					return this.openNotification("Problem", "Please Select a City", 'close-circle', 'red')
 				}
 				else if (!values.profilePic) {
-					return this.openNotification("Picture", "Please Upload the picture", 'close-circle', 'red')
+					return this.openNotification("Problem", "Please Upload the picture", 'close-circle', 'red')
 				}
 				else if (values.description.length < 10) {
 					return this.openNotification("Problem", "Descrription Must be Atleast 10 Numbers", 'close-circle', 'red')
 				}
 
 				values.user = this.props.user
-				values.profilePic = values.profilePic[0].originFileObj
 				this.setState({ loading: true, disable: true })
 				var formData = new FormData();
-				formData.append('data', values)
-				axios.post('https://star-rating123.herokuapp.com/user/login', formData)
+				formData.append('profilePic', values.profilePic[0].originFileObj)
+				formData.append('name', values.name)
+				formData.append('url', values.url)
+				formData.append('telnumber', values.telnumber)
+				formData.append('contactNo', values.contactNo)
+				formData.append('contactEmail', values.contactEmail)
+				formData.append('address', values.address)
+				formData.append('country', values.country)
+				formData.append('city', city[values.city])
+				formData.append('description', values.description)
+
+
+				axios.post('http://localhost:5001/user/createCompany', formData)
 					.then((result) => {
-						if (result.data.success) {
-							this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
-							this.props.loginUser(result.data.user)
-							this.props.history.push('/')
-						}
-						else {
-							this.setState({ loading: false, disable: false })
-							this.openNotification(title, result.data.message, 'close-circle', 'red')
-							// this.setState({ disable: false })
-						}
+						console.log(result)
+						// if (result.data.success) {
+						// 	this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
+						// 	this.props.loginUser(result.data.user)
+						// 	this.props.history.push('/')
+						// }
+						// else {
+						// 	this.setState({ loading: false, disable: false })
+						// 	this.openNotification(title, result.data.message, 'close-circle', 'red')
+						// 	// this.setState({ disable: false })
+						// }
 					})
 			}
 
@@ -249,10 +277,9 @@ class CreateCompany extends React.Component {
 													rules: [{ required: true, message: 'Please Select Your City!' }],
 												})(
 													<Select
-														// showSearch
+														showSearch
 														style={{ backgroundColor: '#fff' }}
 														placeholder="Select a city"
-														// disabled={true}
 														optionFilterProp="children"
 														onSelect={(e) => console.log(e)}
 														filterOption={(input, option) =>
