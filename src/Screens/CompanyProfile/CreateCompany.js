@@ -22,7 +22,7 @@ class CreateCompany extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-
+			city: []
 		}
 	}
 
@@ -90,6 +90,7 @@ class CreateCompany extends React.Component {
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
+		const { city } = this.state
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
@@ -215,16 +216,16 @@ class CreateCompany extends React.Component {
 														showSearch
 														// style={{ width: 200 }}
 														style={{ backgroundColor: '#fff' }}
-														placeholder="Select a person"
+														placeholder="Select a Country"
 														optionFilterProp="children"
-														onSelect={(e) => console.log(e)}
+														onSelect={(e) => this.setState({city: data[e]})}
 														filterOption={(input, option) =>
 															option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 														}
 													>
 														{
-															Object.keys(data).map((key, i) => {
-															return <Option value={key}>{key}</Option>
+															Object.keys(data).map((v, i) => {
+																return <Option value={v} key={i}>{v}</Option>
 															})
 														}
 													</Select>,
@@ -233,6 +234,33 @@ class CreateCompany extends React.Component {
 
 										</div>
 										<div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+											<label>City:</label>
+											<Form.Item className="sign-up">
+												{getFieldDecorator('city', {
+													rules: [{ required: true, message: 'Please Select Your City!' }],
+												})(
+													<Select
+														// showSearch
+														style={{ backgroundColor: '#fff' }}
+														placeholder="Select a city"
+														// disabled={true}
+														optionFilterProp="children"
+														onSelect={(e) => console.log(e)}
+														filterOption={(input, option) =>
+															option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+														}
+													>
+														{
+															city.map((v, i) => {
+																return <Option city={v} key={i}>{v}</Option>
+															})
+														}
+													</Select>,
+												)}
+											</Form.Item>
+
+										</div>
+										<div className="col-md-12">
 											<label>Upload Your Logo</label>
 											<Form.Item className="sign-up">
 												{getFieldDecorator('profilePic', {
