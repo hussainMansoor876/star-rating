@@ -8,6 +8,7 @@ import validator from 'validator'
 import { Form, Icon, Input, Button, Upload, notification, Select } from 'antd';
 import { Link } from 'react-router-dom'
 import Footer from '../Header/Footer'
+import data from '../../country'
 
 const { Option } = Select;
 
@@ -40,28 +41,47 @@ class CreateCompany extends React.Component {
 		this.props.form.validateFields((err, values) => {
 
 			console.log('values', values)
+			if (!err) {
+				if (values.name.length <= 3) {
+					return this.openNotification("Problem", "Name Must be ATleast 4 characters", 'close-circle', 'red')
+				}
+				else if (!validator.isURL(values.url)) {
+					return this.openNotification("Email", "Invalid Url", 'close-circle', 'red')
+				}
+				else if (values.telnumber.length < 10) {
+					return this.openNotification("Problem", "Telephone Number be Atleast 10 Numbers", 'close-circle', 'red')
+				}
+				else if (values.contactNo.length < 10) {
+					return this.openNotification("Problem", "Contact Number be Atleast 10 Numbers", 'close-circle', 'red')
+				}
+				else if (!validator.isEmail(values.contactEmail)) {
+					return this.openNotification("Email", "Invalid Email", 'close-circle', 'red')
+				}
+				else if (values.address.length < 10) {
+					return this.openNotification("Problem", "Address Must be Atleast 10 Numbers", 'close-circle', 'red')
+				}
+				else if (!values.profilePic) {
+					return this.openNotification("Picture", "Please Upload the picture", 'close-circle', 'red')
+				}
+				else if (values.description.length < 10) {
+					return this.openNotification("Problem", "Descrription Must be Atleast 10 Numbers", 'close-circle', 'red')
+				}
 
-			// if (!validator.isEmail(values.email)) {
-			// 	return this.openNotification("Email", "Invalid Email", 'close-circle', 'red')
-			// }
-			// else if (values.password.length < 6) {
-			// 	return this.openNotification("Password", "Password must be Atleast 6 Digits", 'close-circle', 'red')
-			// }
-
-			// this.setState({ loading: true, disable: true })
-			// axios.post('https://star-rating123.herokuapp.com/user/login', values)
-			// 	.then((result) => {
-			// 		if (result.data.success) {
-			// 			this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
-			// 			this.props.loginUser(result.data.user)
-			// 			this.props.history.push('/')
-			// 		}
-			// 		else {
-			// 			this.setState({ loading: false, disable: false })
-			// 			this.openNotification(title, result.data.message, 'close-circle', 'red')
-			// 			// this.setState({ disable: false })
-			// 		}
-			// 	})
+				this.setState({ loading: true, disable: true })
+				axios.post('https://star-rating123.herokuapp.com/user/login', values)
+					.then((result) => {
+						if (result.data.success) {
+							this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
+							this.props.loginUser(result.data.user)
+							this.props.history.push('/')
+						}
+						else {
+							this.setState({ loading: false, disable: false })
+							this.openNotification(title, result.data.message, 'close-circle', 'red')
+							// this.setState({ disable: false })
+						}
+					})
+			}
 
 		});
 
@@ -141,7 +161,7 @@ class CreateCompany extends React.Component {
 										<div class="col-md-6 col-sm-6 col-xs-12">
 											<label>Mobile Number:</label>
 											<Form.Item className="sign-up">
-												{getFieldDecorator('mobnimber', {
+												{getFieldDecorator('contactNo', {
 													rules: [{ required: true, message: 'Please input your Mob Number!' }],
 												})(
 													<Input
@@ -156,7 +176,7 @@ class CreateCompany extends React.Component {
 										<div className="col-md-6 col-sm-6 col-xs-12">
 											<label>Email:</label>
 											<Form.Item className="sign-up">
-												{getFieldDecorator('email', {
+												{getFieldDecorator('contactEmail', {
 													rules: [{ required: true, message: 'Please input your Email!' }],
 												})(
 													<Input
@@ -188,32 +208,26 @@ class CreateCompany extends React.Component {
 										<div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 											<label>Country:</label>
 											<Form.Item className="sign-up">
-												{getFieldDecorator('select', {
+												{getFieldDecorator('country', {
 													rules: [{ required: true, message: 'Please Select Your Country!' }],
 												})(
 													<Select
 														showSearch
 														// style={{ width: 200 }}
+														style={{ backgroundColor: '#fff' }}
 														placeholder="Select a person"
 														optionFilterProp="children"
+														onSelect={(e) => console.log(e)}
 														filterOption={(input, option) =>
 															option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 														}
 													>
-														<Option value="jack">Jack</Option>
-														<Option value="lucy">Lucy</Option>
-														<Option value="tom">Tom</Option>
+														{
+															Object.keys(data).map((key, i) => {
+															return <Option value={key}>{key}</Option>
+															})
+														}
 													</Select>,
-													// <select>
-													// 	<option value="Select Your Country">Select Your Country</option>
-													// 	<option value="Pakistan">Pakistan</option>
-													// 	<option value="Saudia Arabia">Saudia Arabia</option>
-													// 	<option value="United States">United States</option>
-													// 	<option value="United Kingdom">United Kingdom</option>
-													// 	<option value="Sirilanka">Sirilanka</option>
-													// 	<option value="Austrailia">Austrailia</option>
-													// 	<option value="France">France</option>
-													// </select>,
 												)}
 											</Form.Item>
 
@@ -221,7 +235,7 @@ class CreateCompany extends React.Component {
 										<div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 											<label>Upload Your Logo</label>
 											<Form.Item className="sign-up">
-												{getFieldDecorator('upload', {
+												{getFieldDecorator('profilePic', {
 													valuePropName: 'fileList',
 													getValueFromEvent: this.normFile,
 												})(
