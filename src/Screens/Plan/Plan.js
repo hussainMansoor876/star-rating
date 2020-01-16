@@ -17,6 +17,11 @@ class Search extends React.Component {
   }
 
 
+  handleToken(token){
+    console.log(token)
+  }
+
+
   render() {
     return (
       <div className="main-body">
@@ -54,8 +59,12 @@ class Search extends React.Component {
                       </div>
 
                       <div className="price-btn">
-                        <StripeCheckout />
+                        <StripeCheckout
+                        stripeKey="pk_test_Lh2CKCRHvCf7KgPVftBL7tu900oQMdN2v5"
+                        token={(e) => this.handleToken(e)}
+                        >
                         <button className="ff-primary">Join Now</button>
+                        </StripeCheckout>
                       </div>
                       <div className="price-list">
                         <ul>
