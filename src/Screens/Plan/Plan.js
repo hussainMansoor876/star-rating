@@ -62,6 +62,9 @@ class Search extends React.Component {
                         <StripeCheckout
                         stripeKey="pk_test_Lh2CKCRHvCf7KgPVftBL7tu900oQMdN2v5"
                         token={(e) => this.handleToken(e)}
+                        billingAddress
+                        shippingAddress
+                        amount={24.90}
                         >
                         <button className="ff-primary">Join Now</button>
                         </StripeCheckout>
