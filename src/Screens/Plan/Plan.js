@@ -43,38 +43,7 @@ class Search extends React.Component {
                     <h1 className="ff-secondary fc-blue">MOST POPULAR</h1>
                   </div>
                 </div>
-
-                <div className="col-lg-3 col-md-6">
-                  <div className="price-description">
-                    <div className="price-detail bg-primary">
-                      <i class="fa fa-user fc-white"></i>
-                      <h4 className="ff-secondary fc-white">FREE</h4>
-                      <h5 className="ff-secondary fc-white">$ 00.00<span>/m</span></h5>
-                      <p className="ff-primary fc-white">NOW</p>
-                    </div>
-
-                    <div className="price-btn">
-                      <button className="ff-primary">Join Now</button>
-                    </div>
-                    <div className="price-list">
-                      <ul>
-                        <li>10</li>
-                        <li>5</li>
-                        <li>-</li>
-                        <li>-</li>
-                        <li>-</li>
-                        <li>-</li>
-                        <li>-</li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                        <li><i class="fa fa-check"></i></li>
-                      </ul>
-                    </div>
-
-                  </div>
-                </div>
-
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-4 col-md-6">
                   <div className="price-description">
                     <div className="price-detail bg-primary">
                       <i class="fa fa-home fc-white"></i>
@@ -104,7 +73,7 @@ class Search extends React.Component {
                   </div>
                 </div>
 
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-4 col-md-6">
                   <div className="price-description mb-o">
                     <div className="price-detail bg-primary">
                       <i class="fa fa-home fc-white"></i>
@@ -135,7 +104,7 @@ class Search extends React.Component {
                 </div>
 
 
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-4 col-md-6">
                   <div className="price-description mb-o">
                     <div className="price-detail bg-primary">
                       <i class="fa fa-home fc-white"></i>
