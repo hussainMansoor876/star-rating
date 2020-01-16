@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './Plan.css'
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
+import StripeCheckout from 'react-stripe-checkout'
 
 
 class Search extends React.Component {
@@ -53,6 +54,7 @@ class Search extends React.Component {
                       </div>
 
                       <div className="price-btn">
+                        <StripeCheckout />
                         <button className="ff-primary">Join Now</button>
                       </div>
                       <div className="price-list">
@@ -77,7 +79,7 @@ class Search extends React.Component {
                     <div className="price-description mb-o">
                       <div className="price-detail bg-primary">
                         <i class="fa fa-home fc-white"></i>
-                        <h4 className="ff-secondary fc-white"> PLUS</h4>
+                        <h4 className="ff-secondary fc-white">YEARLY</h4>
                         <h5 className="ff-secondary fc-white">$ 240<span>/m</span></h5>
                         <p className="ff-primary fc-white">you save $ 120 per year</p>
                       </div>
