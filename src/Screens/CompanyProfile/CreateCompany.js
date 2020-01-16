@@ -132,7 +132,7 @@ class CreateCompany extends React.Component {
 		const { user } = this.props
 		const { city } = this.state
 		if(!user.buyPlan){
-			return <
+			return <Plan {...this.props} />
 		}
 		return (
 			<div className="main-body">
