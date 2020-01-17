@@ -93,9 +93,10 @@ margin: 0 auto;
   border-radius: 3px 0 0 3px;
   background: #fff;
   border-right: transparent;
+  width: 36%;
 }
 .select-style {
-  width: 35px;
+  width: 100%;
   padding: 0;
   margin: 0;
   display: inline-block;
@@ -134,6 +135,11 @@ button.submit:hover{
     width: 100%;
     }
 }
+@media only screen and (max-width:640px){
+    .select-style select {
+      font-size: 12px;
+    }
+}
 
 /***************** SEARCH-FORM END ********************/
 
@@ -145,7 +151,7 @@ header{
   padding: 20px 0;
   z-index: 9999999;
   top:0;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   background: #fff;
   border-bottom: 2px solid #0c94ac;
@@ -472,6 +478,10 @@ header .nav-list ul .nav-signup:hover a::before {
     display: block;
     padding: 25px 0px;
     background: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    border-bottom: 2px solid #0c94ac;
   }
   .mobile-nav-btn {
     display: block;
@@ -530,10 +540,8 @@ header .nav-list ul .nav-signup:hover a::before {
   background-image: url('../../assets/img/banner.jpg');
   background-size: cover;
   position: relative;
-  /* position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: -99; */
+  margin-bottom: 60px;
+  top: 70px;
 }
 #banner::before{
   content: '';

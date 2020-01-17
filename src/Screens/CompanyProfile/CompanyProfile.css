@@ -27,6 +27,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-bottom: 60px;
+  top: 70px;
 }
 .inside-banner-image::before{
     content: '';
@@ -744,6 +746,8 @@
     background-size: 100% 100%;
     position: relative;
     background-attachment: fixed;
+    margin-bottom: 60px;
+    top: 70px;
   }
   #banner-6::before{
     content: '';

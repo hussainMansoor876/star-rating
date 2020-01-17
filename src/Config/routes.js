@@ -16,6 +16,7 @@ import ReviewerProfile from '../Screens/ReviewerProfile/ReviewerProfile'
 import Profile from '../Screens/Profile/Profile'
 import Search from '../Screens/Search/Search'
 import Privacy from '../Screens/privacy/privacy'
+import profilesearch from '../Screens/profile-search/profile-search'
 
 // import { loginUser } from '../Redux/actions/authActions'
 
@@ -77,6 +78,7 @@ class Routes extends Component {
                     <Route path="/profile" exact component={Profile} />
                     <Route path="/search" exact component={Search} />
                     <Route path="/privacy" exact component={Privacy} />
+                    <Route path="/profilesearch" exact component={profilesearch} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
                     {/* <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
                     <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/article" component={Article} /> */}

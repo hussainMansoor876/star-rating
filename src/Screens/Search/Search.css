@@ -1,0 +1,283 @@
+/**************** BANNER START ****************/
+
+
+#banner-7{
+  background-image: url('../../assets/img/company-search.jpg');
+  background-size: 100% 100%;
+  position: relative;
+  background-attachment: fixed;
+  margin-bottom: 60px;
+  top: 70px;
+}
+#banner-7::before{
+  content: '';
+  height: 100%;
+  position: absolute;
+  background: url('../../assets/img/bg-doted.png') rgba(0, 0, 0, 0.5);
+  width: 100%;
+
+}
+#banner-7 .va-middle {
+  vertical-align: middle;
+  height: 50vh;
+}
+#banner-7 .banner-content{
+  position: relative;
+  text-align: center;
+}
+#banner-7 .banner-content h2{
+  font-size: 60px;
+  color: #fff;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+#banner-7 .banner-content p{
+  font-size: 22px;
+}
+
+
+
+
+@media only screen and (max-width:1024px){
+  #banner-7 .banner-content h2 {
+    font-size: 50px;
+  }
+  #banner-7 .banner-content p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width:991px){
+  #banner-7 .va-middle {
+    height: 40vh;
+}
+}
+@media only screen and (max-width:768px){
+#banner-7 .banner-content h2 {
+  font-size: 40px;
+  }
+  #banner-7 .banner-content p {
+    font-size: 18px;
+    }
+}
+/* @media only screen and (max-width:640px){
+#banner-7 .va-middle {
+  height: 50vh;
+}
+} */
+@media only screen and (max-width:575px){
+
+  #banner-7 .banner-content h2 {
+    font-size: 30px;
+    }
+    #banner-7 .banner-content p {
+      font-size: 16px;
+      }
+  }
+
+  @media only screen and (max-width:460px){
+    #banner-7 {
+      background-size: 100% 55%;
+      background-repeat: no-repeat;
+    }
+    #banner-7 .banner-content h2 {
+      font-size: 25px;
+      }
+      #banner-7 .banner-content p {
+        font-size: 14px;
+        }
+  }
+/**************** BANNER END ****************/
+
+
+/********************** SEARCH COMPANY START *******************/
+/* .search-heading h2{
+  text-align: center;
+  margin: 0;
+  padding-bottom: 20px;
+}
+.search-heading h2 i{
+  color: #0c94ac;
+} */
+.search-box{
+  width: 80%;
+  margin: 30px auto;
+  box-shadow: 0 1px 6px rgb(12, 148, 172);
+  background: #fff;
+  border: 1px solid #0c94ac54;
+}
+.search-img{
+  text-align: center;
+
+  padding: 30px 0;
+}
+.search-b-right{
+  border-right: 2px solid #0c94ac54;
+}
+.search-img img{
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid #0c94ac;
+    width: 180px;
+    margin-bottom: 20px;
+}
+.search-img h5{
+  font-weight: 700;
+  font-size: 25px;
+  color: #000;
+}
+.search-content{
+  padding: 30px 15px 30px 0px;
+}
+.search-content h5{
+  /* text-decoration: underline; */
+  font-weight: 700;
+  font-size: 25px;
+  margin: 0 0 8px;
+  color: #000;
+}
+.search-content h6{
+  margin: 0 0 8px;
+  color: #000;
+}
+.search-content p{
+  margin: 0 0 5px;
+  color: #000;
+}
+.search-stars-icon i{
+  margin: 0 2px 8px;
+  font-size: 18px;
+}
+.search-company-contact h5{
+  margin: 0 0 5px;
+}
+.search-company-contact p{
+  color: #000;
+  margin: 0px 0 5px;
+}
+.search-company-time a button{
+  font-weight: bold;
+  background: #0c94ac;
+  border: 1px solid #0c94ac;
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.search-company-time a button:hover{
+  background: #fff;
+  color: #0c94ac;
+}
+
+.search-social-icon i{
+  margin: 0 2px;
+  font-size: 18px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+}
+.search-social-icon i.fa.fa-twitter {
+  background: #00acee;
+  color: #fff;
+}
+.search-social-icon i.fa.fa-linkedin {
+  background: #00acee;
+  color: #fff;
+}
+.search-social-icon i.fa.fa-instagram {
+  background: red;
+  color: #fff;
+}
+.search-social-icon i.fa.fa-facebook {
+  background: #3c5b9b;
+  color: #fff;
+}
+.search-company-time p span{
+  font-weight: 500;
+  margin-left: 15px;
+  color: #0c94ac;
+}
+
+@media only screen and (max-width:1360px){
+  .search-box {
+    width: 90%;
+  }
+}
+@media only screen and (max-width:1300px){
+  .search-box {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:1100px){
+  .search-company-time p span {
+    margin-left: 5px;
+    font-size: 12px;
+}
+.search-company-time p{
+  font-size: 13px;
+}
+}
+@media only screen and (max-width:991px){
+  .search-content h5 {
+    font-size: 16px;
+  }
+  .search-company-contact p{
+    font-size: 13px;
+  }
+  .search-content p{
+    font-size: 11px;
+  }
+  .search-company-time p span {
+    font-size: 11px;
+}
+}
+@media only screen and (max-width:768px){
+  .search-img img {
+    height: 120px;
+    width: 120px;
+    margin-left: 14px;
+}
+.search-img h5 {
+  font-size: 20px;
+  color: #000;
+}
+.search-img h6 {
+  font-size: 14px;
+}
+}
+
+@media only screen and (max-width:640px){
+  .search-img{
+    margin-left: 14px;
+  }
+  .search-img img{
+    margin-left: 0;
+  }
+.search-img h5 {
+  font-size: 16px;
+  color: #000;
+}
+.search-img h6 {
+  font-size: 14px;
+}
+}
+
+@media only screen and (max-width:575px){
+  .search-content {
+    padding: 0px 20px 30px;
+    text-align: center;
+}
+.search-img {
+  padding: 30px 0 20px;
+  margin-left: 0px;
+}
+.search-b-right {
+  border-right: none;
+}
+}
+/********************** SEARCH COMPANY END *******************/

@@ -108,9 +108,9 @@ class Navbar extends Component {
                       <div className="input-group-addon" id="order">
                         <div className="select-style">
                           <select name="order">
-                            <option value="" disabled>Select Your Type</option>
-                            <option defaultValue="a">A</option>
-                            <option value="b">B</option>
+                            <option value="select">Select</option>
+                            <option defaultValue="a" href="http://localhost:3000/search">Company Profile</option>
+                            <option value="b">User Profile</option>
                           </select>
                         </div>
                       </div>
@@ -176,9 +176,9 @@ class Navbar extends Component {
                               <div className="input-group-addon" id="order">
                                 <div className="select-style">
                                   <select name="order">
-                                    <option value="" disabled>Select Your Type</option>
-                                    <option defaultValue="a">A</option>
-                                    <option value="b">B</option>
+                                    <option value="select">Select</option>
+                                    <option defaultValue="a">Company Profile</option>
+                                    <option value="b">User Profile</option>
                                   </select>
                                 </div>
                               </div>
@@ -208,9 +208,9 @@ class Navbar extends Component {
                                 <div className="input-group-addon" id="order">
                                   <div className="select-style">
                                     <select name="order">
-                                      <option value="" disabled>Select Your Type</option>
-                                      <option defaultValue="a">A</option>
-                                      <option value="b">B</option>
+                                    <option value="select">Select</option>
+                                    <option defaultValue="a">Company Profile</option>
+                                    <option value="b">User Profile</option>
                                     </select>
                                   </div>
                                 </div>
