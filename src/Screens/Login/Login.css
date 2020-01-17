@@ -11,11 +11,17 @@
     padding: 5% 0 5%;
     background-size: 100% 100%;
     background-image: url('../../assets/img/login.png');
+    position: relative;
+    margin-bottom: 60px;
+    top: 70px;
   }
   .register-card{
     padding: 5% 0 5%;
     background-size: 100% 100%;
     background-image: url('../../assets/img/register-bg.jpg');
+    position: relative;
+    margin-bottom: 60px;
+    top: 70px;
   }
   .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

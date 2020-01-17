@@ -6,6 +6,8 @@
     background-size: 100% 100%;
     position: relative;
     background-attachment: fixed;
+    margin-bottom: 60px;
+  top: 70px;
   }
   #banner-4::before{
     content: '';
@@ -17,7 +19,7 @@
   }
   #banner-4 .va-middle {
     vertical-align: middle;
-    height: 80vh;
+    height: 70vh;
   }
   #banner-4 .banner-content{
     position: relative;

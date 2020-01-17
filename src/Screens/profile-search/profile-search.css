@@ -1,0 +1,251 @@
+/**************** BANNER START ****************/
+
+
+#banner-8{
+  background-image: url('../../assets/img/profile-search.jpg');
+  background-size: 100% 100%;
+  position: relative;
+  background-attachment: fixed;
+  margin-bottom: 60px;
+  top: 70px;
+}
+#banner-8::before{
+  content: '';
+  height: 100%;
+  position: absolute;
+  background: url('../../assets/img/bg-doted.png') rgba(0, 0, 0, 0.5);
+  width: 100%;
+
+}
+#banner-8 .va-middle {
+  vertical-align: middle;
+  height: 50vh;
+}
+#banner-8 .banner-content{
+  position: relative;
+  text-align: center;
+}
+#banner-8 .banner-content h2{
+  font-size: 60px;
+  color: #fff;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+#banner-8 .banner-content p{
+  font-size: 22px;
+}
+
+
+
+
+@media only screen and (max-width:1024px){
+  #banner-8 .banner-content h2 {
+    font-size: 50px;
+  }
+  #banner-8 .banner-content p {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width:991px){
+  #banner-8 .va-middle {
+    height: 40vh;
+}
+}
+@media only screen and (max-width:768px){
+#banner-8 .banner-content h2 {
+  font-size: 40px;
+  }
+  #banner-8 .banner-content p {
+    font-size: 18px;
+    }
+}
+/* @media only screen and (max-width:640px){
+#banner-8 .va-middle {
+  height: 50vh;
+}
+} */
+@media only screen and (max-width:575px){
+
+  #banner-8 .banner-content h2 {
+    font-size: 30px;
+    }
+    #banner-8 .banner-content p {
+      font-size: 16px;
+      }
+  }
+
+  @media only screen and (max-width:460px){
+    #banner-8 {
+      background-size: 100% 55%;
+      background-repeat: no-repeat;
+    }
+    #banner-8 .banner-content h2 {
+      font-size: 25px;
+      }
+      #banner-8 .banner-content p {
+        font-size: 14px;
+        }
+  }
+/**************** BANNER END ****************/
+
+/********************** profile-SEARCH COMPANY START *******************/
+/* .profile-search-heading h2{
+  text-align: center;
+  margin: 0;
+  padding-bottom: 20px;
+}
+.profile-search-heading h2 i{
+  color: #0c94ac;
+} */
+.profile-search-box{
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 0 1px 6px rgb(12, 148, 172);
+    background: #fff;
+    border: 1px solid #0c94ac54;
+    border-radius: 20px;
+  }
+  .profile-search-img{
+    text-align: center;
+  
+    padding: 30px 0;
+  }
+  .b-right{
+    border-right: 2px solid #0c94ac54;
+  }
+  .profile-search-img img{
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid #0c94ac;
+    width: 180px;
+    margin-bottom: 20px;
+}
+.profile-search-img h5{
+  font-weight: 700;
+  font-size: 25px;
+  color: #000;
+}
+  .profile-search-content{
+    padding: 30px 15px 30px 0px;
+  }
+  .profile-search-content h5{
+    font-weight: 500;
+    font-size: 25px;
+    margin: 0 0 8px;
+    color: #000;
+  }
+  .profile-search-content h6{
+    margin: 0 0 8px;
+    color: #000;
+    font-weight: 600;
+  }
+  .profile-search-content p{
+    margin: 0 0 8px;
+    color: #000;
+  }
+  .profile-search-stars-icon i{
+    margin: 0 2px 8px;
+    font-size: 18px;
+  }
+  .profile-search-company-contact h5{
+    margin: 0 0 5px;
+  }
+  .profile-search-company-contact p{
+    color: #000;
+    margin: 0px 0 5px;
+  }
+  .profile-search-company-contact a button{
+    font-weight: bold;
+    background: #0c94ac;
+    border: 1px solid #0c94ac;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .profile-search-company-contact a button:hover{
+    background: #fff;
+    color: #0c94ac;
+  }
+  
+  
+.profile-search-social-icon i{
+  margin: 0 2px;
+  font-size: 18px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+}
+.profile-search-social-icon i.fa.fa-twitter {
+  background: #00acee;
+  color: #fff;
+}
+.profile-search-social-icon i.fa.fa-linkedin {
+  background: #00acee;
+  color: #fff;
+}
+.profile-search-social-icon i.fa.fa-instagram {
+  background: red;
+  color: #fff;
+}
+.profile-search-social-icon i.fa.fa-facebook {
+  background: #3c5b9b;
+  color: #fff;
+}
+
+@media only screen and (max-width:1024px){
+  .profile-search-box {
+    width: 90%;
+  }
+}
+@media only screen and (max-width:991px){
+  .profile-search-content p {
+    font-size: 13px;
+  }
+  .profile-search-img{
+    margin-left: 15px;
+  }
+  .profile-search-img img {
+    height: 150px;
+    width: 150px;
+}
+.profile-search-company-contact h5 {
+  font-size: 20px;
+}
+.profile-search-img h5 {
+  font-size: 20px;
+}
+.profile-search-content h5 {
+  font-size: 20px
+}
+}
+@media only screen and (max-width:768px){
+  .profile-search-box {
+    width: 100%;
+  }
+  .profile-search-img {
+    margin-left: 0px;
+}
+  .b-right{
+    border-right:none;
+  }
+  .profile-search-img {
+    padding: 30px 0 10px;
+}
+  .profile-search-content {
+    padding: 0px 20px 30px;
+    text-align: center;
+}
+}
+@media only screen and (max-width:575px){
+  .profile-search-content h5 {
+    font-size: 17px;
+}
+}
+  /********************** profile-SEARCH COMPANY END *******************/
