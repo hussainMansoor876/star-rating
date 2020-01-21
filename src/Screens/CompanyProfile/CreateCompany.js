@@ -126,11 +126,14 @@ class CreateCompany extends React.Component {
 	componentDidMount() {
 		const { user } = this.props
 		// if(!user.buyPlan){
-		// 	this.props.history.push('/plan')
+		// 	return this.props.history.push('/plan')
 		// }
 		// else{
-		// 	this.props.history.push('/companyprofile')
+		// 	return this.props.history.push('/companyprofile')
 		// }
+		this.props.form.setFieldsValue({
+			contactEmail: this.props.user.email,
+		});
 	}
 
 
@@ -229,7 +232,6 @@ class CreateCompany extends React.Component {
 												})(
 													<Input
 														disabled
-														value={this.props.user.email}
 														name="email"
 														prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
 														type="email"
