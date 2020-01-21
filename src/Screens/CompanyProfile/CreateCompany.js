@@ -130,6 +130,9 @@ class CreateCompany extends React.Component {
 		if(!user.buyPlan){
 			this.props.history.push('/plan')
 		}
+		else{
+			this.props.history.push('/companyprofile')
+		}
 	}
 
 
