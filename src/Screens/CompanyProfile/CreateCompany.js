@@ -110,13 +110,11 @@ class CreateCompany extends React.Component {
 					.then((result) => {
 						if (result.data.success) {
 							this.openNotification('Success', 'Successfully Created Company!!!', 'check')
-							// this.props.loginUser(result.data.user)
 							this.props.history.push('/profile')
 						}
 						else {
 							this.setState({ loading: false, disable: false })
 							this.openNotification(title, result.data.message, 'close-circle', 'red')
-							// this.setState({ disable: false })
 						}
 					})
 			}
