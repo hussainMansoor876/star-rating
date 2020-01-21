@@ -206,7 +206,6 @@ td {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 99;
     height: 75px;
   }
   header[role=banner] .utilities {
