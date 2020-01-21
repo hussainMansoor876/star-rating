@@ -126,11 +126,11 @@ class CreateCompany extends React.Component {
 	componentDidMount() {
 		const { user } = this.props
 		if(!user.buyPlan){
-			return this.props.history.push('/plan')
+			this.props.history.push('/plan')
 		}
-		else{
-			return this.props.history.push('/companyprofile')
-		}
+		// else{
+		// 	return this.props.history.push('/companyprofile')
+		// }
 		this.props.form.setFieldsValue({
 			contactEmail: this.props.user.email,
 		});
