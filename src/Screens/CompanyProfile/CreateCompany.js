@@ -123,21 +123,21 @@ class CreateCompany extends React.Component {
 
 	};
 
-	componentDidMount(){
+	componentDidMount() {
 		const { user } = this.props
-		if(!user.buyPlan){
-			this.props.history.push('/plan')
-		}
-		else{
-			this.props.history.push('/companyprofile')
-		}
+		// if(!user.buyPlan){
+		// 	this.props.history.push('/plan')
+		// }
+		// else{
+		// 	this.props.history.push('/companyprofile')
+		// }
 	}
 
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
 		const { city } = this.state
-		
+
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
@@ -161,8 +161,8 @@ class CreateCompany extends React.Component {
 							<div>
 								<Form onSubmit={this.handleSubmit} className="login-form">
 									<h1 className="ff-secondary fc-blue" style={{ textAlign: 'center' }} >Company Registration Form</h1>
-									<div class="row">
-										<div class="col-md-6 col-sm-6 col-xs-12">
+									<div className="row">
+										<div className="col-md-6 col-sm-6 col-xs-12">
 											<label>Company Name:</label>
 											<Form.Item className="sign-up">
 												{getFieldDecorator('name', {
@@ -176,7 +176,7 @@ class CreateCompany extends React.Component {
 												)}
 											</Form.Item>
 										</div>
-										<div class="col-md-6 col-sm-6 col-xs-12">
+										<div className="col-md-6 col-sm-6 col-xs-12">
 											<label>Company Url:</label>
 											<Form.Item className="sign-up">
 												{getFieldDecorator('url', {
@@ -206,7 +206,7 @@ class CreateCompany extends React.Component {
 												)}
 											</Form.Item>
 										</div>
-										<div class="col-md-6 col-sm-6 col-xs-12">
+										<div className="col-md-6 col-sm-6 col-xs-12">
 											<label>Mobile Number:</label>
 											<Form.Item className="sign-up">
 												{getFieldDecorator('contactNo', {
@@ -228,6 +228,8 @@ class CreateCompany extends React.Component {
 													rules: [{ required: true, message: 'Please input your Email!' }],
 												})(
 													<Input
+														disabled
+														value={this.props.user.email}
 														name="email"
 														prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
 														type="email"

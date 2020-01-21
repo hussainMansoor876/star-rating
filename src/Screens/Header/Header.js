@@ -129,9 +129,9 @@ class Navbar extends Component {
                   {user ? <ul>
                     {loginRoutes.map((v, i) => {
                       if (v.route == '/profile') {
-                        return <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name.split(' ')[0]}</Link></li>
+                        return <li key={i}><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name.split(' ')[0]}</Link></li>
                       }
-                      return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
+                      return <li key={i}><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
                     })}
                     {
                       location.pathname === '/profile' && <li><Link to='/createcompany' className='nav-login' >Company</Link></li>
@@ -193,9 +193,9 @@ class Navbar extends Component {
                         </li>
                         {loginRoutes.map((v, i) => {
                           if (v.route == '/profile') {
-                            return <li><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name.split(' ')[0]}</Link></li>
+                            return <li key={i}><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name.split(' ')[0]}</Link></li>
                           }
-                          return <li><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
+                          return <li key={i}><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
                         })}
                         {
                           location.pathname === '/profile' && <li><Link to='/createcompany' className='nav-login' >Company</Link></li>
@@ -224,7 +224,7 @@ class Navbar extends Component {
                             </form>
                           </li>
                           {routes.map((v, i) => {
-                            return <li className={v.className ? v.className : null}><Link to={v.route}>{v.name}</Link></li>
+                            return <li className={v.className ? v.className : null} key={i}><Link to={v.route}>{v.name}</Link></li>
                           })}
                         </ul>}
                     </div>
