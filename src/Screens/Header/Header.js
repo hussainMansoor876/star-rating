@@ -113,7 +113,7 @@ class Navbar extends Component {
                     <div className="input-group">
                       <div className="input-group-addon" id="order">
                         <div className="select-style">
-                          <select name="order" onChange={(e) => console.log('e', e.target)}>
+                          <select name="order" onChange={(e) => this.setState({ searchType: e.target.value })}>
                             <option defaultValue="company" href="http://localhost:3000/search">Company</option>
                             <option value="user">User</option>
                           </select>
