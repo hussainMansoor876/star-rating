@@ -41,7 +41,9 @@ class Navbar extends Component {
         route: '/register',
         className: 'nav-login'
       }
-      ]
+      ],
+      searchType: 'company',
+      searchInput: ''
     }
   }
 
@@ -61,7 +63,7 @@ class Navbar extends Component {
     }
 
     var fill1 = loginRoutes.filter((obj) => {
-      if(location.pathname === '/createcompany' && obj.route == '/profile'){
+      if (location.pathname === '/createcompany' && obj.route == '/profile') {
         return
       }
       return obj.route !== location.pathname;
@@ -90,10 +92,14 @@ class Navbar extends Component {
     });
   }
 
+  search() {
+
+  }
+
 
   render() {
     const { user, location } = this.props
-    const { loginRoutes, routes } = this.state
+    const { loginRoutes, routes, searchInput, searchType } = this.state
 
     return (
       <div>
@@ -103,20 +109,19 @@ class Navbar extends Component {
               <div className="col-md-6">
                 <div className="main-logo">
                   <NavLink to='#'><img src={logonew} alt="" /></NavLink>
-                  <form method="get">
+                  <form>
                     <div className="input-group">
                       <div className="input-group-addon" id="order">
                         <div className="select-style">
-                          <select name="order">
-                            <option value="select">Select</option>
-                            <option defaultValue="a" href="http://localhost:3000/search">Company Profile</option>
-                            <option value="b">User Profile</option>
+                          <select name="order" onChange={(e) => console.log('e', e.target)}>
+                            <option defaultValue="company" href="http://localhost:3000/search">Company</option>
+                            <option value="user">User</option>
                           </select>
                         </div>
                       </div>
                       <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
-                      <div className="input-group-addon" id="sub">
-                        <button className="submit" type="submit">
+                      <div className="input-group-addon">
+                        <button className="submit" type="button">
                           <span className="fa fa-search"></span>
                         </button>
                       </div>
@@ -208,9 +213,9 @@ class Navbar extends Component {
                                 <div className="input-group-addon" id="order">
                                   <div className="select-style">
                                     <select name="order">
-                                    <option value="select">Select</option>
-                                    <option defaultValue="a">Company Profile</option>
-                                    <option value="b">User Profile</option>
+                                      <option value="select">Select</option>
+                                      <option defaultValue="a">Company Profile</option>
+                                      <option value="b">User Profile</option>
                                     </select>
                                   </div>
                                 </div>
