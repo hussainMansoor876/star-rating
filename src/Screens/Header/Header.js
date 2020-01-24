@@ -4,6 +4,7 @@ import './Header.css'
 import { removeUser } from '../../Redux/actions/authActions'
 import logonew from '../../assets/img/new-logo.png';
 import { connect } from 'react-redux';
+import axios from 'axios'
 var $ = require("jquery");
 
 
@@ -43,7 +44,8 @@ class Navbar extends Component {
       }
       ],
       searchType: 'company',
-      searchInput: ''
+      searchInput: '',
+      disable: true
     }
   }
 
@@ -93,13 +95,17 @@ class Navbar extends Component {
   }
 
   search() {
+    const {} = this.state
 
+    if (!this.state.searchInput) {
+      return
+    }
     console.log('this', this.state)
   }
 
 
   render() {
-    const { user, location } = this.props
+    const { user, location, disable } = this.props
     const { loginRoutes, routes, searchInput } = this.state
 
     return (
@@ -120,9 +126,9 @@ class Navbar extends Component {
                           </select>
                         </div>
                       </div>
-                      <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
+                      <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value, disable: e.target.value ? false : true })} />
                       <div className="input-group-addon">
-                        <button className="submit" type="button" onClick={() => this.search()}>
+                        <button className="submit" type="button" disabled={disable} onClick={() => this.search()}>
                           <span className="fa fa-search"></span>
                         </button>
                       </div>
