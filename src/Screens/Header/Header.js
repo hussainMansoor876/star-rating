@@ -44,8 +44,7 @@ class Navbar extends Component {
       }
       ],
       searchType: 'company',
-      searchInput: '',
-      disable: true
+      searchInput: ''
     }
   }
 
@@ -94,18 +93,22 @@ class Navbar extends Component {
     });
   }
 
-  search() {
-    const {} = this.state
+  async search() {
+    const { searchInput, searchType } = this.state
 
-    if (!this.state.searchInput) {
+    if (!searchInput) {
       return
     }
     console.log('this', this.state)
+    const response = await axios.post('http://localhost:5001/post', {
+      searchInput,
+      searchType
+    })
   }
 
 
   render() {
-    const { user, location, disable } = this.props
+    const { user, location } = this.props
     const { loginRoutes, routes, searchInput } = this.state
 
     return (
@@ -126,9 +129,9 @@ class Navbar extends Component {
                           </select>
                         </div>
                       </div>
-                      <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value, disable: e.target.value ? false : true })} />
+                      <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
                       <div className="input-group-addon">
-                        <button className="submit" type="button" disabled={disable} onClick={() => this.search()}>
+                        <button className="submit" type="button" onClick={() => this.search()}>
                           <span className="fa fa-search"></span>
                         </button>
                       </div>
