@@ -94,12 +94,13 @@ class Navbar extends Component {
 
   search() {
 
+    console.log('this', this.state)
   }
 
 
   render() {
     const { user, location } = this.props
-    const { loginRoutes, routes, searchInput, searchType } = this.state
+    const { loginRoutes, routes, searchInput } = this.state
 
     return (
       <div>
@@ -114,14 +115,14 @@ class Navbar extends Component {
                       <div className="input-group-addon" id="order">
                         <div className="select-style">
                           <select name="order" onChange={(e) => this.setState({ searchType: e.target.value })}>
-                            <option defaultValue="company" href="http://localhost:3000/search">Company</option>
+                            <option defaultValue="company">Company</option>
                             <option value="user">User</option>
                           </select>
                         </div>
                       </div>
-                      <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
+                      <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
                       <div className="input-group-addon">
-                        <button className="submit" type="button">
+                        <button className="submit" type="button" onClick={() => this.search()}>
                           <span className="fa fa-search"></span>
                         </button>
                       </div>
