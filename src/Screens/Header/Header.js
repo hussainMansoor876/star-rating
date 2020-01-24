@@ -100,10 +100,13 @@ class Navbar extends Component {
       return
     }
     console.log('this', this.state)
-    const response = await axios.post('http://localhost:5001/post', {
+    await axios.post('http://localhost:5001/post/search', {
       searchInput,
       searchType
     })
+      .then((response) => {
+        console.log('response', response)
+      })
   }
 
 
