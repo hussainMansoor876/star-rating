@@ -14,12 +14,15 @@ class Reviewer extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-
+			user: ''
 		}
 	}
 
+	componentWillMount(){
+		
+	}
+
 	componentDidMount(){
-		console.log('Reviewer', this.props)
 		console.log('params', this.props.match.params.id)
 	  }
 
