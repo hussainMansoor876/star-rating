@@ -133,24 +133,12 @@ class Search extends React.Component {
                           <div className="col-lg-4 col-md-4 col-sm-4 search-b-right">
                             <div className="search-img">
                               <img src={v.profilePic.url} />
-                              <h5 className="ff-secondary">{v.name}</h5>
-                              <h6 className="ff-secondary">Reviews: 50,000,00 <i className="fa fa-star"></i></h6>
                             </div>
                           </div>
                           <div className="col-lg-8 col-md-8 col-sm-8">
                             <div className="search-content">
                               <div className="company-intro">
-                                <h5 className="ff-primary"><Link to={v.url}>{v.url}</Link></h5>
-                                <span className="search-stars-icon">
-                                  <i className="fa fa-star"></i>
-                                  <i className="fa fa-star"></i>
-                                  <i className="fa fa-star"></i>
-                                  <i className="fa fa-star"></i>
-                                  <i className="fa fa-star"></i>
-                                </span>
-                                <p className="ff-primary">
-                                  {v.description}
-                                </p>
+                                <h5 className="ff-secondary">{v.name}</h5>
                               </div>
                               <div className="row">
                                 <div className="col-lg-6 col-md-5">
@@ -159,21 +147,12 @@ class Search extends React.Component {
                                     <p className="ff-primary">{v.address}</p>
                                     <p className="ff-primary">{v.email}</p>
                                     <p className="ff-primary"> {v.contactNo}</p>
-                                    <p className="search-social-icon">
-                                      <a href="#"> <i className="fa fa-facebook"></i></a>
-                                      <a href="#"> <i className="fa fa-twitter"></i></a>
-                                      <a href="#"> <i className="fa fa-instagram"></i></a>
-                                      <a href="#"> <i className="fa fa-linkedin"></i></a>
-                                    </p>
 
                                   </div>
                                 </div>
                                 <div className="col-lg-6 col-md-7">
                                   <div className="search-company-time">
-                                    <h5 className="ff-secondary">Location:</h5>
-                                    <p className="ff-primary">Country: {v.country}</p>
-                                    <p className="ff-primary">City: {v.city}</p>
-                                    <a href="#" className="ff-primary"><button> Read More </button></a>
+                                    <Link to={""} className="ff-primary"><button> Read More </button></Link>
                                   </div>
                                 </div>
 
