@@ -6,7 +6,9 @@ import Header from '../Header/Header';
 import Footer from '../Header/Footer'
 import search from '../../assets/img/search-1.png';
 import axios from 'axios'
-import { Skeleton } from 'antd';
+import { Skeleton, Typography } from 'antd';
+
+const { Title } = Typography;
 
 
 class Search extends React.Component {
@@ -14,7 +16,8 @@ class Search extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: []
+      data: [],
+      result: true
     }
   }
 
@@ -30,7 +33,8 @@ class Search extends React.Component {
         .then((response) => {
           console.log('response', response)
           this.setState({
-            data: response.data.data
+            data: response.data.data,
+            result: response.data.data.length ? true : false
           })
           // this.props.history.replace('', null)
         })
@@ -38,27 +42,27 @@ class Search extends React.Component {
   }
 
 
+
   render() {
-    const { data } = this.state
+    const { data, result } = this.state
     return (
       <div class="search-page">
         <Header {...this.props} />
 
-        <section id="banner-7">
+        {/* <section id="banner-7">
           <div className="wrapper">
             <div className="d-table w-100">
               <div className="d-table-cell va-middle">
                 <div className="banner-content">
                   <h2 className="ff-secondary">Search For Companies</h2>
-                  {/* <p className="ff-primary fc-white">The free version of ProvenExpert is — and always will be — free.</p> */}
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         <div className="search-company">
           <div className="wrapper">
-            {data.length ?
+            {data.length && result ?
               <div className="sec-padding">
                 <div className="search-box">
                   <div className="row">
@@ -237,7 +241,12 @@ class Search extends React.Component {
                   </div>
                 </div>
               </div> :
-              <Skeleton avatar paragraph={{ rows: 4 }} />}
+              !data.length && !result ?
+                <Title style={{ margin: 120 }}>OOPS NO result Found!!!</Title> :
+                <div style={{ marginTop: 20 }}>
+                  <Skeleton avatar paragraph={{ rows: 4 }} />
+                </div>
+            }
           </div>
         </div>
 
