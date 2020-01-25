@@ -78,7 +78,7 @@ class Routes extends Component {
                     <Route path="/profile" exact component={Profile} />
                     <Route path="/search" exact component={Search} />
                     <Route path="/privacy" exact component={Privacy} />
-                    <Route path="/profilesearch" exact component={profilesearch} />
+                    <Route path="/profilesearch/:id" exact component={profilesearch} />
                     {/* <Route path="/dashboard" exact component={Dashboard}/> */}
                     {/* <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
                     <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/article" component={Article} /> */}
@@ -94,7 +94,7 @@ class Routes extends Component {
 
 
 const mapStateToProps = (state) => {
-    console.log("mapToState", state.authReducer)
+    // console.log("mapToState", state.authReducer)
     return {
         user: state.authReducer.user,
     }
