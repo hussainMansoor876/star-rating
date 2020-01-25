@@ -18,6 +18,11 @@ class Reviewer extends React.Component {
 		}
 	}
 
+	componentDidMount(){
+		console.log('Reviewer', this.props)
+		console.log('params', this.props.match.params.id)
+	  }
+
 
 	render() {
 		return (
@@ -561,7 +566,7 @@ class Reviewer extends React.Component {
 
 
 const mapStateToProps = (state) => {
-	console.log("mapToState", state.authReducer)
+	// console.log("mapToState", state.authReducer)
 	return {
 		user: state.authReducer.user,
 	}
