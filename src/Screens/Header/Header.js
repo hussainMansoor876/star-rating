@@ -273,7 +273,7 @@ class Navbar extends Component {
 
 const mapStateToProps = (state) => {
 
-  console.log("mapToState", state.authReducer)
+  // console.log("mapToState", state.authReducer)
   return {
     user: state.authReducer.user,
   }

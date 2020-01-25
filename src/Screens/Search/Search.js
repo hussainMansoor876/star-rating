@@ -12,12 +12,13 @@ class Search extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      data: []
     }
   }
 
   async componentWillMount() {
     const { state } = this.props.history.location
+    console.log('state', state)
     if (state) {
       const { searchInput, searchType } = state
       await axios.post('http://localhost:5001/post/search', {
@@ -26,6 +27,10 @@ class Search extends React.Component {
       })
         .then((response) => {
           console.log('response', response)
+          this.setState({
+            data: response.data.data
+          })
+          this.props.history.replace('', null)
         })
     }
   }
@@ -52,13 +57,6 @@ class Search extends React.Component {
         <div className="search-company">
           <div className="wrapper">
             <div className="sec-padding">
-              {/* <div className="row"> 
-                      <div className="col-lg-12">
-                        <div className="search-heading">
-                          <h2 className="ff-secondary">Search For Company Profile <span><i className="fa fa-building"></i></span></h2>
-                        </div>
-                      </div>
-                  </div> */}
               <div className="search-box">
                 <div className="row">
                   <div className="col-lg-4 col-md-4 col-sm-4 search-b-right">
@@ -283,7 +281,7 @@ class Search extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  console.log("mapToState", state.authReducer)
+  // console.log("mapToState", state.authReducer)
   return {
     user: state.authReducer.user,
   }
