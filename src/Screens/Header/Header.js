@@ -4,7 +4,6 @@ import './Header.css'
 import { removeUser } from '../../Redux/actions/authActions'
 import logonew from '../../assets/img/new-logo.png';
 import { connect } from 'react-redux';
-import axios from 'axios'
 var $ = require("jquery");
 
 
@@ -95,18 +94,28 @@ class Navbar extends Component {
 
   async search() {
     const { searchInput, searchType } = this.state
+    const { history } = this.props
+    console.log('loc', history.location)
 
     if (!searchInput) {
       return
     }
     console.log('this', this.state)
-    await axios.post('http://localhost:5001/post/search', {
-      searchInput,
-      searchType
-    })
-      .then((response) => {
-        console.log('response', response)
-      })
+    if (history.location.pathname === '/search') {
+      this.props.history.push('/search', { searchInput, searchType })
+      window.location.reload()
+    }
+    else{
+      this.props.history.push('/search', { searchInput, searchType })
+    }
+    // this.props.history.push('/search', { searchInput, searchType })
+    // await axios.post('http://localhost:5001/post/search', {
+    //   searchInput,
+    //   searchType
+    // })
+    //   .then((response) => {
+    //     console.log('response', response)
+    //   })
   }
 
 
