@@ -27,7 +27,7 @@ class Search extends React.Component {
     console.log('state', state)
     if (state) {
       const { searchInput, searchType } = state
-      await axios.post('http://localhost:5001/post/search', {
+      await axios.post('https://star-rating123.herokuapp.com/post/search', {
         searchInput,
         searchType
       })
