@@ -27,13 +27,10 @@ class Company extends React.Component {
 		})
 			.then((response) => {
 				const { data } = response
-				if (data.success) {
-					this.setState({
-						company: data.data,
-						success: data.success
-					})
-				}
-				// this.props.history.replace('', null)
+				this.setState({
+					company: data.data,
+					success: data.success
+				})
 			})
 	}
 
