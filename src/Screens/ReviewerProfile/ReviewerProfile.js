@@ -160,7 +160,7 @@ class Reviewer extends React.Component {
 										<h5 className="fc-blue">3,218 Reviews on Star Rating</h5>
 									</div>
 								</div>
-								<div className="col-lg-2 col-md-4 col-sm-12">
+								<div className="col-lg-2 col-md-4" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'blue', width: '100%' }}>
 									<div className="star-center">
 										<span className="ff-primary">4.66/5.00</span>
 										<div className="starress">
@@ -175,7 +175,7 @@ class Reviewer extends React.Component {
 										<span className="ff-primary">EXCELLENT</span>
 									</div>
 								</div>
-								<div className="col-lg-2 col-md-12">
+								{/* <div className="col-lg-2 col-md-12">
 									<div className="inputcol">
 										<select>
 											<option value="volvo">Volvo</option>
@@ -184,7 +184,7 @@ class Reviewer extends React.Component {
 											<option value="audi">Audi</option>
 										</select>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>
