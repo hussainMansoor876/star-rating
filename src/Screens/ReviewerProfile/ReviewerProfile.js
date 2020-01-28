@@ -160,7 +160,7 @@ class Reviewer extends React.Component {
 										<h5 className="fc-blue">3,218 Reviews on Star Rating</h5>
 									</div>
 								</div>
-								<div className="col-lg-2 col-md-4" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', backgroundColor: 'blue', width: '100%' }}>
+								<div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
 									<div className="star-center">
 										<span className="ff-primary">4.66/5.00</span>
 										<div className="starress">
@@ -217,11 +217,14 @@ class Reviewer extends React.Component {
 								</div>
 								<div className="col-lg-10">
 									<div className="two-main-r">
+										<div style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%', marginRight: 20 }}>
+											<button className="btn btn-primary" style={{ maxWidth: '120px', width: '120px' }}>Edit</button>
+										</div>
 										<div className="two-r-main clearfix">
 											<p className="ff-primary coment">
 												I think the rating system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would hope that the sub-items of what should be evaluated can and do.</p>
 										</div>
-										<div className="two-d-main clearfix">
+										{/* <div className="two-d-main clearfix">
 											<div className="col-lg-12">
 												<div className="prove-centre">
 													<p className="ff-primary">Customer review & rating for:</p>
@@ -278,80 +281,8 @@ class Reviewer extends React.Component {
 																						</div>
 																					</div>
 																				</div>
-																				<div className="star-third">
-																					<div className="row">
-																						<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																							<p className="ff-primary txt-align">Possible applications</p>
-																						</div>
-																						<div className="col-lg-4 col-md-4 col-sm-6 col-4">
-																							<div className="starrsd">
-																								<ul>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																								</ul>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div className="star-third">
-																					<div className="row">
-																						<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																							<p className="ff-primary txt-align">Possible applications</p>
-																						</div>
-																						<div className="col-lg-4 col-md-4 col-sm-6 col-4">
-																							<div className="starrsd">
-																								<ul>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																								</ul>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div className="star-third">
-																					<div className="row">
-																						<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																							<p className="ff-primary txt-align">Possible applications</p>
-																						</div>
-																						<div className="col-lg-4 col-md-4 col-sm-6 col-4">
-																							<div className="starrsd">
-																								<ul>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																								</ul>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
 																			</div>
 																		</div>
-																		{/* <div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
-								<div className="mrtpt-1 clearfix">
-								<div className="customer-ser-head clearfix">
-									<i className="lft-sty  fa fa-check"></i>
-									<div className="cost-ben">
-										<p className="ff-primary">Customer service</p>
-										<span className="ff-primary">EXCELLENT (5.00)</span>
-									</div>
-								</div>
-								<div className="customer-ser-head clearfix">
-										<i className="lft-sty fa fa-check"></i>
-									<div className="cost-ben">
-										<p className="ff-primary">Customer service</p>
-										<span className="ff-primary">EXCELLENT (5.00)</span>
-									</div>
-								</div>
-								</div>
-							</div> */}
 																	</div>
 																</div>
 															</div>
@@ -360,8 +291,7 @@ class Reviewer extends React.Component {
 												</div>
 											</div>
 
-
-										</div>
+										</div> */}
 									</div>
 								</div>
 							</div>

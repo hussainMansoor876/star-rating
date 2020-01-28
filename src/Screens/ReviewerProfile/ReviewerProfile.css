@@ -22,3 +22,10 @@ div#headingTwo{
     }
 }
 /********************* REVIEWER PROFILE END ****************/
+
+@media(max-width: 960px){
+    .stars1{
+        justify-content: center !important;
+    }
+}
+
