@@ -13,21 +13,22 @@ class Company extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			company: ''
+			company: '',
+			success: true
 		}
 	}
 
 	async componentWillMount() {
 		console.log('params', this.props.match.params.id)
-		await axios.post('https://star-rating123.herokuapp.com/post/search-profile', {
+		await axios.post('https://star-rating123.herokuapp.com/post/search-company', {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
-				console.log('response', response)
 				const { data } = response
 				if (data.success) {
 					this.setState({
-						company: data.data
+						company: data.data,
+						success: data.success
 					})
 				}
 				// this.props.history.replace('', null)
@@ -36,6 +37,15 @@ class Company extends React.Component {
 
 
 	render() {
+		const { company, success } = this.state
+		if (!company) {
+			return (
+				<div className="main-body">
+					<Header {...this.props} />
+					{!success && <Exception type="404" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="User profile Not Found!!!" />}
+				</div>
+			)
+		}
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
