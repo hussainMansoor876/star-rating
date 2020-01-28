@@ -7,6 +7,7 @@ import manicon from '../../assets/img/man-icon-2.png';
 import logonew from '../../assets/img/new-logo.png';
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
+import axios from 'axios'
 
 
 class Reviewer extends React.Component {
@@ -18,12 +19,15 @@ class Reviewer extends React.Component {
 		}
 	}
 
-	componentWillMount(){
-		
-	}
-
-	componentDidMount(){
+	async componentWillMount(){
 		console.log('params', this.props.match.params.id)
+		await axios.post('http://localhost:5001/post/search-profile', {
+        _id: this.props.match.params.id
+      })
+        .then((response) => {
+          console.log('response', response)
+          // this.props.history.replace('', null)
+        })
 	  }
 
 
