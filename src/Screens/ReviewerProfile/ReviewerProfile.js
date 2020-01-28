@@ -22,7 +22,6 @@ class Reviewer extends React.Component {
 	}
 
 	async componentWillMount() {
-		console.log('params', this.props.match.params.id)
 		await axios.post('http://localhost:5001/post/search-profile', {
 			_id: this.props.match.params.id
 		})
