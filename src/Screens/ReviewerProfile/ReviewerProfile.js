@@ -28,12 +28,10 @@ class Reviewer extends React.Component {
 			.then((response) => {
 				console.log('response', response)
 				const { data } = response
-				if (data.success) {
-					this.setState({
-						user: data.data,
-						success: data.success
-					})
-				}
+				this.setState({
+					user: data.data,
+					success: data.success
+				})
 				// this.props.history.replace('', null)
 			})
 	}
@@ -45,15 +43,7 @@ class Reviewer extends React.Component {
 			return (
 				<div className="main-body">
 					<Header {...this.props} />
-				</div>
-			)
-		}
-		else if (!user && !success) {
-			console.log('success')
-			return (
-				<div>
-					<Header {...this.props} />
-					<Exception type="404" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="User profile Not Found!!!" />
+					{!success && <Exception type="404" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="User profile Not Found!!!" />}
 				</div>
 			)
 		}
