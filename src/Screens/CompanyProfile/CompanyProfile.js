@@ -127,7 +127,7 @@ class Company extends React.Component {
 																<p className="ff-primary ideal">The ideal solution for your referral marketing: For more confidence, customers & sales.</p>
 																<p className="ff-primary">With ProvenExpert.com you get the feedback from your customers
 											 and present your evaluations from all platforms in one single rating...</p>
-																<a href="#">View full description <i class="fa fa-chevron-circle-down fc-blue"></i></a>
+																<a href="#">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a>
 															</div>
 														</div>
 														<div className="col-lg-6 col-md-6 flrt-r">
@@ -138,7 +138,7 @@ class Company extends React.Component {
 																	<span className="ff-primary">Quedlinburger Straße 1</span>
 																	<span className="ff-primary">10589 Berlin</span>
 																	<span className="ff-primary">Germany</span>
-																	<span className="ff-primary direction"><i class="fa fa-map-marker"></i><a href="#" className="fc-blue"> Direction</a></span>
+																	<span className="ff-primary direction"><i className="fa fa-map-marker"></i><a href="#" className="fc-blue"> Direction</a></span>
 																</div>
 																<div className="centr-sub-2-main">
 																	<h5 className="ff-secondary">Contact person</h5>
@@ -160,8 +160,8 @@ class Company extends React.Component {
 										</div> */}
 															<div className="centr-subs-2">
 																<h5 className="ff-secondary">Websites & Profiles</h5>
-																<p><i class="fa fa-window-maximize"></i><a className="ff-primary fc-blue" href="#">ProvenExpert.com</a></p>
-																<p><i class="fa fa-window-maximize"></i><a className="ff-primary fc-blue" href="#">Blog</a></p>
+																<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" href="#">ProvenExpert.com</a></p>
+																<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" href="#">Blog</a></p>
 																<div className="social-icons-proven">
 																	<ul>
 																		<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
