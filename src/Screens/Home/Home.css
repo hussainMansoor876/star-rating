@@ -477,7 +477,7 @@ header .nav-list ul .nav-signup:hover a::before {
     display: block;
     padding: 25px 0px;
     background: #fff;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     z-index: 9999;
     border-bottom: 2px solid #0c94ac;

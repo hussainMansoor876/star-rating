@@ -67,7 +67,7 @@ class Routes extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/register" exact component={SignUp} />
                     <Route path="/login" exact component={Login} />
-                    <Route path="/companyprofile" exact component={CompanyProfile} />
+                    <Route path="/company-view/:id" exact component={CompanyProfile} />
                     <Route path="/createcompany" exact component={CreateCompany} />
                     <Route path="/contact" exact component={Contact} />
                     <Route path="/daten" exact component={Daten} />

@@ -6,14 +6,32 @@ import proven from '../../assets/img/user.png';
 import manicon from '../../assets/img/man-icon-2.png';
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
+import axios from 'axios'
 
 class Company extends React.Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-
+			company: ''
 		}
+	}
+
+	async componentWillMount() {
+		console.log('params', this.props.match.params.id)
+		await axios.post('https://star-rating123.herokuapp.com/post/search-profile', {
+			_id: this.props.match.params.id
+		})
+			.then((response) => {
+				console.log('response', response)
+				const { data } = response
+				if (data.success) {
+					this.setState({
+						company: data.data
+					})
+				}
+				// this.props.history.replace('', null)
+			})
 	}
 
 

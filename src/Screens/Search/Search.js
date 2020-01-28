@@ -115,7 +115,7 @@ class Search extends React.Component {
                                     <h5 className="ff-secondary">Location:</h5>
                                     <p className="ff-primary">Country: {v.country}</p>
                                     <p className="ff-primary">City: {v.city}</p>
-                                    <Link to={`/profile-view/${v._id}`} target="_blank" className="ff-primary"><button> Read More </button></Link>
+                                    <Link to={`/company-view/${v._id}`} target="_blank" className="ff-primary"><button> Read More </button></Link>
                                   </div>
                                 </div>
 

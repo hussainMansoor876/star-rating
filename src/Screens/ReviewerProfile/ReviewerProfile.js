@@ -9,20 +9,21 @@ import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 import { Skeleton } from 'antd';
 import axios from 'axios'
-
+import Exception from 'ant-design-pro/lib/Exception';
 
 class Reviewer extends React.Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			user: ''
+			user: '',
+			success: true
 		}
 	}
 
 	async componentWillMount() {
 		console.log('params', this.props.match.params.id)
-		await axios.post('https://star-rating123.herokuapp.com/post/search-profile', {
+		await axios.post('http://localhost:5001/post/search-profile', {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
@@ -30,7 +31,8 @@ class Reviewer extends React.Component {
 				const { data } = response
 				if (data.success) {
 					this.setState({
-						user: data.data
+						user: data.data,
+						success: data.success
 					})
 				}
 				// this.props.history.replace('', null)
@@ -39,14 +41,26 @@ class Reviewer extends React.Component {
 
 
 	render() {
-		const { user } = this.state
+		const { user, success } = this.state
 		if (!user) {
 			return (
-				<div>
-					<Header {...this.props} />
+				<div className="main-body">
+						<Header {...this.props} />
+						<Exception type="404" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="User profile Not Found!!!" />
+					{/* <div style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }}>
+					</div> */}
 				</div>
 			)
 		}
+		// else if (!user && !success) {
+		// 	console.log('success')
+		// 	return (
+		// 		<div>
+		// 			<Header {...this.props} />
+		// 			<Exception type="404" />
+		// 		</div>
+		// 	)
+		// }
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
