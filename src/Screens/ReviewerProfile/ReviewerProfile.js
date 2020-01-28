@@ -32,7 +32,6 @@ class Reviewer extends React.Component {
 					user: data.data,
 					success: data.success
 				})
-				// this.props.history.replace('', null)
 			})
 	}
 

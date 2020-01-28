@@ -7,6 +7,8 @@ import manicon from '../../assets/img/man-icon-2.png';
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 import axios from 'axios'
+import Exception from 'ant-design-pro/lib/Exception';
+
 
 class Company extends React.Component {
 
