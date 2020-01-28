@@ -15,13 +15,13 @@ class Reviewer extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			user: {}
+			user: ''
 		}
 	}
 
 	async componentWillMount() {
 		console.log('params', this.props.match.params.id)
-		await axios.post('http://localhost:5001/post/search-profile', {
+		await axios.post('https://star-rating123.herokuapp.com/post/search-profile', {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
@@ -29,7 +29,7 @@ class Reviewer extends React.Component {
 				const { data } = response
 				if (data.success) {
 					this.setState({
-						user: data
+						user: data.data
 					})
 				}
 				// this.props.history.replace('', null)
@@ -39,9 +39,12 @@ class Reviewer extends React.Component {
 
 	render() {
 		const { user } = this.state
-		if(!user){
-			return(
-				<h1>Hello</h1>
+		if (!user) {
+			return (
+				<div className="main-body">
+					<Header {...this.props} />
+					<h1>Hello</h1>
+				</div>
 			)
 		}
 		return (
@@ -91,7 +94,7 @@ class Reviewer extends React.Component {
 															<li><i className="fa fa-star"></i></li>
 														</ul>
 													</div>
-													<h4 className="ff-secondary">SEHR GUT</h4>
+													<h4 className="ff-secondary">{user.name}</h4>
 													<h6 className="ff-secondary">3.853 Bewertungen</h6>
 													<div className="pproven-bottom-last">
 														<span className="line-top"></span>
