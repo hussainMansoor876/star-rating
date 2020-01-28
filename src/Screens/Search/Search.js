@@ -152,7 +152,7 @@ class Search extends React.Component {
                                 </div>
                                 <div className="col-lg-6 col-md-7">
                                   <div className="search-company-time">
-                                    <Link to={`/profile-view/${v._id}`} className="ff-primary"><button> Read More </button></Link>
+                                    <Link to={`/profile-view/${v._id}`} target="_blank" className="ff-primary"><button> Read More </button></Link>
                                   </div>
                                 </div>
 
