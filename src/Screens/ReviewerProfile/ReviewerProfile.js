@@ -22,7 +22,7 @@ class Reviewer extends React.Component {
 	}
 
 	async componentWillMount() {
-		await axios.post('http://localhost:5001/post/search-profile', {
+		await axios.post('https://star-rating123.herokuapp.com/post/search-profile', {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
@@ -44,22 +44,19 @@ class Reviewer extends React.Component {
 		if (!user) {
 			return (
 				<div className="main-body">
-						<Header {...this.props} />
-						<Exception type="404" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="User profile Not Found!!!" />
-					{/* <div style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }}>
-					</div> */}
+					<Header {...this.props} />
 				</div>
 			)
 		}
-		// else if (!user && !success) {
-		// 	console.log('success')
-		// 	return (
-		// 		<div>
-		// 			<Header {...this.props} />
-		// 			<Exception type="404" />
-		// 		</div>
-		// 	)
-		// }
+		else if (!user && !success) {
+			console.log('success')
+			return (
+				<div>
+					<Header {...this.props} />
+					<Exception type="404" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="User profile Not Found!!!" />
+				</div>
+			)
+		}
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
