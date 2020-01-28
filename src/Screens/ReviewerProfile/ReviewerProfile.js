@@ -15,23 +15,35 @@ class Reviewer extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			user: ''
+			user: {}
 		}
 	}
 
-	async componentWillMount(){
+	async componentWillMount() {
 		console.log('params', this.props.match.params.id)
 		await axios.post('http://localhost:5001/post/search-profile', {
-        _id: this.props.match.params.id
-      })
-        .then((response) => {
-          console.log('response', response)
-          // this.props.history.replace('', null)
-        })
-	  }
+			_id: this.props.match.params.id
+		})
+			.then((response) => {
+				console.log('response', response)
+				const { data } = response
+				if (data.success) {
+					this.setState({
+						user: data
+					})
+				}
+				// this.props.history.replace('', null)
+			})
+	}
 
 
 	render() {
+		const { user } = this.state
+		if(!user){
+			return(
+				<h1>Hello</h1>
+			)
+		}
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
