@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css'
 import 'antd/dist/antd.css';
-import { Form, Icon, Input, Button, Upload, notification } from 'antd';
+import { Form, Icon, Input, Button, Upload, notification, message } from 'antd';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import validator from 'validator'
@@ -13,7 +13,22 @@ import Footer from '../Header/Footer'
 const title = "Error"
 const desc = 'Please Enter Correct UserName, Email and Password!'
 
-
+const props = {
+  name: 'file',
+  multiple: true,
+  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  onChange(info) {
+      const { status } = info.file;
+      if (status !== 'uploading') {
+          console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+          message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === 'error') {
+          message.error(`${info.file.name} file upload failed.`);
+      }
+  },
+}
 
 class Signup extends React.Component {
   constructor(props) {
@@ -76,7 +91,7 @@ class Signup extends React.Component {
         else if (!values.upload) {
           return this.openNotification("Picture", "Please Upload the picture", 'close-circle', 'red')
         }
-        // this.setState({ disable: true })
+        this.setState({ disable: true })
         var formData = new FormData();
         formData.append('name', values.name)
         formData.append('email', values.email)
@@ -168,7 +183,7 @@ class Signup extends React.Component {
                     valuePropName: 'fileList',
                     getValueFromEvent: this.normFile,
                   })(
-                    <Upload name="logo" accept="image/*" disabled={this.state.disable}>
+                    <Upload name="logo" accept="image/*" disabled={this.state.disable} {...props}>
                       <Button disabled={this.state.disableUpload}>
                         <Icon type="upload" /> Click to upload Image
                     </Button>
