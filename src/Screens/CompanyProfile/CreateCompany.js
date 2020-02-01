@@ -103,6 +103,7 @@ class CreateCompany extends React.Component {
 				formData.append('country', values.country)
 				formData.append('city', city[values.city])
 				formData.append('description', values.description)
+				formData.append('title', values.title)
 				formData.append('user', JSON.stringify(user))
 
 
@@ -310,8 +311,22 @@ class CreateCompany extends React.Component {
 											</Form.Item>
 
 										</div>
-										<div className="col-md-12">
-											<label>Upload Your Logo</label>
+										<div className="col-md-6 col-sm-6 col-xs-12">
+											<label>Company Name:</label>
+											<Form.Item className="sign-up">
+												{getFieldDecorator('name', {
+													rules: [{ required: true, message: 'Please input your Company Name!' }],
+												})(
+													<Input
+														name="title"
+														prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+														placeholder="Company Title"
+													/>,
+												)}
+											</Form.Item>
+										</div>
+										<div className="col-md-6 col-sm-6 col-xs-12">
+											<label>Upload Your Picture</label>
 											<Form.Item className="sign-up">
 												{getFieldDecorator('profilePic', {
 													valuePropName: 'fileList',
