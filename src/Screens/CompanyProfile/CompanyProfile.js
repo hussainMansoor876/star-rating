@@ -38,6 +38,7 @@ class Company extends React.Component {
 
 	render() {
 		const { company, success } = this.state
+		const { user } = this.props
 		if (!company) {
 			return (
 				<div className="main-body">
@@ -291,9 +292,9 @@ class Company extends React.Component {
 																</div>
 															</div>
 														</div>
-														<div className="inputcol-2">
+														{!user.buyPlan ? <div className="inputcol-2">
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
-														</div>
+														</div> : null}
 													</div>
 												</div>
 											</div>
@@ -315,7 +316,7 @@ class Company extends React.Component {
 										<h5 className="fc-blue">3,218 Reviews on ProvenExpert.com</h5>
 									</div>
 								</div>
-								<div className="col-lg-2 col-md-4 col-sm-12">
+								<div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
 									<div className="star-center">
 										<span className="ff-primary">4.66/5.00</span>
 										<div className="starress">
@@ -328,16 +329,6 @@ class Company extends React.Component {
 											</ul>
 										</div>
 										<span className="ff-primary">EXCELLENT</span>
-									</div>
-								</div>
-								<div className="col-lg-2 col-md-12">
-									<div className="inputcol">
-										<select>
-											<option value="volvo">Volvo</option>
-											<option value="saab">Saab</option>
-											<option value="mercedes">Mercedes</option>
-											<option value="audi">Audi</option>
-										</select>
 									</div>
 								</div>
 							</div>
