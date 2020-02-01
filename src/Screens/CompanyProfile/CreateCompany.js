@@ -132,7 +132,7 @@ class CreateCompany extends React.Component {
 	async componentWillMount() {
 		const { user } = this.props
 		if (user.buyPlan) {
-			await axios.post('http://localhost:5001/post/is-company', {
+			await axios.post('https://star-rating123.herokuapp.com/post/is-company', {
 				_id: user._id
 			})
 				.then((response) => {
