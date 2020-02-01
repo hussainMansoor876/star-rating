@@ -28,7 +28,7 @@ class CreateCompany extends React.Component {
 			disableUpload: false,
 			success: true,
 			loading: true,
-			company: []
+			company: null
 		}
 	}
 
@@ -175,8 +175,9 @@ class CreateCompany extends React.Component {
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
-		const { city, success, loading } = this.state
+		const { city, success, loading, company } = this.state
 		const { user } = this.props
+		console.log(company)
 		if (loading) {
 			return (
 				<div className="main-body">
@@ -187,7 +188,7 @@ class CreateCompany extends React.Component {
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
-				{!success ? <Exception type="500" title="Company" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="Your Company profile is on pending!!!" /> :
+				{!success && !company ? <Exception type="500" title="Company" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="Your Company profile is on pending!!!" /> :
 					<div>
 						<section id="banner-6">
 							<div className="wrapper">
