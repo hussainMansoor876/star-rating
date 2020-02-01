@@ -306,64 +306,6 @@ class Company extends React.Component {
 					</div>
 				</section>
 
-
-				<section id="measure">
-					<div className="wrapper">
-						<div className="measure-main">
-							<div className="row">
-								<div className="col-lg-4">
-									<div className="measure-sub">
-										<h5><i className="fa fa-check"></i>Measure of satisfaction</h5>
-										<span className="ff-primary">4.66/5.00</span>
-										<div className="starres">
-											<ul>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-											</ul>
-										</div>
-										<span>701 Reviews</span>
-									</div>
-								</div>
-								<div className="col-lg-4">
-									<div className="measure-sub">
-										<h5><i className="fa fa-check"></i>Measure of satisfaction</h5>
-										<span className="ff-primary">4.66/5.00</span>
-										<div className="starres">
-											<ul>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-											</ul>
-										</div>
-										<span className="ff-primary">701 Reviews</span>
-									</div>
-								</div>
-								<div className="col-lg-4">
-									<div className="measure-sub">
-										<h5><i className="fa fa-check"></i>Measure of satisfaction</h5>
-										<span className="ff-primary">4.66/5.00</span>
-										<div className="starres">
-											<ul>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-											</ul>
-										</div>
-										<span className="ff-primary">701 Reviews</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
 				<section id="reviews">
 					<div className="wrapper">
 						<div className="reviews-main">
