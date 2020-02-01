@@ -140,11 +140,10 @@ class Company extends React.Component {
 																</div>
 																<div className="centr-sub-2-main">
 																	<h5 className="ff-secondary">Contact person</h5>
-																	<span className="ff-primary">Remo Fyda</span>
+																	{/* <span className="ff-primary">Remo Fyda</span> */}
 																	<ul>
-																		<li className="ff-primary"><i className="fa fa-phone"></i><a href="#" className="fc-blue">030 270 041 905</a></li>
-																		<li className="ff-primary"><i className="fa fa-phone"></i><a href="#"> 030 270 041 400</a></li>
-																		<li className="ff-primary"><i className="fa fa-envelope"></i><a href="#" className="fc-blue"> E-Mail sender</a></li>
+																		<li className="ff-primary"><i className="fa fa-phone"></i><a href="#" className="fc-blue">{company.contactNo}</a></li>
+																		<li className="ff-primary"><a href="#" className="fc-blue">{company.contactEmail}</a></li>
 																	</ul>
 																</div>
 															</div>
@@ -303,16 +302,6 @@ class Company extends React.Component {
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</section>
-
-
-				<section id="competencies">
-					<div className="wrapper">
-						<div className="competencies-main">
-							<p className="ff-primary"><span >TOP COMPETENCIES</span> (Based on 41 competencies)</p>
-							<a href="#"><i className="fa fa-chevron-circle-down fc-blue"></i></a>
 						</div>
 					</div>
 				</section>
