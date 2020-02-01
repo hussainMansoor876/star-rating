@@ -65,8 +65,8 @@ class CreateCompany extends React.Component {
 				else if (!validator.isURL(values.url)) {
 					return this.openNotification("Problem", "Invalid Url", 'close-circle', 'red')
 				}
-				else if (values.telnumber.length < 10) {
-					return this.openNotification("Problem", "Telephone Number be Atleast 10 Numbers", 'close-circle', 'red')
+				else if (values.telnumber.length < 8) {
+					return this.openNotification("Problem", "Telephone Number be Atleast 8 Numbers", 'close-circle', 'red')
 				}
 				else if (values.contactNo.length < 10) {
 					return this.openNotification("Problem", "Contact Number be Atleast 10 Numbers", 'close-circle', 'red')
@@ -312,10 +312,10 @@ class CreateCompany extends React.Component {
 
 										</div>
 										<div className="col-md-6 col-sm-6 col-xs-12">
-											<label>Company Name:</label>
+											<label>Company Title:</label>
 											<Form.Item className="sign-up">
-												{getFieldDecorator('name', {
-													rules: [{ required: true, message: 'Please input your Company Name!' }],
+												{getFieldDecorator('title', {
+													rules: [{ required: true, message: 'Please input your Company Title!' }],
 												})(
 													<Input
 														name="title"
