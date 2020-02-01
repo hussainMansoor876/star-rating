@@ -24,7 +24,9 @@ class CreateCompany extends React.Component {
 		super(props)
 		this.state = {
 			city: [],
-			disableUpload: false
+			disableUpload: false,
+			success: true,
+			company: []
 		}
 	}
 
@@ -126,12 +128,25 @@ class CreateCompany extends React.Component {
 
 	async componentWillMount() {
 		const { user } = this.props
-		await axios.post('http://localhost:5001/post/is-company', {
-			_id: user._id
-		})
-			.then((response) => {
-				console.log('response', response)
+		if (user.buyPlan) {
+			await axios.post('http://localhost:5001/post/is-company', {
+				_id: user._id
 			})
+				.then((response) => {
+					console.log('response', response)
+					const { data } = response
+					if (data.success) {
+						this.setState({
+							company: data.data
+						})
+					}
+					else {
+						this.setState({
+							success: false
+						})
+					}
+				})
+		}
 	}
 
 	componentDidMount() {
