@@ -12,12 +12,29 @@ class Search extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      amount: 24.90 * 100,
+      name: "Star Rating"
     }
   }
 
 
-  handleToken(token){
+  handleToken(token) {
+    const { amount, name } = this.state
+    var product = {
+      amount,
+      name
+    }
+    const response = await axios.post(
+      "https://ry7v05l6on.sse.codesandbox.io/checkout",
+      { token, product }
+    );
+    const { status } = response.data;
+    console.log("Response:", response.data);
+    if (status === "success") {
+      toast("Success! Check email for details", { type: "success" });
+    } else {
+      toast("Something went wrong", { type: "error" });
+    }
     console.log(token)
   }
 
@@ -49,81 +66,81 @@ class Search extends React.Component {
                     <h1 className="ff-secondary fc-blue">SELECT PLAN</h1>
                   </div>
                 </div>
-                  <div className="col-lg-6 col-md-6">
-                    <div className="price-description">
-                      <div className="price-detail bg-primary">
-                        <i class="fa fa-home fc-white"></i>
-                        <h4 className="ff-secondary fc-white"> MONTHLY</h4>
-                        <h5 className="ff-secondary fc-white">$ 24.90<span>/m</span></h5>
-                        <p className="ff-primary fc-white">Monhtly Plan</p>
-                      </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="price-description">
+                    <div className="price-detail bg-primary">
+                      <i class="fa fa-home fc-white"></i>
+                      <h4 className="ff-secondary fc-white"> MONTHLY</h4>
+                      <h5 className="ff-secondary fc-white">$ 24.90<span>/m</span></h5>
+                      <p className="ff-primary fc-white">Monhtly Plan</p>
+                    </div>
 
-                      <div className="price-btn">
-                        <StripeCheckout
+                    <div className="price-btn">
+                      <StripeCheckout
                         stripeKey="pk_test_Lh2CKCRHvCf7KgPVftBL7tu900oQMdN2v5"
                         token={(e) => this.handleToken(e)}
                         // billingAddress
                         // shippingAddress
                         amount={24.90 * 100}
-                        >
-                        <button className="ff-primary">Join Now</button>
-                        </StripeCheckout>
-                      </div>
-                      <div className="price-list">
-                        <ul>
-                          <li>50</li>
-                          <li>25</li>
-                          <li>3 platforms</li>
-                          <li>-</li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                        </ul>
-                      </div>
-
+                      >
+                        <button className="ff-primary" onClick={() => this.setState({ amount: 24.90 * 100 })}>Join Now</button>
+                      </StripeCheckout>
                     </div>
+                    <div className="price-list">
+                      <ul>
+                        <li>50</li>
+                        <li>25</li>
+                        <li>3 platforms</li>
+                        <li>-</li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                      </ul>
+                    </div>
+
                   </div>
+                </div>
 
-                  <div className="col-lg-6 col-md-6">
-                    <div className="price-description mb-o">
-                      <div className="price-detail bg-primary">
-                        <i class="fa fa-home fc-white"></i>
-                        <h4 className="ff-secondary fc-white">YEARLY</h4>
-                        <h5 className="ff-secondary fc-white">$ 240<span>/m</span></h5>
-                        <p className="ff-primary fc-white">you save $ 120 per year</p>
-                      </div>
+                <div className="col-lg-6 col-md-6">
+                  <div className="price-description mb-o">
+                    <div className="price-detail bg-primary">
+                      <i class="fa fa-home fc-white"></i>
+                      <h4 className="ff-secondary fc-white">YEARLY</h4>
+                      <h5 className="ff-secondary fc-white">$ 240<span>/m</span></h5>
+                      <p className="ff-primary fc-white">you save $ 120 per year</p>
+                    </div>
 
-                      <div className="price-btn">
-                        <StripeCheckout
+                    <div className="price-btn">
+                      <StripeCheckout
                         stripeKey="pk_test_Lh2CKCRHvCf7KgPVftBL7tu900oQMdN2v5"
                         token={(e) => this.handleToken(e)}
                         // billingAddress
                         // shippingAddress
                         amount={240 * 100}
-                        >
-                        <button className="ff-primary">Join Now</button>
-                        </StripeCheckout>
-                      </div>
-                      <div className="price-list">
-                        <ul>
-                          <li>250</li>
-                          <li>50</li>
-                          <li>5 platforms</li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                          <li><i class="fa fa-check"></i></li>
-                        </ul>
-                      </div>
-
+                      >
+                        <button className="ff-primary" onClick={() => this.setState({ amount: 240 * 100 })}>Join Now</button>
+                      </StripeCheckout>
                     </div>
+                    <div className="price-list">
+                      <ul>
+                        <li>250</li>
+                        <li>50</li>
+                        <li>5 platforms</li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                      </ul>
+                    </div>
+
                   </div>
+                </div>
 
 
               </div>
