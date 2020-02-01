@@ -39,14 +39,6 @@ class Company extends React.Component {
 	render() {
 		const { company, success } = this.state
 		const { user } = this.props
-		if (!company) {
-			return (
-				<div className="main-body">
-					<Header {...this.props} />
-					{!success && <Exception type="404" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="User profile Not Found!!!" />}
-				</div>
-			)
-		}
 		return (
 			<div className="main-body">
 				<section id="inside-banner">
