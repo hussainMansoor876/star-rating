@@ -5,6 +5,8 @@ import './Plan.css'
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 import StripeCheckout from 'react-stripe-checkout'
+import { Icon, notification } from 'antd';
+import axios from 'axios'
 
 
 class Search extends React.Component {
@@ -17,25 +19,32 @@ class Search extends React.Component {
     }
   }
 
+  openNotification = (title, desc, icon, color = '#108ee9') => {
+    notification.open({
+      message: title,
+      description: desc,
+      icon: <Icon type={icon} style={{ color: color }} />,
+    });
+  };
 
-  handleToken(token) {
+
+  async handleToken(token) {
     const { amount, name } = this.state
     var product = {
       amount,
       name
     }
     const response = await axios.post(
-      "https://ry7v05l6on.sse.codesandbox.io/checkout",
+      "https://star-rating123.herokuapp.com/post/checkout",
       { token, product }
     );
     const { status } = response.data;
     console.log("Response:", response.data);
     if (status === "success") {
-      toast("Success! Check email for details", { type: "success" });
+      this.openNotification("Success!", "Check email for details", 'check')
     } else {
-      toast("Something went wrong", { type: "error" });
+      this.openNotification("Error!", "Something went wrong", 'check')
     }
-    console.log(token)
   }
 
 
