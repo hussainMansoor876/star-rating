@@ -27,6 +27,7 @@ class CreateCompany extends React.Component {
 			city: [],
 			disableUpload: false,
 			success: true,
+			loading: true,
 			company: []
 		}
 	}
@@ -138,15 +139,23 @@ class CreateCompany extends React.Component {
 					const { data } = response
 					if (data.success) {
 						this.setState({
-							company: data.data
+							company: data.data,
+							loading: false
 						})
 					}
 					else {
 						this.setState({
-							success: false
+							success: false,
+							loading: false
 						})
 					}
 				})
+		}
+		else {
+			this.setState({
+				success: false,
+				loading: false
+			})
 		}
 	}
 
@@ -166,12 +175,19 @@ class CreateCompany extends React.Component {
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
-		const { city, success } = this.state
+		const { city, success, loading } = this.state
 		const { user } = this.props
+		if (loading) {
+			return (
+				<div className="main-body">
+					<Header {...this.props} />
+				</div>
+			)
+		}
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
-				{!success && user.buyPlan ? <Exception type="500" title="Company" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="Your Company profile is on pending!!!" /> :
+				{!success ? <Exception type="500" title="Company" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="Your Company profile is on pending!!!" /> :
 					<div>
 						<section id="banner-6">
 							<div className="wrapper">
