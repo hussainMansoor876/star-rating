@@ -41,6 +41,7 @@ class Search extends React.Component {
       { token, product }
     );
     const { success, data } = response.data;
+    console.log(data)
     if (success) {
       this.openNotification("Success!", "Check email for details", 'check')
     } else {
