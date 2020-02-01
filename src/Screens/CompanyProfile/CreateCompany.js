@@ -5,7 +5,7 @@ import './CompanyProfile.css'
 import Header from '../Header/Header'
 import axios from 'axios'
 import validator from 'validator'
-import { Form, Icon, Input, Button, Upload, notification, Select } from 'antd';
+import { Form, Icon, Input, Button, Upload, notification, Select, message } from 'antd';
 import { Link } from 'react-router-dom'
 import Footer from '../Header/Footer'
 import data from '../../country'
@@ -19,6 +19,23 @@ const { Option } = Select;
 const title = "Error"
 
 const { TextArea } = Input;
+
+const props = {
+    name: 'file',
+    multiple: true,
+    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    onChange(info) {
+        const { status } = info.file;
+        if (status !== 'uploading') {
+            console.log(info.file, info.fileList);
+        }
+        if (status === 'done') {
+            message.success(`${info.file.name} file uploaded successfully.`);
+        } else if (status === 'error') {
+            message.error(`${info.file.name} file upload failed.`);
+        }
+    },
+}
 
 class CreateCompany extends React.Component {
 
@@ -172,7 +189,6 @@ class CreateCompany extends React.Component {
 		const { getFieldDecorator } = this.props.form;
 		const { city, success, loading, company } = this.state
 		const { user } = this.props
-		console.log(company)
 		if (loading) {
 			return (
 				<div className="main-body">
@@ -372,7 +388,7 @@ class CreateCompany extends React.Component {
 															valuePropName: 'fileList',
 															getValueFromEvent: this.normFile,
 														})(
-															<Upload name="logo" accept="image/*" disabled={this.state.disable}>
+															<Upload name="logo" accept="image/*" disabled={this.state.disable} {...props}>
 																<Button disabled={this.state.disableUpload}>
 																	<Icon type="upload" /> Click to upload Image
                     									</Button>
