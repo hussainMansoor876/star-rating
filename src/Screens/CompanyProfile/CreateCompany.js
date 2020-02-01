@@ -124,6 +124,16 @@ class CreateCompany extends React.Component {
 
 	};
 
+	async componentWillMount() {
+		const { user } = this.props
+		await axios.post('http://localhost:5001/post/is-company', {
+			_id: user._id
+		})
+			.then((response) => {
+				console.log('response', response)
+			})
+	}
+
 	componentDidMount() {
 		const { user } = this.props
 		// if(!user.buyPlan){
@@ -141,7 +151,7 @@ class CreateCompany extends React.Component {
 	render() {
 		const { getFieldDecorator } = this.props.form;
 		const { city } = this.state
-		
+
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
