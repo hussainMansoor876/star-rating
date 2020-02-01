@@ -63,7 +63,7 @@ class Navbar extends Component {
     }
 
     var fill1 = loginRoutes.filter((obj) => {
-      if (location.pathname === '/createcompany' && obj.route == '/profile') {
+      if (location.pathname === '/company' && obj.route == '/profile') {
         return
       }
       return obj.route !== location.pathname;
@@ -161,7 +161,7 @@ class Navbar extends Component {
                       return <li key={i}><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
                     })}
                     {
-                      location.pathname === '/profile' && <li><Link to='/createcompany' className='nav-login' >Company</Link></li>
+                      location.pathname === '/profile' && <li><Link to='/company' className='nav-login' >Company</Link></li>
                     }
                     <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                   </ul> : <ul>
@@ -225,7 +225,7 @@ class Navbar extends Component {
                           return <li key={i}><Link to={v.route} className={v.className ? v.className : null}>{v.name}</Link></li>
                         })}
                         {
-                          location.pathname === '/profile' && <li><Link to='/createcompany' className='nav-login' >Company</Link></li>
+                          location.pathname === '/profile' && <li><Link to='/company' className='nav-login' >Company</Link></li>
                         }
                         <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                       </ul> : <ul>
