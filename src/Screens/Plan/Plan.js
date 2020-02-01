@@ -37,7 +37,7 @@ class Search extends React.Component {
       _id: user._id
     }
     const response = await axios.post(
-      "http://localhost:5001/post/checkout",
+      "https://star-rating123.herokuapp.com/post/checkout",
       { token, product }
     );
     const { success, data } = response.data;
