@@ -292,7 +292,7 @@ class Company extends React.Component {
 																</div>
 															</div>
 														</div>
-														{!user.buyPlan ? <div className="inputcol-2">
+														{user.buyPlan ? <div className="inputcol-2">
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
 														</div> : null}
 													</div>
@@ -313,7 +313,7 @@ class Company extends React.Component {
 							<div className="row">
 								<div className="col-lg-8 col-md-8 col-sm-12">
 									<div className="reviews-head">
-										<h5 className="fc-blue">3,218 Reviews on ProvenExpert.com</h5>
+										<h5 className="fc-blue">3,218 Reviews on star-rating.com</h5>
 									</div>
 								</div>
 								<div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
