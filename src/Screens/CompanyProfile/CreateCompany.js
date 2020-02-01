@@ -21,20 +21,20 @@ const title = "Error"
 const { TextArea } = Input;
 
 const props = {
-    name: 'file',
-    multiple: true,
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    onChange(info) {
-        const { status } = info.file;
-        if (status !== 'uploading') {
-            console.log(info.file, info.fileList);
-        }
-        if (status === 'done') {
-            message.success(`${info.file.name} file uploaded successfully.`);
-        } else if (status === 'error') {
-            message.error(`${info.file.name} file upload failed.`);
-        }
-    },
+	name: 'file',
+	multiple: true,
+	action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+	onChange(info) {
+		const { status } = info.file;
+		if (status !== 'uploading') {
+			console.log(info.file, info.fileList);
+		}
+		if (status === 'done') {
+			message.success(`${info.file.name} file uploaded successfully.`);
+		} else if (status === 'error') {
+			message.error(`${info.file.name} file upload failed.`);
+		}
+	},
 }
 
 class CreateCompany extends React.Component {
@@ -45,6 +45,7 @@ class CreateCompany extends React.Component {
 			city: [],
 			disableUpload: false,
 			success: true,
+			disable: false,
 			loading: true,
 			company: null
 		}
@@ -113,7 +114,7 @@ class CreateCompany extends React.Component {
 				}
 
 				values.user = this.props.user
-				this.setState({ loading: true, disable: true })
+				this.setState({ disable: true })
 				var formData = new FormData();
 				formData.append('profilePic', values.profilePic[0].originFileObj)
 				formData.append('name', values.name)
@@ -136,7 +137,7 @@ class CreateCompany extends React.Component {
 							this.props.history.push('/profile')
 						}
 						else {
-							this.setState({ loading: false, disable: false })
+							this.setState({ disable: false })
 							this.openNotification(title, result.data.message, 'close-circle', 'red')
 						}
 					})
@@ -148,7 +149,10 @@ class CreateCompany extends React.Component {
 
 	async componentWillMount() {
 		const { user } = this.props
-		if (user.buyPlan) {
+		if (!user.buyPlan) {
+			this.props.history.push('/plan')
+		}
+		else {
 			await axios.post('https://star-rating123.herokuapp.com/post/is-company', {
 				_id: user._id
 			})
@@ -169,19 +173,10 @@ class CreateCompany extends React.Component {
 					}
 				})
 		}
-		else {
-			this.setState({
-				success: false,
-				loading: false
-			})
-		}
 	}
 
 	componentDidMount() {
-		const { user } = this.props
-		if(!user.buyPlan){
-			this.props.history.push('/plan')
-		}
+
 	}
 
 
@@ -412,7 +407,7 @@ class CreateCompany extends React.Component {
 												<div className="col-md-12">
 													<div className="register-btn">
 														<Form.Item className="sign-up">
-															<Button htmlType="submit" className="login-form-button" style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
+															<Button htmlType="submit" className="login-form-button" disabled={this.state.disable} loading={this.state.disable} style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
 																Register
 												</Button>
 														</Form.Item>
@@ -491,7 +486,7 @@ class CreateCompany extends React.Component {
 											<div className="exp-main">
 												<div className="exp-con">
 													<h3 className="ff-secondary">{company.url}</h3>
-														<h4 className="ff-secondary">{company.title}</h4>
+													<h4 className="ff-secondary">{company.title}</h4>
 												</div>
 
 
