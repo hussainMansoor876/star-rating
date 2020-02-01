@@ -93,7 +93,7 @@ class Company extends React.Component {
 															<li><i className="fa fa-star"></i></li>
 														</ul>
 													</div>
-													<h4 className="ff-secondary">SEHR GUT</h4>
+													<h4 className="ff-secondary">{company.name}</h4>
 													<h6 className="ff-secondary">3.853 Bewertungen</h6>
 													<div className="pproven-bottom-last">
 														<span className="line-top"></span>
@@ -188,7 +188,7 @@ class Company extends React.Component {
 																				<li><i className="fa fa-star"></i></li>
 																			</ul>
 																		</div>
-																		<h4 className="ff-secondary">SEHR GUT</h4>
+																		<h4 className="ff-secondary">{company.name}</h4>
 																	</div>
 																</div>
 																<div className="col-lg-6 col-md-6">
