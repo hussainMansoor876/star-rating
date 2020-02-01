@@ -141,7 +141,7 @@ class CreateCompany extends React.Component {
 	render() {
 		const { getFieldDecorator } = this.props.form;
 		const { city } = this.state
-
+		
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
