@@ -27,6 +27,7 @@ class Company extends React.Component {
 		})
 			.then((response) => {
 				const { data } = response
+				console.log(data)
 				this.setState({
 					company: data.data,
 					success: data.success
@@ -110,7 +111,7 @@ class Company extends React.Component {
 								<div className="col-lg-10">
 									<div className="exp-main">
 										<div className="exp-con">
-											<h3 className="ff-secondary">ProvenExpert.com</h3>
+											<h3 className="ff-secondary">{company.url}</h3>
 											<h4 className="ff-secondary">Customer satisfaction analysis & referral marketing</h4>
 										</div>
 
@@ -131,11 +132,11 @@ class Company extends React.Component {
 															<div className="centr-sub-1">
 																<div className="centr-sub-1-main">
 																	<h5 className="ff-secondary">Contact information</h5>
-																	<span className="ff-primary">ProvenExpert.com</span>
-																	<span className="ff-primary">Quedlinburger Straße 1</span>
-																	<span className="ff-primary">10589 Berlin</span>
-																	<span className="ff-primary">Germany</span>
-																	<span className="ff-primary direction"><i className="fa fa-map-marker"></i><a href="#" className="fc-blue"> Direction</a></span>
+																	<span className="ff-primary">{company.url}</span>
+																	<span className="ff-primary">{company.address}</span>
+																	<span className="ff-primary">{company.city}</span>
+																	<span className="ff-primary">{company.country}</span>
+																	{/* <span className="ff-primary direction"><i className="fa fa-map-marker"></i><a href="#" className="fc-blue"> Direction</a></span> */}
 																</div>
 																<div className="centr-sub-2-main">
 																	<h5 className="ff-secondary">Contact person</h5>
@@ -157,8 +158,7 @@ class Company extends React.Component {
 										</div> */}
 															<div className="centr-subs-2">
 																<h5 className="ff-secondary">Websites & Profiles</h5>
-																<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" href="#">ProvenExpert.com</a></p>
-																<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" href="#">Blog</a></p>
+																<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" target="_blank" href={`https://${company.url}`}>{company.url}</a></p>
 																<div className="social-icons-proven">
 																	<ul>
 																		<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
