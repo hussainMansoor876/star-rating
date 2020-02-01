@@ -30,12 +30,14 @@ class Search extends React.Component {
 
   async handleToken(token) {
     const { amount, name } = this.state
+    const { user } = this.props
     var product = {
       amount,
-      name
+      name,
+      _id: user._id
     }
     const response = await axios.post(
-      "https://star-rating123.herokuapp.com/post/checkout",
+      "http://localhost:5001/post/checkout",
       { token, product }
     );
     const { status } = response.data;
@@ -43,7 +45,7 @@ class Search extends React.Component {
     if (status === "success") {
       this.openNotification("Success!", "Check email for details", 'check')
     } else {
-      this.openNotification("Error!", "Something went wrong", 'check')
+      this.openNotification("Error!", "Something went wrong", 'close-circle')
     }
   }
 
