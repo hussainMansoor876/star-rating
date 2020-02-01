@@ -485,7 +485,10 @@ class CreateCompany extends React.Component {
 										<div className="col-lg-10">
 											<div className="exp-main">
 												<div className="exp-con">
-													<h3 className="ff-secondary">{company.url}</h3>
+													<div style={{ display: 'flex' }}>
+														<h3 className="ff-secondary">{company.url}</h3>
+														{company.status == 'pending' ? <h4 style={{ color: 'red' }}>&nbsp;(Pending)</h4> : null}
+													</div>
 													<h4 className="ff-secondary">{company.title}</h4>
 												</div>
 
