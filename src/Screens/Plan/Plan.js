@@ -40,9 +40,8 @@ class Search extends React.Component {
       "http://localhost:5001/post/checkout",
       { token, product }
     );
-    const { status } = response.data;
-    console.log("Response:", response.data);
-    if (status === "success") {
+    const { success, data } = response.data;
+    if (success) {
       this.openNotification("Success!", "Check email for details", 'check')
     } else {
       this.openNotification("Error!", "Something went wrong", 'close-circle')
