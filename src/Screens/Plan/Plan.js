@@ -43,7 +43,11 @@ class Search extends React.Component {
     const { success, data } = response.data;
     console.log(data)
     if (success) {
+      this.props.loginUser(data)
       this.openNotification("Success!", "Check email for details", 'check')
+      setTimeout(()=>{
+        this.props.history.replace('/company')
+      }, 100)
     } else {
       this.openNotification("Error!", "Something went wrong", 'close-circle')
     }

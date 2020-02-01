@@ -165,9 +165,6 @@ class CreateCompany extends React.Component {
 		if(!user.buyPlan){
 			this.props.history.push('/plan')
 		}
-		this.props.form.setFieldsValue({
-			contactEmail: this.props.user.email,
-		});
 	}
 
 
@@ -186,7 +183,7 @@ class CreateCompany extends React.Component {
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
-				{!success && !company ? <Exception type="500" title="Company" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: '100px' }} desc="Your Company profile is on pending!!!" /> : !user.buyPlan ?
+				{user.buyPlan && !company ?
 					<div>
 						<section id="banner-6">
 							<div className="wrapper">
@@ -271,6 +268,7 @@ class CreateCompany extends React.Component {
 													<label>Email:</label>
 													<Form.Item className="sign-up">
 														{getFieldDecorator('contactEmail', {
+															initialValue: this.props.user.email,
 															rules: [{ required: true, message: 'Please input your Email!' }],
 														})(
 															<Input
