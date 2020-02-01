@@ -62,8 +62,8 @@ class Search extends React.Component {
                         <StripeCheckout
                         stripeKey="pk_test_Lh2CKCRHvCf7KgPVftBL7tu900oQMdN2v5"
                         token={(e) => this.handleToken(e)}
-                        billingAddress
-                        shippingAddress
+                        // billingAddress
+                        // shippingAddress
                         amount={24.90 * 100}
                         >
                         <button className="ff-primary">Join Now</button>
@@ -100,8 +100,8 @@ class Search extends React.Component {
                         <StripeCheckout
                         stripeKey="pk_test_Lh2CKCRHvCf7KgPVftBL7tu900oQMdN2v5"
                         token={(e) => this.handleToken(e)}
-                        billingAddress
-                        shippingAddress
+                        // billingAddress
+                        // shippingAddress
                         amount={240 * 100}
                         >
                         <button className="ff-primary">Join Now</button>
