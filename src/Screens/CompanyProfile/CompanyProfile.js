@@ -78,7 +78,7 @@ class Company extends React.Component {
 										<div className="row">
 											<div className="col-lg-12">
 												<div className="proven-con">
-													<img src={proven} />
+													<img src={company.profilePic.url} />
 												</div>
 											</div>
 											<div className="col-lg-12">
@@ -122,10 +122,10 @@ class Company extends React.Component {
 													<div className="center-first">
 														<div className="col-lg-12">
 															<div className="center-first-sub ">
-																<p className="ff-primary ideal">The ideal solution for your referral marketing: For more confidence, customers & sales.</p>
-																<p className="ff-primary">With ProvenExpert.com you get the feedback from your customers
-											 and present your evaluations from all platforms in one single rating...</p>
-																<a href="#">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a>
+																<p className="ff-primary ideal" style={{
+																	overflow: 'hidden'
+																}}>{company.description}</p>
+																{/* <a href="#">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a> */}
 															</div>
 														</div>
 														<div className="col-lg-6 col-md-6 flrt-r">
