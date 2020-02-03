@@ -127,7 +127,7 @@ class CreateCompany extends React.Component {
 				formData.append('city', city[values.city])
 				formData.append('description', values.description)
 				formData.append('title', values.title)
-				formData.append('user', user)
+				formData.append('user', JSON.stringify(user))
 
 
 				axios.post('https://star-rating123.herokuapp.com/user/createCompany', formData)
