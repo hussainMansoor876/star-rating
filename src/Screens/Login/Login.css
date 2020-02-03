@@ -93,6 +93,8 @@
 @media(max-width:991px){
   .login-card {
     padding: 10% 0 10%;
+    top: 0;
+    margin-bottom: 0px;
   }
 }
 
@@ -186,7 +188,13 @@
   background: #fff;
 }
   
-
+@media only screen and (max-width:991px){
+  .register-card{
+    top: 0;
+    margin-bottom: 0px;
+  }
+  
+}
   
   
 

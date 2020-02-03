@@ -125,6 +125,27 @@ class Navbar extends Component {
 
     return (
       <div>
+        <div class="first-form">
+        <form>
+          <div className="input-group">
+            <div className="input-group-addon" id="order">
+              <div className="select-style">
+                <select name="order" onChange={(e) => this.setState({ searchType: e.target.value })}>
+                  <option defaultValue="company">Company</option>
+                  <option value="user">User</option>
+                </select>
+              </div>
+            </div>
+            <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
+            <div className="input-group-addon">
+              <button className="submit" type="button" onClick={() => this.search()}>
+                <span className="fa fa-search"></span>
+              </button>
+            </div>
+          </div>
+        </form>
+        </div>
+
         <header>
           <div className="wrapper">
             <div className="row">
@@ -197,7 +218,7 @@ class Navbar extends Component {
                   <nav>
                     <div className="mob-nav-list">
                       {user ? <ul>
-                        <li className='mobile-form'>
+                        {/* <li className='mobile-form'>
                           <form method="get">
                             <div className="input-group">
                               <div className="input-group-addon" id="order">
@@ -217,7 +238,7 @@ class Navbar extends Component {
                               </div>
                             </div>
                           </form>
-                        </li>
+                        </li> */}
                         {loginRoutes.map((v, i) => {
                           if (v.route == '/profile') {
                             return <li key={i}><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name.split(' ')[0]}</Link></li>
