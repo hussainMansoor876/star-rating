@@ -156,7 +156,7 @@ class Navbar extends Component {
                       </div>
                       <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
                       <div className="input-group-addon">
-                        <button className="submit" type="submit">
+                        <button className="submit" type="button" onClick={() => this.search()}>
                           <span className="fa fa-search"></span>
                         </button>
                       </div>
@@ -222,7 +222,7 @@ class Navbar extends Component {
                         <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                       </ul> : <ul>
                           <li className='mobile-form'>
-                            <form method="get" onSubmit={() => this.search()}>
+                            <form onSubmit={() => this.search()}>
                               <div className="input-group">
                                 <div className="input-group-addon" id="order">
                                   <div className="select-style">
@@ -234,7 +234,7 @@ class Navbar extends Component {
                                 </div>
                                 <input type="text" name="search" value={searchInput} id="search" className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
                                 <div className="input-group-addon" id="sub">
-                                  <button className="submit" type="submit" onClick={() => this.search()}>
+                                  <button className="submit" type="button" onClick={() => this.search()}>
                                     <span className="fa fa-search"></span>
                                   </button>
                                 </div>
