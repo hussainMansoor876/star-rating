@@ -49,6 +49,9 @@
 }
 
 @media only screen and (max-width:991px){
+  #banner-7{
+    top: 0;
+  }
   #banner-7 .va-middle {
     height: 40vh;
 }

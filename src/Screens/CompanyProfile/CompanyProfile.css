@@ -789,6 +789,9 @@
   }
   
   @media only screen and (max-width:991px){
+    #banner-6{
+        top: 0;
+      }
     #banner-6 .va-middle {
       height: 70vh;
   }

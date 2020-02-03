@@ -77,6 +77,10 @@
 
 /****************** SEARCH-FORM START ********************/
 
+.first-form {
+  display: none;
+}
+
 button[type="submit"] {
   padding: 0;
   background: none;
@@ -129,10 +133,16 @@ button.submit:hover{
   background: #fff;
   color: #0c94ac;
 }
+@media only screen and (max-width:991px){
+  .first-form {
+    display: block;
+    padding: 15px 0;
+  }
+}
 
 @media only screen and (max-width:768px){
   form{
-    width: 100%;
+    width: 90%;
     }
 }
 @media only screen and (max-width:640px){
@@ -150,7 +160,8 @@ button.submit:hover{
 header{
   padding: 20px 0;
   top:0;
-  /* position: fixed; */
+  position: fixed;
+  z-index: 9999;
   width: 100%;
   background: #fff;
   border-bottom: 2px solid #0c94ac;
@@ -382,8 +393,8 @@ header .nav-list ul .nav-signup:hover a::before {
 /** Mobile Nav Button **/
 .mobile-nav-btn {
   display: none;
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  top: -25px;
   height: 30px;
   padding: 7px 6px 19px;
   border-radius: 4px;
@@ -578,6 +589,9 @@ header .nav-list ul .nav-signup:hover a::before {
     }
   }
 @media only screen and (max-width:991px){
+  #banner{
+    top: 0;
+  }
   #banner .banner-content h2{
     font-size: 50px;}
     #banner .va-middle {
