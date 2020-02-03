@@ -105,17 +105,9 @@ class Navbar extends Component {
       this.props.history.push('/search', { searchInput, searchType })
       window.location.reload()
     }
-    else{
+    else {
       this.props.history.push('/search', { searchInput, searchType })
     }
-    // this.props.history.push('/search', { searchInput, searchType })
-    // await axios.post('http://localhost:5001/post/search', {
-    //   searchInput,
-    //   searchType
-    // })
-    //   .then((response) => {
-    //     console.log('response', response)
-    //   })
   }
 
 
@@ -125,25 +117,25 @@ class Navbar extends Component {
 
     return (
       <div>
-        <div class="first-form">
-        <form>
-          <div className="input-group">
-            <div className="input-group-addon" id="order">
-              <div className="select-style">
-                <select name="order" onChange={(e) => this.setState({ searchType: e.target.value })}>
-                  <option defaultValue="company">Company</option>
-                  <option value="user">User</option>
-                </select>
+        <div className="first-form">
+          <form>
+            <div className="input-group">
+              <div className="input-group-addon" id="order">
+                <div className="select-style">
+                  <select name="order" onChange={(e) => this.setState({ searchType: e.target.value })}>
+                    <option defaultValue="company">Company</option>
+                    <option value="user">User</option>
+                  </select>
+                </div>
+              </div>
+              <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
+              <div className="input-group-addon">
+                <button className="submit" type="button" onClick={() => this.search()}>
+                  <span className="fa fa-search"></span>
+                </button>
               </div>
             </div>
-            <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
-            <div className="input-group-addon">
-              <button className="submit" type="button" onClick={() => this.search()}>
-                <span className="fa fa-search"></span>
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
         </div>
 
         <header>
@@ -152,7 +144,7 @@ class Navbar extends Component {
               <div className="col-md-6">
                 <div className="main-logo">
                   <NavLink to='#'><img src={logonew} alt="" /></NavLink>
-                  <form>
+                  <form onSubmit={() => this.search()}>
                     <div className="input-group">
                       <div className="input-group-addon" id="order">
                         <div className="select-style">
@@ -164,7 +156,7 @@ class Navbar extends Component {
                       </div>
                       <input type="text" name="search" value={searchInput} className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
                       <div className="input-group-addon">
-                        <button className="submit" type="button" onClick={() => this.search()}>
+                        <button className="submit" type="submit">
                           <span className="fa fa-search"></span>
                         </button>
                       </div>
@@ -218,27 +210,6 @@ class Navbar extends Component {
                   <nav>
                     <div className="mob-nav-list">
                       {user ? <ul>
-                        {/* <li className='mobile-form'>
-                          <form method="get">
-                            <div className="input-group">
-                              <div className="input-group-addon" id="order">
-                                <div className="select-style">
-                                  <select name="order">
-                                    <option value="select">Select</option>
-                                    <option defaultValue="a">Company Profile</option>
-                                    <option value="b">User Profile</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
-                              <div className="input-group-addon" id="sub">
-                                <button className="submit" type="submit">
-                                  <span className="fa fa-search"></span>
-                                </button>
-                              </div>
-                            </div>
-                          </form>
-                        </li> */}
                         {loginRoutes.map((v, i) => {
                           if (v.route == '/profile') {
                             return <li key={i}><Link to="/profile"><img height={30} width={30} style={{ borderRadius: 50 }} src={user.profilePic.url} alt="" />{user.name.split(' ')[0]}</Link></li>
@@ -251,20 +222,19 @@ class Navbar extends Component {
                         <li className="nav-login"><Link to="#" onClick={() => this.logout()}>Logout</Link></li>
                       </ul> : <ul>
                           <li className='mobile-form'>
-                            <form method="get">
+                            <form method="get" onSubmit={() => this.search()}>
                               <div className="input-group">
                                 <div className="input-group-addon" id="order">
                                   <div className="select-style">
-                                    <select name="order">
-                                      <option value="select">Select</option>
-                                      <option defaultValue="a">Company Profile</option>
-                                      <option value="b">User Profile</option>
+                                    <select name="order" onChange={(e) => this.setState({ searchType: e.target.value })}>
+                                      <option defaultValue="company">Company</option>
+                                      <option value="user">User</option>
                                     </select>
                                   </div>
                                 </div>
-                                <input type="text" name="search" id="search" className="form-control" placeholder="Search For ..." autoComplete="off" />
+                                <input type="text" name="search" value={searchInput} id="search" className="form-control" placeholder="Search For ..." autoComplete="off" onChange={(e) => this.setState({ searchInput: e.target.value })} />
                                 <div className="input-group-addon" id="sub">
-                                  <button className="submit" type="submit">
+                                  <button className="submit" type="submit" onClick={() => this.search()}>
                                     <span className="fa fa-search"></span>
                                   </button>
                                 </div>

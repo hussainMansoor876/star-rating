@@ -21,13 +21,11 @@ class Company extends React.Component {
 	}
 
 	async componentWillMount() {
-		console.log('params', this.props.match.params.id)
 		await axios.post('https://star-rating123.herokuapp.com/post/search-company', {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
 				const { data } = response
-				console.log(data)
 				this.setState({
 					company: data.data,
 					success: data.success
