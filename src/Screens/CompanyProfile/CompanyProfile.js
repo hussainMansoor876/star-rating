@@ -290,9 +290,12 @@ class Company extends React.Component {
 																</div>
 															</div>
 														</div>
-														{user.buyPlan ? <div className="inputcol-2">
+														{!user.buyPlan ? <div className="inputcol-2">
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
 														</div> : null}
+														<div className="inputcol-2">
+															<button className="btn-blue ff-primary" style={{ width: '100%'}}>Add Review</button>
+														</div>
 													</div>
 												</div>
 											</div>
