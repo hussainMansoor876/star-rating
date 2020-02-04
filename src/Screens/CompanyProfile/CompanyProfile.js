@@ -421,7 +421,7 @@ class Company extends React.Component {
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
-																		<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
+																			<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
 																		</div>
 																	</div>
 																</div>
@@ -429,11 +429,11 @@ class Company extends React.Component {
 															<div className="star-third">
 																<div className="row">
 																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
+																		<p className="ff-primary">Clarity applications</p>
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
-																		<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
+																			<Rate disabled defaultValue={v.clarityStars} style={{ color: '#0c94ac' }} />
 																		</div>
 																	</div>
 																</div>
@@ -441,17 +441,11 @@ class Company extends React.Component {
 															<div className="star-third">
 																<div className="row">
 																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
+																		<p className="ff-primary">Privacy applications</p>
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
+																			<Rate disabled defaultValue={v.privacyStars} style={{ color: '#0c94ac' }} />
 																		</div>
 																	</div>
 																</div>
