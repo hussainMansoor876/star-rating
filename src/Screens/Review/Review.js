@@ -21,6 +21,8 @@ const props = {
     },
 }
 
+const title = "Error"
+
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
 class Review extends React.Component {
@@ -39,10 +41,10 @@ class Review extends React.Component {
         }
     }
 
-    openNotification = (title, desc, icon, color = '#108ee9') => {
+    openNotification = (title, desc1, icon, color = '#108ee9') => {
         notification.open({
             message: title,
-            description: desc,
+            description: desc1,
             icon: <Icon type={icon} style={{ color: color }} />,
         });
     };
@@ -66,27 +68,44 @@ class Review extends React.Component {
         return e && e.fileList;
     }
 
-    handleCreate = () => {
-		const { form } = this.formRef.props;
-		form.validateFields((err, values) => {
-			if (err) {
-				return;
-			}
-			this.setState({ visible: false, imageData: values });
-		});
-	};
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+
+            if (!err) {
+                // axios.post('https://star-rating123.herokuapp.com/user/signup', formData)
+                //     .then((result) => {
+                //         console.log(result)
+                //         if (result.data.success) {
+                //             this.openNotification('Wellcome', result.data.message, 'check')
+                //             this.props.loginUser(result.data.user)
+                //             // SessionStorageManager.setUser(result.data)
+                //             // window.location.reload()
+                //             this.props.history.push('/')
+                //         }
+                //         else {
+                //             this.openNotification(title, result.data.message, 'close-circle', 'red')
+                //             this.setState({ disable: false })
+                //         }
+                //     })
+            }
+            else {
+                this.openNotification(title, "desc1", 'close-circle', 'red')
+            }
+        });
+    };
 
     render() {
         const { visible, onCancel, form } = this.props;
         const { getFieldDecorator } = form;
-        const { disableUpload, value, starValues } = this.state
+        const { disableUpload, starValues } = this.state
         return (
             <Modal
                 visible={visible}
                 title="Add Image Details"
                 okText="Submit"
                 onCancel={onCancel}
-                onOk={() => this.handleCreate()}
+                onOk={this.handleSubmit}
             >
                 <Form layout="vertical">
                     <Form.Item label="feedback">
@@ -103,6 +122,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     applicationStars: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    applicationStars: value
+                                })
                             })} value={starValues.applicationStars} />
                             {starValues.applicationStars ? <span className="ant-rate-text">{desc[starValues.applicationStars - 1]}</span> : ''}
                         </span>)}
@@ -116,6 +139,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     featuresStars: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    applicationStars: value
+                                })
                             })} value={starValues.featuresStars} />
                             {starValues.featuresStars ? <span className="ant-rate-text">{desc[starValues.featuresStars - 1]}</span> : ''}
                         </span>)}
@@ -129,6 +156,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     clarityStars: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    applicationStars: value
+                                })
                             })} value={starValues.clarityStars} />
                             {starValues.clarityStars ? <span className="ant-rate-text">{desc[starValues.clarityStars - 1]}</span> : ''}
                         </span>)}
@@ -142,6 +173,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     privacyStars: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    applicationStars: value
+                                })
                             })} value={starValues.privacyStars} />
                             {starValues.privacyStars ? <span className="ant-rate-text">{desc[starValues.privacyStars - 1]}</span> : ''}
                         </span>)}
@@ -155,6 +190,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     customerService: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    applicationStars: value
+                                })
                             })} value={starValues.customerService} />
                             {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
                         </span>)}
