@@ -27,17 +27,24 @@ class Company extends React.Component {
 		this.setState({ visible: false });
 	};
 
-	handleCreate = (values) => {
+	async handleCreate(values){
 		const { user } = this.props
 		const { company } = this.state
 		this.handleCancel()
+		if (!values.video) {
+			delete values.video
+		}
 		values.companyName = company.name
 		values.companyId = company._id
 		values.ownerId = company.user._id
 		values.ownerName = company.user.name
 		values.reveiwerName = user.name
 		values.reveiwerId = user._id
-		console.log('values', values)
+		await axios.post('http://localhost:5001/post/add-review', values)
+			.then((response) => {
+				const { data } = response
+				console.log(data)
+			})
 
 	};
 
@@ -46,6 +53,7 @@ class Company extends React.Component {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
+				console.log(response)
 				const { data } = response
 				this.setState({
 					company: data.data,
@@ -522,7 +530,7 @@ class Company extends React.Component {
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
 					openNotification={this.openNotification}
-					handleCreate={this.handleCreate}
+					handleCreate={this.handleCreate.bind(this)}
 				/>
 				<Footer {...this.props} />
 			</div>
