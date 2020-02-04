@@ -28,7 +28,12 @@ class Review extends React.Component {
         super(props)
         this.state = {
             disableUpload: false,
-            value: 0
+            value: 0,
+            starValues: {
+                applicationStars: 0,
+                featuresStars: 0,
+                
+            }
         }
     }
 
@@ -77,8 +82,40 @@ class Review extends React.Component {
                             rules: [{ required: true, message: 'Please Add the description of Image!' }]
                         })(<TextArea rows={3} />)}
                     </Form.Item>
-                    <Form.Item>
-                        {getFieldDecorator('stars',{
+                    <Form.Item label="Application">
+                        {getFieldDecorator('applicationStars',{
+                            rules: [{required: true, message: 'Please give stars also'}]
+                        })(<span>
+                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
+                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                          </span>)}
+                    </Form.Item>
+                    <Form.Item label="Features">
+                        {getFieldDecorator('featuresStars',{
+                            rules: [{required: true, message: 'Please give stars also'}]
+                        })(<span>
+                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
+                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                          </span>)}
+                    </Form.Item>
+                    <Form.Item label="Clarity">
+                        {getFieldDecorator('clarityStars',{
+                            rules: [{required: true, message: 'Please give stars also'}]
+                        })(<span>
+                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
+                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                          </span>)}
+                    </Form.Item>
+                    <Form.Item label="Privacy">
+                        {getFieldDecorator('privacyStars',{
+                            rules: [{required: true, message: 'Please give stars also'}]
+                        })(<span>
+                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
+                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                          </span>)}
+                    </Form.Item>
+                    <Form.Item label="Customer">
+                        {getFieldDecorator('customerService',{
                             rules: [{required: true, message: 'Please give stars also'}]
                         })(<span>
                             <Rate tooltips={desc} onChange={this.handleChange} value={value} />
