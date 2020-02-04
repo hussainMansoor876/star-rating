@@ -114,15 +114,25 @@ class Review extends React.Component {
                         {getFieldDecorator('clarityStars', {
                             rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
-                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
-                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                            <Rate tooltips={desc} onChange={(value) => this.setState({
+                                starValues: {
+                                    ...starValues,
+                                    clarityStars: value
+                                }
+                            })} value={starValues.clarityStars} />
+                            {value ? <span className="ant-rate-text">{desc[starValues.clarityStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Privacy">
                         {getFieldDecorator('privacyStars', {
                             rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
-                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
+                            <Rate tooltips={desc} onChange={(value) => this.setState({
+                                starValues: {
+                                    ...starValues,
+                                    privacyStars: value
+                                }
+                            })} value={starValues.privacyStars} />
                             {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
