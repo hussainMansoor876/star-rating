@@ -94,7 +94,7 @@ class Review extends React.Component {
                                     applicationStars: value
                                 }
                             })} value={starValues.applicationStars} />
-                            {value ? <span className="ant-rate-text">{desc[starValues.applicationStars - 1]}</span> : ''}
+                            {starValues.applicationStars ? <span className="ant-rate-text">{desc[starValues.applicationStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Features">
@@ -107,7 +107,7 @@ class Review extends React.Component {
                                     featuresStars: value
                                 }
                             })} value={starValues.featuresStars} />
-                            {value ? <span className="ant-rate-text">{desc[starValues.featuresStars - 1]}</span> : ''}
+                            {starValues.featuresStars ? <span className="ant-rate-text">{desc[starValues.featuresStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Clarity">
@@ -120,7 +120,7 @@ class Review extends React.Component {
                                     clarityStars: value
                                 }
                             })} value={starValues.clarityStars} />
-                            {value ? <span className="ant-rate-text">{desc[starValues.clarityStars - 1]}</span> : ''}
+                            {starValues.clarityStars ? <span className="ant-rate-text">{desc[starValues.clarityStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Privacy">
@@ -133,7 +133,7 @@ class Review extends React.Component {
                                     privacyStars: value
                                 }
                             })} value={starValues.privacyStars} />
-                            {value ? <span className="ant-rate-text">{desc[starValues.privacyStars - 1]}</span> : ''}
+                            {starValues.privacyStars ? <span className="ant-rate-text">{desc[starValues.privacyStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Customer">
@@ -146,7 +146,7 @@ class Review extends React.Component {
                                     customerService: value
                                 }
                             })} value={starValues.customerService} />
-                            {value ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
+                            {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item >
