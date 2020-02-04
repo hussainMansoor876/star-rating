@@ -118,7 +118,6 @@ class Navbar extends Component {
     return (
       <div>
         <div className="first-form">
-          <form>
             <div className="input-group">
               <div className="input-group-addon" id="order">
                 <div className="select-style">
@@ -135,7 +134,6 @@ class Navbar extends Component {
                 </button>
               </div>
             </div>
-          </form>
         </div>
 
         <header>
@@ -144,7 +142,6 @@ class Navbar extends Component {
               <div className="col-md-6">
                 <div className="main-logo">
                   <NavLink to='#'><img src={logonew} alt="" /></NavLink>
-                  <form onSubmit={() => this.search()}>
                     <div className="input-group">
                       <div className="input-group-addon" id="order">
                         <div className="select-style">
@@ -161,7 +158,6 @@ class Navbar extends Component {
                         </button>
                       </div>
                     </div>
-                  </form>
                 </div>
               </div>
               <div className="col-md-6">

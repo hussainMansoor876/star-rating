@@ -23,8 +23,7 @@ class Search extends React.Component {
   }
 
   async componentWillMount() {
-    const { state } = this.props.history.location
-    console.log('state', state)
+    var { state } = this.props.history.location
     if (state) {
       const { searchInput, searchType } = state
       await axios.post('https://star-rating123.herokuapp.com/post/search', {
@@ -91,7 +90,7 @@ class Search extends React.Component {
                                   <i className="fa fa-star"></i>
                                 </span>
                                 <p className="ff-primary">
-                                  {v.description}
+                                  {v.description.length > 300 ? `${v.description.slice(0, 300)}...` : v.description}
                                 </p>
                               </div>
                               <div className="row">
