@@ -66,17 +66,27 @@ class Review extends React.Component {
         return e && e.fileList;
     }
 
+    handleCreate = () => {
+		const { form } = this.formRef.props;
+		form.validateFields((err, values) => {
+			if (err) {
+				return;
+			}
+			this.setState({ visible: false, imageData: values });
+		});
+	};
+
     render() {
-        const { visible, onCancel, onCreate, form } = this.props;
+        const { visible, onCancel, form } = this.props;
         const { getFieldDecorator } = form;
         const { disableUpload, value, starValues } = this.state
         return (
             <Modal
                 visible={visible}
                 title="Add Image Details"
-                okText="Create"
+                okText="Submit"
                 onCancel={onCancel}
-                onOk={onCreate}
+                onOk={() => this.handleCreate()}
             >
                 <Form layout="vertical">
                     <Form.Item label="feedback">
