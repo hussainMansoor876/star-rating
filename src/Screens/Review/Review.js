@@ -94,15 +94,20 @@ class Review extends React.Component {
                                     applicationStars: value
                                 }
                             })} value={starValues.applicationStars} />
-                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                            {value ? <span className="ant-rate-text">{desc[starValues.applicationStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Features">
                         {getFieldDecorator('featuresStars', {
                             rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
-                            <Rate tooltips={desc} onChange={this.handleChange} value={starValues.applicationStars} />
-                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                            <Rate tooltips={desc} onChange={(value) => this.setState({
+                                starValues: {
+                                    ...starValues,
+                                    featuresStars: value
+                                }
+                            })} value={starValues.featuresStars} />
+                            {value ? <span className="ant-rate-text">{desc[starValues.featuresStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Clarity">
