@@ -10,6 +10,7 @@ import axios from 'axios'
 import Exception from 'ant-design-pro/lib/Exception';
 import { Form } from 'antd';
 import Review from '../Review/Review'
+import { Rate } from 'antd';
 
 
 class Company extends React.Component {
@@ -382,13 +383,7 @@ class Company extends React.Component {
 												<div className="two-star">
 													<span className="ff-primary">4.66/5.00</span>
 													<div className="starress">
-														<ul>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-														</ul>
+														<Rate disabled defaultValue={2} style={{ color: '#0c94ac' }} />
 													</div>
 													<span className="ff-primary">EXCELLENT</span>
 												</div>
@@ -401,8 +396,7 @@ class Company extends React.Component {
 										<div className="col-lg-10">
 											<div className="two-main-r">
 												<div className="two-r-main clearfix">
-													<p className="ff-primary coment">
-														I think the rating system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would hope that the sub-items of what should be evaluated can and do.</p>
+													<p className="ff-primary coment">{v.feedback}</p>
 
 													<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
 														<div className="star-rating-second">
