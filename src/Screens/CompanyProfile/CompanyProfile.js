@@ -397,6 +397,7 @@ class Company extends React.Component {
 										<div className="col-lg-10">
 											<div className="two-main-r">
 												<div className="two-r-main clearfix">
+													<h3 className="ff-secondary">{v.reveiwerName}</h3>
 													<p className="ff-primary coment">{v.feedback}</p>
 
 													<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
@@ -408,13 +409,19 @@ class Company extends React.Component {
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
+																			<Rate disabled defaultValue={v.applicationStars} style={{ color: '#0c94ac' }} />
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<p className="ff-primary">Features applications</p>
+																	</div>
+																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="starrsd">
+																		<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
 																		</div>
 																	</div>
 																</div>
@@ -426,31 +433,7 @@ class Company extends React.Component {
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div className="star-third">
-																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
-																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
+																		<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
 																		</div>
 																	</div>
 																</div>
