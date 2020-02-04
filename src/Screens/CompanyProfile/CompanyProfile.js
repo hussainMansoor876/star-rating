@@ -31,7 +31,14 @@ class Company extends React.Component {
 		const { user } = this.props
 		const { company } = this.state
 		this.handleCancel()
+		values.companyName = company.name
+		values.companyId = company._id
+		values.ownerId = company.user._id
+		values.ownerName = company.user.name
+		values.reveiwerName = user.name
+		values.reveiwerId = user._id
 		console.log('values', values)
+
 	};
 
 	async componentWillMount() {
