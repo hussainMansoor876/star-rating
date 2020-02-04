@@ -133,15 +133,20 @@ class Review extends React.Component {
                                     privacyStars: value
                                 }
                             })} value={starValues.privacyStars} />
-                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                            {value ? <span className="ant-rate-text">{desc[starValues.privacyStars - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item label="Customer">
                         {getFieldDecorator('customerService', {
                             rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
-                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
-                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                            <Rate tooltips={desc} onChange={(value) => this.setState({
+                                starValues: {
+                                    ...starValues,
+                                    customerService: value
+                                }
+                            })} value={starValues.customerService} />
+                            {value ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
                     <Form.Item >
