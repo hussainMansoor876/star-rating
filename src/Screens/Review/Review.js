@@ -141,7 +141,7 @@ class Review extends React.Component {
                                 }
                             }, () => {
                                 this.props.form.setFieldsValue({
-                                    applicationStars: value
+                                    featuresStars: value
                                 })
                             })} value={starValues.featuresStars} />
                             {starValues.featuresStars ? <span className="ant-rate-text">{desc[starValues.featuresStars - 1]}</span> : ''}
@@ -158,7 +158,7 @@ class Review extends React.Component {
                                 }
                             }, () => {
                                 this.props.form.setFieldsValue({
-                                    applicationStars: value
+                                    clarityStars: value
                                 })
                             })} value={starValues.clarityStars} />
                             {starValues.clarityStars ? <span className="ant-rate-text">{desc[starValues.clarityStars - 1]}</span> : ''}
@@ -175,7 +175,7 @@ class Review extends React.Component {
                                 }
                             }, () => {
                                 this.props.form.setFieldsValue({
-                                    applicationStars: value
+                                    privacyStars: value
                                 })
                             })} value={starValues.privacyStars} />
                             {starValues.privacyStars ? <span className="ant-rate-text">{desc[starValues.privacyStars - 1]}</span> : ''}
@@ -192,7 +192,7 @@ class Review extends React.Component {
                                 }
                             }, () => {
                                 this.props.form.setFieldsValue({
-                                    applicationStars: value
+                                    customerService: value
                                 })
                             })} value={starValues.customerService} />
                             {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
