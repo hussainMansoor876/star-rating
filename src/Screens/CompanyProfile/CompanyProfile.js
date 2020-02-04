@@ -27,14 +27,9 @@ class Company extends React.Component {
 		this.setState({ visible: false });
 	};
 
-	handleCreate = () => {
-		const { form } = this.formRef.props;
-		form.validateFields((err, values) => {
-			if (err) {
-				return;
-			}
-			this.setState({ visible: false, imageData: values });
-		});
+	handleCreate = (values) => {
+		this.handleCancel()
+		console.log('values', values)
 	};
 
 	async componentWillMount() {
@@ -518,6 +513,7 @@ class Company extends React.Component {
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
 					openNotification={this.openNotification}
+					handleCreate={this.handleCreate}
 				/>
 				<Footer {...this.props} />
 			</div>

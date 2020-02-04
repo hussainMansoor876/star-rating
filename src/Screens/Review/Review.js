@@ -73,24 +73,10 @@ class Review extends React.Component {
         this.props.form.validateFields((err, values) => {
 
             if (!err) {
-                // axios.post('https://star-rating123.herokuapp.com/user/signup', formData)
-                //     .then((result) => {
-                //         console.log(result)
-                //         if (result.data.success) {
-                //             this.openNotification('Wellcome', result.data.message, 'check')
-                //             this.props.loginUser(result.data.user)
-                //             // SessionStorageManager.setUser(result.data)
-                //             // window.location.reload()
-                //             this.props.history.push('/')
-                //         }
-                //         else {
-                //             this.openNotification(title, result.data.message, 'close-circle', 'red')
-                //             this.setState({ disable: false })
-                //         }
-                //     })
+                this.props.handleCreate(values)
             }
             else {
-                this.openNotification(title, "desc1", 'close-circle', 'red')
+                this.openNotification(title, "SomeThing Went wrong", 'close-circle', 'red')
             }
         });
     };
@@ -110,8 +96,8 @@ class Review extends React.Component {
                 <Form layout="vertical">
                     <Form.Item label="feedback">
                         {getFieldDecorator('feedback', {
-                            rules: [{ required: true, message: 'Please Add the description of Image!' }]
-                        })(<TextArea rows={3} />)}
+                            rules: [{ required: true, message: 'Please Add the Feedback!' }]
+                        })(<TextArea rows={3} minLength={10} />)}
                     </Form.Item>
                     <Form.Item label="Application">
                         {getFieldDecorator('applicationStars', {
