@@ -372,163 +372,167 @@ class Company extends React.Component {
 				</section>
 
 				{company.reviews ? <section id="customer-service">
-					<div className="wrapper">
-						<div className="customer-service-main">
-							<div className="row">
-								<div className="col-lg-2">
-									<div className="two-str-main-dv">
-										<div className="two-star">
-											<span className="ff-primary">4.66/5.00</span>
-											<div className="starress">
-												<ul>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-												</ul>
+					{company.reviews.map((v, i) => {
+						return (
+							<div className="wrapper">
+								<div className="customer-service-main">
+									<div className="row">
+										<div className="col-lg-2">
+											<div className="two-str-main-dv">
+												<div className="two-star">
+													<span className="ff-primary">4.66/5.00</span>
+													<div className="starress">
+														<ul>
+															<li><i className="fa fa-star"></i></li>
+															<li><i className="fa fa-star"></i></li>
+															<li><i className="fa fa-star"></i></li>
+															<li><i className="fa fa-star"></i></li>
+															<li><i className="fa fa-star"></i></li>
+														</ul>
+													</div>
+													<span className="ff-primary">EXCELLENT</span>
+												</div>
+												<div className="two-icon">
+													<img src={manicon} />
+													<h5>Recommendation</h5>
+												</div>
 											</div>
-											<span className="ff-primary">EXCELLENT</span>
 										</div>
-										<div className="two-icon">
-											<img src={manicon} />
-											<h5>Recommendation</h5>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-10">
-									<div className="two-main-r">
-										<div className="two-r-main clearfix">
-											<p className="ff-primary coment">
-												I think the rating system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would hope that the sub-items of what should be evaluated can and do.</p>
+										<div className="col-lg-10">
+											<div className="two-main-r">
+												<div className="two-r-main clearfix">
+													<p className="ff-primary coment">
+														I think the rating system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would hope that the sub-items of what should be evaluated can and do.</p>
 
-											<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
-												<div className="star-rating-second">
-													<div className="star-third">
-														<div className="row">
-															<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																<p className="ff-primary">Possible applications</p>
+													<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
+														<div className="star-rating-second">
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-8 col-md-8 col-sm-6 col-8">
+																		<p className="ff-primary">Possible applications</p>
+																	</div>
+																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="starrsd">
+																			<ul>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
 															</div>
-															<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																<div className="starrsd">
-																	<ul>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																	</ul>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<p className="ff-primary">Possible applications</p>
+																	</div>
+																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="starrsd">
+																			<ul>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<p className="ff-primary">Possible applications</p>
+																	</div>
+																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="starrsd">
+																			<ul>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<p className="ff-primary">Possible applications</p>
+																	</div>
+																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="starrsd">
+																			<ul>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<p className="ff-primary">Possible applications</p>
+																	</div>
+																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="starrsd">
+																			<ul>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																				<li><i className="fa fa-star"></i></li>
+																			</ul>
+																		</div>
+																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
-													<div className="star-third">
-														<div className="row">
-															<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																<p className="ff-primary">Possible applications</p>
-															</div>
-															<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																<div className="starrsd">
-																	<ul>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																	</ul>
+													<div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
+														<div className="mrtpt clearfix">
+															<div className="customer-ser-head clearfix">
+																<i className="lft-sty  fa fa-check"></i>
+																<div className="cost-ben">
+																	<p className="ff-primary">Customer service</p>
+																	<span className="ff-primary">EXCELLENT (5.00)</span>
 																</div>
 															</div>
-														</div>
-													</div>
-													<div className="star-third">
-														<div className="row">
-															<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																<p className="ff-primary">Possible applications</p>
-															</div>
-															<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																<div className="starrsd">
-																	<ul>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div className="star-third">
-														<div className="row">
-															<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																<p className="ff-primary">Possible applications</p>
-															</div>
-															<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																<div className="starrsd">
-																	<ul>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div className="star-third">
-														<div className="row">
-															<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																<p className="ff-primary">Possible applications</p>
-															</div>
-															<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																<div className="starrsd">
-																	<ul>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																		<li><i className="fa fa-star"></i></li>
-																	</ul>
+															<div className="customer-ser-head clearfix">
+																<i className="lft-sty fa fa-check"></i>
+																<div className="cost-ben">
+																	<p className="ff-primary">Customer service</p>
+																	<span className="ff-primary">EXCELLENT (5.00)</span>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-											<div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
-												<div className="mrtpt clearfix">
-													<div className="customer-ser-head clearfix">
-														<i className="lft-sty  fa fa-check"></i>
-														<div className="cost-ben">
-															<p className="ff-primary">Customer service</p>
-															<span className="ff-primary">EXCELLENT (5.00)</span>
+												<div className="two-d-main clearfix">
+													<div className="col-lg-12">
+														<div className="prove-centre">
+															<p className="ff-primary">Customer review & rating for:</p>
+															<span className="ff-primary">Star Rating</span>
 														</div>
 													</div>
-													<div className="customer-ser-head clearfix">
-														<i className="lft-sty fa fa-check"></i>
-														<div className="cost-ben">
-															<p className="ff-primary">Customer service</p>
-															<span className="ff-primary">EXCELLENT (5.00)</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div className="two-d-main clearfix">
-											<div className="col-lg-12">
-												<div className="prove-centre">
-													<p className="ff-primary">Customer review & rating for:</p>
-													<span className="ff-primary">ProvenExpert</span>
-												</div>
-											</div>
 
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						)
+					})}
 				</section> : null}
 				<Review
 					// wrappedComponentRef={this.saveFormRef}
