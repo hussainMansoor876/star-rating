@@ -55,7 +55,7 @@ class Company extends React.Component {
 	};
 
 	async componentWillMount() {
-		await axios.post('http://localhost:5001/post/search-company', {
+		await axios.post('https://star-rating123.herokuapp.com/post/search-company', {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
@@ -382,7 +382,6 @@ class Company extends React.Component {
 											<div className="two-str-main-dv">
 												<div className="two-star">
 													<span className="ff-primary">4.66/5.00</span>
-													<span>{v.timestamp}</span>
 													<div className="starress">
 														<Rate disabled defaultValue={2} style={{ color: '#0c94ac' }} />
 													</div>
