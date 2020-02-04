@@ -12,6 +12,7 @@ import { Form } from 'antd';
 import Review from '../Review/Review'
 import { Rate } from 'antd';
 
+const reviewDesc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
 class Company extends React.Component {
 
@@ -386,7 +387,8 @@ class Company extends React.Component {
 													<div className="starress">
 														<Rate disabled defaultValue={count} allowHalf={true} style={{ color: '#0c94ac' }} />
 													</div>
-													<span className="ff-primary">EXCELLENT</span>
+													{/* <span className="ff-primary">EXCELLENT</span> */}
+													<span className="ant-rate-text">{reviewDesc[parseInt(count) - 1]}</span>
 												</div>
 												<div className="two-icon">
 													<img src={manicon} />
@@ -453,17 +455,11 @@ class Company extends React.Component {
 															<div className="star-third">
 																<div className="row">
 																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
+																		<p className="ff-primary">Customer Service</p>
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
+																			<Rate disabled defaultValue={v.customerService} style={{ color: '#0c94ac' }} />
 																		</div>
 																	</div>
 																</div>
@@ -472,7 +468,7 @@ class Company extends React.Component {
 													</div>
 													<div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
 														<div className="mrtpt clearfix">
-															<div className="customer-ser-head clearfix">
+															{/* <div className="customer-ser-head clearfix">
 																<i className="lft-sty  fa fa-check"></i>
 																<div className="cost-ben">
 																	<p className="ff-primary">Customer service</p>
@@ -485,7 +481,7 @@ class Company extends React.Component {
 																	<p className="ff-primary">Customer service</p>
 																	<span className="ff-primary">EXCELLENT (5.00)</span>
 																</div>
-															</div>
+															</div> */}
 														</div>
 													</div>
 												</div>
