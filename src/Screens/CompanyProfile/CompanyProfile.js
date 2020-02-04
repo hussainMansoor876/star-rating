@@ -8,6 +8,8 @@ import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 import axios from 'axios'
 import Exception from 'ant-design-pro/lib/Exception';
+import { Form } from 'antd';
+import Review from '../Review/Review'
 
 
 class Company extends React.Component {
@@ -16,9 +18,24 @@ class Company extends React.Component {
 		super(props)
 		this.state = {
 			company: '',
-			success: true
+			success: true,
+			visible: false
 		}
 	}
+
+	handleCancel = () => {
+		this.setState({ visible: false });
+	};
+
+	handleCreate = () => {
+		const { form } = this.formRef.props;
+		form.validateFields((err, values) => {
+			if (err) {
+				return;
+			}
+			this.setState({ visible: false, imageData: values });
+		});
+	};
 
 	async componentWillMount() {
 		await axios.post('https://star-rating123.herokuapp.com/post/search-company', {
@@ -77,7 +94,7 @@ class Company extends React.Component {
 										<div className="row">
 											<div className="col-lg-12">
 												<div className="proven-con">
-													<img src={company.profilePic.url} />
+													<img src={company.profilePic.url} alt="image" />
 												</div>
 											</div>
 											<div className="col-lg-12">
@@ -294,7 +311,7 @@ class Company extends React.Component {
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
 														</div> : null}
 														<div className="inputcol-2">
-															<button className="btn-blue ff-primary" style={{ width: '100%'}}>Add Review</button>
+															<button className="btn-blue ff-primary" style={{ width: '100%' }} onClick={() => this.setState({ visible: true })}>Add Review</button>
 														</div>
 													</div>
 												</div>
@@ -496,11 +513,21 @@ class Company extends React.Component {
 						</div>
 					</div>
 				</section>
+				<Review
+					// wrappedComponentRef={this.saveFormRef}
+					visible={this.state.visible}
+					onCancel={this.handleCancel}
+					onCreate={this.handleCreate}
+					openNotification={this.openNotification}
+				/>
 				<Footer {...this.props} />
 			</div>
 		)
 	}
 }
+
+
+const CompanyForm = Form.create({ name: 'Company' })(Company);
 
 
 
@@ -519,4 +546,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Company)
+export default connect(mapStateToProps, mapDispatchToProps)(CompanyForm)
