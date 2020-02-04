@@ -347,9 +347,9 @@ class Company extends React.Component {
 						<div className="reviews-main">
 							<div className="row">
 								<div className="col-lg-8 col-md-8 col-sm-12">
-									<div className="reviews-head">
-										<h5 className="fc-blue">3,218 Reviews on star-rating.com</h5>
-									</div>
+									{company.reviews ? <div className="reviews-head">
+										<h5 className="fc-blue">{company.reviews.length} Reviews on star-rating.com</h5>
+									</div> : null}
 								</div>
 								<div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
 									<div className="star-center">
@@ -371,7 +371,7 @@ class Company extends React.Component {
 					</div>
 				</section>
 
-				<section id="customer-service">
+				{company.reviews ? <section id="customer-service">
 					<div className="wrapper">
 						<div className="customer-service-main">
 							<div className="row">
@@ -529,7 +529,7 @@ class Company extends React.Component {
 							</div>
 						</div>
 					</div>
-				</section>
+				</section> : null}
 				<Review
 					// wrappedComponentRef={this.saveFormRef}
 					visible={this.state.visible}
