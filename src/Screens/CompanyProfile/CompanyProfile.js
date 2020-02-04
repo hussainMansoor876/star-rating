@@ -379,6 +379,9 @@ class Company extends React.Component {
 						return (
 							<div className="wrapper" key={i}>
 								<div className="customer-service-main">
+									{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
+										<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
+									</div> : null}
 									<div className="row">
 										<div className="col-lg-2">
 											<div className="two-str-main-dv">

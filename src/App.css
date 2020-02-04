@@ -7,3 +7,11 @@
 .test-border { 
   border: solid 1px red !important
 }
+
+
+.edit1{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -50px;
+  margin-right: 10px;
+}
