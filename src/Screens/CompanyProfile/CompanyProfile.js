@@ -27,7 +27,7 @@ class Company extends React.Component {
 		this.setState({ visible: false });
 	};
 
-	async handleCreate(values){
+	async handleCreate(values) {
 		const { user } = this.props
 		const { company } = this.state
 		this.handleCancel()
@@ -40,10 +40,15 @@ class Company extends React.Component {
 		values.ownerName = company.user.name
 		values.reveiwerName = user.name
 		values.reveiwerId = user._id
-		await axios.post('http://localhost:5001/post/add-review', values)
+		await axios.post('https://star-rating123.herokuapp.com/post/add-review', values)
 			.then((response) => {
 				const { data } = response
-				console.log(data)
+				if (data.success) {
+					this.props.loginUser(data.data)
+					setTimeout(() => {
+						window.location.reload()
+					})
+				}
 			})
 
 	};
