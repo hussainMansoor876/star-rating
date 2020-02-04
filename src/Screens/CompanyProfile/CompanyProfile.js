@@ -374,6 +374,7 @@ class Company extends React.Component {
 
 				{company.reviews ? <section id="customer-service">
 					{company.reviews.reverse().map((v, i) => {
+						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 						return (
 							<div className="wrapper" key={i}>
 								<div className="customer-service-main">
@@ -381,9 +382,9 @@ class Company extends React.Component {
 										<div className="col-lg-2">
 											<div className="two-str-main-dv">
 												<div className="two-star">
-													<span className="ff-primary">4.66/5.00</span>
+													<span className="ff-primary">{count}/5.00</span>
 													<div className="starress">
-														<Rate disabled defaultValue={2} style={{ color: '#0c94ac' }} />
+														<Rate disabled defaultValue={count} allowHalf={true} style={{ color: '#0c94ac' }} />
 													</div>
 													<span className="ff-primary">EXCELLENT</span>
 												</div>
