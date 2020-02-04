@@ -12,7 +12,7 @@ import { Form } from 'antd';
 import Review from '../Review/Review'
 import { Rate } from 'antd';
 
-const reviewDesc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
+const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
 
 class Company extends React.Component {
 
