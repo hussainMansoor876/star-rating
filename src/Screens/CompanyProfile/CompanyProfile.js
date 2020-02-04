@@ -55,7 +55,7 @@ class Company extends React.Component {
 	};
 
 	async componentWillMount() {
-		await axios.post('https://star-rating123.herokuapp.com/post/search-company', {
+		await axios.post('http://localhost:5001/post/search-company', {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
@@ -373,15 +373,16 @@ class Company extends React.Component {
 				</section>
 
 				{company.reviews ? <section id="customer-service">
-					{company.reviews.map((v, i) => {
+					{company.reviews.reverse().map((v, i) => {
 						return (
-							<div className="wrapper">
+							<div className="wrapper" key={i}>
 								<div className="customer-service-main">
 									<div className="row">
 										<div className="col-lg-2">
 											<div className="two-str-main-dv">
 												<div className="two-star">
 													<span className="ff-primary">4.66/5.00</span>
+													<span>{v.timestamp}</span>
 													<div className="starress">
 														<Rate disabled defaultValue={2} style={{ color: '#0c94ac' }} />
 													</div>
