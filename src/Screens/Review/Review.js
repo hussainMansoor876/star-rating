@@ -1,6 +1,6 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Icon, Form, Modal, Upload, Input, Button, message, notification } from 'antd';
+import { Icon, Form, Modal, Upload, Input, Button, message, notification, Rate } from 'antd';
 
 const { TextArea } = Input;
 
@@ -21,21 +21,28 @@ const props = {
     },
 }
 
+const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
+
 class Review extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            disableUpload: false
+            disableUpload: false,
+            value: 0
         }
     }
 
     openNotification = (title, desc, icon, color = '#108ee9') => {
         notification.open({
-          message: title,
-          description: desc,
-          icon: <Icon type={icon} style={{ color: color }} />,
+            message: title,
+            description: desc,
+            icon: <Icon type={icon} style={{ color: color }} />,
         });
-      };
+    };
+
+    handleChange = value => {
+        this.setState({ value });
+    };
 
     normFile = e => {
         this.setState({ disableUpload: false })
@@ -55,7 +62,7 @@ class Review extends React.Component {
     render() {
         const { visible, onCancel, onCreate, form } = this.props;
         const { getFieldDecorator } = form;
-        const { disableUpload } = this.state
+        const { disableUpload, value } = this.state
         return (
             <Modal
                 visible={visible}
@@ -65,10 +72,18 @@ class Review extends React.Component {
                 onOk={onCreate}
             >
                 <Form layout="vertical">
-                    <Form.Item label="Review">
-                        {getFieldDecorator('review', {
+                    <Form.Item label="feedback">
+                        {getFieldDecorator('feedback', {
                             rules: [{ required: true, message: 'Please Add the description of Image!' }]
                         })(<TextArea rows={3} />)}
+                    </Form.Item>
+                    <Form.Item>
+                        {getFieldDecorator('stars',{
+                            rules: [{required: true, message: 'Please give stars also'}]
+                        })(<span>
+                            <Rate tooltips={desc} onChange={this.handleChange} value={value} />
+                            {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
+                          </span>)}
                     </Form.Item>
                     <Form.Item >
                         {getFieldDecorator('video', {
