@@ -369,6 +369,7 @@ class CreateCompany extends React.Component {
 															rules: [{ required: true, message: 'Please input your Company Title!' }],
 														})(
 															<Input
+																maxLength={60}
 																name="title"
 																prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
 																placeholder="Company Title"
