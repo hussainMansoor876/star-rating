@@ -28,6 +28,8 @@ class Company extends React.Component {
 	};
 
 	handleCreate = (values) => {
+		const { user } = this.props
+		const { company } = this.state
 		this.handleCancel()
 		console.log('values', values)
 	};
