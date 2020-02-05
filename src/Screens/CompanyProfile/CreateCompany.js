@@ -29,9 +29,6 @@ const props = {
 	action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
 	onChange(info) {
 		const { status } = info.file;
-		if (status !== 'uploading') {
-			console.log(info.file, info.fileList);
-		}
 		if (status === 'done') {
 			message.success(`${info.file.name} file uploaded successfully.`);
 		} else if (status === 'error') {
@@ -186,7 +183,6 @@ class CreateCompany extends React.Component {
 				_id: user._id
 			})
 				.then((response) => {
-					console.log('response', response)
 					var { data } = response
 					if (data.success) {
 						if (data.data && data.data.reviews) {

@@ -112,7 +112,6 @@ class Company extends React.Component {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
-				console.log(response)
 				var { data } = response
 				if (data.data && data.data.reviews) {
 					data.data.reviews = data.data.reviews.reverse()
@@ -548,7 +547,6 @@ const CompanyForm = Form.create({ name: 'Company' })(Company);
 
 
 const mapStateToProps = (state) => {
-	console.log("mapToState", state.authReducer)
 	return {
 		user: state.authReducer.user,
 	}
