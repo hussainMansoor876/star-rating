@@ -232,7 +232,7 @@ class Review extends React.Component {
                             {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
-                    <Form.Item >
+                    {!editValue ? <Form.Item >
                         {getFieldDecorator('video', {
                             rules: [{ required: false, message: 'Please Upload the Image!' }],
                             valuePropName: 'fileList',
@@ -244,7 +244,7 @@ class Review extends React.Component {
                       </Button>
                             </Upload>,
                         )}
-                    </Form.Item>
+                    </Form.Item> : null}
                 </Form>
             </Modal>
         );
