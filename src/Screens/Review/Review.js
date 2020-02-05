@@ -115,8 +115,16 @@ class Review extends React.Component {
                                 starValues: {
                                     ...starValues,
                                     applicationStars: value
-                                }
+                                },
                             }, () => {
+                                if (editValue) {
+                                    this.setState({
+                                        editValue: {
+                                            ...editValue,
+                                            applicationStars: value
+                                        }
+                                    })
+                                }
                                 this.props.form.setFieldsValue({
                                     applicationStars: value
                                 })
