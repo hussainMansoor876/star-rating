@@ -100,7 +100,7 @@ class Company extends React.Component {
 						starValues.featuresStars = starValues.featuresStars / company.reviews.length
 						starValues.clarityStars = starValues.clarityStars / company.reviews.length
 						starValues.privacyStars = starValues.privacyStars / company.reviews.length
-						starValues.customerService = v.privacyStars / company.reviews.length
+						starValues.customerService = starValues.privacyStars / company.reviews.length
 						this.setState({
 							starValues: starValues
 						})
