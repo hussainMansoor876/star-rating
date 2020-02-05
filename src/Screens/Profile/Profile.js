@@ -21,63 +21,22 @@ class Reviewer extends React.Component {
 		super(props)
 		this.state = {
 			user: '',
-			success: true,
-			starValues: {
-				totalStars: 0,
-				applicationStars: 0,
-				featuresStars: 0,
-				clarityStars: 0,
-				privacyStars: 0,
-				customerService: 0
-			}
+			success: true
 		}
 	}
 
-	// async componentWillMount() {
-	// 	await axios.post('https://star-rating123.herokuapp.com/post/search-profile', {
-	// 		_id: this.props.match.params.id
-	// 	})
-	// 		.then((response) => {
-	// 			console.log('response', response)
-	// 			const { data } = response
-	// 			this.setState({
-	// 				user: data.data,
-	// 				success: data.success
-	// 			})
-	// 		})
-	// }
 
 	componentDidMount() {
 		const { user } = this.props
-		var { starValues } = this.state
 		if (!user) {
 			this.props.history.replace('/login')
-		}
-		if (user.reviews) {
-			for (var v of user.reviews) {
-				var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
-				starValues.totalStars += count
-				starValues.applicationStars += v.applicationStars
-				starValues.featuresStars += v.featuresStars
-				starValues.clarityStars += v.clarityStars
-				starValues.privacyStars += v.privacyStars
-				starValues.customerService += v.privacyStars
-			}
-			starValues.totalStars = starValues.totalStars / user.reviews.length
-			starValues.applicationStars = starValues.applicationStars / user.reviews.length
-			starValues.featuresStars = starValues.featuresStars / user.reviews.length
-			starValues.clarityStars = starValues.clarityStars / user.reviews.length
-			starValues.privacyStars = starValues.privacyStars / user.reviews.length
-			starValues.customerService = starValues.customerService / user.reviews.length
-			this.setState({
-				starValues: starValues
-			})
 		}
 	}
 
 
 	render() {
 		const { user } = this.props
+
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
