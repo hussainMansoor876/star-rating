@@ -150,44 +150,21 @@ class Reviewer extends React.Component {
 					</div>
 				</section>
 
-				<section id="reviews">
+				{user.reviews ? <section id="reviews">
 					<div className="wrapper">
 						<div className="reviews-main">
 							<div className="row">
 								<div className="col-lg-8 col-md-8 col-sm-12">
-									<div className="reviews-head">
-										<h5 className="fc-blue">3,218 Reviews on Star Rating</h5>
+									<div className="reviews-head" style={{
+										marginTop: 25
+									}}>
+										<h5 className="fc-blue">Your Reviews</h5>
 									</div>
 								</div>
-								<div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
-									<div className="star-center">
-										<span className="ff-primary">4.66/5.00</span>
-										<div className="starress">
-											<ul>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-											</ul>
-										</div>
-										<span className="ff-primary">EXCELLENT</span>
-									</div>
-								</div>
-								{/* <div className="col-lg-2 col-md-12">
-									<div className="inputcol">
-										<select>
-											<option value="volvo">Volvo</option>
-											<option value="saab">Saab</option>
-											<option value="mercedes">Mercedes</option>
-											<option value="audi">Audi</option>
-										</select>
-									</div>
-								</div> */}
 							</div>
 						</div>
 					</div>
-				</section>
+				</section> : null}
 
 				<section id="customer-service">
 					<div className="wrapper">
