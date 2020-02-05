@@ -184,9 +184,9 @@ class Reviewer extends React.Component {
 						return (
 							<div className="wrapper" key={i}>
 								<div className="customer-service-main">
-									{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
+									<div className="inputcol-2 edit1">
 										<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
-									</div> : null}
+									</div>
 									<div className="row">
 										<div className="col-lg-2 col-md-4">
 											<div className="two-str-main-dv">
