@@ -178,7 +178,7 @@ class Reviewer extends React.Component {
 				</section> : null}
 
 				{user.reviews ? <section id="customer-service">
-					{user.reviews.map((v, i) => {
+					{user.reviews.slice(index, index + 5).map((v, i) => {
 						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 						return (
 							<div className="wrapper" key={i}>
