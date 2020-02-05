@@ -111,7 +111,7 @@ class Company extends React.Component {
 
 
 	render() {
-		const { company, success } = this.state
+		const { company, success, starValues } = this.state
 		const { user } = this.props
 		if (!company) {
 			return (
@@ -158,16 +158,18 @@ class Company extends React.Component {
 											</div>
 											<div className="col-lg-12">
 												<div className="proven-botm">
-													<span className="ff-primary">4.66/5.00</span>
-													<div className="starr">
-														<ul>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-														</ul>
-													</div>
+													{company.reviews ? <div>
+														<span className="ff-primary">{parseFloat(starValues.totalStars)}/5.00</span>
+														<div className="starr">
+															<ul>
+																<li><i className="fa fa-star"></i></li>
+																<li><i className="fa fa-star"></i></li>
+																<li><i className="fa fa-star"></i></li>
+																<li><i className="fa fa-star"></i></li>
+																<li><i className="fa fa-star"></i></li>
+															</ul>
+														</div>
+													</div> : null}
 													<h4 className="ff-secondary">{company.name}</h4>
 													<div className="pproven-bottom-last">
 														<span className="line-top"></span>
