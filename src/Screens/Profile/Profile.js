@@ -36,6 +36,25 @@ class Reviewer extends React.Component {
 		}
 	}
 
+	handleCancel = () => {
+		this.setState({ visible: false, editReview: false, editValue: null });
+	};
+
+	async handleUpdate(values) {
+		await axios.post('https://star-rating123.herokuapp.com/post/update-review', values)
+			.then((response) => {
+				var { data } = response
+				this.handleCancel()
+				if (data.success) {
+					data.data.reviews = data.data.reviews.reverse()
+					this.props.loginUser(data.data)
+					setTimeout(() => {
+						window.location.reload()
+					})
+				}
+			})
+	}
+
 
 	render() {
 		const { user } = this.props
@@ -263,7 +282,6 @@ class Reviewer extends React.Component {
 					visible={this.state.editReview}
 					editValue={this.state.editValue}
 					onCancel={this.handleCancel}
-					openNotification={this.openNotification}
 					handleUpdate={this.handleUpdate.bind(this)}
 				/> : null}
 				<Footer {...this.props} />
@@ -275,7 +293,6 @@ class Reviewer extends React.Component {
 
 
 const mapStateToProps = (state) => {
-	// console.log("mapToState", state.authReducer)
 	return {
 		user: state.authReducer.user,
 	}
