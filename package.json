@@ -30,7 +30,8 @@
     "redux-thunk": "^2.3.0",
     "sha.js": "^2.4.11",
     "stripe": "^8.3.0",
-    "validator": "^11.1.0"
+    "validator": "^11.1.0",
+    "video-react": "^0.14.1"
   },
   "scripts": {
     "start": "node clientserver.js",

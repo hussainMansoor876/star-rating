@@ -11,6 +11,9 @@ import Exception from 'ant-design-pro/lib/Exception';
 import { Form } from 'antd';
 import Review from '../Review/Review'
 import { Rate } from 'antd';
+import ReactPlayer from 'react-player'
+import "../../../node_modules/video-react/dist/video-react.css";
+import { Player } from 'video-react';
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
 
@@ -67,7 +70,7 @@ class Company extends React.Component {
 			.then((response) => {
 				console.log(response)
 				var { data } = response
-				if(data.data && data.data.reviews){
+				if (data.data && data.data.reviews) {
 					data.data.reviews = data.data.reviews.reverse()
 				}
 				this.setState({
@@ -479,6 +482,9 @@ class Company extends React.Component {
 													</div>
 													<div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
 														<div className="mrtpt clearfix">
+															<Player>
+																<source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+															</Player>
 															{/* <div className="customer-ser-head clearfix">
 																<i className="lft-sty  fa fa-check"></i>
 																<div className="cost-ben">
