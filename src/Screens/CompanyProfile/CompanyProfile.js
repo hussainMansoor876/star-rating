@@ -49,14 +49,13 @@ class Company extends React.Component {
 		await axios.post('http://localhost:5001/post/add-review', formData)
 			.then((response) => {
 				const { data } = response
-				console.log('data', data)
 				this.handleCancel()
-				// if (data.success) {
-				// 	this.props.loginUser(data.data)
-				// 	setTimeout(() => {
-				// 		window.location.reload()
-				// 	})
-				// }
+				if (data.success) {
+					this.props.loginUser(data.data)
+					setTimeout(() => {
+						window.location.reload()
+					})
+				}
 			})
 
 	};
