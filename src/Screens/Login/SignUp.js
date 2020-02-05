@@ -19,9 +19,6 @@ const props = {
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   onChange(info) {
       const { status } = info.file;
-      if (status !== 'uploading') {
-          console.log(info.file, info.fileList);
-      }
       if (status === 'done') {
           message.success(`${info.file.name} file uploaded successfully.`);
       } else if (status === 'error') {
@@ -75,7 +72,6 @@ class Signup extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log(values.upload)
         if (values.name.length < 4) {
           return this.openNotification("Name", "Name must be Atleast 4 Digits", 'close-circle', 'red')
         }
@@ -99,7 +95,6 @@ class Signup extends React.Component {
         formData.append('upload', values.upload[0].originFileObj)
         axios.post('https://star-rating123.herokuapp.com/user/signup', formData)
           .then((result) => {
-            console.log(result)
             if (result.data.success) {
               this.openNotification('Wellcome', result.data.message, 'check')
               this.props.loginUser(result.data.user)
@@ -216,7 +211,6 @@ const SignupComp = Form.create({ name: 'normal_login' })(Signup);
 
 
 const mapStateToProps = (state) => {
-  console.log("mapToState", state.authReducer)
   return {
     user: state.authReducer.user,
   }

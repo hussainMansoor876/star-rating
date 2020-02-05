@@ -41,7 +41,6 @@ class Search extends React.Component {
       { token, product }
     );
     const { success, data } = response.data;
-    console.log(data)
     if (success) {
       this.props.loginUser(data)
       this.openNotification("Success!", "Check email for details", 'check')
@@ -173,7 +172,6 @@ class Search extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  console.log("mapToState", state.authReducer)
   return {
     user: state.authReducer.user,
   }

@@ -95,12 +95,10 @@ class Navbar extends Component {
   async search() {
     const { searchInput, searchType } = this.state
     const { history } = this.props
-    console.log('loc', history.location)
 
     if (!searchInput) {
       return
     }
-    console.log('this', this.state)
     if (history.location.pathname === '/search') {
       this.props.history.push('/search', { searchInput, searchType })
       window.location.reload()
@@ -259,8 +257,6 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => {
-
-  // console.log("mapToState", state.authReducer)
   return {
     user: state.authReducer.user,
   }

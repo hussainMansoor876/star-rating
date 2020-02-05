@@ -393,7 +393,6 @@ class CreateCompany extends React.Component {
 																style={{ backgroundColor: '#fff' }}
 																placeholder="Select a city"
 																optionFilterProp="children"
-																onSelect={(e) => console.log(e)}
 																filterOption={(input, option) =>
 																	option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 																}
@@ -837,7 +836,6 @@ const CreateCompanyComp = Form.create({ name: 'normal_login' })(CreateCompany);
 
 
 const mapStateToProps = (state) => {
-	console.log("mapToState", state.authReducer)
 	return {
 		user: state.authReducer.user,
 	}

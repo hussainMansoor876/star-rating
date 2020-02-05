@@ -31,7 +31,6 @@ class Search extends React.Component {
         searchType
       })
         .then((response) => {
-          console.log('response', response)
           this.setState({
             data: response.data.data,
             result: response.data.data.length ? true : false
@@ -182,7 +181,6 @@ class Search extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  // console.log("mapToState", state.authReducer)
   return {
     user: state.authReducer.user,
   }

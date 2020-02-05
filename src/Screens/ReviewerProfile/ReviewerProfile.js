@@ -32,7 +32,6 @@ class Reviewer extends React.Component {
 			_id: this.props.match.params.id
 		})
 			.then((response) => {
-				console.log('response', response)
 				var { data } = response
 				if (data.data && data.data.reviews) {
 					data.data.reviews = data.data.reviews.reverse()
