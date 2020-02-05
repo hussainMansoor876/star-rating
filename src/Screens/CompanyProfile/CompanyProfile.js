@@ -100,7 +100,7 @@ class Company extends React.Component {
 						starValues.featuresStars = starValues.featuresStars / company.reviews.length
 						starValues.clarityStars = starValues.clarityStars / company.reviews.length
 						starValues.privacyStars = starValues.privacyStars / company.reviews.length
-						starValues.customerService = starValues.privacyStars / company.reviews.length
+						starValues.customerService = starValues.customerService / company.reviews.length
 						this.setState({
 							starValues: starValues
 						})
@@ -160,7 +160,7 @@ class Company extends React.Component {
 												<div className="proven-botm">
 													{starValues.totalStars ? <div>
 														<span className="ff-primary">{starValues.totalStars}/5.00</span>
-														<div className="starrd">
+														<div className="starress">
 															<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
 														</div>
 													</div> : null}
@@ -238,7 +238,7 @@ class Company extends React.Component {
 																	<div className="for-main">
 																		{starValues.totalStars ? <div>
 																			<span className="ff-primary">{starValues.totalStars} von 5</span>
-																			<div className="starrd">
+																			<div className="starress">
 																				<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
 																			</div>
 																		</div> : null}
@@ -254,13 +254,7 @@ class Company extends React.Component {
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
-																				<ul>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																				</ul>
+																				<Rate disabled defaultValue={starValues.applicationStars} style={{ color: '#0c94ac' }} />
 																			</div>
 																		</div>
 																	</div>
@@ -272,13 +266,7 @@ class Company extends React.Component {
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
-																				<ul>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																				</ul>
+																				<Rate disabled defaultValue={starValues.featuresStars} style={{ color: '#0c94ac' }} />
 																			</div>
 																		</div>
 																	</div>
@@ -290,13 +278,7 @@ class Company extends React.Component {
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
-																				<ul>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																				</ul>
+																				<Rate disabled defaultValue={starValues.clarityStars} style={{ color: '#0c94ac' }} />
 																			</div>
 																		</div>
 																	</div>
@@ -308,13 +290,7 @@ class Company extends React.Component {
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
-																				<ul>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																				</ul>
+																				<Rate disabled defaultValue={starValues.privacyStars} style={{ color: '#0c94ac' }} />
 																			</div>
 																		</div>
 																	</div>
@@ -326,25 +302,19 @@ class Company extends React.Component {
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
-																				<ul>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																				</ul>
+																				<Rate disabled defaultValue={starValues.customerService} style={{ color: '#0c94ac' }} />
 																			</div>
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div> : <div style={{
-																display: 'flex',
-																justifyContent: 'center',
-																alignItems: 'center'
-															}}>
+															display: 'flex',
+															justifyContent: 'center',
+															alignItems: 'center'
+														}}>
 																<h3>No Reviews</h3>
-																</div>}
+															</div>}
 														{!user.buyPlan ? <div className="inputcol-2">
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
 														</div> : null}
@@ -376,17 +346,11 @@ class Company extends React.Component {
 								</div>
 								{starValues.totalStars ? <div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
 									<div className="star-center">
-										<span className="ff-primary">4.66/5.00</span>
+										<span className="ff-primary">{starValues.totalStars}/5.00</span>
 										<div className="starress">
-											<ul>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-												<li><i className="fa fa-star"></i></li>
-											</ul>
+											<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
 										</div>
-										<span className="ff-primary">EXCELLENT</span>
+										<span className="ant-rate-text">{reviewDesc[parseInt(starValues.totalStars) - 1]}</span>
 									</div>
 								</div> : null}
 							</div>
@@ -411,7 +375,6 @@ class Company extends React.Component {
 													<div className="starress">
 														<Rate disabled defaultValue={count} allowHalf={true} style={{ color: '#0c94ac' }} />
 													</div>
-													{/* <span className="ff-primary">EXCELLENT</span> */}
 													<span className="ant-rate-text">{reviewDesc[parseInt(count) - 1]}</span>
 												</div>
 												<div className="two-icon">
