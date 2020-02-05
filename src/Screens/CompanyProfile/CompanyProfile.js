@@ -374,7 +374,7 @@ class Company extends React.Component {
 										<h5 className="fc-blue">{company.reviews.length} Reviews on star-rating.com</h5>
 									</div> : null}
 								</div>
-								<div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
+								{starValues.totalStars ? <div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
 									<div className="star-center">
 										<span className="ff-primary">4.66/5.00</span>
 										<div className="starress">
@@ -388,7 +388,7 @@ class Company extends React.Component {
 										</div>
 										<span className="ff-primary">EXCELLENT</span>
 									</div>
-								</div>
+								</div> : null}
 							</div>
 						</div>
 					</div>
