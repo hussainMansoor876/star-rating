@@ -141,12 +141,12 @@ class Reviewer extends React.Component {
 																<div className="centr-sub-1-main">
 																	<h5 className="ff-secondary">Contact information</h5>
 																	<span className="ff-primary">{user.email}</span>
-																	<div className="pproven-bottom-last">
+																	{user.reviews ? <div className="pproven-bottom-last">
 																		<span className="line-top"></span>
 																		<span className="lie-botm"></span>
-																		<a className="a-tg-h ff-primary" href="javascript:void(0)"><span>637</span>
-																			Reviews <br></br> </a>
-																	</div>
+																		<a className="a-tg-h ff-primary" href="javascript:void(0)"><span>{user.reviews.length} Reviews</span>
+																		</a>
+																	</div> : null}
 																</div>
 
 															</div>
