@@ -86,7 +86,7 @@ class Review extends React.Component {
     };
 
     render() {
-        const { visible, onCancel, form } = this.props;
+        const { visible, onCancel, form, editValue } = this.props;
         const { getFieldDecorator } = form;
         const { disableUpload, starValues, disable } = this.state
         return (

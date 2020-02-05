@@ -481,12 +481,14 @@ class Company extends React.Component {
 				<Review
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
+					editValue={null}
 					openNotification={this.openNotification}
 					handleCreate={this.handleCreate.bind(this)}
 				/>
 
 				<Review
 					visible={this.state.editReview}
+					editValue={this.state.editValue}
 					onCancel={this.handleCancel}
 					openNotification={this.openNotification}
 					handleCreate={this.handleCreate.bind(this)}
