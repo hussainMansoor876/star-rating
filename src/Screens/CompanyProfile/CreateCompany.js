@@ -493,7 +493,7 @@ class CreateCompany extends React.Component {
 															{starValues.totalStars ? <div>
 																<span className="ff-primary">{starValues.totalStars}/5.00</span>
 																<div className="starress">
-																	<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
+																	<Rate disabled defaultValue={Math.round(starValues.totalStars)} style={{ color: '#0c94ac' }} />
 																</div>
 															</div> : null}
 															<h4 className="ff-secondary">{company.name}</h4>
@@ -570,7 +570,7 @@ class CreateCompany extends React.Component {
 																				{starValues.totalStars ? <div>
 																					<span className="ff-primary">{starValues.totalStars} von 5</span>
 																					<div className="starress">
-																						<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
+																						<Rate disabled defaultValue={Math.round(starValues.totalStars)} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div> : null}
 																				<h4 className="ff-secondary">{company.name}</h4>
@@ -585,7 +585,7 @@ class CreateCompany extends React.Component {
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<div className="starrs">
-																						<Rate disabled defaultValue={starValues.applicationStars} style={{ color: '#0c94ac' }} />
+																						<Rate disabled defaultValue={Math.round(starValues.applicationStars)} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -597,7 +597,7 @@ class CreateCompany extends React.Component {
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<div className="starrs">
-																						<Rate disabled defaultValue={starValues.featuresStars} style={{ color: '#0c94ac' }} />
+																						<Rate disabled defaultValue={Math.round(starValues.featuresStars)} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -609,7 +609,7 @@ class CreateCompany extends React.Component {
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<div className="starrs">
-																						<Rate disabled defaultValue={starValues.clarityStars} style={{ color: '#0c94ac' }} />
+																						<Rate disabled defaultValue={Math.round(starValues.clarityStars)} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -621,7 +621,7 @@ class CreateCompany extends React.Component {
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<div className="starrs">
-																						<Rate disabled defaultValue={starValues.privacyStars} style={{ color: '#0c94ac' }} />
+																						<Rate disabled defaultValue={Math.round(starValues.privacyStars)} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -633,7 +633,7 @@ class CreateCompany extends React.Component {
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<div className="starrs">
-																						<Rate disabled defaultValue={starValues.customerService} style={{ color: '#0c94ac' }} />
+																						<Rate disabled defaultValue={Math.round(starValues.customerService)} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -673,9 +673,9 @@ class CreateCompany extends React.Component {
 											<div className="star-center">
 												<span className="ff-primary">{starValues.totalStars}/5.00</span>
 												<div className="starress">
-													<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
+													<Rate disabled defaultValue={Math.round(starValues.totalStars)} style={{ color: '#0c94ac' }} />
 												</div>
-												<span className="ant-rate-text">{reviewDesc[parseInt(starValues.totalStars) - 1]}</span>
+												<span className="ant-rate-text">{reviewDesc[Math.round(starValues.totalStars) - 1]}</span>
 											</div>
 										</div> : null}
 									</div>
