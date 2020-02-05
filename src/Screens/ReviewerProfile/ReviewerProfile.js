@@ -143,7 +143,6 @@ class Reviewer extends React.Component {
 																<div className="centr-sub-1-main">
 																	<h5 className="ff-secondary">Contact information</h5>
 																	<span className="ff-primary">{user.email}</span>
-																	<h6 className="ff-secondary">3.853 Bewertungen</h6>
 																	{user.reviews ? <div className="pproven-bottom-last">
 																		<span className="line-top"></span>
 																		<span className="lie-botm"></span>
@@ -174,7 +173,7 @@ class Reviewer extends React.Component {
 									<div className="reviews-head" style={{
 										marginTop: 25
 									}}>
-										<h5 className="fc-blue">Your Reviews</h5>
+										<h5 className="fc-blue">{user.name} Reviews</h5>
 									</div>
 								</div>
 							</div>
