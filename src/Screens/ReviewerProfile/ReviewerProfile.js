@@ -22,7 +22,8 @@ class Reviewer extends React.Component {
 		this.state = {
 			user: '',
 			success: true,
-			index: 0
+			index: 0,
+			currPage: 1
 		}
 	}
 
@@ -41,6 +42,23 @@ class Reviewer extends React.Component {
 					success: data.success
 				})
 			})
+	}
+
+
+	updatePage(value) {
+		const { currPage, index } = this.state
+		if (value > currPage) {
+			this.setState({
+				currPage: value,
+				index: index + 5
+			})
+		}
+		else{
+			this.setState({
+				currPage: value,
+				index: index - 5
+			})
+		}
 	}
 
 
@@ -166,7 +184,7 @@ class Reviewer extends React.Component {
 				</section> : null}
 
 				{user.reviews ? <section id="customer-service">
-					{user.reviews.slice().map((v, i) => {
+					{user.reviews.slice(index, index + 5).map((v, i) => {
 						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 						return (
 							<div className="wrapper" key={i}>
@@ -286,7 +304,7 @@ class Reviewer extends React.Component {
 						justifyContent: 'flex-end',
 						marginBottom: 50
 					}}>
-						<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} />
+						<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
 					</div>
 				</section> : null}
 				<Footer {...this.props} />
