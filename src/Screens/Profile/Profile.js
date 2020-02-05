@@ -36,7 +36,6 @@ class Reviewer extends React.Component {
 
 	render() {
 		const { user } = this.props
-
 		return (
 			<div className="main-body">
 				<Header {...this.props} />

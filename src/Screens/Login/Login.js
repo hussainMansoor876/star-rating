@@ -102,6 +102,9 @@ class Login extends React.Component {
         .then((result) => {
           if (result.data.success) {
             this.openNotification('Wellcome', 'Successfully Login!!!', 'check')
+            if (result.data.user.reviews) {
+              result.data.user.reviews = result.data.user.reviews.reverse()
+            }
             this.props.loginUser(result.data.user)
             this.props.history.push('/')
           }
@@ -179,7 +182,7 @@ class Login extends React.Component {
 
         </div>
         <Footer {...this.props} />
-        </div>
+      </div>
     );
   }
 }
