@@ -82,16 +82,6 @@ class Reviewer extends React.Component {
 											</div>
 											<div className="col-lg-12">
 												<div className="proven-botm">
-													<span className="ff-primary">4.66/5.00</span>
-													<div className="starr">
-														<ul>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-														</ul>
-													</div>
 													<h4 className="ff-secondary">{user.name}</h4>
 												</div>
 											</div>
@@ -117,7 +107,6 @@ class Reviewer extends React.Component {
 																<div className="centr-sub-1-main">
 																	<h5 className="ff-secondary">Contact information</h5>
 																	<span className="ff-primary">{user.email}</span>
-																	<h6 className="ff-secondary">3.853 Bewertungen</h6>
 																	<div className="pproven-bottom-last">
 																		<span className="line-top"></span>
 																		<span className="lie-botm"></span>
