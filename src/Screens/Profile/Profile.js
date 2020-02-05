@@ -78,7 +78,6 @@ class Reviewer extends React.Component {
 
 	render() {
 		const { user } = this.props
-		const { starValues } = this.state
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
@@ -150,13 +149,6 @@ class Reviewer extends React.Component {
 																</div>
 
 															</div>
-														</div>
-													</div>
-												</div>
-												<div className="col-lg-5 flrt-r">
-													<div className="center-second">
-														<div className="center-second-main">
-															{/* <p className="ff-primary">Bewertungen vom 14.12.2019 </p> */}
 														</div>
 													</div>
 												</div>
