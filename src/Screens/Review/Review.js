@@ -129,7 +129,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Features">
                         {getFieldDecorator('featuresStars', {
-                            rules: [{ required: true, message: 'Please give stars also' }]
+                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -146,7 +146,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Clarity">
                         {getFieldDecorator('clarityStars', {
-                            rules: [{ required: true, message: 'Please give stars also' }]
+                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -163,7 +163,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Privacy">
                         {getFieldDecorator('privacyStars', {
-                            rules: [{ required: true, message: 'Please give stars also' }]
+                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -180,7 +180,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Customer">
                         {getFieldDecorator('customerService', {
-                            rules: [{ required: true, message: 'Please give stars also' }]
+                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
