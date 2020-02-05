@@ -479,13 +479,13 @@ class Company extends React.Component {
 															</div>
 														</div>
 													</div>
-													<div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
+													{v.video ? <div className="col-lg-3 col-md-6 col-sm-12 flrt-r">
 														<div className="mrtpt clearfix">
 															<Player>
 																<source src={v.video.url} />
 															</Player>
 														</div>
-													</div>
+													</div> : null}
 												</div>
 												<div className="two-d-main clearfix">
 													<div className="col-lg-12">
