@@ -26,12 +26,12 @@ class Company extends React.Component {
 			visible: false,
 			starValues: {
 				totalStars: 0,
-                applicationStars: 0,
-                featuresStars: 0,
-                clarityStars: 0,
-                privacyStars: 0,
-                customerService: 0
-            }
+				applicationStars: 0,
+				featuresStars: 0,
+				clarityStars: 0,
+				privacyStars: 0,
+				customerService: 0
+			}
 		}
 	}
 
@@ -84,11 +84,18 @@ class Company extends React.Component {
 					company: data.data,
 					success: data.success
 				}, () => {
-					const { company } = this.state
+					var { company, starValues } = this.state
 					if (company.reviews) {
-						company.reviews.filter((v) => {
-							console.log(v)
-						})
+						for (var v of company.reviews) {
+							var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
+							starValues.totalStars += count
+							starValues.applicationStars += v.applicationStars
+							starValues.featuresStars += v.featuresStars
+							starValues.clarityStars += v.clarityStars
+							starValues.privacyStars += v.privacyStars
+							starValues.customerService += v.privacyStars
+							console.log(starValues);
+						  }
 						console.log("Hello")
 					}
 				})
