@@ -12,6 +12,7 @@ import axios from 'axios'
 import Exception from 'ant-design-pro/lib/Exception';
 import { Rate } from 'antd';
 import { Player } from 'video-react';
+import Review from '../Review/Review'
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
 
@@ -21,7 +22,9 @@ class Reviewer extends React.Component {
 		super(props)
 		this.state = {
 			user: '',
-			success: true
+			success: true,
+			editValue: null,
+			editReview: false
 		}
 	}
 
@@ -143,7 +146,7 @@ class Reviewer extends React.Component {
 							<div className="wrapper" key={i}>
 								<div className="customer-service-main">
 									<div className="inputcol-2 edit1">
-										<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
+										<button className="btn-blue ff-primary" style={{ width: '120px' }} onClick={() => this.setState({ editValue: v, editReview: true })}>Edit</button>
 									</div>
 									<div className="row">
 										<div className="col-lg-2 col-md-4">
@@ -256,6 +259,13 @@ class Reviewer extends React.Component {
 						)
 					})}
 				</section> : null}
+				{this.state.editValue ? <Review
+					visible={this.state.editReview}
+					editValue={this.state.editValue}
+					onCancel={this.handleCancel}
+					openNotification={this.openNotification}
+					handleUpdate={this.handleUpdate.bind(this)}
+				/> : null}
 				<Footer {...this.props} />
 			</div>
 		)
