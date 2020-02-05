@@ -77,10 +77,12 @@ class Review extends React.Component {
                 this.setState({
                     disable: true
                 })
-                if(this.props.editValue){
-                    
+                if (this.props.editValue) {
+                    this.props.handleUpdate(values)
                 }
-                this.props.handleCreate(values)
+                else {
+                    this.props.handleCreate(values)
+                }
             }
             else {
                 this.openNotification(title, "SomeThing Went wrong", 'close-circle', 'red')
