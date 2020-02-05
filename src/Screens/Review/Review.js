@@ -71,6 +71,7 @@ class Review extends React.Component {
     }
 
     handleSubmit = e => {
+        const { editValue } = this.state
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
 
@@ -78,6 +79,9 @@ class Review extends React.Component {
                 this.setState({
                     disable: true
                 })
+                if (editValue) {
+                    return this.props.handleUpdate(editValue)
+                }
                 this.props.handleCreate(values)
             }
             else {

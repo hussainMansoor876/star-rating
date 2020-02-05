@@ -495,7 +495,7 @@ class Company extends React.Component {
 					editValue={this.state.editValue}
 					onCancel={this.handleCancel}
 					openNotification={this.openNotification}
-					handleCreate={this.handleUpdate.bind(this)}
+					handleUpdate={this.handleUpdate.bind(this)}
 				/> : null}
 				<Footer {...this.props} />
 			</div>
