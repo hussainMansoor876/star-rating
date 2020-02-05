@@ -71,7 +71,7 @@ class Company extends React.Component {
 
 	};
 
-	async handleUpdate(values){
+	handleUpdate(values){
 		console.log('value', values)
 	}
 
