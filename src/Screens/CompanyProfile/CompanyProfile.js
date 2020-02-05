@@ -193,7 +193,6 @@ class Company extends React.Component {
 																<p className="ff-primary ideal" style={{
 																	overflow: 'hidden'
 																}}>{company.description}</p>
-																{/* <a href="javascript:void(0)">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a> */}
 															</div>
 														</div>
 														<div className="col-lg-6 col-md-6 flrt-r">
