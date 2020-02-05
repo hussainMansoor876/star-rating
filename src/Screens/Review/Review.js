@@ -142,6 +142,14 @@ class Review extends React.Component {
                                     featuresStars: value
                                 }
                             }, () => {
+                                if (editValue) {
+                                    this.setState({
+                                        editValue: {
+                                            ...editValue,
+                                            featuresStars: value
+                                        }
+                                    })
+                                }
                                 this.props.form.setFieldsValue({
                                     featuresStars: value
                                 })
@@ -159,6 +167,14 @@ class Review extends React.Component {
                                     clarityStars: value
                                 }
                             }, () => {
+                                if (editValue) {
+                                    this.setState({
+                                        editValue: {
+                                            ...editValue,
+                                            clarityStars: value
+                                        }
+                                    })
+                                }
                                 this.props.form.setFieldsValue({
                                     clarityStars: value
                                 })
@@ -176,6 +192,14 @@ class Review extends React.Component {
                                     privacyStars: value
                                 }
                             }, () => {
+                                if (editValue) {
+                                    this.setState({
+                                        editValue: {
+                                            ...editValue,
+                                            privacyStars: value
+                                        }
+                                    })
+                                }
                                 this.props.form.setFieldsValue({
                                     privacyStars: value
                                 })
@@ -193,6 +217,14 @@ class Review extends React.Component {
                                     customerService: value
                                 }
                             }, () => {
+                                if (editValue) {
+                                    this.setState({
+                                        editValue: {
+                                            ...editValue,
+                                            customerService: value
+                                        }
+                                    })
+                                }
                                 this.props.form.setFieldsValue({
                                     customerService: value
                                 })
