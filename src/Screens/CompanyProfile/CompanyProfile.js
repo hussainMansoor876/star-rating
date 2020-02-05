@@ -42,15 +42,21 @@ class Company extends React.Component {
 		values.ownerName = company.user.name
 		values.reveiwerName = user.name
 		values.reveiwerId = user._id
-		await axios.post('https://star-rating123.herokuapp.com/post/add-review', values)
+		var formData = new FormData();
+		for (var i in values) {
+			formData.append(i, values[i])
+		}
+		formData.set('video', values.video[0].originFileObj)
+		await axios.post('http://localhost:5001/post/add-review', formData)
 			.then((response) => {
 				const { data } = response
-				if (data.success) {
-					this.props.loginUser(data.data)
-					setTimeout(() => {
-						window.location.reload()
-					})
-				}
+				console.log('data', data)
+				// if (data.success) {
+				// 	this.props.loginUser(data.data)
+				// 	setTimeout(() => {
+				// 		window.location.reload()
+				// 	})
+				// }
 			})
 
 	};
@@ -409,10 +415,10 @@ class Company extends React.Component {
 														<div className="star-rating-second">
 															<div className="star-third">
 																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-6 col-8">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<p className="ff-primary">Possible</p>
 																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<div className="starrsd">
 																			<Rate disabled defaultValue={v.applicationStars} style={{ color: '#0c94ac' }} />
 																		</div>
@@ -421,10 +427,10 @@ class Company extends React.Component {
 															</div>
 															<div className="star-third">
 																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<p className="ff-primary">Features</p>
 																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<div className="starrsd">
 																			<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
 																		</div>
@@ -433,10 +439,10 @@ class Company extends React.Component {
 															</div>
 															<div className="star-third">
 																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<p className="ff-primary">Clarity</p>
 																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<div className="starrsd">
 																			<Rate disabled defaultValue={v.clarityStars} style={{ color: '#0c94ac' }} />
 																		</div>
@@ -445,10 +451,10 @@ class Company extends React.Component {
 															</div>
 															<div className="star-third">
 																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<p className="ff-primary">Privacy</p>
 																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<div className="starrsd">
 																			<Rate disabled defaultValue={v.privacyStars} style={{ color: '#0c94ac' }} />
 																		</div>
@@ -457,10 +463,10 @@ class Company extends React.Component {
 															</div>
 															<div className="star-third">
 																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<p className="ff-primary">Customer Service</p>
 																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																		<div className="starrsd">
 																			<Rate disabled defaultValue={v.customerService} style={{ color: '#0c94ac' }} />
 																		</div>
