@@ -621,12 +621,6 @@ class CreateCompany extends React.Component {
 																}}>
 																		<h3>No Reviews</h3>
 																	</div>}
-																{!user.buyPlan ? <div className="inputcol-2">
-																	<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
-																</div> : null}
-																{company.ownerId !== user._id ? <div className="inputcol-2">
-																	<button className="btn-blue ff-primary" style={{ width: '100%' }} onClick={() => this.setState({ visible: true })}>Add Review</button>
-																</div> : null}
 															</div>
 														</div>
 													</div>
@@ -670,9 +664,6 @@ class CreateCompany extends React.Component {
 								return (
 									<div className="wrapper" key={i}>
 										<div className="customer-service-main">
-											{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
-												<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
-											</div> : null}
 											<div className="row">
 												<div className="col-lg-2">
 													<div className="two-str-main-dv">
