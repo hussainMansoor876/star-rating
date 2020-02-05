@@ -31,6 +31,7 @@ class Review extends React.Component {
         this.state = {
             disableUpload: false,
             value: 0,
+            disable: false,
             starValues: {
                 applicationStars: 0,
                 featuresStars: 0,
@@ -84,12 +85,13 @@ class Review extends React.Component {
     render() {
         const { visible, onCancel, form } = this.props;
         const { getFieldDecorator } = form;
-        const { disableUpload, starValues } = this.state
+        const { disableUpload, starValues, disable } = this.state
         return (
             <Modal
                 visible={visible}
                 title="Add Image Details"
                 okText="Submit"
+                // okButtonProps={{ disabled: true }}
                 onCancel={onCancel}
                 onOk={this.handleSubmit}
             >

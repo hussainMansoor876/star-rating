@@ -32,7 +32,6 @@ class Company extends React.Component {
 	async handleCreate(values) {
 		const { user } = this.props
 		const { company } = this.state
-		this.handleCancel()
 		if (!values.video) {
 			delete values.video
 		}
@@ -51,6 +50,7 @@ class Company extends React.Component {
 			.then((response) => {
 				const { data } = response
 				console.log('data', data)
+				this.handleCancel()
 				// if (data.success) {
 				// 	this.props.loginUser(data.data)
 				// 	setTimeout(() => {
