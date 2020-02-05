@@ -46,7 +46,7 @@ class Company extends React.Component {
 			formData.append(i, values[i])
 		}
 		formData.append('video', values.video[0].originFileObj)
-		await axios.post('http://localhost:5001/post/add-review', formData)
+		await axios.post('https://star-rating123.herokuapp.com/post/add-review', formData)
 			.then((response) => {
 				const { data } = response
 				this.handleCancel()
@@ -66,7 +66,10 @@ class Company extends React.Component {
 		})
 			.then((response) => {
 				console.log(response)
-				const { data } = response
+				var { data } = response
+				if(data.data && data.data.reviews){
+					data.data.reviews = data.data.reviews.reverse()
+				}
 				this.setState({
 					company: data.data,
 					success: data.success
@@ -379,7 +382,7 @@ class Company extends React.Component {
 				</section>
 
 				{company.reviews ? <section id="customer-service">
-					{company.reviews.reverse().map((v, i) => {
+					{company.reviews.map((v, i) => {
 						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 						return (
 							<div className="wrapper" key={i}>
