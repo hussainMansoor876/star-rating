@@ -42,6 +42,22 @@ class Reviewer extends React.Component {
 		this.setState({ visible: false, editReview: false, editValue: null });
 	};
 
+	updatePage(value) {
+		const { currPage, index } = this.state
+		if (value > currPage) {
+			this.setState({
+				currPage: value,
+				index: index + 5
+			})
+		}
+		else {
+			this.setState({
+				currPage: value,
+				index: index - 5
+			})
+		}
+	}
+
 	async handleUpdate(values) {
 		await axios.post('https://star-rating123.herokuapp.com/post/update-review', values)
 			.then((response) => {
