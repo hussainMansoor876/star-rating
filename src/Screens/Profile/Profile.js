@@ -57,10 +57,10 @@ class Reviewer extends React.Component {
 							</div>
 							<div className="social-icons">
 								<ul>
-									<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
-									<li><a href="#"><i className="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i className="fa fa-xing-square"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-facebook-f"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-twitter"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-linkedin"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-xing-square"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -110,10 +110,8 @@ class Reviewer extends React.Component {
 																	<div className="pproven-bottom-last">
 																		<span className="line-top"></span>
 																		<span className="lie-botm"></span>
-																		<a className="a-tg-h ff-primary" href="#"><span>637</span>
+																		<a className="a-tg-h ff-primary" href="javascript:void(0)"><span>637</span>
 																			Reviews <br></br> </a>
-																		<a className="a-tg-h ff-primary" href="#"><span>4</span>
-																			other sources</a>
 																	</div>
 																</div>
 
