@@ -169,11 +169,36 @@ class CreateCompany extends React.Component {
 			})
 				.then((response) => {
 					console.log('response', response)
-					const { data } = response
+					var { data } = response
 					if (data.success) {
+						if (data.data && data.data.reviews) {
+							data.data.reviews = data.data.reviews.reverse()
+						}
 						this.setState({
 							company: data.data,
 							loading: false
+						}, () => {
+							var { company, starValues } = this.state
+							if (company.reviews) {
+								for (var v of company.reviews) {
+									var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
+									starValues.totalStars += count
+									starValues.applicationStars += v.applicationStars
+									starValues.featuresStars += v.featuresStars
+									starValues.clarityStars += v.clarityStars
+									starValues.privacyStars += v.privacyStars
+									starValues.customerService += v.privacyStars
+								}
+								starValues.totalStars = starValues.totalStars / company.reviews.length
+								starValues.applicationStars = starValues.applicationStars / company.reviews.length
+								starValues.featuresStars = starValues.featuresStars / company.reviews.length
+								starValues.clarityStars = starValues.clarityStars / company.reviews.length
+								starValues.privacyStars = starValues.privacyStars / company.reviews.length
+								starValues.customerService = starValues.customerService / company.reviews.length
+								this.setState({
+									starValues: starValues
+								})
+							}
 						})
 					}
 					else {
