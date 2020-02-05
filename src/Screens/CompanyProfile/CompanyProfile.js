@@ -46,7 +46,8 @@ class Company extends React.Component {
 		for (var i in values) {
 			formData.append(i, values[i])
 		}
-		formData.set('video', values.video[0].originFileObj)
+		formData.delete('video')
+		formData.append('video', values.video[0].originFileObj)
 		await axios.post('http://localhost:5001/post/add-review', formData)
 			.then((response) => {
 				const { data } = response

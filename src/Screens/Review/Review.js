@@ -190,7 +190,7 @@ class Review extends React.Component {
                             valuePropName: 'fileList',
                             getValueFromEvent: this.normFile,
                         })(
-                            <Upload name="logo" listType="picture" accept="video/*" {...props}>
+                            <Upload name="logo" listType="picture" accept="video/*">
                                 <Button disabled={disableUpload}>
                                     <Icon type="upload" /> Click to upload
                       </Button>
