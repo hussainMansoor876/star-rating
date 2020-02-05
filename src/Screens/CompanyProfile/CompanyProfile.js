@@ -43,6 +43,9 @@ class Company extends React.Component {
 	async handleCreate(values) {
 		const { user } = this.props
 		const { company } = this.state
+		if (!values.video) {
+			delete values.video
+		}
 		values.companyName = company.name
 		values.companyId = company._id
 		values.ownerId = company.user._id
@@ -71,8 +74,20 @@ class Company extends React.Component {
 
 	};
 
-	handleUpdate(values){
+	async handleUpdate(values) {
 		console.log('value', values)
+		await axios.post('http://localhost:5001/post/update-review', values)
+			.then((response) => {
+				var { data } = response
+				this.handleCancel()
+				if (data.success) {
+					data.data.reviews = data.data.reviews.reverse()
+					this.props.loginUser(data.data)
+					setTimeout(() => {
+						window.location.reload()
+					})
+				}
+			})
 	}
 
 	async componentWillMount() {
