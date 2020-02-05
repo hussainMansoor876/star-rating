@@ -21,7 +21,8 @@ class Reviewer extends React.Component {
 		super(props)
 		this.state = {
 			user: '',
-			success: true
+			success: true,
+			index: 0
 		}
 	}
 
@@ -44,7 +45,7 @@ class Reviewer extends React.Component {
 
 
 	render() {
-		const { user, success } = this.state
+		const { user, success, index } = this.state
 		if (!user) {
 			return (
 				<div className="main-body">
@@ -138,13 +139,6 @@ class Reviewer extends React.Component {
 														</div>
 													</div>
 												</div>
-												<div className="col-lg-5 flrt-r">
-													<div className="center-second">
-														<div className="center-second-main">
-															{/* <p className="ff-primary">Bewertungen vom 14.12.2019 </p> */}
-														</div>
-													</div>
-												</div>
 											</div>
 										</div>
 
@@ -172,7 +166,7 @@ class Reviewer extends React.Component {
 				</section> : null}
 
 				{user.reviews ? <section id="customer-service">
-					{user.reviews.map((v, i) => {
+					{user.reviews.slice().map((v, i) => {
 						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 						return (
 							<div className="wrapper" key={i}>
@@ -292,7 +286,7 @@ class Reviewer extends React.Component {
 						justifyContent: 'flex-end',
 						marginBottom: 50
 					}}>
-						<Pagination defaultCurrent={1} total={user.reviews.length} size="large" />
+						<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} />
 					</div>
 				</section> : null}
 				<Footer {...this.props} />
@@ -304,7 +298,6 @@ class Reviewer extends React.Component {
 
 
 const mapStateToProps = (state) => {
-	// console.log("mapToState", state.authReducer)
 	return {
 		user: state.authReducer.user,
 	}
