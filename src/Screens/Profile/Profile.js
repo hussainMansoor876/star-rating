@@ -74,6 +74,7 @@ class Reviewer extends React.Component {
 
 	render() {
 		const { user } = this.props
+		const { starValues } = this.state
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
@@ -189,129 +190,131 @@ class Reviewer extends React.Component {
 										<span className="ff-primary">EXCELLENT</span>
 									</div>
 								</div>
-								{/* <div className="col-lg-2 col-md-12">
-									<div className="inputcol">
-										<select>
-											<option value="volvo">Volvo</option>
-											<option value="saab">Saab</option>
-											<option value="mercedes">Mercedes</option>
-											<option value="audi">Audi</option>
-										</select>
-									</div>
-								</div> */}
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<section id="customer-service">
-					<div className="wrapper">
-						<div className="customer-service-main">
-							<div className="row">
-								<div className="col-lg-2">
-									<div className="two-str-main-dv">
-										<div className="two-star">
-											<span className="ff-primary">4.66/5.00</span>
-											<div className="starress">
-												<ul>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-													<li><i className="fa fa-star"></i></li>
-												</ul>
+				{user.reviews ? <section id="customer-service">
+					{user.reviews.map((v, i) => {
+						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
+						return (
+							<div className="wrapper" key={i}>
+								<div className="customer-service-main">
+									{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
+										<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
+									</div> : null}
+									<div className="row">
+										<div className="col-lg-2">
+											<div className="two-str-main-dv">
+												<div className="two-star">
+													<span className="ff-primary">{count}/5.00</span>
+													<div className="starress">
+														<Rate disabled defaultValue={count} allowHalf={true} style={{ color: '#0c94ac' }} />
+													</div>
+													<span className="ant-rate-text">{reviewDesc[parseInt(count) - 1]}</span>
+												</div>
+												<div className="two-icon">
+													<img src={manicon} />
+													<h5>Recommendation</h5>
+												</div>
 											</div>
-											<span className="ff-primary">EXCELLENT</span>
 										</div>
-										<div className="two-icon">
-											<img src={manicon} />
-											<h5>Recommendation</h5>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-10">
-									<div className="two-main-r">
-										<div style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%', marginRight: 20 }}>
-											<button className="btn btn-primary" style={{ maxWidth: '120px', width: '120px' }}>Edit</button>
-										</div>
-										<div className="two-r-main clearfix">
-											<p className="ff-primary coment">
-												I think the rating system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would hope that the sub-items of what should be evaluated can and do.</p>
-										</div>
-										{/* <div className="two-d-main clearfix">
-											<div className="col-lg-12">
-												<div className="prove-centre">
-													<p className="ff-primary">Customer review & rating for:</p>
-													<span className="ff-primary">ProvenExpert</span>
+										<div className="col-lg-10">
+											<div className="two-main-r">
+												<div className="two-r-main clearfix">
+													<h3 className="ff-secondary">{v.reveiwerName}</h3>
+													<p className="ff-primary coment">{v.feedback}</p>
 
-													<div id="accordion" role="tablist">
-
-														<div className="card-1">
-															<div className="card-header-1" role="tab" id="headingTwo">
-																<h5 className="mb-0">
-
-
-																	<i className="fa fa-chevron-circle-down fc-blue collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></i>
-																</h5>
+													<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
+														<div className="star-rating-second">
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<p className="ff-primary">Possible</p>
+																	</div>
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<div className="starrsd">
+																			<Rate disabled defaultValue={v.applicationStars} style={{ color: '#0c94ac' }} />
+																		</div>
+																	</div>
+																</div>
 															</div>
-															<div id="collapseTwo" className="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-																<div className="card-body ff-primary">
-																	<div className="row">
-																		<div className="col-lg-12 col-md-12 col-sm-12 flrt-r">
-																			<div className="star-rating-second">
-																				<div className="star-third">
-																					<div className="row">
-																						<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																							<p className="ff-primary txt-align">Possible applications</p>
-																						</div>
-																						<div className="col-lg-4 col-md-4 col-sm-6 col-4">
-																							<div className="starrsd">
-																								<ul>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																								</ul>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div className="star-third">
-																					<div className="row">
-																						<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																							<p className="ff-primary txt-align">Possible applications</p>
-																						</div>
-																						<div className="col-lg-4 col-md-4 col-sm-6 col-4">
-																							<div className="starrsd">
-																								<ul>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																									<li><i className="fa fa-star"></i></li>
-																								</ul>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<p className="ff-primary">Features</p>
+																	</div>
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<div className="starrsd">
+																			<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<p className="ff-primary">Clarity</p>
+																	</div>
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<div className="starrsd">
+																			<Rate disabled defaultValue={v.clarityStars} style={{ color: '#0c94ac' }} />
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<p className="ff-primary">Privacy</p>
+																	</div>
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<div className="starrsd">
+																			<Rate disabled defaultValue={v.privacyStars} style={{ color: '#0c94ac' }} />
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div className="star-third">
+																<div className="row">
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<p className="ff-primary">Customer Service</p>
+																	</div>
+																	<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																		<div className="starrsd">
+																			<Rate disabled defaultValue={v.customerService} style={{ color: '#0c94ac' }} />
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
+													{v.video ? <div className="col-lg-3 col-md-6 col-sm-12 flrt-r">
+														<div className="mrtpt clearfix">
+															<Player>
+																<source src={v.video.url} />
+															</Player>
+														</div>
+													</div> : null}
+												</div>
+												<div className="two-d-main clearfix">
+													<div className="col-lg-12">
+														<div className="prove-centre">
+															<p className="ff-primary">Customer review & rating for:</p>
+															<span className="ff-primary">Star Rating</span>
+														</div>
+													</div>
+
 												</div>
 											</div>
-
-										</div> */}
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</section>
+						)
+					})}
+				</section> : null}
 				<Footer {...this.props} />
 			</div>
 		)
