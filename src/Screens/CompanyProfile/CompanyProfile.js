@@ -37,7 +37,7 @@ class Company extends React.Component {
 	}
 
 	handleCancel = () => {
-		this.setState({ visible: false });
+		this.setState({ visible: false, editReview: false });
 	};
 
 	async handleCreate(values) {
@@ -70,6 +70,10 @@ class Company extends React.Component {
 			})
 
 	};
+
+	async handleUpdate(values){
+		console.log('value', values)
+	}
 
 	async componentWillMount() {
 		await axios.post('https://star-rating123.herokuapp.com/post/search-company', {
@@ -481,7 +485,7 @@ class Company extends React.Component {
 				<Review
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
-					editValue={null}
+					editValue={{}}
 					openNotification={this.openNotification}
 					handleCreate={this.handleCreate.bind(this)}
 				/>
@@ -491,7 +495,7 @@ class Company extends React.Component {
 					editValue={this.state.editValue}
 					onCancel={this.handleCancel}
 					openNotification={this.openNotification}
-					handleCreate={this.handleCreate.bind(this)}
+					handleCreate={this.handleUpdate.bind(this)}
 				/>
 				<Footer {...this.props} />
 			</div>

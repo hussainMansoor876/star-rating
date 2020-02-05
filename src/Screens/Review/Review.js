@@ -77,6 +77,9 @@ class Review extends React.Component {
                 this.setState({
                     disable: true
                 })
+                if(this.props.editValue){
+                    
+                }
                 this.props.handleCreate(values)
             }
             else {
@@ -89,6 +92,7 @@ class Review extends React.Component {
         const { visible, onCancel, form, editValue } = this.props;
         const { getFieldDecorator } = form;
         const { disableUpload, starValues, disable } = this.state
+        console.log(editValue)
         return (
             <Modal
                 visible={visible}
@@ -101,6 +105,7 @@ class Review extends React.Component {
                 <Form layout="vertical">
                     <Form.Item label="feedback">
                         {getFieldDecorator('feedback', {
+                            initialValue: editValue ? editValue.feedback : '',
                             rules: [{ required: true, message: 'Please Add the Feedback!' }]
                         })(<TextArea rows={3} minLength={10} />)}
                     </Form.Item>
