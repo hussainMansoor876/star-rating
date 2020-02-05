@@ -193,7 +193,7 @@ class Reviewer extends React.Component {
 												<div className="two-star">
 													<span className="ff-primary">{count}/5.00</span>
 													<div className="starress">
-														<Rate disabled defaultValue={Math.round(count)} allowHalf={true} style={{ color: '#0c94ac' }} />
+														<Rate disabled defaultValue={Math.round(count)} style={{ color: '#0c94ac' }} />
 													</div>
 													<span className="ant-rate-text">{reviewDesc[Math.round(count) - 1]}</span>
 												</div>
