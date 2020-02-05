@@ -32,7 +32,9 @@ class Company extends React.Component {
 				clarityStars: 0,
 				privacyStars: 0,
 				customerService: 0
-			}
+			},
+			index: 0,
+			currPage: 1
 		}
 	}
 
@@ -146,7 +148,7 @@ class Company extends React.Component {
 
 
 	render() {
-		const { company, success, starValues } = this.state
+		const { company, success, starValues, index } = this.state
 		const { user } = this.props
 		if (!company) {
 			return (
@@ -393,7 +395,7 @@ class Company extends React.Component {
 				</section>
 
 				{company.reviews ? <section id="customer-service">
-					{company.reviews.map((v, i) => {
+					{company.reviews.slice(index, index + 5).map((v, i) => {
 						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 						return (
 							<div className="wrapper" key={i}>
