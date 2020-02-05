@@ -283,7 +283,7 @@ class Home extends React.Component {
           </div>
         </section>
 
-        <section id="join-now">
+        {!user ? <section id="join-now">
           <div className="wrapper">
             <div className="sec-padding">
               <div className="row">
@@ -297,17 +297,17 @@ class Home extends React.Component {
                         </p>
                   </div>
                 </div>
-                {!user ? <div className="col-md-3">
+                <div className="col-md-3">
                   <div className="join-now-button">
                     <Link to="/register">
                       <button className="btn-white ff-primary">Sign up now</button>
                     </Link>
                   </div>
-                </div> : null}
+                </div>
               </div>
             </div>
           </div>
-        </section>
+        </section> : null}
 
         <section id="contact">
           <div className="wrapper">
@@ -319,7 +319,9 @@ class Home extends React.Component {
                     <p className="ff-primary">Defective deliveries or unreceived, returned goods: when shopping online, it might happen that something goes wrong.</p>
                     <p className="ff-primary">But you don’t need to worry:<br />
                       the Trusted Shops service deals with it for you.</p>
-                    <button className="btn-blue ff-primary">Contact Us</button>
+                    <Link to="/contact">
+                      <button className="btn-blue ff-primary">Contact Us</button>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-md-6 relative-block">
