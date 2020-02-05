@@ -689,15 +689,18 @@ class CreateCompany extends React.Component {
 								return (
 									<div className="wrapper" key={i}>
 										<div className="customer-service-main">
+											{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
+												<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
+											</div> : null}
 											<div className="row">
-												<div className="col-lg-2">
+												<div className="col-lg-2 col-md-4">
 													<div className="two-str-main-dv">
 														<div className="two-star">
 															<span className="ff-primary">{count}/5.00</span>
 															<div className="starress">
-																<Rate disabled defaultValue={count} allowHalf={true} style={{ color: '#0c94ac' }} />
+																<Rate disabled defaultValue={Math.round(count)} allowHalf={true} style={{ color: '#0c94ac' }} />
 															</div>
-															<span className="ant-rate-text">{reviewDesc[parseInt(count) - 1]}</span>
+															<span className="ant-rate-text">{reviewDesc[Math.round(count) - 1]}</span>
 														</div>
 														<div className="two-icon">
 															<img src={manicon} />
@@ -705,13 +708,13 @@ class CreateCompany extends React.Component {
 														</div>
 													</div>
 												</div>
-												<div className="col-lg-10">
+												<div className="col-lg-10 col-md-4">
 													<div className="two-main-r">
 														<div className="two-r-main clearfix">
 															<h3 className="ff-secondary">{v.reveiwerName}</h3>
 															<p className="ff-primary coment">{v.feedback}</p>
 
-															<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
+															<div className="col-lg-5 col-md-12 col-sm-12 flrt-r">
 																<div className="star-rating-second">
 																	<div className="star-third">
 																		<div className="row">
@@ -775,7 +778,7 @@ class CreateCompany extends React.Component {
 																	</div>
 																</div>
 															</div>
-															{v.video ? <div className="col-lg-3 col-md-6 col-sm-12 flrt-r">
+															{v.video ? <div className="col-lg-3 col-md-12 col-sm-12 flrt-r">
 																<div className="mrtpt clearfix">
 																	<Player>
 																		<source src={v.video.url} />
