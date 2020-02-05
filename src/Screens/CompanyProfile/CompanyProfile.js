@@ -24,6 +24,7 @@ class Company extends React.Component {
 			success: true,
 			visible: false,
 			editValue: null,
+			editReview: false,
 			starValues: {
 				totalStars: 0,
 				applicationStars: 0,
@@ -364,7 +365,7 @@ class Company extends React.Component {
 							<div className="wrapper" key={i}>
 								<div className="customer-service-main">
 									{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
-										<button className="btn-blue ff-primary" style={{ width: '120px' }} onClick={() => this.setState({ editValue: v })} >Edit</button>
+										<button className="btn-blue ff-primary" style={{ width: '120px' }} onClick={() => this.setState({ editValue: v, editReview: true })} >Edit</button>
 									</div> : null}
 									<div className="row">
 										<div className="col-lg-2 col-md-4">
@@ -479,6 +480,13 @@ class Company extends React.Component {
 				</section> : null}
 				<Review
 					visible={this.state.visible}
+					onCancel={this.handleCancel}
+					openNotification={this.openNotification}
+					handleCreate={this.handleCreate.bind(this)}
+				/>
+
+				<Review
+					visible={this.state.editReview}
 					onCancel={this.handleCancel}
 					openNotification={this.openNotification}
 					handleCreate={this.handleCreate.bind(this)}
