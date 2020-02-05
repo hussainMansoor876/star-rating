@@ -215,12 +215,6 @@ class Company extends React.Component {
 															</div>
 														</div>
 														<div className="col-lg-6 col-md-6 flrt-r">
-															{/* <div className="centr-sub-2">
-											<h5 className="ff-secondary">Opening hours</h5>
-											<span className="col-lg-6 col-xs-6 ff-primary">Donnerstag</span>
-											<span className="col-lg-6 col-xs-6 ff-primary">09:00-18:00</span>
-											<a className="col-lg-12 ff-primary" href="javascript:void(0)">Alle Zeiten anzeigen</a>
-										</div> */}
 															<div className="centr-subs-2">
 																<h5 className="ff-secondary">Websites & Profiles</h5>
 																<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" target="_blank" href={`https://${company.url}`}>{company.url}</a></p>
@@ -238,8 +232,7 @@ class Company extends React.Component {
 												</div>
 												<div className="col-lg-5 flrt-r">
 													<div className="center-second">
-														<div className="center-second-main">
-															{/* <p className="ff-primary">Bewertungen vom 14.12.2019 </p> */}
+														{starValues.totalStars ? <div className="center-second-main">
 															<div className="row">
 																<div className="col-lg-12 col-md-12">
 																	<div className="for-main">
@@ -257,7 +250,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Possible applications</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Possible</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
@@ -293,7 +286,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Transparency</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Clarity</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
@@ -329,7 +322,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Value</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Customer Service</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
@@ -345,7 +338,13 @@ class Company extends React.Component {
 																	</div>
 																</div>
 															</div>
-														</div>
+														</div> : <div style={{
+																display: 'flex',
+																justifyContent: 'center',
+																alignItems: 'center'
+															}}>
+																<h3>No Reviews</h3>
+																</div>}
 														{!user.buyPlan ? <div className="inputcol-2">
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
 														</div> : null}
