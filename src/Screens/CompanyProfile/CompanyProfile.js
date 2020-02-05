@@ -37,7 +37,7 @@ class Company extends React.Component {
 	}
 
 	handleCancel = () => {
-		this.setState({ visible: false, editReview: false });
+		this.setState({ visible: false, editReview: false, editValue: null });
 	};
 
 	async handleCreate(values) {

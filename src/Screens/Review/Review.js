@@ -90,7 +90,7 @@ class Review extends React.Component {
         const { visible, onCancel, form } = this.props;
         const { getFieldDecorator } = form;
         const { disableUpload, starValues, disable, editValue } = this.state
-        console.log(this.props.editValue)
+        console.log(editValue)
         return (
             <Modal
                 visible={visible}
