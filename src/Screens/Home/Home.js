@@ -13,6 +13,7 @@ import slider4 from '../../assets/img/slider-4.jpg';
 import slider5 from '../../assets/img/slider-5.jpg';
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
+import { Link } from 'react-router-dom'
 
 
 class Home extends React.Component {
@@ -30,6 +31,7 @@ class Home extends React.Component {
 
 
   render() {
+    const { user } = this.props
     return (
       <div className="main-body">
         <Header {...this.props} />
@@ -295,11 +297,13 @@ class Home extends React.Component {
                         </p>
                   </div>
                 </div>
-                <div className="col-md-3">
+                {!user ? <div className="col-md-3">
                   <div className="join-now-button">
-                    <button className="btn-white ff-primary">Sign up now</button>
+                    <Link to="/register">
+                      <button className="btn-white ff-primary">Sign up now</button>
+                    </Link>
                   </div>
-                </div>
+                </div> : null}
               </div>
             </div>
           </div>
