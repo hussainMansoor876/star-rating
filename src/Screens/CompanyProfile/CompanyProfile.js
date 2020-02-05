@@ -10,7 +10,7 @@ import axios from 'axios'
 import Exception from 'ant-design-pro/lib/Exception';
 import { Form } from 'antd';
 import Review from '../Review/Review'
-import { Rate } from 'antd';
+import { Rate, Pagination } from 'antd';
 import { Player } from 'video-react';
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
@@ -39,6 +39,22 @@ class Company extends React.Component {
 	handleCancel = () => {
 		this.setState({ visible: false, editReview: false, editValue: null });
 	};
+
+	updatePage(value) {
+		const { currPage, index } = this.state
+		if (value > currPage) {
+			this.setState({
+				currPage: value,
+				index: index + 5
+			})
+		}
+		else {
+			this.setState({
+				currPage: value,
+				index: index - 5
+			})
+		}
+	}
 
 	async handleCreate(values) {
 		const { user } = this.props
@@ -495,6 +511,13 @@ class Company extends React.Component {
 							</div>
 						)
 					})}
+					<div style={{
+						display: 'flex',
+						justifyContent: 'flex-end',
+						marginBottom: 50
+					}}>
+						<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
+					</div>
 				</section> : null}
 				{this.state.visible ? <Review
 					visible={this.state.visible}

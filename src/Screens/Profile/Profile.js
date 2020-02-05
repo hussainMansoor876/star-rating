@@ -10,7 +10,7 @@ import Footer from '../Header/Footer'
 import { Skeleton } from 'antd';
 import axios from 'axios'
 import Exception from 'ant-design-pro/lib/Exception';
-import { Rate } from 'antd';
+import { Rate, Pagination } from 'antd';
 import { Player } from 'video-react';
 import Review from '../Review/Review'
 
@@ -24,7 +24,9 @@ class Reviewer extends React.Component {
 			user: '',
 			success: true,
 			editValue: null,
-			editReview: false
+			editReview: false,
+			index: 0,
+			currPage: 1
 		}
 	}
 
@@ -58,6 +60,7 @@ class Reviewer extends React.Component {
 
 	render() {
 		const { user } = this.props
+		const { index } = this.state
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
@@ -277,6 +280,13 @@ class Reviewer extends React.Component {
 							</div>
 						)
 					})}
+					<div style={{
+						display: 'flex',
+						justifyContent: 'flex-end',
+						marginBottom: 50
+					}}>
+						<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
+					</div>
 				</section> : null}
 				{this.state.editValue ? <Review
 					visible={this.state.editReview}
