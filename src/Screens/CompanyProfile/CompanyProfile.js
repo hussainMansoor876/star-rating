@@ -313,10 +313,10 @@ class Company extends React.Component {
 														}}>
 																<h3>No Reviews</h3>
 															</div>}
-														{!user.buyPlan ? <div className="inputcol-2">
+														{user && !user.buyPlan ? <div className="inputcol-2">
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
 														</div> : null}
-														{company.ownerId !== user._id ? <div className="inputcol-2">
+														{user && company.ownerId !== user._id ? <div className="inputcol-2">
 															<button className="btn-blue ff-primary" style={{ width: '100%' }} onClick={() => this.setState({ visible: true })}>Add Review</button>
 														</div> : null}
 													</div>
