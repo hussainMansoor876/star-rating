@@ -247,10 +247,10 @@ class Company extends React.Component {
 															<div className="star-rating">
 																<div className="star-first">
 																	<div className="row">
-																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Possible</a></p>
 																		</div>
-																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<div className="starrs">
 																				<Rate disabled defaultValue={starValues.applicationStars} style={{ color: '#0c94ac' }} />
 																			</div>
@@ -259,10 +259,10 @@ class Company extends React.Component {
 																</div>
 																<div className="star-first">
 																	<div className="row">
-																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Features</a></p>
 																		</div>
-																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<div className="starrs">
 																				<Rate disabled defaultValue={starValues.featuresStars} style={{ color: '#0c94ac' }} />
 																			</div>
@@ -271,10 +271,10 @@ class Company extends React.Component {
 																</div>
 																<div className="star-first">
 																	<div className="row">
-																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Clarity</a></p>
 																		</div>
-																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<div className="starrs">
 																				<Rate disabled defaultValue={starValues.clarityStars} style={{ color: '#0c94ac' }} />
 																			</div>
@@ -283,10 +283,10 @@ class Company extends React.Component {
 																</div>
 																<div className="star-first">
 																	<div className="row">
-																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Privacy</a></p>
 																		</div>
-																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<div className="starrs">
 																				<Rate disabled defaultValue={starValues.privacyStars} style={{ color: '#0c94ac' }} />
 																			</div>
@@ -295,10 +295,10 @@ class Company extends React.Component {
 																</div>
 																<div className="star-first">
 																	<div className="row">
-																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Customer Service</a></p>
 																		</div>
-																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
+																		<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																			<div className="starrs">
 																				<Rate disabled defaultValue={starValues.customerService} style={{ color: '#0c94ac' }} />
 																			</div>
