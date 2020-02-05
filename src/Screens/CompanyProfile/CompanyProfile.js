@@ -23,7 +23,15 @@ class Company extends React.Component {
 		this.state = {
 			company: '',
 			success: true,
-			visible: false
+			visible: false,
+			starValues: {
+				totalStars: 0,
+                applicationStars: 0,
+                featuresStars: 0,
+                clarityStars: 0,
+                privacyStars: 0,
+                customerService: 0
+            }
 		}
 	}
 
@@ -76,7 +84,11 @@ class Company extends React.Component {
 					company: data.data,
 					success: data.success
 				}, () => {
-					if (this.state.company.reviews){
+					const { company } = this.state
+					if (company.reviews) {
+						company.reviews.filter((v) => {
+							console.log(v)
+						})
 						console.log("Hello")
 					}
 				})
