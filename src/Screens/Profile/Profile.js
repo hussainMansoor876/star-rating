@@ -188,7 +188,7 @@ class Reviewer extends React.Component {
 										<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
 									</div> : null}
 									<div className="row">
-										<div className="col-lg-2">
+										<div className="col-lg-3 col-md-4">
 											<div className="two-str-main-dv">
 												<div className="two-star">
 													<span className="ff-primary">{count}/5.00</span>
@@ -203,7 +203,7 @@ class Reviewer extends React.Component {
 												</div>
 											</div>
 										</div>
-										<div className="col-lg-10">
+										<div className="col-lg-9 col-md-8">
 											<div className="two-main-r">
 												<div className="two-r-main clearfix">
 													<h3 className="ff-secondary">To: {v.companyName}</h3>
