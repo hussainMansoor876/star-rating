@@ -12,7 +12,10 @@ import data from '../../country'
 import Plan from '../Plan/Plan'
 import Exception from 'ant-design-pro/lib/Exception';
 import manicon from '../../assets/img/man-icon-2.png';
+import { Rate } from 'antd';
+import { Player } from 'video-react';
 
+const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
 const { Option } = Select;
 
 
@@ -47,7 +50,15 @@ class CreateCompany extends React.Component {
 			success: true,
 			disable: false,
 			loading: true,
-			company: null
+			company: null,
+			starValues: {
+				totalStars: 0,
+				applicationStars: 0,
+				featuresStars: 0,
+				clarityStars: 0,
+				privacyStars: 0,
+				customerService: 0
+			}
 		}
 	}
 
@@ -175,14 +186,10 @@ class CreateCompany extends React.Component {
 		}
 	}
 
-	componentDidMount() {
-
-	}
-
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
-		const { city, success, loading, company } = this.state
+		const { city, success, loading, company, starValues } = this.state
 		const { user } = this.props
 		if (loading) {
 			return (
@@ -433,10 +440,10 @@ class CreateCompany extends React.Component {
 									</div>
 									<div className="social-icons">
 										<ul>
-											<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
-											<li><a href="#"><i className="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-											<li><a href="#"><i className="fa fa-xing-square"></i></a></li>
+											<li><a href="javascript:void(0)"><i className="fa fa-facebook-f"></i></a></li>
+											<li><a href="javascript:void(0)"><i className="fa fa-twitter"></i></a></li>
+											<li><a href="javascript:void(0)"><i className="fa fa-linkedin"></i></a></li>
+											<li><a href="javascript:void(0)"><i className="fa fa-xing-square"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -453,30 +460,23 @@ class CreateCompany extends React.Component {
 												<div className="row">
 													<div className="col-lg-12">
 														<div className="proven-con">
-															<img src={company.profilePic.url} />
+															<img src={company.profilePic.url} alt="image" />
 														</div>
 													</div>
 													<div className="col-lg-12">
 														<div className="proven-botm">
-															<span className="ff-primary">4.66/5.00</span>
-															<div className="starr">
-																<ul>
-																	<li><i className="fa fa-star"></i></li>
-																	<li><i className="fa fa-star"></i></li>
-																	<li><i className="fa fa-star"></i></li>
-																	<li><i className="fa fa-star"></i></li>
-																	<li><i className="fa fa-star"></i></li>
-																</ul>
-															</div>
+															{starValues.totalStars ? <div>
+																<span className="ff-primary">{starValues.totalStars}/5.00</span>
+																<div className="starress">
+																	<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
+																</div>
+															</div> : null}
 															<h4 className="ff-secondary">{company.name}</h4>
-															<h6 className="ff-secondary">3.853 Bewertungen</h6>
 															<div className="pproven-bottom-last">
 																<span className="line-top"></span>
 																<span className="lie-botm"></span>
-																<a className="a-tg-h ff-primary" href="#"><span>637</span>
-																	Reviews <br></br> </a>
-																<a className="a-tg-h ff-primary" href="#"><span>4</span>
-																	other sources</a>
+																{company.reviews ? <a className="a-tg-h ff-primary" href="javascript:void(0)"><span>{company.reviews.length}</span>
+																	Reviews <br></br> </a> : null}
 															</div>
 														</div>
 													</div>
@@ -486,10 +486,7 @@ class CreateCompany extends React.Component {
 										<div className="col-lg-10">
 											<div className="exp-main">
 												<div className="exp-con">
-													<div style={{ display: 'flex' }}>
-														<h3 className="ff-secondary">{company.url}</h3>
-														{company.status == 'pending' ? <h4 style={{ color: 'red' }}>&nbsp;(Pending)</h4> : null}
-													</div>
+													<h3 className="ff-secondary">{company.url}</h3>
 													<h4 className="ff-secondary">{company.title}</h4>
 												</div>
 
@@ -503,7 +500,6 @@ class CreateCompany extends React.Component {
 																		<p className="ff-primary ideal" style={{
 																			overflow: 'hidden'
 																		}}>{company.description}</p>
-																		{/* <a href="#">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a> */}
 																	</div>
 																</div>
 																<div className="col-lg-6 col-md-6 flrt-r">
@@ -518,8 +514,8 @@ class CreateCompany extends React.Component {
 																		<div className="centr-sub-2-main">
 																			<h5 className="ff-secondary">Contact person</h5>
 																			<ul>
-																				<li className="ff-primary"><i className="fa fa-phone"></i><a href="#" className="fc-blue">{company.contactNo}</a></li>
-																				<li className="ff-primary"><a href="#" className="fc-blue">{company.contactEmail}</a></li>
+																				<li className="ff-primary"><i className="fa fa-phone"></i><a href="javascript:void(0)" className="fc-blue">{company.contactNo}</a></li>
+																				<li className="ff-primary"><a href="javascript:void(0)" className="fc-blue">{company.contactEmail}</a></li>
 																			</ul>
 																		</div>
 																	</div>
@@ -530,10 +526,10 @@ class CreateCompany extends React.Component {
 																		<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" target="_blank" href={`https://${company.url}`}>{company.url}</a></p>
 																		<div className="social-icons-proven">
 																			<ul>
-																				<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
-																				<li><a href="#"><i className="fa fa-twitter"></i></a></li>
-																				<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-																				<li><a href="#"><i className="fa fa-xing-square"></i></a></li>
+																				<li><a href="javascript:void(0)"><i className="fa fa-facebook-f"></i></a></li>
+																				<li><a href="javascript:void(0)"><i className="fa fa-twitter"></i></a></li>
+																				<li><a href="javascript:void(0)"><i className="fa fa-linkedin"></i></a></li>
+																				<li><a href="javascript:void(0)"><i className="fa fa-xing-square"></i></a></li>
 																			</ul>
 																		</div>
 																	</div>
@@ -542,47 +538,29 @@ class CreateCompany extends React.Component {
 														</div>
 														<div className="col-lg-5 flrt-r">
 															<div className="center-second">
-																<div className="center-second-main">
-																	{/* <p className="ff-primary">Bewertungen vom 14.12.2019 </p> */}
+																{starValues.totalStars ? <div className="center-second-main">
 																	<div className="row">
-																		<div className="col-lg-6 col-md-6">
+																		<div className="col-lg-12 col-md-12">
 																			<div className="for-main">
-																				<span className="ff-primary">5,00 von 5</span>
-																				<div className="starr">
-																					<ul>
-																						<li><i className="fa fa-star"></i></li>
-																						<li><i className="fa fa-star"></i></li>
-																						<li><i className="fa fa-star"></i></li>
-																						<li><i className="fa fa-star"></i></li>
-																						<li><i className="fa fa-star"></i></li>
-																					</ul>
-																				</div>
+																				{starValues.totalStars ? <div>
+																					<span className="ff-primary">{starValues.totalStars} von 5</span>
+																					<div className="starress">
+																						<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
+																					</div>
+																				</div> : null}
 																				<h4 className="ff-secondary">{company.name}</h4>
 																			</div>
-																		</div>
-																		<div className="col-lg-6 col-md-6">
-																			<div className="icon-image">
-																				<img src={manicon} />
-																				<h5>recommendation</h5>
-																			</div>
-
 																		</div>
 																	</div>
 																	<div className="star-rating">
 																		<div className="star-first">
 																			<div className="row">
 																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																					<p className="ff-primary fc-blue"><a href="#">Possible applications</a></p>
+																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Possible</a></p>
 																				</div>
 																				<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																					<div className="starrs">
-																						<ul>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																						</ul>
+																						<Rate disabled defaultValue={starValues.applicationStars} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -590,17 +568,11 @@ class CreateCompany extends React.Component {
 																		<div className="star-first">
 																			<div className="row">
 																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																					<p className="ff-primary fc-blue"><a href="#">Features</a></p>
+																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Features</a></p>
 																				</div>
 																				<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																					<div className="starrs">
-																						<ul>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																						</ul>
+																						<Rate disabled defaultValue={starValues.featuresStars} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -608,17 +580,11 @@ class CreateCompany extends React.Component {
 																		<div className="star-first">
 																			<div className="row">
 																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																					<p className="ff-primary fc-blue"><a href="#">Transparency</a></p>
+																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Clarity</a></p>
 																				</div>
 																				<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																					<div className="starrs">
-																						<ul>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																						</ul>
+																						<Rate disabled defaultValue={starValues.clarityStars} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -626,17 +592,11 @@ class CreateCompany extends React.Component {
 																		<div className="star-first">
 																			<div className="row">
 																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																					<p className="ff-primary fc-blue"><a href="#">Privacy</a></p>
+																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Privacy</a></p>
 																				</div>
 																				<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																					<div className="starrs">
-																						<ul>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																						</ul>
+																						<Rate disabled defaultValue={starValues.privacyStars} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
@@ -644,23 +604,29 @@ class CreateCompany extends React.Component {
 																		<div className="star-first">
 																			<div className="row">
 																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																					<p className="ff-primary fc-blue"><a href="#">Value</a></p>
+																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Customer Service</a></p>
 																				</div>
 																				<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																					<div className="starrs">
-																						<ul>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																							<li><i className="fa fa-star"></i></li>
-																						</ul>
+																						<Rate disabled defaultValue={starValues.customerService} style={{ color: '#0c94ac' }} />
 																					</div>
 																				</div>
 																			</div>
 																		</div>
 																	</div>
-																</div>
+																</div> : <div style={{
+																	display: 'flex',
+																	justifyContent: 'center',
+																	alignItems: 'center'
+																}}>
+																		<h3>No Reviews</h3>
+																	</div>}
+																{!user.buyPlan ? <div className="inputcol-2">
+																	<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
+																</div> : null}
+																{company.ownerId !== user._id ? <div className="inputcol-2">
+																	<button className="btn-blue ff-primary" style={{ width: '100%' }} onClick={() => this.setState({ visible: true })}>Add Review</button>
+																</div> : null}
 															</div>
 														</div>
 													</div>
@@ -678,189 +644,146 @@ class CreateCompany extends React.Component {
 								<div className="reviews-main">
 									<div className="row">
 										<div className="col-lg-8 col-md-8 col-sm-12">
-											<div className="reviews-head">
-												<h5 className="fc-blue">3,218 Reviews on star-rating.com</h5>
-											</div>
+											{company.reviews && company.reviews.length ? <div className="reviews-head" style={{
+												marginTop: 25
+											}}>
+												<h5 className="fc-blue">{company.reviews.length} Reviews on star-rating.com</h5>
+											</div> : null}
 										</div>
-										<div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
+										{starValues.totalStars ? <div className="stars1 col-sm-12" style={{ display: 'flex', flex: 1, flexDirection: 'row', justifyContent: 'flex-end', width: '100%' }}>
 											<div className="star-center">
-												<span className="ff-primary">4.66/5.00</span>
+												<span className="ff-primary">{starValues.totalStars}/5.00</span>
 												<div className="starress">
-													<ul>
-														<li><i className="fa fa-star"></i></li>
-														<li><i className="fa fa-star"></i></li>
-														<li><i className="fa fa-star"></i></li>
-														<li><i className="fa fa-star"></i></li>
-														<li><i className="fa fa-star"></i></li>
-													</ul>
+													<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
 												</div>
-												<span className="ff-primary">EXCELLENT</span>
+												<span className="ant-rate-text">{reviewDesc[parseInt(starValues.totalStars) - 1]}</span>
 											</div>
-										</div>
+										</div> : null}
 									</div>
 								</div>
 							</div>
 						</section>
 
-						<section id="customer-service">
-							<div className="wrapper">
-								<div className="customer-service-main">
-									<div className="row">
-										<div className="col-lg-2">
-											<div className="two-str-main-dv">
-												<div className="two-star">
-													<span className="ff-primary">4.66/5.00</span>
-													<div className="starress">
-														<ul>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-															<li><i className="fa fa-star"></i></li>
-														</ul>
+						{company.reviews ? <section id="customer-service">
+							{company.reviews.map((v, i) => {
+								var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
+								return (
+									<div className="wrapper" key={i}>
+										<div className="customer-service-main">
+											{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
+												<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
+											</div> : null}
+											<div className="row">
+												<div className="col-lg-2">
+													<div className="two-str-main-dv">
+														<div className="two-star">
+															<span className="ff-primary">{count}/5.00</span>
+															<div className="starress">
+																<Rate disabled defaultValue={count} allowHalf={true} style={{ color: '#0c94ac' }} />
+															</div>
+															<span className="ant-rate-text">{reviewDesc[parseInt(count) - 1]}</span>
+														</div>
+														<div className="two-icon">
+															<img src={manicon} />
+															<h5>Recommendation</h5>
+														</div>
 													</div>
-													<span className="ff-primary">EXCELLENT</span>
 												</div>
-												<div className="two-icon">
-													<img src={manicon} />
-													<h5>Recommendation</h5>
-												</div>
-											</div>
-										</div>
-										<div className="col-lg-10">
-											<div className="two-main-r">
-												<div className="two-r-main clearfix">
-													<p className="ff-primary coment">
-														I think the rating system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would like that the sub-points of what should be evaluated and put in. I think the evaluation system is quite good. However, I would hope that the sub-items of what should be evaluated can and do.</p>
+												<div className="col-lg-10">
+													<div className="two-main-r">
+														<div className="two-r-main clearfix">
+															<h3 className="ff-secondary">{v.reveiwerName}</h3>
+															<p className="ff-primary coment">{v.feedback}</p>
 
-													<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
-														<div className="star-rating-second">
-															<div className="star-third">
-																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																		<p className="ff-primary">Possible applications</p>
+															<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
+																<div className="star-rating-second">
+																	<div className="star-third">
+																		<div className="row">
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<p className="ff-primary">Possible</p>
+																			</div>
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<div className="starrsd">
+																					<Rate disabled defaultValue={v.applicationStars} style={{ color: '#0c94ac' }} />
+																				</div>
+																			</div>
+																		</div>
 																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
+																	<div className="star-third">
+																		<div className="row">
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<p className="ff-primary">Features</p>
+																			</div>
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<div className="starrsd">
+																					<Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div className="star-third">
+																		<div className="row">
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<p className="ff-primary">Clarity</p>
+																			</div>
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<div className="starrsd">
+																					<Rate disabled defaultValue={v.clarityStars} style={{ color: '#0c94ac' }} />
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div className="star-third">
+																		<div className="row">
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<p className="ff-primary">Privacy</p>
+																			</div>
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<div className="starrsd">
+																					<Rate disabled defaultValue={v.privacyStars} style={{ color: '#0c94ac' }} />
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div className="star-third">
+																		<div className="row">
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<p className="ff-primary">Customer Service</p>
+																			</div>
+																			<div className="col-lg-6 col-md-6 col-sm-6 col-6">
+																				<div className="starrsd">
+																					<Rate disabled defaultValue={v.customerService} style={{ color: '#0c94ac' }} />
+																				</div>
+																			</div>
 																		</div>
 																	</div>
 																</div>
 															</div>
-															<div className="star-third">
-																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
-																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
-																		</div>
-																	</div>
+															{v.video ? <div className="col-lg-3 col-md-6 col-sm-12 flrt-r">
+																<div className="mrtpt clearfix">
+																	<Player>
+																		<source src={v.video.url} />
+																	</Player>
 																</div>
-															</div>
-															<div className="star-third">
-																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
-																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div className="star-third">
-																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
-																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div className="star-third">
-																<div className="row">
-																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Possible applications</p>
-																	</div>
-																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
-																		<div className="starrsd">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</div>
+															</div> : null}
 														</div>
-													</div>
-													<div className="col-lg-4 col-md-6 col-sm-12 flrt-r">
-														<div className="mrtpt clearfix">
-															<div className="customer-ser-head clearfix">
-																<i className="lft-sty  fa fa-check"></i>
-																<div className="cost-ben">
-																	<p className="ff-primary">Customer service</p>
-																	<span className="ff-primary">EXCELLENT (5.00)</span>
+														<div className="two-d-main clearfix">
+															<div className="col-lg-12">
+																<div className="prove-centre">
+																	<p className="ff-primary">Customer review & rating for:</p>
+																	<span className="ff-primary">Star Rating</span>
 																</div>
 															</div>
-															<div className="customer-ser-head clearfix">
-																<i className="lft-sty fa fa-check"></i>
-																<div className="cost-ben">
-																	<p className="ff-primary">Customer service</p>
-																	<span className="ff-primary">EXCELLENT (5.00)</span>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div className="two-d-main clearfix">
-													<div className="col-lg-12">
-														<div className="prove-centre">
-															<p className="ff-primary">Customer review & rating for:</p>
-															<span className="ff-primary">ProvenExpert</span>
-														</div>
-													</div>
 
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-						</section>
+								)
+							})}
+						</section> : null}
 						<Footer {...this.props} />
 					</div>
 				}

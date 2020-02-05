@@ -12,7 +12,6 @@ import { Form } from 'antd';
 import Review from '../Review/Review'
 import { Rate } from 'antd';
 import { Player } from 'video-react';
-import thumbnail from '../../assets/img/thumbnail.png'
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
 
@@ -478,7 +477,6 @@ class Company extends React.Component {
 					})}
 				</section> : null}
 				<Review
-					// wrappedComponentRef={this.saveFormRef}
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
 					openNotification={this.openNotification}
