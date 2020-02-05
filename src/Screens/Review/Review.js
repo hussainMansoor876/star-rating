@@ -71,7 +71,7 @@ class Review extends React.Component {
     }
 
     handleSubmit = e => {
-        const { editValue } = this.state
+        var { editValue } = this.state
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
 
@@ -80,6 +80,7 @@ class Review extends React.Component {
                     disable: true
                 })
                 if (editValue) {
+                    editValue.feedback = values.feedback
                     return this.props.handleUpdate(editValue)
                 }
                 this.props.handleCreate(values)
@@ -94,7 +95,6 @@ class Review extends React.Component {
         const { visible, onCancel, form } = this.props;
         const { getFieldDecorator } = form;
         const { disableUpload, starValues, disable, editValue } = this.state
-        console.log(editValue)
         return (
             <Modal
                 visible={visible}
