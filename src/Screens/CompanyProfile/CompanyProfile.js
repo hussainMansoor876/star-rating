@@ -410,7 +410,7 @@ class Company extends React.Component {
 															<div className="star-third">
 																<div className="row">
 																	<div className="col-lg-8 col-md-8 col-sm-6 col-8">
-																		<p className="ff-primary">Possible applications</p>
+																		<p className="ff-primary">Possible</p>
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
@@ -422,7 +422,7 @@ class Company extends React.Component {
 															<div className="star-third">
 																<div className="row">
 																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Features applications</p>
+																		<p className="ff-primary">Features</p>
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
@@ -434,7 +434,7 @@ class Company extends React.Component {
 															<div className="star-third">
 																<div className="row">
 																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Clarity applications</p>
+																		<p className="ff-primary">Clarity</p>
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
@@ -446,7 +446,7 @@ class Company extends React.Component {
 															<div className="star-third">
 																<div className="row">
 																	<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																		<p className="ff-primary">Privacy applications</p>
+																		<p className="ff-primary">Privacy</p>
 																	</div>
 																	<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																		<div className="starrsd">
