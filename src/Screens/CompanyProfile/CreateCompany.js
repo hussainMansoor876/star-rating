@@ -604,7 +604,7 @@ class CreateCompany extends React.Component {
 																		</div>
 																		<div className="star-first">
 																			<div className="row">
-																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Clarity</a></p>
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
@@ -616,7 +616,7 @@ class CreateCompany extends React.Component {
 																		</div>
 																		<div className="star-first">
 																			<div className="row">
-																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Privacy</a></p>
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
@@ -628,7 +628,7 @@ class CreateCompany extends React.Component {
 																		</div>
 																		<div className="star-first">
 																			<div className="row">
-																				<div className="col-lg-8 col-md-8 col-sm-8 col-8">
+																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
 																					<p className="ff-primary fc-blue"><a href="javascript:void(0)">Customer Service</a></p>
 																				</div>
 																				<div className="col-lg-6 col-md-6 col-sm-6 col-6">
