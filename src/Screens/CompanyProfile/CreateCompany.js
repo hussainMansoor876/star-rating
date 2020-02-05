@@ -825,7 +825,7 @@ class CreateCompany extends React.Component {
 								justifyContent: 'flex-end',
 								marginBottom: 50
 							}}>
-								<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
+								<Pagination defaultCurrent={1} total={company.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
 							</div>
 						</section> : null}
 						<Footer {...this.props} />
