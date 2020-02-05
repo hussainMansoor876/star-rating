@@ -133,10 +133,10 @@ class Company extends React.Component {
 							</div>
 							<div className="social-icons">
 								<ul>
-									<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
-									<li><a href="#"><i className="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-									<li><a href="#"><i className="fa fa-xing-square"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-facebook-f"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-twitter"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-linkedin"></i></a></li>
+									<li><a href="javascript:void(0)"><i className="fa fa-xing-square"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -158,16 +158,10 @@ class Company extends React.Component {
 											</div>
 											<div className="col-lg-12">
 												<div className="proven-botm">
-													{company.reviews ? <div>
-														<span className="ff-primary">{parseFloat(starValues.totalStars)}/5.00</span>
-														<div className="starr">
-															<ul>
-																<li><i className="fa fa-star"></i></li>
-																<li><i className="fa fa-star"></i></li>
-																<li><i className="fa fa-star"></i></li>
-																<li><i className="fa fa-star"></i></li>
-																<li><i className="fa fa-star"></i></li>
-															</ul>
+													{starValues.totalStars ? <div>
+														<span className="ff-primary">{starValues.totalStars}/5.00</span>
+														<div className="starrd">
+															<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
 														</div>
 													</div> : null}
 													<h4 className="ff-secondary">{company.name}</h4>
@@ -186,7 +180,7 @@ class Company extends React.Component {
 									<div className="exp-main">
 										<div className="exp-con">
 											<h3 className="ff-secondary">{company.url}</h3>
-											<h4 className="ff-secondary">Customer satisfaction analysis & referral marketing</h4>
+											<h4 className="ff-secondary">{company.title}</h4>
 										</div>
 
 
@@ -199,7 +193,7 @@ class Company extends React.Component {
 																<p className="ff-primary ideal" style={{
 																	overflow: 'hidden'
 																}}>{company.description}</p>
-																{/* <a href="#">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a> */}
+																{/* <a href="javascript:void(0)">View full description <i className="fa fa-chevron-circle-down fc-blue"></i></a> */}
 															</div>
 														</div>
 														<div className="col-lg-6 col-md-6 flrt-r">
@@ -210,14 +204,12 @@ class Company extends React.Component {
 																	<span className="ff-primary">{company.address}</span>
 																	<span className="ff-primary">{company.city}</span>
 																	<span className="ff-primary">{company.country}</span>
-																	{/* <span className="ff-primary direction"><i className="fa fa-map-marker"></i><a href="#" className="fc-blue"> Direction</a></span> */}
 																</div>
 																<div className="centr-sub-2-main">
 																	<h5 className="ff-secondary">Contact person</h5>
-																	{/* <span className="ff-primary">Remo Fyda</span> */}
 																	<ul>
-																		<li className="ff-primary"><i className="fa fa-phone"></i><a href="#" className="fc-blue">{company.contactNo}</a></li>
-																		<li className="ff-primary"><a href="#" className="fc-blue">{company.contactEmail}</a></li>
+																		<li className="ff-primary"><i className="fa fa-phone"></i><a href="javascript:void(0)" className="fc-blue">{company.contactNo}</a></li>
+																		<li className="ff-primary"><a href="javascript:void(0)" className="fc-blue">{company.contactEmail}</a></li>
 																	</ul>
 																</div>
 															</div>
@@ -227,17 +219,17 @@ class Company extends React.Component {
 											<h5 className="ff-secondary">Opening hours</h5>
 											<span className="col-lg-6 col-xs-6 ff-primary">Donnerstag</span>
 											<span className="col-lg-6 col-xs-6 ff-primary">09:00-18:00</span>
-											<a className="col-lg-12 ff-primary" href="#">Alle Zeiten anzeigen</a>
+											<a className="col-lg-12 ff-primary" href="javascript:void(0)">Alle Zeiten anzeigen</a>
 										</div> */}
 															<div className="centr-subs-2">
 																<h5 className="ff-secondary">Websites & Profiles</h5>
 																<p><i className="fa fa-window-maximize"></i><a className="ff-primary fc-blue" target="_blank" href={`https://${company.url}`}>{company.url}</a></p>
 																<div className="social-icons-proven">
 																	<ul>
-																		<li><a href="#"><i className="fa fa-facebook-f"></i></a></li>
-																		<li><a href="#"><i className="fa fa-twitter"></i></a></li>
-																		<li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-																		<li><a href="#"><i className="fa fa-xing-square"></i></a></li>
+																		<li><a href="javascript:void(0)"><i className="fa fa-facebook-f"></i></a></li>
+																		<li><a href="javascript:void(0)"><i className="fa fa-twitter"></i></a></li>
+																		<li><a href="javascript:void(0)"><i className="fa fa-linkedin"></i></a></li>
+																		<li><a href="javascript:void(0)"><i className="fa fa-xing-square"></i></a></li>
 																	</ul>
 																</div>
 															</div>
@@ -251,16 +243,18 @@ class Company extends React.Component {
 															<div className="row">
 																<div className="col-lg-6 col-md-6">
 																	<div className="for-main">
-																		<span className="ff-primary">5,00 von 5</span>
-																		<div className="starr">
-																			<ul>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																				<li><i className="fa fa-star"></i></li>
-																			</ul>
-																		</div>
+																		{company.reviews ? <div>
+																			<span className="ff-primary">{starValues.totalStars} von 5</span>
+																			<div className="starr">
+																				<ul>
+																					<li><i className="fa fa-star"></i></li>
+																					<li><i className="fa fa-star"></i></li>
+																					<li><i className="fa fa-star"></i></li>
+																					<li><i className="fa fa-star"></i></li>
+																					<li><i className="fa fa-star"></i></li>
+																				</ul>
+																			</div>
+																		</div> : null}
 																		<h4 className="ff-secondary">{company.name}</h4>
 																	</div>
 																</div>
@@ -276,7 +270,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="#">Possible applications</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Possible applications</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
@@ -294,7 +288,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="#">Features</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Features</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
@@ -312,7 +306,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="#">Transparency</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Transparency</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
@@ -330,7 +324,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="#">Privacy</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Privacy</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
@@ -348,7 +342,7 @@ class Company extends React.Component {
 																<div className="star-first">
 																	<div className="row">
 																		<div className="col-lg-8 col-md-8 col-sm-8 col-8">
-																			<p className="ff-primary fc-blue"><a href="#">Value</a></p>
+																			<p className="ff-primary fc-blue"><a href="javascript:void(0)">Value</a></p>
 																		</div>
 																		<div className="col-lg-4 col-md-4 col-sm-4 col-4">
 																			<div className="starrs">
