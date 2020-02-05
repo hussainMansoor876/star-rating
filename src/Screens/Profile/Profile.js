@@ -214,8 +214,8 @@ class Reviewer extends React.Component {
 										<div className="col-lg-10">
 											<div className="two-main-r">
 												<div className="two-r-main clearfix">
-													<h3 className="ff-secondary">{v.reveiwerName}</h3>
-													<p className="ff-primary coment">{v.feedback}</p>
+													<h3 className="ff-secondary">To: {v.companyName}</h3>
+													<p className="ff-primary coment">You: {v.feedback}</p>
 
 													<div className="col-lg-5 col-md-6 col-sm-12 flrt-r">
 														<div className="star-rating-second">
