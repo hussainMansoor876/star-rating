@@ -139,14 +139,11 @@ class Company extends React.Component {
 														</ul>
 													</div>
 													<h4 className="ff-secondary">{company.name}</h4>
-													<h6 className="ff-secondary">3.853 Bewertungen</h6>
 													<div className="pproven-bottom-last">
 														<span className="line-top"></span>
 														<span className="lie-botm"></span>
-														<a className="a-tg-h ff-primary" href="#"><span>637</span>
-															Reviews <br></br> </a>
-														<a className="a-tg-h ff-primary" href="#"><span>4</span>
-															other sources</a>
+														{company.reviews ? <a className="a-tg-h ff-primary" href="#"><span>{company.reviews.length}</span>
+															Reviews <br></br> </a> : null}
 													</div>
 												</div>
 											</div>
