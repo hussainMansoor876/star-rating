@@ -94,7 +94,6 @@ class Review extends React.Component {
         const { visible, onCancel, form, editValue } = this.props;
         const { getFieldDecorator } = form;
         const { disableUpload, starValues, disable } = this.state
-        console.log(editValue)
         return (
             <Modal
                 visible={visible}
@@ -113,7 +112,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Application">
                         {getFieldDecorator('applicationStars', {
-                            rules: [{ required: true, message: 'Please give stars also' }]
+                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
