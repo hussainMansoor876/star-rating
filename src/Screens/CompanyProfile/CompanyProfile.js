@@ -349,9 +349,9 @@ class Company extends React.Component {
 														{!user.buyPlan ? <div className="inputcol-2">
 															<a href="/createcompany" className="btn-blue ff-primary">Register Your Company</a>
 														</div> : null}
-														<div className="inputcol-2">
+														{company.ownerId !== user._id ? <div className="inputcol-2">
 															<button className="btn-blue ff-primary" style={{ width: '100%' }} onClick={() => this.setState({ visible: true })}>Add Review</button>
-														</div>
+														</div> : null}
 													</div>
 												</div>
 											</div>
