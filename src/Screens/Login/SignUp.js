@@ -103,8 +103,6 @@ class Signup extends React.Component {
             if (result.data.success) {
               this.openNotification('Wellcome', result.data.message, 'check')
               this.props.loginUser(result.data.user)
-              // SessionStorageManager.setUser(result.data)
-              // window.location.reload()
               this.props.history.push('/')
             }
             else {
@@ -195,7 +193,7 @@ class Signup extends React.Component {
                   <Button htmlType="submit" className="login-form-button" disabled={this.state.disable} style={{ backgroundColor: '#37A000', color: 'white', fontWeight: 'bold', fontSize: 14, height: 40 }}>
                     Sign Up
           </Button>
-                  Or <Link to="/">Login With An Existing Account</Link>
+                  Or <Link to="/login">Login With An Existing Account</Link>
                 </Form.Item>
                 <div className="signup-with">
                   <div className="signup-info">
