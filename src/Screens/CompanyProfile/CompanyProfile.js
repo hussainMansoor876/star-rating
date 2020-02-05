@@ -368,7 +368,9 @@ class Company extends React.Component {
 						<div className="reviews-main">
 							<div className="row">
 								<div className="col-lg-8 col-md-8 col-sm-12">
-									{company.reviews ? <div className="reviews-head">
+									{company.reviews && company.reviews.length ? <div className="reviews-head" style={{
+										marginTop: 25
+									}}>
 										<h5 className="fc-blue">{company.reviews.length} Reviews on star-rating.com</h5>
 									</div> : null}
 								</div>
