@@ -94,9 +94,16 @@ class Company extends React.Component {
 							starValues.clarityStars += v.clarityStars
 							starValues.privacyStars += v.privacyStars
 							starValues.customerService += v.privacyStars
-							console.log(starValues);
-						  }
-						console.log("Hello")
+						}
+						starValues.totalStars = starValues.totalStars / company.reviews.length
+						starValues.applicationStars = starValues.applicationStars / company.reviews.length
+						starValues.featuresStars = starValues.featuresStars / company.reviews.length
+						starValues.clarityStars = starValues.clarityStars / company.reviews.length
+						starValues.privacyStars = starValues.privacyStars / company.reviews.length
+						starValues.customerService = v.privacyStars / company.reviews.length
+						this.setState({
+							starValues: starValues
+						})
 					}
 				})
 			})
