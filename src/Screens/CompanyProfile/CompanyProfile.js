@@ -75,8 +75,7 @@ class Company extends React.Component {
 	};
 
 	async handleUpdate(values) {
-		console.log('value', values)
-		await axios.post('http://localhost:5001/post/update-review', values)
+		await axios.post('https://star-rating123.herokuapp.com/post/update-review', values)
 			.then((response) => {
 				var { data } = response
 				this.handleCancel()
