@@ -43,9 +43,6 @@ class Company extends React.Component {
 	async handleCreate(values) {
 		const { user } = this.props
 		const { company } = this.state
-		if (!values.video) {
-			delete values.video
-		}
 		values.companyName = company.name
 		values.companyId = company._id
 		values.ownerId = company.user._id
@@ -56,12 +53,15 @@ class Company extends React.Component {
 		for (var i in values) {
 			formData.append(i, values[i])
 		}
-		formData.append('video', values.video[0].originFileObj)
+		if (values.video) {
+			formData.append('video', values.video[0].originFileObj)
+		}
 		await axios.post('https://star-rating123.herokuapp.com/post/add-review', formData)
 			.then((response) => {
-				const { data } = response
+				var { data } = response
 				this.handleCancel()
 				if (data.success) {
+					data.data.reviews = data.data.reviews.reverse()
 					this.props.loginUser(data.data)
 					setTimeout(() => {
 						window.location.reload()
