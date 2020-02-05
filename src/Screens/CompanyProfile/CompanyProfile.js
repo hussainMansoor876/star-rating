@@ -23,6 +23,7 @@ class Company extends React.Component {
 			company: '',
 			success: true,
 			visible: false,
+			editValue: null,
 			starValues: {
 				totalStars: 0,
 				applicationStars: 0,
@@ -363,7 +364,7 @@ class Company extends React.Component {
 							<div className="wrapper" key={i}>
 								<div className="customer-service-main">
 									{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
-										<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
+										<button className="btn-blue ff-primary" style={{ width: '120px' }} onClick={() => this.setState({ editValue: v })} >Edit</button>
 									</div> : null}
 									<div className="row">
 										<div className="col-lg-2 col-md-4">
