@@ -15,7 +15,6 @@ import { Player } from 'video-react';
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
 
-
 class Reviewer extends React.Component {
 
 	constructor(props) {
