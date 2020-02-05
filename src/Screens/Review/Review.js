@@ -32,6 +32,7 @@ class Review extends React.Component {
             disableUpload: false,
             value: 0,
             disable: false,
+            editValue: this.props.editValue ? this.props.editValue : '',
             starValues: {
                 applicationStars: 0,
                 featuresStars: 0,
@@ -86,9 +87,10 @@ class Review extends React.Component {
     };
 
     render() {
-        const { visible, onCancel, form, editValue } = this.props;
+        const { visible, onCancel, form } = this.props;
         const { getFieldDecorator } = form;
-        const { disableUpload, starValues, disable } = this.state
+        const { disableUpload, starValues, disable, editValue } = this.state
+        console.log(this.props.editValue)
         return (
             <Modal
                 visible={visible}
