@@ -75,6 +75,10 @@ class Company extends React.Component {
 				this.setState({
 					company: data.data,
 					success: data.success
+				}, () => {
+					if (this.state.company.reviews){
+						console.log("Hello")
+					}
 				})
 			})
 	}
@@ -142,7 +146,7 @@ class Company extends React.Component {
 													<div className="pproven-bottom-last">
 														<span className="line-top"></span>
 														<span className="lie-botm"></span>
-														{company.reviews ? <a className="a-tg-h ff-primary" href="#"><span>{company.reviews.length}</span>
+														{company.reviews ? <a className="a-tg-h ff-primary" href="javascript:void(0)"><span>{company.reviews.length}</span>
 															Reviews <br></br> </a> : null}
 													</div>
 												</div>
