@@ -12,7 +12,7 @@ import data from '../../country'
 import Plan from '../Plan/Plan'
 import Exception from 'ant-design-pro/lib/Exception';
 import manicon from '../../assets/img/man-icon-2.png';
-import { Rate } from 'antd';
+import { Rate, Pagination } from 'antd';
 import { Player } from 'video-react';
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
@@ -58,7 +58,9 @@ class CreateCompany extends React.Component {
 				clarityStars: 0,
 				privacyStars: 0,
 				customerService: 0
-			}
+			},
+			index: 0,
+			currPage: 1
 		}
 	}
 
@@ -69,6 +71,22 @@ class CreateCompany extends React.Component {
 			icon: <Icon type={icon} style={{ color: color }} />,
 		});
 	};
+
+	updatePage(value) {
+		const { currPage, index } = this.state
+		if (value > currPage) {
+			this.setState({
+				currPage: value,
+				index: index + 5
+			})
+		}
+		else {
+			this.setState({
+				currPage: value,
+				index: index - 5
+			})
+		}
+	}
 
 	normFile = e => {
 		this.setState({ disableUpload: false })
@@ -214,7 +232,7 @@ class CreateCompany extends React.Component {
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
-		const { city, success, loading, company, starValues } = this.state
+		const { city, success, loading, company, starValues, index } = this.state
 		const { user } = this.props
 		if (loading) {
 			return (
@@ -684,7 +702,7 @@ class CreateCompany extends React.Component {
 						</section>
 
 						{company.reviews ? <section id="customer-service">
-							{company.reviews.map((v, i) => {
+							{company.reviews.slice(index, index + 5).map((v, i) => {
 								var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 								return (
 									<div className="wrapper" key={i}>
@@ -802,6 +820,13 @@ class CreateCompany extends React.Component {
 									</div>
 								)
 							})}
+							<div style={{
+								display: 'flex',
+								justifyContent: 'flex-end',
+								marginBottom: 50
+							}}>
+								<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
+							</div>
 						</section> : null}
 						<Footer {...this.props} />
 					</div>
