@@ -74,6 +74,9 @@ class Review extends React.Component {
         this.props.form.validateFields((err, values) => {
 
             if (!err) {
+                this.setState({
+                    disable: true
+                })
                 this.props.handleCreate(values)
             }
             else {
@@ -90,8 +93,8 @@ class Review extends React.Component {
             <Modal
                 visible={visible}
                 title="Add Image Details"
-                okText="Submit"
-                // okButtonProps={{ disabled: true }}
+                okText={!disable ? "Submit" : "Uploading"}
+                okButtonProps={{ disabled: disable, loading: disable }}
                 onCancel={onCancel}
                 onOk={this.handleSubmit}
             >
