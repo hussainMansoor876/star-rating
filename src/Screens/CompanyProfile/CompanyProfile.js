@@ -241,29 +241,16 @@ class Company extends React.Component {
 														<div className="center-second-main">
 															{/* <p className="ff-primary">Bewertungen vom 14.12.2019 </p> */}
 															<div className="row">
-																<div className="col-lg-6 col-md-6">
+																<div className="col-lg-12 col-md-12">
 																	<div className="for-main">
-																		{company.reviews ? <div>
+																		{starValues.totalStars ? <div>
 																			<span className="ff-primary">{starValues.totalStars} von 5</span>
-																			<div className="starr">
-																				<ul>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																					<li><i className="fa fa-star"></i></li>
-																				</ul>
+																			<div className="starrd">
+																				<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
 																			</div>
 																		</div> : null}
 																		<h4 className="ff-secondary">{company.name}</h4>
 																	</div>
-																</div>
-																<div className="col-lg-6 col-md-6">
-																	<div className="icon-image">
-																		<img src={manicon} />
-																		<h5>recommendation</h5>
-																	</div>
-
 																</div>
 															</div>
 															<div className="star-rating">
