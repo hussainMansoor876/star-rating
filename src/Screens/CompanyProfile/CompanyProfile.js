@@ -346,9 +346,9 @@ class Company extends React.Component {
 									<div className="star-center">
 										<span className="ff-primary">{starValues.totalStars}/5.00</span>
 										<div className="starress">
-											<Rate disabled defaultValue={starValues.totalStars} style={{ color: '#0c94ac' }} />
+											<Rate disabled defaultValue={Math.round(starValues.totalStars)} style={{ color: '#0c94ac' }} />
 										</div>
-										<span className="ant-rate-text">{reviewDesc[parseInt(starValues.totalStars) - 1]}</span>
+										<span className="ant-rate-text">{reviewDesc[Math.round(starValues.totalStars) - 1]}</span>
 									</div>
 								</div> : null}
 							</div>
