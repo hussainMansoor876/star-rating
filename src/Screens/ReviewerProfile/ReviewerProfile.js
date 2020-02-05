@@ -10,7 +10,7 @@ import Footer from '../Header/Footer'
 import { Skeleton } from 'antd';
 import axios from 'axios'
 import Exception from 'ant-design-pro/lib/Exception';
-import { Rate } from 'antd';
+import { Rate, Pagination } from 'antd';
 import { Player } from 'video-react';
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
@@ -31,7 +31,10 @@ class Reviewer extends React.Component {
 		})
 			.then((response) => {
 				console.log('response', response)
-				const { data } = response
+				var { data } = response
+				if (data.data && data.data.reviews) {
+					data.data.reviews = data.data.reviews.reverse()
+				}
 				this.setState({
 					user: data.data,
 					success: data.success
@@ -284,6 +287,13 @@ class Reviewer extends React.Component {
 							</div>
 						)
 					})}
+					<div style={{
+						display: 'flex',
+						justifyContent: 'flex-end',
+						marginBottom: 50
+					}}>
+						<Pagination defaultCurrent={1} total={user.reviews.length} size="large" />
+					</div>
 				</section> : null}
 				<Footer {...this.props} />
 			</div>
