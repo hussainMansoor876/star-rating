@@ -179,7 +179,7 @@ class Reviewer extends React.Component {
 				</section> : null}
 
 				{user.reviews ? <section id="customer-service">
-					{user.reviews.reverse().map((v, i) => {
+					{user.reviews.map((v, i) => {
 						var count = (v.applicationStars + v.featuresStars + v.clarityStars + v.privacyStars + v.customerService) / 5
 						return (
 							<div className="wrapper" key={i}>
@@ -206,8 +206,8 @@ class Reviewer extends React.Component {
 										<div className="col-lg-10 col-md-4">
 											<div className="two-main-r">
 												<div className="two-r-main clearfix">
-													<h3 className="ff-secondary">{v.reveiwerName}</h3>
-													<p className="ff-primary coment">{v.feedback}</p>
+													<h3 className="ff-secondary">To: {v.companyName}</h3>
+													<p className="ff-primary coment">You: {v.feedback}</p>
 
 													<div className="col-lg-5 col-md-12 col-sm-12 flrt-r">
 														<div className="star-rating-second">
