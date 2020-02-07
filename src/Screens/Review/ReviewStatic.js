@@ -67,7 +67,6 @@ class Review extends React.Component {
     }
 
     handleSubmit = e => {
-        var { editValue } = this.state
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
 
@@ -75,11 +74,6 @@ class Review extends React.Component {
                 this.setState({
                     disable: true
                 })
-                if (editValue) {
-                    editValue.feedback = values.feedback
-                    return this.props.handleUpdate(editValue)
-                }
-                this.props.handleCreate(values)
             }
             else {
                 this.openNotification(title, "SomeThing Went wrong", 'close-circle', 'red')
@@ -123,7 +117,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Application">
                         {getFieldDecorator('applicationStars', {
-                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
+                            rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -136,7 +130,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Features">
                         {getFieldDecorator('featuresStars', {
-                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
+                            rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -149,7 +143,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Clarity">
                         {getFieldDecorator('clarityStars', {
-                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
+                            rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -162,7 +156,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Privacy">
                         {getFieldDecorator('privacyStars', {
-                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
+                            rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -175,7 +169,7 @@ class Review extends React.Component {
                     </Form.Item>
                     <Form.Item label="Customer">
                         {getFieldDecorator('customerService', {
-                            rules: [{ required: editValue ? false : true, message: 'Please give stars also' }]
+                            rules: [{ required: true, message: 'Please give stars also' }]
                         })(<span>
                             <Rate tooltips={desc} onChange={(value) => this.setState({
                                 starValues: {
@@ -186,7 +180,7 @@ class Review extends React.Component {
                             {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
                         </span>)}
                     </Form.Item>
-                    {!editValue ? <Form.Item >
+                    <Form.Item >
                         {getFieldDecorator('video', {
                             rules: [{ required: false, message: 'Please Upload the Image!' }],
                             valuePropName: 'fileList',
@@ -198,7 +192,7 @@ class Review extends React.Component {
                       </Button>
                             </Upload>,
                         )}
-                    </Form.Item> : null}
+                    </Form.Item>
                 </Form>
             </Modal>
         );
