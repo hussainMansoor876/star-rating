@@ -52,7 +52,7 @@ class Reviewer extends React.Component {
 				index: index + 5
 			})
 		}
-		else{
+		else {
 			this.setState({
 				currPage: value,
 				index: index - 5
@@ -297,13 +297,13 @@ class Reviewer extends React.Component {
 							</div>
 						)
 					})}
-					<div style={{
+					{user.reviews && user.reviews.length ? <div style={{
 						display: 'flex',
 						justifyContent: 'flex-end',
 						marginBottom: 50
 					}}>
 						<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
-					</div>
+					</div> : null}
 				</section> : null}
 				<Footer {...this.props} />
 			</div>
