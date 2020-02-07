@@ -143,18 +143,6 @@ class Review extends React.Component {
                                     ...starValues,
                                     clarityStars: value
                                 }
-                            }, () => {
-                                if (editValue) {
-                                    this.setState({
-                                        editValue: {
-                                            ...editValue,
-                                            clarityStars: value
-                                        }
-                                    })
-                                }
-                                this.props.form.setFieldsValue({
-                                    clarityStars: value
-                                })
                             })} value={starValues.clarityStars} />
                             {starValues.clarityStars ? <span className="ant-rate-text">{desc[starValues.clarityStars - 1]}</span> : ''}
                         </span>)}
@@ -168,18 +156,6 @@ class Review extends React.Component {
                                     ...starValues,
                                     privacyStars: value
                                 }
-                            }, () => {
-                                if (editValue) {
-                                    this.setState({
-                                        editValue: {
-                                            ...editValue,
-                                            privacyStars: value
-                                        }
-                                    })
-                                }
-                                this.props.form.setFieldsValue({
-                                    privacyStars: value
-                                })
                             })} value={starValues.privacyStars} />
                             {starValues.privacyStars ? <span className="ant-rate-text">{desc[starValues.privacyStars - 1]}</span> : ''}
                         </span>)}
@@ -193,18 +169,6 @@ class Review extends React.Component {
                                     ...starValues,
                                     customerService: value
                                 }
-                            }, () => {
-                                if (editValue) {
-                                    this.setState({
-                                        editValue: {
-                                            ...editValue,
-                                            customerService: value
-                                        }
-                                    })
-                                }
-                                this.props.form.setFieldsValue({
-                                    customerService: value
-                                })
                             })} value={starValues.customerService} />
                             {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
                         </span>)}
