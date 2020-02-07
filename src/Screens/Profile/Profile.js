@@ -105,18 +105,18 @@ class Reviewer extends React.Component {
 			formData.append('video', values.video[0].originFileObj)
 		}
 
-		axios.post('http://localhost:5001/post/static-review', values)
+		axios.post('http://localhost:5001/post/static-company', company)
 			.then((response) => {
 				var { data } = response
 				console.log('data', data)
 				// this.handleCancel()
-				if (data.success) {
-					// data.data.reviews = data.data.reviews.reverse()
-					// this.props.loginUser(data.data)
-					// setTimeout(() => {
-					// 	window.location.reload()
-					// })
-				}
+				axios.post('http://localhost:5001/post/static-review', formData)
+					.then((response) => {
+						var { data } = response
+						console.log('data', data)
+						// this.handleCancel()
+
+					})
 			})
 	}
 

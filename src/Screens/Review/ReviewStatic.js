@@ -1,6 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Icon, Form, Modal, Upload, Input, Button, message, notification, Rate } from 'antd';
+import validator from 'validator'
 
 const { TextArea } = Input;
 
@@ -71,9 +72,12 @@ class Review extends React.Component {
         this.props.form.validateFields((err, values) => {
 
             if (!err) {
-                this.setState({
-                    disable: true
-                })
+                // this.setState({
+                //     disable: true
+                // })
+                if (!validator.isURL(values.url)) {
+                    return this.openNotification(title, "Please Enter Valid Url!!", 'close-circle', 'red')
+                }
                 this.props.handleStatic(values)
             }
             else {
@@ -195,7 +199,7 @@ class Review extends React.Component {
                                 }
                             }, () => {
                                 this.props.form.setFieldsValue({
-                                    applicationStars: value
+                                    customerService: value
                                 })
                             })} value={starValues.customerService} />
                             {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
