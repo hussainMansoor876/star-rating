@@ -220,7 +220,7 @@ class Reviewer extends React.Component {
 					</div>
 				</section>
 
-				{user.reviews ? <section id="reviews">
+				{user.reviews && user.reviews.length ? <section id="reviews">
 					<div className="wrapper">
 						<div className="reviews-main">
 							<div className="row">
@@ -355,13 +355,13 @@ class Reviewer extends React.Component {
 							</div>
 						)
 					})}
-					<div style={{
+					{user.reviews && user.reviews.length ? <div style={{
 						display: 'flex',
 						justifyContent: 'flex-end',
 						marginBottom: 50
 					}}>
 						<Pagination defaultCurrent={1} total={user.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
-					</div>
+					</div> : null}
 				</section> : null}
 				{this.state.editValue ? <Review
 					visible={this.state.editReview}
