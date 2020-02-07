@@ -165,7 +165,7 @@ class Reviewer extends React.Component {
 					</div>
 				</section>
 
-				{user.reviews ? <section id="reviews">
+				{user.reviews && user.reviews.length ? <section id="reviews">
 					<div className="wrapper">
 						<div className="reviews-main">
 							<div className="row">
