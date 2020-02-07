@@ -34,15 +34,7 @@ class Reviewer extends React.Component {
 	componentWillMount() {
 		const { user } = this.props
 		if (!user) {
-			return this.props.history.replace('/')
-		}
-	}
-
-
-	componentDidMount() {
-		const { user } = this.props
-		if (!user) {
-			this.props.history.replace('/login')
+			return this.props.history.replace('/login')
 		}
 	}
 
@@ -138,9 +130,11 @@ class Reviewer extends React.Component {
 		const { user } = this.props
 		const { index } = this.state
 		if (!user) {
-			<div className="main-body">
-				<Header {...this.props} />
-			</div>
+			return (
+				<div className="main-body">
+					<Header {...this.props} />
+				</div>
+			)
 		}
 		return (
 			<div className="main-body">
