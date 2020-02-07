@@ -125,6 +125,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     applicationStars: value
                                 },
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    applicationStars: value
+                                })
                             })} value={starValues.applicationStars} />
                             {starValues.applicationStars ? <span className="ant-rate-text">{desc[starValues.applicationStars - 1]}</span> : ''}
                         </span>)}
@@ -138,6 +142,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     featuresStars: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    featuresStars: value
+                                })
                             })} value={starValues.featuresStars} />
                             {starValues.featuresStars ? <span className="ant-rate-text">{desc[starValues.featuresStars - 1]}</span> : ''}
                         </span>)}
@@ -151,6 +159,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     clarityStars: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    clarityStars: value
+                                })
                             })} value={starValues.clarityStars} />
                             {starValues.clarityStars ? <span className="ant-rate-text">{desc[starValues.clarityStars - 1]}</span> : ''}
                         </span>)}
@@ -164,6 +176,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     privacyStars: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    privacyStars: value
+                                })
                             })} value={starValues.privacyStars} />
                             {starValues.privacyStars ? <span className="ant-rate-text">{desc[starValues.privacyStars - 1]}</span> : ''}
                         </span>)}
@@ -177,6 +193,10 @@ class Review extends React.Component {
                                     ...starValues,
                                     customerService: value
                                 }
+                            }, () => {
+                                this.props.form.setFieldsValue({
+                                    applicationStars: value
+                                })
                             })} value={starValues.customerService} />
                             {starValues.customerService ? <span className="ant-rate-text">{desc[starValues.customerService - 1]}</span> : ''}
                         </span>)}
