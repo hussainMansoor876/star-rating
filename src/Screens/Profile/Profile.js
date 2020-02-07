@@ -109,6 +109,7 @@ class Reviewer extends React.Component {
 		axios.post('http://localhost:5001/post/static-company', company)
 			.then((response) => {
 				var { data } = response
+				console.log(data)
 				this.handleCancel()
 				if (data.success) {
 					formData.append('companyId', data._id)
@@ -117,11 +118,15 @@ class Reviewer extends React.Component {
 							var { data } = response
 							data.data.reviews = data.data.reviews.reverse()
 							this.props.loginUser(data.data)
-							setTimeout(() => {
-								window.location.reload()
-							}, 500)
+							console.log(data)
+							// setTimeout(() => {
+							// 	window.location.reload()
+							// }, 500)
 						})
 				}
+			})
+			.catch((e)=>{
+				console.log(e)
 			})
 	}
 
