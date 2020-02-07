@@ -72,9 +72,9 @@ class Review extends React.Component {
         this.props.form.validateFields((err, values) => {
 
             if (!err) {
-                // this.setState({
-                //     disable: true
-                // })
+                this.setState({
+                    disable: true
+                })
                 if (!validator.isURL(values.url)) {
                     return this.openNotification(title, "Please Enter Valid Url!!", 'close-circle', 'red')
                 }
@@ -95,7 +95,7 @@ class Review extends React.Component {
                 visible={visible}
                 title="Add Image Details"
                 okText={!disable ? "Submit" : "Uploading"}
-                // okButtonProps={{ disabled: disable, loading: disable }}
+                okButtonProps={{ disabled: disable, loading: disable }}
                 onCancel={onCancel}
                 onOk={this.handleSubmit}
             >
