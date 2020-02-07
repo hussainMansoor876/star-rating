@@ -146,7 +146,9 @@ class Reviewer extends React.Component {
 																		</a>
 																	</div> : null}
 																</div>
-
+																<div className="inputcol-2">
+																	<button className="btn-blue ff-primary" style={{ width: '100%' }} onClick={() => this.setState({ visible: true })}>Add Review</button>
+																</div>
 															</div>
 														</div>
 													</div>
