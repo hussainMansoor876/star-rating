@@ -76,6 +76,7 @@ class Reviewer extends React.Component {
 
 	handleStatic(values) {
 		const { user } = this.props
+		var id = new Date().getTime()
 		var company = {
 			name: values.name,
 			status: 'approved',
@@ -85,7 +86,7 @@ class Reviewer extends React.Component {
 			},
 			user: {
 				name: values.name,
-				_id: toString(Math.random() * 10000000) + new Date().getTime(),
+				_id: JSON.stringify(id)
 			},
 		}
 		company.ownerId = company.user._id
