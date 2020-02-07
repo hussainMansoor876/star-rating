@@ -312,6 +312,14 @@ class Reviewer extends React.Component {
 					onCancel={this.handleCancel}
 					handleUpdate={this.handleUpdate.bind(this)}
 				/> : null}
+
+				{this.state.visible ? <Review
+					visible={this.state.visible}
+					onCancel={this.handleCancel}
+					editValue={null}
+					openNotification={this.openNotification}
+					handleCreate={this.handleCreate.bind(this)}
+				/> : null}
 				<Footer {...this.props} />
 			</div>
 		)
