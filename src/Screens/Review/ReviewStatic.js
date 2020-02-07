@@ -111,8 +111,14 @@ class Review extends React.Component {
                     <Form.Item label="Company Name">
                         {getFieldDecorator('name', {
                             initialValue: editValue ? editValue.feedback : '',
-                            rules: [{ required: true, message: 'Please Add the Feedback!' }]
+                            rules: [{ required: true, message: 'Please Add the Company Name!' }]
                         })(<Input minLength={5} />)}
+                    </Form.Item>
+                    <Form.Item label="Company Address">
+                        {getFieldDecorator('address', {
+                            initialValue: editValue ? editValue.feedback : '',
+                            rules: [{ required: true, message: 'Please Add the Company Address!' }]
+                        })(<Input minLength={10} />)}
                     </Form.Item>
                     <Form.Item label="Application">
                         {getFieldDecorator('applicationStars', {
