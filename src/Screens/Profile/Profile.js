@@ -26,7 +26,8 @@ class Reviewer extends React.Component {
 			editValue: null,
 			editReview: false,
 			index: 0,
-			currPage: 1
+			currPage: 1,
+			visible: false
 		}
 	}
 
@@ -317,7 +318,7 @@ class Reviewer extends React.Component {
 					handleUpdate={this.handleUpdate.bind(this)}
 				/> : null}
 
-				{this.state.visible ? <Review
+				{this.state.visible ? <ReviewStatic
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
 					editValue={null}
