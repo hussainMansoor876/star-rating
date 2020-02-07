@@ -85,10 +85,10 @@ class Reviewer extends React.Component {
 			},
 			user: {
 				name: values.name,
-				_id: '4444',
+				_id: toString(Math.random() * 10000000) + new Date().getTime(),
 			},
-			ownerId: toString(Math.random() * 10000000) + new Date().getTime()
 		}
+		company.ownerId = company.user._id
 		if (!values.video) {
 			delete values.video
 		}
