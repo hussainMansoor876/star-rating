@@ -31,6 +31,13 @@ class Reviewer extends React.Component {
 		}
 	}
 
+	componentWillMount() {
+		const { user } = this.props
+		if (!user) {
+			return this.props.history.replace('/')
+		}
+	}
+
 
 	componentDidMount() {
 		const { user } = this.props
@@ -121,7 +128,7 @@ class Reviewer extends React.Component {
 						})
 				}
 			})
-			.catch((e)=>{
+			.catch((e) => {
 				console.log(e)
 			})
 	}
@@ -130,6 +137,11 @@ class Reviewer extends React.Component {
 	render() {
 		const { user } = this.props
 		const { index } = this.state
+		if (!user) {
+			<div className="main-body">
+				<Header {...this.props} />
+			</div>
+		}
 		return (
 			<div className="main-body">
 				<Header {...this.props} />
