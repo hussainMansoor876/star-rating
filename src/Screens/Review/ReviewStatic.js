@@ -117,18 +117,6 @@ class Review extends React.Component {
                                     ...starValues,
                                     applicationStars: value
                                 },
-                            }, () => {
-                                if (editValue) {
-                                    this.setState({
-                                        editValue: {
-                                            ...editValue,
-                                            applicationStars: value
-                                        }
-                                    })
-                                }
-                                this.props.form.setFieldsValue({
-                                    applicationStars: value
-                                })
                             })} value={starValues.applicationStars} />
                             {starValues.applicationStars ? <span className="ant-rate-text">{desc[starValues.applicationStars - 1]}</span> : ''}
                         </span>)}
@@ -142,18 +130,6 @@ class Review extends React.Component {
                                     ...starValues,
                                     featuresStars: value
                                 }
-                            }, () => {
-                                if (editValue) {
-                                    this.setState({
-                                        editValue: {
-                                            ...editValue,
-                                            featuresStars: value
-                                        }
-                                    })
-                                }
-                                this.props.form.setFieldsValue({
-                                    featuresStars: value
-                                })
                             })} value={starValues.featuresStars} />
                             {starValues.featuresStars ? <span className="ant-rate-text">{desc[starValues.featuresStars - 1]}</span> : ''}
                         </span>)}
