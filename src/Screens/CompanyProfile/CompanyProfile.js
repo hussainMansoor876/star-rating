@@ -512,7 +512,7 @@ class Company extends React.Component {
 							</div>
 						)
 					})}
-					{company && company.reviews.length ? <div style={{
+					{company && company.reviews && company.reviews.length ? <div style={{
 						display: 'flex',
 						justifyContent: 'flex-end',
 						marginBottom: 50
