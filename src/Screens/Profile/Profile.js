@@ -76,6 +76,19 @@ class Reviewer extends React.Component {
 
 	handleStatic(values) {
 		const { user } = this.props
+		var company = {
+			name: values.name,
+			status: 'approved',
+			url: values.url,
+			profilePic: {
+				url: 'https://res.cloudinary.com/dl39em2mk/image/upload/v1581094024/company_ggfyri.jpg',
+			},
+			user: {
+				name: values.name,
+				_id: '4444',
+			},
+			ownerId: toString(Math.random() * 10000000) + new Date().getTime()
+		}
 		if (!values.video) {
 			delete values.video
 		}
