@@ -93,8 +93,8 @@ class Reviewer extends React.Component {
 			delete values.video
 		}
 		values.companyName = values.name
-		// values.ownerId = company.user._id
-		// values.ownerName = company.user.name
+		values.ownerId = company.ownerId
+		values.ownerName = company.name
 		values.reveiwerName = user.name
 		values.reveiwerId = user._id
 		var formData = new FormData();
