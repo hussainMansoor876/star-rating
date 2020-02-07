@@ -36,7 +36,7 @@ class Reviewer extends React.Component {
 		if (!user) {
 			return this.props.history.replace('/login')
 		}
-		await axios.post('https://star-rating123.herokuapp.com/post/is-company', {
+		await axios.post('https://star-rating123.herokuapp.com/user/update-user', {
 			_id: user._id
 		})
 			.then((response) => {
