@@ -175,6 +175,9 @@ class CreateCompany extends React.Component {
 
 	async componentWillMount() {
 		const { user } = this.props
+		if (!user) {
+			return this.props.history.replace('/login')
+		}
 		if (!user.buyPlan) {
 			this.props.history.push('/plan')
 		}
@@ -230,7 +233,14 @@ class CreateCompany extends React.Component {
 		const { getFieldDecorator } = this.props.form;
 		const { city, success, loading, company, starValues, index } = this.state
 		const { user } = this.props
-		if (loading) {
+		if (!user) {
+			return (
+				<div className="main-body">
+					<Header {...this.props} />
+				</div>
+			)
+		}
+		else if (loading) {
 			return (
 				<div className="main-body">
 					<Header {...this.props} />
@@ -815,7 +825,7 @@ class CreateCompany extends React.Component {
 									</div>
 								)
 							})}
-							{company.reviews && company.reviews.length ?<div style={{
+							{company.reviews && company.reviews.length ? <div style={{
 								display: 'flex',
 								justifyContent: 'flex-end',
 								marginBottom: 50
