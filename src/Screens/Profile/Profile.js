@@ -9,7 +9,7 @@ import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 import { Skeleton } from 'antd';
 import axios from 'axios'
-import Exception from 'ant-design-pro/lib/Exception';
+import ReviewStatic from '../Review/ReviewStatic'
 import { Rate, Pagination } from 'antd';
 import { Player } from 'video-react';
 import Review from '../Review/Review'
@@ -71,6 +71,10 @@ class Reviewer extends React.Component {
 					})
 				}
 			})
+	}
+
+	handleStatic(values){
+
 	}
 
 
@@ -317,8 +321,7 @@ class Reviewer extends React.Component {
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
 					editValue={null}
-					openNotification={this.openNotification}
-					handleCreate={this.handleCreate.bind(this)}
+					handleCreate={this.handleStatic.bind(this)}
 				/> : null}
 				<Footer {...this.props} />
 			</div>
