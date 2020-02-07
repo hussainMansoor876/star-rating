@@ -46,7 +46,7 @@ class Search extends React.Component {
     const { data, result } = this.state
     const { state } = this.props.history.location
     return (
-      <div class="search-page">
+      <div className="search-page">
         <Header {...this.props} />
 
         {/* <section id="banner-7">
