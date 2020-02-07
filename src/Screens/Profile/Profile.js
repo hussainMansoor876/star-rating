@@ -106,22 +106,18 @@ class Reviewer extends React.Component {
 			formData.append('video', values.video[0].originFileObj)
 		}
 
-		axios.post('http://localhost:5001/post/static-company', company)
+		axios.post('https://star-rating123.herokuapp.com/post/static-company', company)
 			.then((response) => {
 				var { data } = response
 				console.log(data)
 				this.handleCancel()
 				if (data.success) {
 					formData.append('companyId', data._id)
-					axios.post('http://localhost:5001/post/add-review', formData)
+					axios.post('https://star-rating123.herokuapp.com/post/add-review', formData)
 						.then((response) => {
 							var { data } = response
 							data.data.reviews = data.data.reviews.reverse()
 							this.props.loginUser(data.data)
-							console.log(data)
-							// setTimeout(() => {
-							// 	window.location.reload()
-							// }, 500)
 						})
 				}
 			})
