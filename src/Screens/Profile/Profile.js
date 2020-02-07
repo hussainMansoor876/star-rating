@@ -31,11 +31,21 @@ class Reviewer extends React.Component {
 		}
 	}
 
-	componentWillMount() {
+	async componentWillMount() {
 		const { user } = this.props
 		if (!user) {
 			return this.props.history.replace('/login')
 		}
+		await axios.post('https://star-rating123.herokuapp.com/post/is-company', {
+			_id: user._id
+		})
+			.then((response) => {
+				const { data } = response
+				this.props.loginUser(data.user)
+			})
+			.catch((e) => {
+				console.log(e)
+			})
 	}
 
 	handleCancel = () => {
