@@ -74,8 +74,23 @@ class Reviewer extends React.Component {
 			})
 	}
 
-	handleStatic(values){
-
+	handleStatic(values) {
+		const { user } = this.props
+		if (!values.video) {
+			delete values.video
+		}
+		values.companyName = values.name
+		// values.ownerId = company.user._id
+		// values.ownerName = company.user.name
+		values.reveiwerName = user.name
+		values.reveiwerId = user._id
+		var formData = new FormData();
+		for (var i in values) {
+			formData.append(i, values[i])
+		}
+		if (values.video) {
+			formData.append('video', values.video[0].originFileObj)
+		}
 	}
 
 
@@ -322,7 +337,7 @@ class Reviewer extends React.Component {
 					visible={this.state.visible}
 					onCancel={this.handleCancel}
 					editValue={null}
-					handleCreate={this.handleStatic.bind(this)}
+					handleStatic={this.handleStatic.bind(this)}
 				/> : null}
 				<Footer {...this.props} />
 			</div>

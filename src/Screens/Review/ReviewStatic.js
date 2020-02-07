@@ -74,6 +74,7 @@ class Review extends React.Component {
                 this.setState({
                     disable: true
                 })
+                this.props.handleStatic(values)
             }
             else {
                 this.openNotification(title, "SomeThing Went wrong", 'close-circle', 'red')
