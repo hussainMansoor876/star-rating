@@ -49,17 +49,6 @@ class Search extends React.Component {
       <div className="search-page">
         <Header {...this.props} />
 
-        {/* <section id="banner-7">
-          <div className="wrapper">
-            <div className="d-table w-100">
-              <div className="d-table-cell va-middle">
-                <div className="banner-content">
-                  <h2 className="ff-secondary">Search For Companies</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
         <div className="search-company">
           <div className="wrapper">
             {data.length && result ?
