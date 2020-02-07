@@ -91,7 +91,7 @@ class Review extends React.Component {
                 visible={visible}
                 title="Add Image Details"
                 okText={!disable ? "Submit" : "Uploading"}
-                okButtonProps={{ disabled: disable, loading: disable }}
+                // okButtonProps={{ disabled: disable, loading: disable }}
                 onCancel={onCancel}
                 onOk={this.handleSubmit}
             >
