@@ -512,13 +512,14 @@ class Company extends React.Component {
 							</div>
 						)
 					})}
-					<div style={{
+					{company && company.reviews.length ? <div style={{
 						display: 'flex',
 						justifyContent: 'flex-end',
 						marginBottom: 50
 					}}>
 						<Pagination defaultCurrent={1} total={company.reviews.length} defaultPageSize={5} onChange={(value) => this.updatePage(value)} />
-					</div>
+					</div> : null}
+
 				</section> : null}
 				{this.state.visible ? <Review
 					visible={this.state.visible}
