@@ -42,7 +42,7 @@ class Reviewer extends React.Component {
                 {review ? <section id="customer-service">
 
                     <div className="wrapper">
-                        <div className="customer-service-main">
+                        <div className="customer-service-main1">
                             <div className="row">
                                 <div className="col-lg-2 col-md-4">
                                     <div className="two-str-main-dv">
@@ -136,15 +136,6 @@ class Reviewer extends React.Component {
                                                     </Player>
                                                 </div>
                                             </div> : null}
-                                        </div>
-                                        <div className="two-d-main clearfix">
-                                            <div className="col-lg-12">
-                                                <div className="prove-centre">
-                                                    <p className="ff-primary">Customer review & rating for:</p>
-                                                    <span className="ff-primary">Star Rating</span>
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div>
