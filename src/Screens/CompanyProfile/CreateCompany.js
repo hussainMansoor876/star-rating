@@ -14,6 +14,7 @@ import Exception from 'ant-design-pro/lib/Exception';
 import manicon from '../../assets/img/man-icon-2.png';
 import { Rate, Pagination } from 'antd';
 import { Player } from 'video-react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const reviewDesc = ['Terrible', 'Bad', 'Normal', 'Good', 'Wonderful'];
 const { Option } = Select;
@@ -57,7 +58,8 @@ class CreateCompany extends React.Component {
 				customerService: 0
 			},
 			index: 0,
-			currPage: 1
+			currPage: 1,
+			copied: false
 		}
 	}
 
@@ -712,9 +714,13 @@ class CreateCompany extends React.Component {
 								return (
 									<div className="wrapper" key={i}>
 										<div className="customer-service-main">
-											{user && user._id === v.reveiwerId ? <div className="inputcol-2 edit1">
-												<button className="btn-blue ff-primary" style={{ width: '120px' }}>Edit</button>
-											</div> : null}
+											<CopyToClipboard text={'this.state.value'}
+												onCopy={() => this.setState({ copied: true })}>
+												<div className="inputcol-2 edit1">
+													<button className="btn-blue ff-primary" style={{ width: '120px' }}>Copy Script</button>
+												</div>
+											</CopyToClipboard>
+
 											<div className="row">
 												<div className="col-lg-2 col-md-4">
 													<div className="two-str-main-dv">
