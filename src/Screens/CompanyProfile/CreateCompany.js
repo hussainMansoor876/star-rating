@@ -714,8 +714,10 @@ class CreateCompany extends React.Component {
 								return (
 									<div className="wrapper" key={i}>
 										<div className="customer-service-main">
-											<CopyToClipboard text={'this.state.value'}
-												onCopy={() => this.setState({ copied: true })}>
+											<CopyToClipboard text={`<iframe src="https://star-rating-frontend.herokuapp.com/review/${v._id}" height=300 width="100%">`}
+												onCopy={() => this.setState({ copied: true },()=>{
+													this.openNotification('Success', 'Successfully Copied Script!!!', 'check')
+												})}>
 												<div className="inputcol-2 edit1">
 													<button className="btn-blue ff-primary" style={{ width: '120px' }}>Copy Script</button>
 												</div>
