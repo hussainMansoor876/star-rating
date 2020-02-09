@@ -19,7 +19,7 @@ import Privacy from '../Screens/privacy/privacy'
 import profilesearch from '../Screens/profile-search/profile-search'
 import Exception from 'ant-design-pro/lib/Exception';
 import Page404 from '../Screens/Page404'
-import ViewReview from '../Screens/Review/Review'
+import ViewReview from '../Screens/Review/ViewReview'
 
 
 function PrivateRoute({ component: Component, isLoggedIn, ...rest }) {
@@ -81,12 +81,6 @@ class Routes extends Component {
                     <Route path="/profilesearch" exact component={profilesearch} />
                     <Route path="/review/:id" exact component={ViewReview} />
                     <Route component={Page404} />
-                    {/* <Route path="/dashboard" exact component={Dashboard}/> */}
-                    {/* <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/dashboard" component={Dashboard} />
-                    <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/article" component={Article} /> */}
-                    {/* <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/alljobs" component={AllJobs} />
-                    <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/postjob" component={PostJob} />
-                    <Route isLoggedIn={(this.props.isLoggedIn || this.state.isLoggedIn)} exact path="/editjob" component={EditJob} /> */}
 
                 </Switch>
             </Router>
