@@ -18,7 +18,7 @@ class Reviewer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            review: {}
+            review: ''
         }
     }
 
@@ -28,6 +28,7 @@ class Reviewer extends React.Component {
         })
             .then((response) => {
                 var { data } = response
+                console.log('data', data)
                 this.setState({ review: data.data })
             })
     }
@@ -61,7 +62,7 @@ class Reviewer extends React.Component {
                                 <div className="col-lg-10 col-md-4">
                                     <div className="two-main-r">
                                         <div className="two-r-main clearfix">
-                                            <h3 className="ff-secondary">{review.reviewerName}</h3>
+                                            <h3 className="ff-secondary">{review.reveiwerName}</h3>
                                             <p className="ff-primary coment">{review.feedback}</p>
 
                                             <div className="col-lg-5 col-md-12 col-sm-12 flrt-r">
@@ -73,7 +74,7 @@ class Reviewer extends React.Component {
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                                                 <div className="starrsd">
-                                                                    <Rate disabled defaultValue={v.applicationStars} style={{ color: '#0c94ac' }} />
+                                                                    <Rate disabled defaultValue={review.applicationStars} style={{ color: '#0c94ac' }} />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -85,7 +86,7 @@ class Reviewer extends React.Component {
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                                                 <div className="starrsd">
-                                                                    <Rate disabled defaultValue={v.featuresStars} style={{ color: '#0c94ac' }} />
+                                                                    <Rate disabled defaultValue={review.featuresStars} style={{ color: '#0c94ac' }} />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -97,7 +98,7 @@ class Reviewer extends React.Component {
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                                                 <div className="starrsd">
-                                                                    <Rate disabled defaultValue={v.clarityStars} style={{ color: '#0c94ac' }} />
+                                                                    <Rate disabled defaultValue={review.clarityStars} style={{ color: '#0c94ac' }} />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -109,7 +110,7 @@ class Reviewer extends React.Component {
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                                                 <div className="starrsd">
-                                                                    <Rate disabled defaultValue={v.privacyStars} style={{ color: '#0c94ac' }} />
+                                                                    <Rate disabled defaultValue={review.privacyStars} style={{ color: '#0c94ac' }} />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -121,17 +122,17 @@ class Reviewer extends React.Component {
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
                                                                 <div className="starrsd">
-                                                                    <Rate disabled defaultValue={v.customerService} style={{ color: '#0c94ac' }} />
+                                                                    <Rate disabled defaultValue={review.customerService} style={{ color: '#0c94ac' }} />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            {v.video ? <div className="col-lg-3 col-md-12 col-sm-12 flrt-r">
+                                            {review.video ? <div className="col-lg-3 col-md-12 col-sm-12 flrt-r">
                                                 <div className="mrtpt clearfix">
                                                     <Player>
-                                                        <source src={v.video.url} />
+                                                        <source src={review.video.url} />
                                                     </Player>
                                                 </div>
                                             </div> : null}
