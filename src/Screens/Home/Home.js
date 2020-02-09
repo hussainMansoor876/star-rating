@@ -14,6 +14,7 @@ import slider5 from '../../assets/img/slider-5.jpg';
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 class Home extends React.Component {
@@ -26,7 +27,10 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-
+    axios.get('http://localhost:5001/get/get-company')
+      .then((res) => {
+        console.log(res)
+      })
   }
 
 
