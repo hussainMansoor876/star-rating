@@ -6,14 +6,9 @@ import logo from '../../assets/img/shoes.jpg';
 import sole from '../../assets/img/sole-trader.jpg';
 import trust from '../../assets/img/trust-2.png';
 import testiimage from '../../assets/img/man.png'; // with import
-import slider1 from '../../assets/img/slider-1.jpg';
-import slider2 from '../../assets/img/slider-2.jpg';
-import slider3 from '../../assets/img/slider-3.jpg';
-import slider4 from '../../assets/img/slider-4.jpg';
-import slider5 from '../../assets/img/slider-5.jpg';
+import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
-import { Link } from 'react-router-dom'
 import { Rate } from 'antd'
 import axios from 'axios'
 
@@ -92,7 +87,9 @@ class Home extends React.Component {
                               </div>
                             </div>
                             <div className="inputcol-2 edit1">
-                              <button className="btn-blue ff-primary" style={{ width: '80px' }} onClick={() => }>View</button>
+                              <Link to={`/company-view/${v._id}`}>
+                                <button className="btn-blue ff-primary" style={{ width: '80px' }}>View</button>
+                              </Link>
                             </div>
                           </div>
                         </div>
