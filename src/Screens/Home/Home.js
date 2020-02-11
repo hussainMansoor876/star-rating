@@ -14,6 +14,7 @@ import slider5 from '../../assets/img/slider-5.jpg';
 import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 import { Link } from 'react-router-dom'
+import { Rate } from 'antd'
 import axios from 'axios'
 
 
@@ -85,16 +86,13 @@ class Home extends React.Component {
                             <h5 className="ff-primary">{v.url}</h5>
                             <div className="service-content-star">
                               {/* <img src={v.profilePic.url} /> */}
-                              <div className="starr">
-                                <ul>
-                                  <li><i className="fa fa-star"></i></li>
-                                  <li><i className="fa fa-star"></i></li>
-                                  <li><i className="fa fa-star"></i></li>
-                                  <li><i className="fa fa-star"></i></li>
-                                  <li><i className="fa fa-star"></i></li>
-                                </ul>
-                                <span className="ff-primary">4.66/5.00</span>
+                              <div className="starrd">
+                                <Rate disabled defaultValue={count} style={{ color: '#0c94ac' }} />
+                                <span className="ff-primary">{count}/5.00</span>
                               </div>
+                            </div>
+                            <div className="inputcol-2 edit1">
+                              <button className="btn-blue ff-primary" style={{ width: '80px' }} onClick={() => }>View</button>
                             </div>
                           </div>
                         </div>
