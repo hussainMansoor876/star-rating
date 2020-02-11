@@ -74,13 +74,13 @@ class Home extends React.Component {
                     return (
                       <div className="col-md-4" key={i}>
                         <div className="service">
-                          <div className="service-image" style={{ backgroundImage: v.profilePic.url }}></div>
+                          <div className="service-image" style={{ backgroundImage: `url(${v.profilePic.url})` }}></div>
                           {/* <div className="service-logo">
                             <img src={sole} />
                           </div> */}
                           <div className="service-content">
-                            <span className="ff-primary">Shose</span>
-                            <h5 className="ff-primary">soletrader.co.uk</h5>
+                            <span className="ff-primary">{v.name}</span>
+                            <h5 className="ff-primary">{v.url}</h5>
                             <div className="service-content-star">
                               <img src={trust} />
                               <div className="starr">
