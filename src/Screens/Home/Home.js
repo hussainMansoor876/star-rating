@@ -23,7 +23,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5001/get/get-company')
+    axios.get('https://star-rating123.herokuapp.com/get/get-company')
       .then((res) => {
         console.log(res)
         const { data } = res
