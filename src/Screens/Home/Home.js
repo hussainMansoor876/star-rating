@@ -70,19 +70,21 @@ class Home extends React.Component {
                 <h1 className="ff-secondary fc-blue">Some of our <br /><span>25,000+ shops</span></h1>
                 <div className="row">
                   {company.length ? company.map((v, i) => {
-                    console.log(v.profilePic.url)
+                    var reviews = v.reviews
+                    var count = 0
+                    for (var j of reviews) {
+                      count += (j.applicationStars + j.featuresStars + j.clarityStars + j.privacyStars + j.customerService) / 5
+                    }
+                    count /= reviews.length
                     return (
                       <div className="col-md-4" key={i}>
                         <div className="service">
                           <div className="service-image" style={{ backgroundImage: `url(${v.profilePic.url})` }}></div>
-                          {/* <div className="service-logo">
-                            <img src={sole} />
-                          </div> */}
                           <div className="service-content">
                             <span className="ff-primary">{v.name}</span>
                             <h5 className="ff-primary">{v.url}</h5>
                             <div className="service-content-star">
-                              <img src={trust} />
+                              {/* <img src={v.profilePic.url} /> */}
                               <div className="starr">
                                 <ul>
                                   <li><i className="fa fa-star"></i></li>
