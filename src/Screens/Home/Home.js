@@ -22,7 +22,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      company =[]
+      company: []
     }
   }
 
@@ -41,6 +41,7 @@ class Home extends React.Component {
 
 
   render() {
+    const { company } = this.state
     const { user } = this.props
     return (
       <div className="main-body">
@@ -68,31 +69,36 @@ class Home extends React.Component {
               <div className="our-service-main">
                 <h1 className="ff-secondary fc-blue">Some of our <br /><span>25,000+ shops</span></h1>
                 <div className="row">
-                  <div className="col-md-4">
-                    <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${logo})` }}></div>
-                      <div className="service-logo">
-                        <img src={sole} />
-                      </div>
-                      <div className="service-content">
-                        <span className="ff-primary">Shose</span>
-                        <h5 className="ff-primary">soletrader.co.uk</h5>
-                        <div className="service-content-star">
-                          <img src={trust} />
-                          <div className="starr">
-                            <ul>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                            </ul>
-                            <span className="ff-primary">4.66/5.00</span>
+                  {company.length ? company.map((v, i) => {
+                    console.log(v.profilePic.url)
+                    return (
+                      <div className="col-md-4" key={i}>
+                        <div className="service">
+                          <div className="service-image" style={{ backgroundImage: v.profilePic.url }}></div>
+                          {/* <div className="service-logo">
+                            <img src={sole} />
+                          </div> */}
+                          <div className="service-content">
+                            <span className="ff-primary">Shose</span>
+                            <h5 className="ff-primary">soletrader.co.uk</h5>
+                            <div className="service-content-star">
+                              <img src={trust} />
+                              <div className="starr">
+                                <ul>
+                                  <li><i className="fa fa-star"></i></li>
+                                  <li><i className="fa fa-star"></i></li>
+                                  <li><i className="fa fa-star"></i></li>
+                                  <li><i className="fa fa-star"></i></li>
+                                  <li><i className="fa fa-star"></i></li>
+                                </ul>
+                                <span className="ff-primary">4.66/5.00</span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    )
+                  }) : null}
                 </div>
               </div>
             </div>
