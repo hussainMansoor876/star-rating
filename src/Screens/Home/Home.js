@@ -79,17 +79,20 @@ class Home extends React.Component {
                           <div className="service-content">
                             <span className="ff-primary">{v.name}</span>
                             <h5 className="ff-primary">{v.url}</h5>
-                            <div className="service-content-star">
+                            <div style={{
+                              display: 'flex',
+                              justifyContent: 'space-between'
+                            }}>
                               {/* <img src={v.profilePic.url} /> */}
                               <div className="starrd">
                                 <Rate disabled defaultValue={count} style={{ color: '#0c94ac' }} />
                                 <span className="ff-primary">{count}/5.00</span>
                               </div>
-                            </div>
-                            <div className="inputcol-2 edit1">
-                              <Link to={`/company-view/${v._id}`}>
-                                <button className="btn-blue ff-primary" style={{ width: '80px' }}>View</button>
-                              </Link>
+                              <div className="inputcol-2 edit1">
+                                <Link to={`/company-view/${v._id}`}>
+                                  <button className="btn-blue ff-primary" style={{ width: '80px' }}>View</button>
+                                </Link>
+                              </div>
                             </div>
                           </div>
                         </div>
