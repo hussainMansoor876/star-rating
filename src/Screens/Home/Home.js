@@ -22,7 +22,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      company =[]
     }
   }
 
@@ -30,6 +30,12 @@ class Home extends React.Component {
     axios.get('http://localhost:5001/get/get-company')
       .then((res) => {
         console.log(res)
+        const { data } = res
+        if (data.success && data.data.length) {
+          this.setState({
+            company: data.data
+          })
+        }
       })
   }
 
@@ -65,131 +71,6 @@ class Home extends React.Component {
                   <div className="col-md-4">
                     <div className="service">
                       <div className="service-image" style={{ backgroundImage: `url(${logo})` }}></div>
-                      <div className="service-logo">
-                        <img src={sole} />
-                      </div>
-                      <div className="service-content">
-                        <span className="ff-primary">Shose</span>
-                        <h5 className="ff-primary">soletrader.co.uk</h5>
-                        <div className="service-content-star">
-                          <img src={trust} />
-                          <div className="starr">
-                            <ul>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                            </ul>
-                            <span className="ff-primary">4.66/5.00</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${slider5})` }}></div>
-                      <div className="service-logo">
-                        <img src={sole} />
-                      </div>
-                      <div className="service-content">
-                        <span className="ff-primary">Shose</span>
-                        <h5 className="ff-primary">soletrader.co.uk</h5>
-                        <div className="service-content-star">
-                          <img src={trust} />
-                          <div className="starr">
-                            <ul>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                            </ul>
-                            <span className="ff-primary">4.66/5.00</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${slider4})` }}></div>
-                      <div className="service-logo">
-                        <img src={sole} />
-                      </div>
-                      <div className="service-content">
-                        <span className="ff-primary">Shose</span>
-                        <h5 className="ff-primary">soletrader.co.uk</h5>
-                        <div className="service-content-star">
-                          <img src={trust} />
-                          <div className="starr">
-                            <ul>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                            </ul>
-                            <span className="ff-primary">4.66/5.00</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${slider3})` }}></div>
-                      <div className="service-logo">
-                        <img src={sole} />
-                      </div>
-                      <div className="service-content">
-                        <span className="ff-primary">Shose</span>
-                        <h5 className="ff-primary">soletrader.co.uk</h5>
-                        <div className="service-content-star">
-                          <img src={trust} />
-                          <div className="starr">
-                            <ul>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                            </ul>
-                            <span className="ff-primary">4.66/5.00</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${slider2})` }}></div>
-                      <div className="service-logo">
-                        <img src={sole} />
-                      </div>
-                      <div className="service-content">
-                        <span className="ff-primary">Shose</span>
-                        <h5 className="ff-primary">soletrader.co.uk</h5>
-                        <div className="service-content-star">
-                          <img src={trust} />
-                          <div className="starr">
-                            <ul>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                              <li><i className="fa fa-star"></i></li>
-                            </ul>
-                            <span className="ff-primary">4.66/5.00</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="service">
-                      <div className="service-image" style={{ backgroundImage: `url(${slider1})` }}></div>
                       <div className="service-logo">
                         <img src={sole} />
                       </div>
