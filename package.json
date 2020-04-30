@@ -12,7 +12,7 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "heroku-ssl-redirect": "^0.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "path": "^0.12.7",
     "rc-tween-one": "^2.6.3",
