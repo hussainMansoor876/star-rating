@@ -7,7 +7,7 @@
     "@types/stripe": "^7.13.20",
     "ant-design-pro": "^2.3.2",
     "antd": "^3.26.4",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "3",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
